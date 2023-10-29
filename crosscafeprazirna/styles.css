@@ -480,6 +480,7 @@
 	flex-direction: column-reverse;
 	gap: 10px;
 	color: white;
+	font-weight: 400;
 }
 .footer-bottom #signature {
 	margin: 0;
