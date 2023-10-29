@@ -127,7 +127,7 @@
 	text-align: left;
 	padding-right: 57vw;
 	padding-bottom: 1em;
-	padding-top: 1.2em;
+	padding-top: 1.4em;
 	justify-content: flex-end;
 }
 .banners-top > .banner-wrapper:first-child span {
@@ -245,19 +245,14 @@
 }
 
 .welcome-wrapper h1 {
-	display: flex;
-	justify-content: flex-end;
 	text-transform: uppercase;
 	font-weight: bold;
 	color: var(--color-primary);
 	font-size: var(--index-heading-size) !important;
-	position: relative;
-	width: 100%;
-	margin: 0;
-	margin-left: auto;
-	max-width: 11em;
+	width: var(--index-max-width);
 	text-align: left !important;
-	margin-right: 55vw;
+	margin: auto;
+	padding-right: calc(var(--index-max-width) / 1.5);
 	padding-top: calc(var(--ornaments-size) / 8.7);
 }
 .welcome-wrapper h1::before {
@@ -270,9 +265,53 @@
 }
 /*konkurencni vyhody*/
 .benefitBanner {
-	padding-top: 200px;
-	padding-bottom: 200px;
+	display: flex;
+	justify-content: center;
+	padding-top: calc(var(--ornaments-size) / 4.5);
+	padding-bottom: calc(var(--ornaments-size) / 8);
 	margin: 0 auto;
+	position: relative;
+	width: var(--index-max-width);
+}
+.benefitBanner::before {
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-09.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	top: 0;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+}
+.benefitBanner::after {
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-10.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	bottom: -7px;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+}
+.benefitBanner__item {
+	display: flex;
+	flex-direction: column;
+	flex: auto;
+	flex-grow: 0;
+	width: 20%;
+}
+.benefitBanner__picture {
+	max-width: 50%;
+	margin: 0;
+}
+.benefitBanner__content {
+	padding: 0;
+}
+.benefitBanner__content h2 {
+	display: flex;
+	flex-direction: column;
+	color: var(--color-primary);
+	font-size: 18px;
+	text-align: center;
+	margin: 0.5em 0 0;
 }
 
 /*footer*/
