@@ -45,7 +45,7 @@
 	padding-left: 1%;
 }
 .navigation-wrapper::before {
-	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-01.svg");
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-01.svg");
 	width: var(--ornaments-size);
 	height: auto;
 	bottom: -6px;
@@ -69,7 +69,7 @@
 	display: none;
 }
 .banners-top::after {
-	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-03.svg");
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-03.svg");
 	width: var(--ornaments-size);
 	height: auto;
 	bottom: -15px;
@@ -136,7 +136,7 @@
 	margin: 0;
 }
 .banners-top > .banner-wrapper:first-child::after {
-	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-02.svg");
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-02.svg");
 	width: var(--ornaments-size);
 	height: auto;
 	top: 0;
@@ -176,7 +176,7 @@
 	display: none;
 }
 .in-index #content > .homepage-group-title::after {
-	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-05.svg");
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-05.svg");
 	width: var(--ornaments-size);
 	height: auto;
 	top: 0;
@@ -185,7 +185,7 @@
 	position: absolute;
 }
 .in-index #content > .homepage-group-title:first-child::after {
-	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-04.svg");
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-04.svg");
 	width: var(--ornaments-size);
 	height: auto;
 	top: 0;
@@ -199,7 +199,7 @@
 	padding-bottom: 5em;
 }
 .in-index #content > .products:nth-last-child(3)::after {
-	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-06.svg");
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-06.svg");
 	width: var(--ornaments-size);
 	height: auto;
 	bottom: -7px;
@@ -222,7 +222,7 @@
 	padding: 4em 0 4em;
 }
 .welcome-wrapper::before {
-	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-07-v2.svg");
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-07-v2.svg");
 	width: var(--ornaments-size);
 	height: auto;
 	top: 0;
@@ -231,7 +231,7 @@
 	position: absolute;
 }
 .welcome-wrapper::after {
-	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-08-v2.svg");
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-08-v2.svg");
 	width: var(--ornaments-size);
 	height: auto;
 	bottom: -6px;
