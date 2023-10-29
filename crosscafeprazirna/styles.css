@@ -1,6 +1,6 @@
 :root {
 	--ornaments-size: clamp(100px, 60vw, 1000px);
-	--index-heading-size: clamp(16px, 2vw, 34px);
+	--index-heading-size: clamp(16px, 1.6vw, 34px);
 }
 
 /*hlavní menu*/
@@ -33,17 +33,18 @@
 
 .in-index h1.header-title {
 	position: relative;
-	width: 50%;
-	text-align: left;
+	width: 100%;
+	text-align: center;
 	font-size: var(--index-heading-size);
 	height: 100%;
+	max-height: calc(var(--ornaments-size) / 3);
+	margin-top: auto;
 	padding: 0;
+	padding-left: calc(var(--ornaments-size) / 3.25);
+	padding-bottom: calc(var(--ornaments-size) / 6);
 	transition: none;
 }
-.in-index h1.header-title span {
-	padding-bottom: 5%;
-	padding-left: 1%;
-}
+
 .navigation-wrapper::before {
 	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-01.svg");
 	width: var(--ornaments-size);
@@ -90,6 +91,9 @@
 .banners-top > .banner-wrapper span {
 	background: none;
 }
+.banners-top > .banner-wrapper a {
+	transition: none;
+}
 
 .banners-top > .banner-wrapper h3 {
 	display: flex;
@@ -123,7 +127,7 @@
 	text-align: left;
 	padding-right: min(2650px, 57vw);
 	padding-bottom: 1em;
-	padding-top: 0.8em;
+	padding-top: 1.2em;
 	justify-content: flex-end;
 }
 .banners-top > .banner-wrapper:first-child span {
@@ -164,12 +168,11 @@
 	margin-top: 0;
 	text-align: right;
 	padding-right: min(2700px, 60vw);
-	padding-top: 0.7em;
-	padding-left: 0.5em;
+	padding-top: 0.9em;
 }
 
 .in-index #content > .homepage-group-title:first-child {
-	padding-top: 1.3em;
+	padding-top: 1.7em;
 	padding-bottom: 0.9em;
 }
 .in-index #content > .homepage-group-title::before {
@@ -219,7 +222,7 @@
 	background-color: var(--color-tertiary);
 	font-size: var(--index-heading-size);
 	position: relative;
-	padding: 4em 0 4em;
+	padding: 0;
 }
 .welcome-wrapper::before {
 	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-07-v2.svg");
@@ -254,7 +257,7 @@
 	text-align: right;
 	padding-right: min(2600px, 55vw);
 	padding-top: 0;
-	margin-top: -8px;
+	padding-top: 4.8em;
 }
 .welcome-wrapper h1::before {
 	display: none !important;
