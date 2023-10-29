@@ -4,26 +4,26 @@
 }
 
 /*hlavní menu*/
-.header-navigation {
+.in-index .header-navigation {
 	display: none;
 }
 /*uvodní banner*/
-#header {
+.in-index #header {
 	padding-top: 0;
 }
-#header .navigation-wrapper {
+.in-index #header .navigation-wrapper {
 	position: absolute;
 	height: 100%;
 	width: 100%;
 	padding: 0;
 	display: flex;
 }
-#videoWrapper {
+.in-index #videoWrapper {
 	position: relative;
 	overflow: visible;
 }
 
-#videoWrapper video {
+.in-index #videoWrapper video {
 	position: relative;
 	margin: auto;
 	width: 100%;
@@ -45,7 +45,7 @@
 	transition: none;
 }
 
-.navigation-wrapper::before {
+.in-index .navigation-wrapper::before {
 	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-01.svg");
 	width: var(--ornaments-size);
 	height: auto;
@@ -53,6 +53,7 @@
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
+	pointer-events: none;
 }
 
 /*Horní bannery - Novinky naší pražírny*/
@@ -77,6 +78,7 @@
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
+	pointer-events: none;
 }
 
 .banners-top > .banner-wrapper {
@@ -147,6 +149,7 @@
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
+	pointer-events: none;
 }
 
 /*bloky produktů na hlavní stránce*/
@@ -164,16 +167,17 @@
 	font-size: var(--index-heading-size);
 	position: relative;
 	width: 100%;
-	margin: auto;
 	margin-top: 0;
 	text-align: right;
 	padding-right: 60vw;
 	padding-top: calc(var(--ornaments-size) / 44);
+	margin: 1em auto;
 }
 
 .in-index #content > .homepage-group-title:first-child {
 	padding-top: calc(var(--ornaments-size) / 22);
 	padding-bottom: 0.9em;
+	margin: auto;
 }
 .in-index #content > .homepage-group-title::before {
 	display: none;
@@ -186,6 +190,7 @@
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
+	pointer-events: none;
 }
 .in-index #content > .homepage-group-title:first-child::after {
 	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-04.svg");
@@ -195,6 +200,7 @@
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
+	pointer-events: none;
 }
 .in-index #content > .products:nth-last-child(3) {
 	position: relative;
@@ -209,6 +215,7 @@
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
+	pointer-events: none;
 }
 
 /*produkty homepage*/
@@ -233,6 +240,7 @@
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
+	pointer-events: none;
 }
 .welcome-wrapper::after {
 	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-08-v2.svg");
@@ -242,6 +250,7 @@
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
+	pointer-events: none;
 }
 
 .welcome-wrapper h1 {
@@ -281,6 +290,7 @@
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
+	pointer-events: none;
 }
 .benefitBanner::after {
 	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-10.svg");
@@ -290,6 +300,7 @@
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
+	pointer-events: none;
 }
 .benefitBanner__item {
 	display: flex;
@@ -316,6 +327,69 @@
 
 /*footer*/
 #footer {
-	background: var(--color-primary);
-	color: white;
+	position: relative;
+	overflow: hidden;
+	min-height: calc(var(--ornaments-size) / 1.79);
+	display: flex;
+	flex-direction: column;
+	padding-left: calc(var(--ornaments-size) / 6);
+}
+#footer,
+.footer-section {
+	border-style: none;
+}
+#footer::before {
+	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-11.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	top: 0;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+	pointer-events: none;
+}
+
+.custom-footer {
+	display: flex;
+	flex-direction: column;
+}
+
+.custom-footer span,
+.custom-footer a {
+	color: white !important;
+	font-size: 14px;
+	font-weight: 400;
+}
+.custom-footer h4 span {
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.footer-bottom {
+	margin: auto;
+	margin-bottom: 0;
+	padding-bottom: 10px;
+}
+.footer-bottom .container {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 10px;
+}
+.footer-bottom #signature {
+	margin: 0;
+}
+.footer-bottom #signature a {
+	color: white !important;
+}
+
+@media (min-width: 1440px) {
+	.footer-bottom {
+		position: absolute;
+		bottom: 0;
+		right: 10px;
+	}
+	.footer-bottom .container {
+		align-items: flex-end;
+	}
 }
