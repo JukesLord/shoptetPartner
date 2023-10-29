@@ -265,6 +265,9 @@
 	text-align: left;
 	padding-left: 39%;
 }
+.in-index .products-block .p:hover {
+	position: relative;
+}
 .in-index .products-block .p .prices-top .price-final,
 .in-index .products-block .p .prices-top .price-standard,
 .in-index .products-block .p .prices-top .save-percent {
@@ -281,7 +284,6 @@
 .in-index .products-block .p .p-bottom::after,
 .in-index .products-block .p::after {
 	opacity: 0;
-
 	content: "";
 	display: block;
 	position: absolute;
