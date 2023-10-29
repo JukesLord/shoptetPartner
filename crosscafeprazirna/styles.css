@@ -1,0 +1,270 @@
+:root {
+	--ornaments-size: clamp(100px, 60vw, 1000px);
+	--index-heading-size: clamp(16px, 2vw, 34px);
+}
+
+/*hlavní menu*/
+.header-navigation {
+	display: none;
+}
+/*uvodní banner*/
+#header {
+	padding-top: 0;
+}
+#header .navigation-wrapper {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	display: flex;
+}
+#videoWrapper {
+	position: relative;
+	overflow: visible;
+}
+
+#videoWrapper video {
+	position: relative;
+	margin: auto;
+	width: 100%;
+	left: 0;
+	z-index: 2;
+}
+
+.in-index h1.header-title {
+	position: relative;
+	width: 50%;
+	text-align: left;
+	font-size: var(--index-heading-size);
+	height: 100%;
+	padding: 0;
+	transition: none;
+}
+.in-index h1.header-title span {
+	padding-bottom: 5%;
+	padding-left: 1%;
+}
+.navigation-wrapper::before {
+	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-01.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	bottom: -6px;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+}
+
+/*Horní bannery - Novinky naší pražírny*/
+.banners-top {
+	background-color: var(--color-tertiary);
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	justify-content: center;
+	font-size: var(--index-heading-size);
+	padding-bottom: 6.5em;
+	position: relative;
+}
+.banners-top::before {
+	display: none;
+}
+.banners-top::after {
+	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-03.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	bottom: -15px;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+}
+
+.banners-top > .banner-wrapper {
+	width: 25%;
+	max-width: 260px;
+	display: flex;
+	justify-content: center;
+	margin-top: 3.5em;
+	overflow: visible;
+}
+
+.banners-top > .banner-wrapper span {
+	background: none;
+}
+
+.banners-top > .banner-wrapper h3 {
+	display: flex;
+	flex-direction: column;
+	color: var(--color-primary);
+	font-size: 1em;
+	margin: 0;
+	position: relative;
+}
+.banners-top > .banner-wrapper h3::after {
+	display: block;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 0.2em;
+	bottom: -0.3em;
+	background: var(--color-primary);
+	transform: scaleX(0%);
+	transform-origin: right;
+	transition: transform var(--trans-d) var(--trans-f);
+}
+.banners-top > .banner-wrapper a:hover h3::after {
+	transform: scaleX(100%);
+	transform-origin: left;
+}
+.banners-top > .banner-wrapper:first-child {
+	position: relative;
+	width: 100%;
+	margin-top: 0;
+	max-width: none;
+	text-align: left;
+	padding-right: min(2650px, 57vw);
+	padding-bottom: 1em;
+	padding-top: 0.8em;
+	justify-content: flex-end;
+}
+.banners-top > .banner-wrapper:first-child span {
+	background: none;
+}
+.banners-top > .banner-wrapper:first-child h2 {
+	font-size: 1em;
+	color: var(--color-primary);
+	font-weight: 400;
+	margin: 0;
+}
+.banners-top > .banner-wrapper:first-child::after {
+	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-02.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	top: 0;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+}
+
+/*bloky produktů na hlavní stránce*/
+.in-index #content-wrapper.container {
+	padding: 0;
+	width: 100%;
+}
+.in-index #content-wrapper.container #content {
+	padding: 0;
+}
+.in-index #content > .homepage-group-title {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: var(--color-primary);
+	font-size: var(--index-heading-size);
+	position: relative;
+	width: 100%;
+	margin: auto;
+	margin-top: 0;
+	text-align: right;
+	padding-right: min(2700px, 60vw);
+	padding-top: 0.7em;
+	padding-left: 0.5em;
+}
+
+.in-index #content > .homepage-group-title:first-child {
+	padding-top: 1.3em;
+	padding-bottom: 0.9em;
+}
+.in-index #content > .homepage-group-title::before {
+	display: none;
+}
+.in-index #content > .homepage-group-title::after {
+	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-05.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	top: 0;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+}
+.in-index #content > .homepage-group-title:first-child::after {
+	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-04.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	top: 0;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+}
+.in-index #content > .products:nth-last-child(3) {
+	position: relative;
+	margin-bottom: 0;
+	padding-bottom: 5em;
+}
+.in-index #content > .products:nth-last-child(3)::after {
+	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-06.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	bottom: -7px;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+}
+
+/*produkty homepage*/
+.in-index #content .products {
+	max-width: var(--index-max-width);
+	margin: auto;
+}
+
+/*welcome text*/
+.welcome-wrapper {
+	background-color: var(--color-tertiary);
+	font-size: var(--index-heading-size);
+	position: relative;
+	padding: 4em 0 4em;
+}
+.welcome-wrapper::before {
+	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-07-v2.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	top: 0;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+}
+.welcome-wrapper::after {
+	content: url("/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-08-v2.svg");
+	width: var(--ornaments-size);
+	height: auto;
+	bottom: -6px;
+	left: 50%;
+	transform: translatex(-50%);
+	position: absolute;
+}
+
+.welcome-wrapper h1 {
+	display: flex;
+	justify-content: flex-end;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: var(--color-primary);
+	font-size: var(--index-heading-size) !important;
+	position: relative;
+	width: 100%;
+	margin: 0;
+	max-width: none;
+	text-align: right;
+	padding-right: min(2600px, 55vw);
+	padding-top: 0;
+	margin-top: -8px;
+}
+.welcome-wrapper h1::before {
+	display: none !important;
+}
+.welcome-wrapper .welcome > div {
+	max-width: var(--index-max-width);
+	margin: auto;
+}
+/*footer*/
+#footer {
+	background: var(--color-primary);
+	color: white;
+}
