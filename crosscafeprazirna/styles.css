@@ -238,7 +238,7 @@
 	content: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-08-v2.svg");
 	width: var(--ornaments-size);
 	height: auto;
-	bottom: -6px;
+	bottom: -12px;
 	left: 50%;
 	transform: translatex(-50%);
 	position: absolute;
@@ -266,7 +266,15 @@
 .welcome-wrapper .welcome > div {
 	max-width: var(--index-max-width);
 	margin: auto;
+	padding-bottom: calc(var(--ornaments-size) / 7.5);
 }
+/*konkurencni vyhody*/
+.benefitBanner {
+	padding-top: 200px;
+	padding-bottom: 200px;
+	margin: 0 auto;
+}
+
 /*footer*/
 #footer {
 	background: var(--color-primary);
