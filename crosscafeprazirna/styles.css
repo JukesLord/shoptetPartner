@@ -167,6 +167,7 @@ body {
 .in-index #content-wrapper.container {
 	padding: 0;
 	width: 100%;
+	max-width: none;
 }
 .in-index #content-wrapper.container #content {
 	padding: 0;
