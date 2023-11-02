@@ -539,7 +539,9 @@
 	.menu-open .menu-hamburger-close {
 		display: block;
 	}
-
+	.in-index #header .header-navigation {
+		display: none;
+	}
 	.in-index #header .menu-open .header-navigation {
 		display: block;
 	}
@@ -678,6 +680,17 @@
 }
 
 @media (max-width: 992px) {
+	.in-index .header-navigation {
+		top: 10px;
+	}
+	html.scrolled .in-index .header-navigation {
+		top: 0;
+	}
+	.in-index .header-title,
+	.in-index .navigation-wrapper::before {
+		display: none;
+	}
+
 	.banners-top > .banner-wrapper {
 		margin-top: 1.5em;
 		margin-bottom: 1em;
