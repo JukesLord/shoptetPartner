@@ -758,10 +758,11 @@ h2.header-title {
 	height: auto;
 }
 .sidebar {
-	margin-right: 20px;
-	background: var(--color-tertiary);
-	margin-top: -40px;
-	padding-top: 40px;
+	margin-right: 10px;
+	padding-right: 10px;
+	border-right-style: solid;
+	border-width: 1px;
+	border-color: var(--color-tertiary);
 }
 .sidebar h4 span {
 	color: var(--color-primary);
