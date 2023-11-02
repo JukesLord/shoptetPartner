@@ -753,9 +753,16 @@ body {
 	.sidebar {
 		width: 220px;
 	}
+	#header {
+		padding-top: 120px;
+	}
 }
 
 /*kategorie, vyhledavani, sidebar atd*/
+.ordering-process #header,
+.type-product #header {
+	padding-bottom: 0;
+}
 h1.header-title,
 h2.header-title {
 	height: auto;
