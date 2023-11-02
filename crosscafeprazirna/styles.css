@@ -259,7 +259,7 @@ body {
 .products-block .p-bottom > .p-desc:first-child {
 	display: none;
 }
-.products-block .p .prices {
+.products-block .product .p .prices {
 	font-size: 1.8rem;
 	margin: 0;
 	margin-top: -0.85em;
@@ -810,23 +810,23 @@ body {
 	.footer-bottom .container {
 		text-align: center;
 	}
-	.in-index .products-block .prices-top {
+	.products-block .prices-top {
 		padding: 0;
 	}
-	.in-index .products-block .prices-top .price-standard,
-	.in-index .products-block .prices-top .price-final {
+	.products-block .prices-top .price-standard,
+	.products-block .prices-top .price-final {
 		flex: auto !important;
 	}
-	.in-index .p-in a span::after {
+	.products-block .p-in a span::after {
 		width: 20%;
 		height: 0.1em;
 		bottom: 0.8em;
 	}
-	.in-index .products-block .product .p {
+	.products-block .product .p {
 		height: auto;
 	}
 
-	.in-index .products-block .p-desc {
+	.products-block .p-desc {
 		overflow: hidden;
 		display: -webkit-box;
 		-webkit-line-clamp: 4;
@@ -834,8 +834,8 @@ body {
 		padding-top: 0.5em;
 		height: auto;
 	}
-	.in-index .products-block .p:hover .p-bottom,
-	.in-index .products-block .p .p-bottom {
+	.products-block .p:hover .p-bottom,
+	.products-block .p .p-bottom {
 		padding-bottom: 20px !important;
 	}
 }
