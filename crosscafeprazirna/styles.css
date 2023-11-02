@@ -666,20 +666,26 @@
 	.toggle-window[data-target="navigation"] {
 		display: none !important;
 	}
+
 	.popup-widget.search-widget {
-		top: 85px;
-		right: calc(5% - 20px);
-		left: auto;
+		top: 85px !important;
+		right: calc(5% - 20px) !important;
+		left: auto !important;
 	}
 	.popup-widget.login-widget {
-		top: 85px;
-		right: calc(5% - 25px);
-		left: auto;
+		top: 85px !important;
+		right: calc(5% - 25px) !important;
+		left: auto !important;
 	}
 	.popup-widget.cart-widget {
-		top: 85px;
-		right: calc(5% - 19px);
-		left: auto;
+		top: 85px !important;
+		right: calc(5% - 19px) !important;
+		left: auto !important;
+	}
+	.admin-logged .popup-widget.search-widget,
+	.admin-logged .popup-widget.login-widget,
+	.admin-logged .popup-widget.cart-widget {
+		top: 100px !important;
 	}
 }
 
