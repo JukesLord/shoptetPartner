@@ -5,6 +5,13 @@
 body {
 	font-weight: 400;
 }
+@media (min-width: 768px) {
+	.content-wrapper.container {
+		width: 100%;
+		max-width: 1440px;
+		padding: 20px;
+	}
+}
 
 .header-navigation > div {
 	width: 100% !important;
@@ -223,7 +230,7 @@ body {
 }
 
 /*produkty homepage*/
-#content .products {
+.in-index #content .products {
 	max-width: var(--index-max-width);
 	margin: auto;
 }
@@ -727,6 +734,34 @@ body {
 	}
 }
 
+/*kategorie, vyhledavani, sidebar atd*/
+.sidebar {
+	margin-right: 20px;
+	background: var(--color-tertiary);
+	margin-top: -40px;
+	padding-top: 40px;
+}
+.sidebar h4 span {
+	color: var(--color-primary);
+	background: transparent;
+}
+.ui-slider .ui-slider-range,
+.ui-slider-handle,
+.ui-slider-handle:hover {
+	background-color: var(--color-primary);
+}
+.sidebar h4:before {
+	display: none;
+}
+.categories ul a:before {
+	background-color: var(--color-primary);
+}
+@media (min-width: 768px) {
+	.breadcrumbs {
+		position: relative;
+		background: transparent;
+	}
+}
 @media (max-width: 992px) {
 	.in-index .header-navigation {
 		top: 10px;
