@@ -28,18 +28,29 @@ function addHamburgerMenu() {
 		}
 	});
 }
+function removeHamburgerMenu() {
+	$("#header > .navigation-wrapper").append($("#header .navigation-buttons"));
+	$(".menu-hamburger").remove();
+	$(".menu-hamburger-close").remove();
+	$("#header > .navigation-wrapper").removeClass("menu-open");
+	addedMenuClose = false;
+	$("#header > .navigation-wrapper > .header-navigation > div").append($("#header .navigation-buttons"));
+}
 
 /*Onload if 992+*/
 window.addEventListener("DOMContentLoaded", function () {
 	if (matchesMedia992) {
 		topMenuInitialized = true;
 		addHamburgerMenu();
-	} else {
-		window.addEventListener("resize", function () {
-			if (!topMenuInitialized && matchesMedia992) {
-				topMenuInitialized = true;
-				addHamburgerMenu();
-			}
-		});
 	}
+	window.addEventListener("resize", function () {
+		if (topMenuInitialized && !matchesMedia992) {
+			topMenuInitialized = false;
+			removeHamburgerMenu();
+		}
+		if (!topMenuInitialized && matchesMedia992) {
+			topMenuInitialized = true;
+			addHamburgerMenu();
+		}
+	});
 });
