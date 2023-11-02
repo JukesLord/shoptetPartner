@@ -1,17 +1,37 @@
-if (document.body.classList.contains("in-index")) {
-	$(".benefitBanner").insertAfter(".welcome-wrapper");
-}
-
 const mediaThreshold992 = 992;
 let matchesMedia992;
-let addedMenuClose = false;
-let topMenuInitialized = false;
 
 function matchesMedia() {
 	matchesMedia992 = window.matchMedia("(min-width: " + mediaThreshold992 + "px)").matches;
 }
 window.addEventListener("DOMContentLoaded", matchesMedia);
 window.addEventListener("resize", matchesMedia);
+
+if (document.body.classList.contains("in-index")) {
+	$(".benefitBanner").insertAfter(".welcome-wrapper");
+}
+
+let addedMenuClose = false;
+let topMenuInitialized = false;
+
+window.addEventListener("DOMContentLoaded", function () {
+	if (document.body.classList.contains("in-index")) {
+		if (matchesMedia992) {
+			topMenuInitialized = true;
+			addHamburgerMenu();
+		}
+		window.addEventListener("resize", function () {
+			if (topMenuInitialized && !matchesMedia992) {
+				topMenuInitialized = false;
+				removeHamburgerMenu();
+			}
+			if (!topMenuInitialized && matchesMedia992) {
+				topMenuInitialized = true;
+				addHamburgerMenu();
+			}
+		});
+	}
+});
 
 function addHamburgerMenu() {
 	$("#header > .navigation-wrapper").append($("#header .navigation-buttons"));
@@ -36,21 +56,3 @@ function removeHamburgerMenu() {
 	addedMenuClose = false;
 	$("#header > .navigation-wrapper > .header-navigation > div").append($("#header .navigation-buttons"));
 }
-
-/*Onload if 992+*/
-window.addEventListener("DOMContentLoaded", function () {
-	if (matchesMedia992) {
-		topMenuInitialized = true;
-		addHamburgerMenu();
-	}
-	window.addEventListener("resize", function () {
-		if (topMenuInitialized && !matchesMedia992) {
-			topMenuInitialized = false;
-			removeHamburgerMenu();
-		}
-		if (!topMenuInitialized && matchesMedia992) {
-			topMenuInitialized = true;
-			addHamburgerMenu();
-		}
-	});
-});

@@ -2,6 +2,9 @@
 	--ornaments-size: clamp(10rem, 60vw, 100rem);
 	--index-heading-size: clamp(2rem, 1.6vw, 3.4rem);
 }
+body {
+	font-weight: 400;
+}
 
 .header-navigation > div {
 	width: 100% !important;
@@ -555,7 +558,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		width: var(--menu-width);
+		width: var(--menu-width) !important;
 		padding: 0 var(--menu-padding);
 		height: 100vh;
 		height: 100svh;
@@ -591,13 +594,15 @@
 	}
 	#navigation {
 		position: absolute;
-		top: 68px;
+		width: 100%;
+		top: 58px;
 	}
 	.in-index #navigation {
 		position: initial;
 		width: 100%;
 		overflow-y: auto;
 		overflow-x: hidden;
+		flex: 1;
 	}
 	.in-index #navigation .navigation-in {
 		position: initial;
@@ -650,6 +655,9 @@
 		left: 2%;
 		top: 15px;
 	}
+	.in-index #header .site-name {
+		position: initial;
+	}
 	.navigation-buttons {
 		display: flex;
 		right: 5% !important;
@@ -657,7 +665,7 @@
 		position: absolute;
 	}
 	.in-index .navigation-buttons {
-		top: 45px;
+		top: 45px !important;
 	}
 	.navigation-buttons > a {
 		font-size: 2.2rem;
