@@ -734,7 +734,29 @@ body {
 	}
 }
 
+@media (min-width: 992px) {
+	.scrolled .popup-widget::before {
+		display: none !important;
+	}
+	.scrolled .header-navigation {
+		height: 100px;
+	}
+	.scrolled .in-index .header-navigation {
+		height: auto;
+	}
+	.scrolled.scrolled-up .header-navigation {
+		top: 0;
+	}
+	.scrolled.scrolled-down .header-navigation {
+		top: -100px;
+	}
+}
+
 /*kategorie, vyhledavani, sidebar atd*/
+h1.header-title,
+h2.header-title {
+	height: auto;
+}
 .sidebar {
 	margin-right: 20px;
 	background: var(--color-tertiary);
