@@ -750,6 +750,9 @@ body {
 	.scrolled.scrolled-down .header-navigation {
 		top: -100px;
 	}
+	.sidebar {
+		width: 220px;
+	}
 }
 
 /*kategorie, vyhledavani, sidebar atd*/
@@ -763,6 +766,10 @@ h2.header-title {
 	border-right-style: solid;
 	border-width: 1px;
 	border-color: var(--color-tertiary);
+}
+.sidebar-inner {
+	padding-top: 0px;
+	margin-top: 20px;
 }
 .sidebar h4 span {
 	color: var(--color-primary);
