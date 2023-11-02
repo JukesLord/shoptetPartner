@@ -3,6 +3,10 @@
 	--index-heading-size: clamp(2rem, 1.6vw, 3.4rem);
 }
 
+.header-navigation > div {
+	width: 100% !important;
+}
+
 /*uvodní banner*/
 .in-index #header {
 	padding-top: 0;
@@ -646,7 +650,7 @@
 		top: 45px !important;
 		position: absolute;
 	}
-	.in-index .navigation-buttons > a {
+	.navigation-buttons > a {
 		font-size: 2.2rem;
 	}
 	.navigation-buttons > a[data-target="cart"] i {
@@ -656,23 +660,23 @@
 		height: 20px;
 		width: 20px;
 	}
-	.in-index .toggle-window {
+	.toggle-window {
 		padding-top: 0;
 	}
-	.in-index .toggle-window[data-target="navigation"] {
+	.toggle-window[data-target="navigation"] {
 		display: none !important;
 	}
-	.in-index .popup-widget.search-widget {
+	.popup-widget.search-widget {
 		top: 85px;
 		right: calc(5% - 20px);
 		left: auto;
 	}
-	.in-index .popup-widget.login-widget {
+	.popup-widget.login-widget {
 		top: 85px;
 		right: calc(5% - 25px);
 		left: auto;
 	}
-	.in-index .popup-widget.cart-widget {
+	.popup-widget.cart-widget {
 		top: 85px;
 		right: calc(5% - 19px);
 		left: auto;
