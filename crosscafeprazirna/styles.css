@@ -644,7 +644,7 @@
 		display: none !important;
 	}
 
-	.in-index .navigation-buttons {
+	.navigation-buttons {
 		display: flex;
 		right: 5% !important;
 		top: 45px !important;
