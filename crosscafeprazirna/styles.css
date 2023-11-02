@@ -1,6 +1,9 @@
 :root {
 	--ornaments-size: clamp(10rem, 60vw, 100rem);
 	--index-heading-size: clamp(2rem, 1.6vw, 3.4rem);
+	--trans-d: 0.2s;
+	--trans-f: ease-in-out;
+	--index-max-width: 960px;
 }
 body {
 	font-weight: 400;
