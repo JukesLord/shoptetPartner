@@ -291,8 +291,7 @@ h1,
 	margin-top: 3.5rem;
 	margin-bottom: 3rem;
 }
-.col-sm-4 .next-to-carousel-banners > div:nth-child(1) h2,
-h2.h1-smaller {
+.col-sm-4 .next-to-carousel-banners > div:nth-child(1) h2 {
 	color: var(--color-primary);
 	font-weight: 800;
 	font-size: 2.75rem;
@@ -300,6 +299,7 @@ h2.h1-smaller {
 	max-width: 18em;
 	margin: 0 auto 0.75em;
 }
+
 .col-sm-4 .next-to-carousel-banners > div:nth-child(1) > span > p {
 	color: var(--color-primary);
 	font-weight: 500;
@@ -424,7 +424,8 @@ h4.contact-form-h4 {
 	line-height: 1.3em;
 	margin-bottom: 0.3em;
 }
-.col-sm-4 .next-to-carousel-banners > div:nth-child(8) p {
+.col-sm-4 .next-to-carousel-banners > div:nth-child(8) p,
+p.contact-form-p {
 	font-size: 1rem;
 	color: var(--color-primary);
 	text-align: center;
@@ -800,4 +801,21 @@ h4.contact-form-h4 {
 	.content-wrapper .content-wrapper-in .banners-row > div:first-child::before {
 		left: 0;
 	}
+}
+
+/*podstranky*/
+.cislovani {
+	color: var(--color-tertiary);
+	font-weight: 800;
+	font-size: 3.25rem;
+	line-height: 1.3em;
+	max-width: 18em;
+	margin: 0 auto 0.75em;
+}
+h2 {
+	color: var(--color-primary);
+	font-weight: 600;
+	font-size: 2.25rem;
+	line-height: 1.3em;
+	margin: 0 auto 0.75em;
 }
