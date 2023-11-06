@@ -291,7 +291,8 @@ h1,
 	margin-top: 3.5rem;
 	margin-bottom: 3rem;
 }
-.col-sm-4 .next-to-carousel-banners > div:nth-child(1) h2 {
+.col-sm-4 .next-to-carousel-banners > div:nth-child(1) h2,
+h2.h1-smaller {
 	color: var(--color-primary);
 	font-weight: 800;
 	font-size: 2.75rem;
@@ -413,7 +414,8 @@ h1,
 	top: 0;
 }
 
-.col-sm-4 .next-to-carousel-banners > div:nth-child(8) h4 {
+.col-sm-4 .next-to-carousel-banners > div:nth-child(8) h4,
+h4.contact-form-h4 {
 	font-size: 2.75rem;
 	color: var(--color-primary);
 	text-align: center;
