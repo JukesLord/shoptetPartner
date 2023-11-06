@@ -868,6 +868,10 @@ h2 {
 
 .in-kontakty article > div > p {
 	text-align: center;
+	font-size: 1.5rem;
+	max-width: 25em;
+	margin: auto;
+	margin-bottom: 1em;
 }
 
 .gmap_canvas {
