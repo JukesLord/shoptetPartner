@@ -807,15 +807,14 @@ p.contact-form-p {
 .cislovani {
 	color: var(--color-tertiary);
 	font-weight: 800;
-	font-size: 3.25rem;
+	font-size: 4.25rem;
 	line-height: 1.3em;
 	max-width: 18em;
-	margin: 0 auto 0.75em;
 }
 h2 {
 	color: var(--color-primary);
 	font-weight: 600;
 	font-size: 2.25rem;
 	line-height: 1.3em;
-	margin: 0 auto 0.75em;
+	margin: 0 auto 0.5em;
 }
