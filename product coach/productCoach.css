@@ -865,3 +865,23 @@ h2 {
 	max-width: 1200px;
 	padding: 0 20px;
 }
+
+.in-kontakty article > div > p:first-child {
+	text-align: center;
+}
+
+.gmap_canvas {
+	overflow: hidden;
+	height: 400px;
+	width: 100%;
+}
+.gmap_canvas iframe {
+	position: relative;
+	z-index: 2;
+}
+.mapouter {
+	position: relative;
+	height: 400px;
+	width: 100%;
+	background: #fff;
+}
