@@ -810,11 +810,58 @@ p.contact-form-p {
 	font-size: 4.25rem;
 	line-height: 1.3em;
 	max-width: 18em;
+	margin-bottom: 0.5em;
 }
 h2 {
 	color: var(--color-primary);
 	font-weight: 600;
 	font-size: 2.25rem;
 	line-height: 1.3em;
-	margin: 0 auto 0.5em;
+	margin: 0;
+	margin-bottom: 0.5em;
+}
+
+.type-page h1 {
+	margin-top: 0.6em !important;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.content-inner > article > div > .block > .block-subpage {
+	position: relative;
+	display: grid;
+	grid-template-columns: 0.08fr 0.92fr;
+	grid-column-gap: 1rem;
+	margin-bottom: 3rem;
+	margin-top: 4rem;
+	align-items: center;
+}
+.content-inner > article > div > .block > .block-subpage > p {
+	grid-column: 2;
+}
+.content-inner > article > div > .block > .block-subpage .cislovani {
+	grid-column: 1;
+	text-align: right;
+}
+
+.content-inner > article > div > .block:nth-child(even) .block-subpage {
+	grid-template-columns: 0.5fr 0.5fr;
+}
+
+.grid-block-on-subpage {
+	display: grid;
+	grid-template-columns: 0.5fr 0.5fr;
+	grid-column-gap: 1rem;
+}
+.grid-block-on-subpage img {
+	padding: 0 20%;
+}
+
+.content-inner > article > div > .block:nth-child(even) > .grid-block-on-subpage {
+	text-align: right;
+}
+
+.type-page .content-inner {
+	max-width: 1200px;
+	padding: 0 20px;
 }
