@@ -1,0 +1,40 @@
+$(document).ready(function() {
+	if($('.icon-account-login[href="/klient/"]').length) {
+	   $("body").addClass("pkLogged");
+	} else {
+	   $("body").addClass("pkNotLogged");
+	}
+
+	if($(".pkNotLogged.type-product").length) {
+		if($("#product-images .bool-custom2").length) {
+			$("#product-detail").remove();
+			$("#product-detail-info").before('<div id="pkDetail"><p><span class="strong">Tento produkt mohou zakoupit pouze registrovaní uživatelé.</span><br />Prosíme <a title="Přihlášení" href="/login/?backTo=' + window.location.pathname + '" rel="nofollow">přihlaste se</a>.<br />Pokud ještě registraci nemáte, můžete ji zdarma provést <a href="/registrace/" title="Zdarma se registrovat">zde</a>.</p></div>')
+		} else {
+			$("#product-detail").show();
+		}
+	}
+})
+
+function pkPrices() {
+	if($(".pkNotLogged .products").length) {
+		if($(".bool-custom2").length) {
+			$(".bool-custom2").each(function(){
+				$(this).parents(".product").addClass("pkHidden");
+				$(this).parents(".product").find(".p-cart-button").children().remove();
+				$(this).parents(".product").find(".p-cart-button").append('<span class="button-product-wrap button-wrap"><a href="' + $(this).parents(".product").find(".p-name").attr("href") + '" title="Detail" class="button-content-product button-content small button">Detail</a></span>')
+			})
+		}
+		$(".p-action").css("visibility", "visible");
+	}
+}
+$(document).ready(function(){
+	$(".pkLogged a").each(function() {
+    $(this).html(function(){
+      return $(this).html().replace("+ lepší cena po registraci", "");
+    })
+  })
+	pkPrices();
+})
+$(document).ajaxComplete(function(){
+	pkPrices();
+})
