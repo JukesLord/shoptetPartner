@@ -18,7 +18,8 @@ html {
 .content-wrapper-in {
 	overflow: hidden;
 }
-h1 {
+h1,
+.h1 {
 	color: var(--color-primary);
 	font-weight: 800;
 	font-size: 2.75rem;
@@ -430,50 +431,50 @@ h1 {
 	margin-bottom: 2rem;
 }
 
-.banner-wrapper #formContact {
+#formContact {
 	max-width: 43rem;
 	margin: auto;
 }
-.banner-wrapper #formContact fieldset {
+#formContact fieldset {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
 }
-.banner-wrapper #formContact fieldset > .form-group {
+#formContact fieldset > .form-group {
 	width: 100%;
 	color: var(--color-primary);
 	font-weight: 500;
 }
-.banner-wrapper #formContact fieldset > .form-group:nth-of-type(1),
-.banner-wrapper #formContact fieldset > .form-group:nth-of-type(2) {
+#formContact fieldset > .form-group:nth-of-type(1),
+#formContact fieldset > .form-group:nth-of-type(2) {
 	width: calc(50% - 0.5rem);
 }
-.banner-wrapper #formContact fieldset > .form-group {
+#formContact fieldset > .form-group {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	margin: 0;
 }
 
-.banner-wrapper #formContact fieldset > .form-group input,
-.banner-wrapper #formContact fieldset > .form-group textarea {
+#formContact fieldset > .form-group input,
+#formContact fieldset > .form-group textarea {
 	width: 100%;
 	border-color: var(--color-primary);
 	border-radius: 0;
 	background: transparent;
 }
-.banner-wrapper #formContact fieldset > .form-group input:focus,
-.banner-wrapper #formContact fieldset > .form-group textarea:focus {
+#formContact fieldset > .form-group input:focus,
+#formContact fieldset > .form-group textarea:focus {
 	border-color: var(--color-secondary-hover);
 }
-.banner-wrapper #formContact fieldset > .form-group.consents-first {
+#formContact fieldset > .form-group.consents-first {
 	font-size: 0.8em;
 	font-weight: 400;
 }
-.banner-wrapper #formContact fieldset > .form-group.submit-wrapper {
+#formContact fieldset > .form-group.submit-wrapper {
 	margin-top: 0.5rem;
 }
-.banner-wrapper #formContact fieldset > .form-group.submit-wrapper input {
+#formContact fieldset > .form-group.submit-wrapper input {
 	background: var(--color-primary);
 	color: white;
 	display: inline-block;
@@ -488,7 +489,7 @@ h1 {
 	transition: all 0.2s;
 	margin: auto;
 }
-.banner-wrapper #formContact fieldset > .form-group.submit-wrapper input:hover {
+#formContact fieldset > .form-group.submit-wrapper input:hover {
 	color: white;
 	background: var(--color-secondary-hover);
 	border-color: var(--color-secondary-hover);
