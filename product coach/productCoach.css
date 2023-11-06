@@ -884,4 +884,16 @@ h2 {
 	height: 400px;
 	width: 100%;
 	background: #fff;
+	margin: 2rem 0;
+}
+.in-kontakty #content-wrapper {
+	max-width: 100%;
+	padding: 0 !important;
+}
+.in-kontakty #content {
+	padding: 0;
+}
+.in-kontakty.type-page .content-inner {
+	max-width: 100%;
+	padding: 0;
 }
