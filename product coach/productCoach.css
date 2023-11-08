@@ -934,4 +934,7 @@ h2 {
 	.content-inner > article > div > .block:nth-child(even) .custom-button {
 		display: none;
 	}
+	.in-kontakty #content-wrapper {
+		padding: 0 10px !important;
+	}
 }
