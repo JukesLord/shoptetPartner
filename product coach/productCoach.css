@@ -776,11 +776,11 @@ p.contact-form-p {
 	.col-sm-4 .next-to-carousel-banners > div:nth-child(8) {
 		padding: 3rem 0 2rem 0;
 	}
-	.banner-wrapper #formContact fieldset > .form-group:nth-of-type(1),
-	.banner-wrapper #formContact fieldset > .form-group:nth-of-type(2) {
+	#formContact fieldset > .form-group:nth-of-type(1),
+	#formContact fieldset > .form-group:nth-of-type(2) {
 		width: 100%;
 	}
-	.banner-wrapper #formContact fieldset > .form-group.consents-first {
+	#formContact fieldset > .form-group.consents-first {
 		font-size: 1em;
 	}
 	.footer-rows .custom-footer {
@@ -900,4 +900,38 @@ h2 {
 .in-kontakty.type-page .content-inner {
 	max-width: 100%;
 	padding: 0;
+}
+
+@media (max-width: 768px) {
+	.type-page .content-inner {
+		padding: 0 5px;
+	}
+	.content-inner > article > div > .block .block-subpage {
+		grid-template-columns: 0.05fr 0.95fr !important;
+	}
+	.cislovani {
+		font-size: 3rem;
+	}
+	.content-inner > article > div > .block > .block-subpage {
+		margin-bottom: 0.5rem;
+		margin-top: 2rem;
+	}
+	.content-inner > article > div > .block > .block-subpage > p {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	h2 {
+		font-size: 1.6rem;
+	}
+	.grid-block-on-subpage {
+		display: flex;
+		flex-direction: column;
+	}
+	.in-sluzby .custom-button {
+		display: block;
+		text-align: center;
+	}
+	.content-inner > article > div > .block:nth-child(even) .custom-button {
+		display: none;
+	}
 }
