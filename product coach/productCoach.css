@@ -937,4 +937,11 @@ h2 {
 	.in-kontakty #content-wrapper {
 		padding: 0 10px !important;
 	}
+	.overall-wrapper {
+		padding-top: 0 !important;
+	}
+	.type-page h1,
+	.type-page .h1 {
+		font-size: 1.75rem;
+	}
 }
