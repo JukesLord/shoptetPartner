@@ -749,7 +749,7 @@ body {
 		display: none !important;
 	}
 	.scrolled .header-navigation {
-		height: 100px;
+		height: 50px;
 	}
 	.scrolled .in-index .header-navigation {
 		height: auto;
@@ -759,7 +759,7 @@ body {
 		height: 50px;
 	}
 	.scrolled.scrolled-down .header-navigation {
-		top: -100px;
+		top: -50px;
 	}
 	.scrolled.scrolled-up #header .site-name,
 	.scrolled.scrolled-down #header .site-name {
@@ -913,7 +913,7 @@ h2.header-title {
 }
 
 .scrolled-up .sidebar-inner {
-	top: 120px;
+	top: 70px;
 }
 .sidebar h4 span {
 	color: var(--color-primary);
