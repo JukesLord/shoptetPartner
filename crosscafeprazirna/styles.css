@@ -875,7 +875,7 @@ h2.header-title {
 	position: sticky;
 	top: 20px;
 	padding-top: 0px;
-	transition: top 0.2s ease;
+	transition: top 0.3s ease;
 }
 
 .scrolled-up .sidebar-inner {
