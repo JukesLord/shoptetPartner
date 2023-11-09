@@ -560,6 +560,7 @@ body {
 	}
 	.in-index #header .header-navigation {
 		display: none;
+		height: 0 !important;
 	}
 	.in-index #header .menu-open .header-navigation {
 		display: block;
@@ -586,6 +587,9 @@ body {
 		animation-duration: var(--trans-d);
 		animation-timing-function: var(--trans-f);
 		animation-fill-mode: forwards;
+	}
+	.in-index.admin-logged #header .menu-open .header-navigation > div {
+		padding-top: 10px;
 	}
 	@keyframes menuSlideIn {
 		from {
@@ -1236,6 +1240,16 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 }
 .quantity .increase:before {
 	border-radius: 0 6px 6px 0 !important;
+}
+.type-detail .add-to-cart button:hover,
+.type-detail .add-to-cart button:focus,
+.type-detail .add-to-cart button:focus-within {
+	background: var(--color-secondary);
+	color: white;
+}
+.quantity .decrease:hover::before,
+.quantity .increase:hover::before {
+	color: var(--color-secondary) !important;
 }
 .type-detail .shp-tabs-wrapper > .row::before {
 	content: "";
