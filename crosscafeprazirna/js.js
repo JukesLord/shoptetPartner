@@ -56,3 +56,36 @@ function removeHamburgerMenu() {
 	addedMenuClose = false;
 	$("#header > .navigation-wrapper > .header-navigation > div").append($("#header .navigation-buttons"));
 }
+
+window.addEventListener("DOMContentLoaded", function () {
+	if (document.body.classList.contains("type-detail")) {
+		rearrangeShortDesc();
+		changeParameterstoRectangles();
+	}
+});
+
+function rearrangeShortDesc() {
+	$(".p-details").insertAfter($(".add-to-cart"));
+}
+
+let parametersInDetail;
+let stupniceVal;
+let stupniceMax;
+const filledStupniceBlock = "<div class='stupnice-block filled'></div>";
+const emptyStupniceBlock = "<div class='stupnice-block empty'></div>";
+
+function changeParameterstoRectangles() {
+	parametersInDetail = $(".detail-parameters td:contains(Stupnice)");
+	parametersInDetail.each(function (index) {
+		stupniceVal = parseInt($(this).text().split(" ")[1]);
+		stupniceMax = parseInt($(this).text().split(" ")[3]);
+		$(this).text("");
+		for (let i = 0; i < stupniceMax; i++) {
+			if (i < stupniceVal) {
+				$(this).append(filledStupniceBlock);
+			} else {
+				$(this).append(emptyStupniceBlock);
+			}
+		}
+	});
+}

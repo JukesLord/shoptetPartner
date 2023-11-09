@@ -869,6 +869,7 @@ h2.header-title {
 	text-transform: uppercase;
 	color: var(--color-primary);
 	position: relative;
+	font-weight: 600;
 }
 .sidebar {
 	margin-right: 20px;
@@ -910,10 +911,16 @@ h2.header-title {
 .categories ul a:before {
 	background-color: var(--color-primary);
 }
+@media (max-width: 768px) {
+	aside.sidebar {
+		display: none !important;
+	}
+}
 @media (min-width: 768px) {
 	.breadcrumbs {
 		position: relative;
 		background: transparent;
+		z-index: 2;
 	}
 }
 @media (max-width: 992px) {
@@ -1215,4 +1222,18 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 	position: absolute;
 	background-color: var(--color-primary);
 	opacity: 0.03;
+}
+.stupnice-block {
+	width: 18px;
+	height: 14px;
+	background: var(--color-secondary);
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--color-primary);
+	display: inline-block;
+	margin-right: 5px;
+}
+.stupnice-block.empty {
+	background: var(--color-tertiary);
+	opacity: 0.8;
 }
