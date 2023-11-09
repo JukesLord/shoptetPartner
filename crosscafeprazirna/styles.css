@@ -1203,6 +1203,9 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 	border-radius: 6px;
 	padding: 0 27px;
 }
+.cart-widget-product-amount .quantity {
+	padding: 0 22px;
+}
 .quantity input {
 	background: var(--color-tertiary) !important;
 	color: var(--color-primary);
@@ -1221,7 +1224,7 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 .quantity .increase {
 	right: 10px !important;
 }
-..quantity .decrease:before,
+.quantity .decrease:before,
 .quantity .increase:before {
 	color: var(--color-primary) !important;
 	font-size: 10px !important;
