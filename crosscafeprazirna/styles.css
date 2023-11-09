@@ -872,8 +872,13 @@ h2.header-title {
 }
 .sidebar-inner {
 	position: sticky;
-	top: 0px;
+	top: 20px;
 	padding-top: 0px;
+	transition: top 0.2s ease;
+}
+
+.scrolled-up .sidebar-inner {
+	top: 120px;
 }
 .sidebar h4 span {
 	color: var(--color-primary);
