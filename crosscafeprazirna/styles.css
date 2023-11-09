@@ -857,12 +857,12 @@ h2.header-title {
 	height: auto;
 }
 .sidebar {
-	margin-right: 10px;
+	margin-right: 20px;
 	border-right-style: solid;
 	border-bottom-style: solid;
 	border-width: 1px;
 	border-color: var(--color-primary);
-	box-shadow: 8px 16px 16px #707070;
+	box-shadow: -4px 4px 16px var(--color-primary);
 	margin-top: 20px;
 	position: relative;
 	top: -65px;
