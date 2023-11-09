@@ -766,10 +766,11 @@ body {
 		left: 10px;
 		top: 0px;
 		height: 50px;
+		width: 50px;
 	}
 	.scrolled.scrolled-up .navigation-buttons,
 	.scrolled.scrolled-down .navigation-buttons {
-		top: -5px;
+		top: -5px !important;
 	}
 	.scrolled .popup-widget.search-widget,
 	.scrolled .popup-widget.login-widget,
