@@ -667,6 +667,7 @@ body {
 		position: absolute;
 		left: 2%;
 		top: 15px;
+		transition: all 0.3 ease;
 	}
 	.in-index #header .site-name {
 		position: initial;
@@ -755,10 +756,27 @@ body {
 	}
 	.scrolled.scrolled-up .header-navigation {
 		top: 0;
+		height: 50px;
 	}
 	.scrolled.scrolled-down .header-navigation {
 		top: -100px;
 	}
+	.scrolled.scrolled-up #header .site-name,
+	.scrolled.scrolled-down #header .site-name {
+		left: 10px;
+		top: 0px;
+		height: 50px;
+	}
+	.scrolled.scrolled-up .navigation-buttons,
+	.scrolled.scrolled-down .navigation-buttons {
+		top: -5px;
+	}
+	.scrolled .popup-widget.search-widget,
+	.scrolled .popup-widget.login-widget,
+	.scrolled .popup-widget.cart-widget {
+		top: 32px !important;
+	}
+
 	.sidebar {
 		width: 240px;
 	}
