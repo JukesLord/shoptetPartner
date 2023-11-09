@@ -691,7 +691,7 @@ body {
 		width: 20px;
 	}
 	.in-index .navigation-buttons > a[data-target="cart"] i {
-		top: 0;
+		top: 0.8em;
 	}
 	.toggle-window {
 		padding-top: 0;
@@ -855,6 +855,20 @@ body {
 h1.header-title,
 h2.header-title {
 	height: auto;
+}
+.category-top > h1 {
+	margin-top: 0;
+	color: var(--color-primary);
+	font-size: 2.6rem;
+}
+.sidebar .categories a:hover,
+.categories .topic.child-active > a:hover {
+	color: var(--color-primary-hover);
+}
+.p-info-wrapper h1 {
+	text-transform: uppercase;
+	color: var(--color-primary);
+	position: relative;
 }
 .sidebar {
 	margin-right: 20px;
@@ -1071,4 +1085,134 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 	background: url("https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/ornaments/crosscafe-ornaments-01.svg");
 	background-repeat: no-repeat;
 	background-position: bottom;
+}
+
+/*Detail produktu*/
+.type-detail .p-final-price-wrapper {
+	text-align: right;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+}
+
+.type-detail .p-final-price-wrapper::before {
+	content: "";
+	display: block;
+	width: 30%;
+	height: 6px;
+	margin-right: 15px;
+	background: var(--color-primary);
+}
+.type-detail .p-detail .p-detail-inner .price-standard {
+	opacity: 1;
+}
+.type-detail .p-detail .p-detail-inner .price-standard span,
+.type-detail .p-detail .p-detail-inner .price-save {
+	background: none;
+	color: var(--color-secondary);
+}
+.availability-wrapper .availability-label {
+	background: var(--color-primary) !important;
+	color: white;
+	border-radius: 6px;
+	padding: 8px 25px;
+	text-transform: uppercase;
+}
+.p-details {
+	margin: 19px 0;
+}
+.p-details .detail-parameters tbody > tr:first-child {
+	display: none;
+}
+.shp-tabs-holder ul.shp-tabs {
+	margin-left: 0;
+}
+.shp-tabs-holder ul.shp-tabs a {
+	font-weight: 500;
+	text-transform: uppercase;
+	color: var(--color-primary);
+}
+.shp-tab,
+.shp-tab > a {
+	border-style: none !important;
+}
+.shp-tab.active a::after {
+	content: ": ";
+	position: relative;
+	top: -1px;
+	right: -1px;
+}
+.shp-tabs,
+.shp-tabs-holder {
+	border-color: var(--color-secondary);
+	border-top-style: none;
+}
+.type-detail .shp-tabs-wrapper > .row {
+	position: relative;
+}
+.type-detail .add-to-cart {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+	align-items: center;
+	column-gap: 10px;
+	row-gap: 5px;
+}
+.type-detail .p-info-wrapper .add-to-cart-button {
+	height: 36px;
+	padding: 0 19px;
+	border-radius: 6px;
+	text-transform: uppercase;
+	border-style: solid;
+	border-color: var(--color-primary);
+	border-width: 1px;
+	background: var(--color-tertiary);
+	color: var(--color-primary);
+	font-weight: 500;
+}
+.type-detail .p-detail .add-to-cart .quantity {
+	border-color: var(--color-primary);
+	background: var(--color-tertiary);
+	border-radius: 6px;
+	padding: 0 27px;
+}
+.type-detail .quantity input {
+	background: var(--color-tertiary);
+	color: var(--color-primary);
+}
+.type-detail .quantity {
+	height: 36px;
+}
+.type-detail .quantity .decrease,
+.type-detail .quantity .increase,
+.type-detail .quantity input {
+	height: 34px;
+}
+.type-detail .quantity .decrease {
+	left: 10px;
+}
+.type-detail .quantity .increase {
+	right: 10px;
+}
+.type-detail .quantity .decrease:before,
+.type-detail .quantity .increase:before {
+	color: var(--color-primary);
+	font-size: 10px;
+	background: var(--color-tertiary);
+	line-height: 33px;
+}
+.type-detail .quantity .decrease:before {
+	border-radius: 6px 0 0 6px;
+}
+.type-detail .quantity .increase:before {
+	border-radius: 0 6px 6px 0;
+}
+.type-detail .shp-tabs-wrapper > .row::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: var(--color-primary);
+	opacity: 0.03;
 }
