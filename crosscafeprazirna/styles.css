@@ -620,6 +620,7 @@ h1.header-title {
 		position: absolute;
 		width: 100%;
 		top: 58px;
+		height: 60px;
 	}
 	.in-index #navigation {
 		position: initial;
@@ -808,6 +809,8 @@ h1.header-title {
 		color: var(--color-primary);
 		font-size: 1.5rem;
 		z-index: 2;
+		position: relative;
+		top: 10px;
 	}
 	.sidebar {
 		width: 240px;
@@ -956,7 +959,7 @@ h2.header-title {
 	margin-top: 20px;
 	position: relative;
 	top: -65px;
-	padding-top: 65px;
+	padding-top: 75px;
 	background: var(--color-tertiary);
 	padding-left: 20px;
 	padding-right: 20px;
@@ -1085,6 +1088,7 @@ h2.header-title {
 		margin: 0;
 		align-items: center;
 		max-width: none;
+		text-align: center;
 	}
 	.footer-bottom .container {
 		text-align: center;
