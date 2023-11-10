@@ -969,19 +969,38 @@ h2.header-title {
 }
 .sidebar {
 	margin-right: 20px;
+	/* 	border-right-style: solid;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-color: var(--color-primary);
+	box-shadow: -4px 4px 16px var(--color-primary);
+	background: var(--color-tertiary); */
+	margin-top: 20px;
+	position: relative;
+	top: -45px;
+	padding-top: 55px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.sidebar::before {
+	content: "";
+	width: 100%;
+	height: calc(100% + 100px);
+	background: red;
+	display: block;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
 	border-right-style: solid;
 	border-bottom-style: solid;
 	border-width: 1px;
 	border-color: var(--color-primary);
 	box-shadow: -4px 4px 16px var(--color-primary);
-	margin-top: 20px;
-	position: relative;
-	top: -65px;
-	padding-top: 75px;
 	background: var(--color-tertiary);
-	padding-left: 20px;
-	padding-right: 20px;
 }
+
 .sidebar-inner {
 	position: sticky;
 	top: 20px;
@@ -1060,8 +1079,8 @@ h2.header-title {
 		margin-right: -20px;
 	}
 	.type-detail .tab-content {
-		padding-left: 10px;
-		padding-right: 10px;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 }
 @media (min-width: 768px) {
