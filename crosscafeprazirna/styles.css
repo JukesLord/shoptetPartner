@@ -20,6 +20,13 @@ body {
 .header-navigation > div {
 	width: 100% !important;
 }
+/*odstraneni jednoho ze dnou h1 na podstrance*/
+h1.header-title {
+	display: none;
+}
+.in-index h1.header-title {
+	display: flex;
+}
 
 /*uvodní banner*/
 .in-index #header {
@@ -746,8 +753,94 @@ body {
 	.in-index.admin-logged .popup-widget.cart-widget {
 		top: 100px !important;
 	}
-}
 
+	#footer .contact-box {
+		min-height: auto;
+	}
+	#footer .contact-box ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	#footer {
+		padding-left: 20px;
+	}
+	#footer .custom-footer > div {
+		width: 42%;
+		padding-bottom: 0;
+	}
+
+	#footer .custom-footer h4 {
+		margin-top: 2.5em;
+	}
+	#footer .custom-footer > div:first-child h4 {
+		margin-top: 0;
+	}
+	#footer .custom-footer h4 span {
+		position: relative;
+	}
+	#footer .custom-footer h4 span::after {
+		display: block;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		bottom: 0em;
+		background: white;
+		opacity: 0.08;
+	}
+	#footer .custom-footer__articles ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.instagram-follow-btn {
+		text-align: left;
+	}
+}
+@media (min-width: 769px) {
+	.type-detail .content-wrapper > .breadcrumbs > span:last-child {
+		display: none;
+	}
+	.type-detail .content-wrapper > .breadcrumbs > span:nth-last-child(2) .navigation-bullet {
+		display: none;
+	}
+	.content-wrapper .breadcrumbs {
+		color: var(--color-primary);
+		font-size: 1.5rem;
+		z-index: 2;
+	}
+	.sidebar {
+		width: 240px;
+	}
+	.sidebar .categories a {
+		color: var(--color-primary);
+		font-weight: 500;
+		font-size: 1.5rem;
+	}
+	.sidebar .categories li.active > a {
+		color: var(--color-secondary);
+	}
+	.sidebar .categories a::before {
+		display: none;
+	}
+	.sidebar #categories .categories > ul {
+		padding-left: 1rem;
+	}
+	.sidebar .categories ul a {
+		padding-left: 22px;
+	}
+	.sidebar .categories ul ul a {
+		padding-left: 32px;
+	}
+	.sidebar .categories ul ul ul ul a {
+		padding-left: 42px;
+	}
+	.sidebar .categories ul ul ul ul a {
+		padding-left: 52px;
+	}
+	.sidebar .categories ul ul ul ul a {
+		padding-left: 62px;
+	}
+}
 @media (min-width: 992px) {
 	.scrolled .popup-widget::before {
 		display: none !important;
@@ -782,9 +875,6 @@ body {
 		top: 32px !important;
 	}
 
-	.sidebar {
-		width: 240px;
-	}
 	.navigation-in > ul > li > a {
 		font-size: 1.6rem;
 	}
@@ -793,17 +883,7 @@ body {
 		padding-bottom: 1.5em;
 		padding-top: 1.5em;
 	}
-	.content-wrapper .breadcrumbs {
-		color: var(--color-primary);
-		font-size: 1.5rem;
-		z-index: 2;
-	}
-	.type-detail .content-wrapper > .breadcrumbs > span:last-child {
-		display: none;
-	}
-	.type-detail .content-wrapper > .breadcrumbs > span:nth-last-child(2) .navigation-bullet {
-		display: none;
-	}
+
 	.navigation-in > ul > li > a > b {
 		position: relative;
 	}
@@ -838,35 +918,6 @@ body {
 	}
 	.navigation-in ul.menu-level-2 li a::before {
 		display: none;
-	}
-	.sidebar .categories a {
-		color: var(--color-primary);
-		font-weight: 500;
-		font-size: 1.5rem;
-	}
-	.categories li.active > a {
-		color: var(--color-secondary);
-	}
-	.sidebar .categories a::before {
-		display: none;
-	}
-	.sidebar #categories .categories > ul {
-		padding-left: 1rem;
-	}
-	.sidebar .categories ul a {
-		padding-left: 22px;
-	}
-	.sidebar .categories ul ul a {
-		padding-left: 32px;
-	}
-	.sidebar .categories ul ul ul ul a {
-		padding-left: 42px;
-	}
-	.sidebar .categories ul ul ul ul a {
-		padding-left: 52px;
-	}
-	.sidebar .categories ul ul ul ul a {
-		padding-left: 62px;
 	}
 }
 
@@ -927,6 +978,14 @@ h2.header-title {
 .ui-slider-handle,
 .ui-slider-handle:hover {
 	background-color: var(--color-primary);
+}
+.slider-content:after,
+.slider-content:before {
+	background: var(--color-secondary);
+	opacity: 0.2;
+}
+.sidebar #slider {
+	background: rgba(255, 255, 255, 0.3);
 }
 .sidebar h4:before {
 	display: none;
