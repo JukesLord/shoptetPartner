@@ -4,6 +4,7 @@
 	--trans-d: 0.2s;
 	--trans-f: ease-in-out;
 	--index-max-width: 960px;
+	--border-radius: 6px;
 }
 body {
 	font-weight: 400;
@@ -16,6 +17,10 @@ body {
 		padding-left: 0;
 		padding-top: 0;
 	}
+}
+.btn,
+a.btn {
+	border-radius: var(--border-radius);
 }
 
 .header-navigation > div {
@@ -590,7 +595,7 @@ h1.header-title {
 		border-right-style: solid;
 		border-width: 1px;
 		border-color: var(--color-primary);
-		box-shadow: 8px 16px 16px #707070;
+		box-shadow: 0px 4px 16px var(--color-primary);
 		animation: menuSlideIn;
 		animation-duration: var(--trans-d);
 		animation-timing-function: var(--trans-f);
@@ -867,8 +872,13 @@ h1.header-title {
 	.scrolled.scrolled-down #header .site-name {
 		left: 10px;
 		top: 0px;
-		height: 50px;
 		width: 50px;
+	}
+	.in-index .scrolled.scrolled-up #header .site-name,
+	.in-index .scrolled.scrolled-down #header .site-name {
+		left: 10px;
+		top: 0px;
+		width: 63px;
 	}
 	.scrolled.scrolled-up .navigation-buttons,
 	.scrolled.scrolled-down .navigation-buttons {
@@ -1210,7 +1220,7 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 .availability-wrapper .availability-label {
 	background: var(--color-primary) !important;
 	color: white;
-	border-radius: 6px;
+	border-radius: var(--border-radius);
 	padding: 8px 25px;
 	text-transform: uppercase;
 }
@@ -1258,7 +1268,7 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 .type-detail .p-info-wrapper .add-to-cart-button {
 	height: 36px;
 	padding: 0 19px;
-	border-radius: 6px;
+	border-radius: var(--border-radius);
 	text-transform: uppercase;
 	border-style: solid;
 	border-color: var(--color-primary);
@@ -1270,7 +1280,7 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 .quantity {
 	border-color: var(--color-primary);
 	background: var(--color-tertiary);
-	border-radius: 6px;
+	border-radius: var(--border-radius);
 	padding: 0 27px;
 }
 .cart-widget-product-amount .quantity {
@@ -1302,10 +1312,10 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 	line-height: 33px !important;
 }
 .quantity .decrease:before {
-	border-radius: 6px 0 0 6px !important;
+	border-radius: var(--border-radius) 0 0 var(--border-radius) !important;
 }
 .quantity .increase:before {
-	border-radius: 0 6px 6px 0 !important;
+	border-radius: 0 var(--border-radius) var(--border-radius) 0 !important;
 }
 .type-detail .add-to-cart button:hover,
 .type-detail .add-to-cart button:focus,
