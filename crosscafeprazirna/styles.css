@@ -1386,9 +1386,7 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 .quantity .increase:before {
 	border-radius: 0 var(--border-radius) var(--border-radius) 0 !important;
 }
-.type-detail .add-to-cart button:hover,
-.type-detail .add-to-cart button:focus,
-.type-detail .add-to-cart button:focus-within {
+.type-detail .add-to-cart button:hover {
 	background: var(--color-secondary);
 	color: white;
 }
