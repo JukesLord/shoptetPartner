@@ -872,12 +872,14 @@ h1.header-title {
 	.scrolled.scrolled-down #header .site-name {
 		left: 10px;
 		top: 0px;
+		height: 50px;
 		width: 50px;
 	}
 	.in-index .scrolled.scrolled-up #header .site-name,
 	.in-index .scrolled.scrolled-down #header .site-name {
 		left: 10px;
 		top: 0px;
+		height: auto;
 		width: 63px;
 	}
 	.scrolled.scrolled-up .navigation-buttons,
