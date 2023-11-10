@@ -875,8 +875,8 @@ h1.header-title {
 		height: 50px;
 		width: 50px;
 	}
-	.in-index .scrolled.scrolled-up #header .site-name,
-	.in-index .scrolled.scrolled-down #header .site-name {
+	.scrolled.scrolled-up .in-index #header .site-name,
+	.scrolled.scrolled-down .in-index #header .site-name {
 		left: 10px;
 		top: 0px;
 		height: auto;
