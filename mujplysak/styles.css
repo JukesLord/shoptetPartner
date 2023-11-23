@@ -98,6 +98,7 @@
 	grid-column: 2;
 	grid-row-start: 1;
 	grid-row-end: 3;
+	padding-left: 10px;
 }
 .banners-top .slide-image img {
 	width: auto;
@@ -105,6 +106,9 @@
 	height: auto;
 	max-height: 100%;
 	margin: auto;
+}
+.w-slider-arrow-left {
+	width: 36px;
 }
 @media (max-width: 768px) {
 	.slider-mask {
@@ -127,6 +131,7 @@
 		grid-column: 1;
 		grid-row: 1;
 		margin-bottom: 30px;
+		padding: 0;
 	}
 	.slide .slide-button {
 		margin: 15px auto auto;
