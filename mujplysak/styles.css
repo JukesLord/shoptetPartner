@@ -3,6 +3,7 @@
 	--hero-button-color: #dcb276;
 	--hero-button-color-hover: #c49655;
 	--border-radius: 50px;
+	--menu-active-color: #986339;
 }
 /*---------------------------------------------------hero-slider*/
 .w-slider {
@@ -150,4 +151,78 @@
 		line-height: 1.35;
 		font-weight: 600;
 	}
+}
+/*header menu*/
+@media (min-width: 992px) {
+	#navigation {
+		overflow: visible;
+	}
+	.navigation-in {
+		max-width: 100%;
+	}
+
+	.menu-level-1 {
+		width: max-content;
+		position: relative;
+		height: 38px;
+		left: 50%;
+		transform: translatex(-50%);
+	}
+	.menu-level-1 > li a {
+		padding-top: 8px !important;
+		padding-bottom: 0 !important;
+	}
+	.menu-level-1 > li:first-child {
+		position: initial;
+	}
+	.menu-level-1 > li:first-child a {
+		background: var(--menu-active-color) !important;
+		border-radius: var(--border-radius);
+		color: white;
+
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.menu-level-1 > li:first-child .submenu-arrow {
+		display: none;
+	}
+	.menu-level-1 > li:first-child .menu-level-2 {
+		display: flex !important;
+		flex-direction: row;
+		width: 100%;
+		position: absolute;
+		height: 30px;
+		background: var(--menu-active-color);
+		right: auto;
+		left: 0;
+		margin: 0;
+		border-style: none;
+		border-radius: var(--border-radius);
+		bottom: -32px;
+		top: auto;
+		overflow: hidden;
+	}
+	.menu-level-1 > li:first-child .menu-level-2 a {
+		color: white;
+		font-weight: 500;
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+	}
+	.menu-level-1 > li:first-child .menu-level-2 a:hover {
+		color: var(--color-primary);
+	}
+	.menu-level-1 > li:first-child .menu-level-2 li a::before {
+		display: none;
+	}
+}
+
+/*footer*/
+#footer .footer-platby-online {
+	display: none;
+	position: relative;
+	top: 0;
+	left: 0;
+	max-width: none;
+	width: 80px;
+	margin-top: 10px;
 }
