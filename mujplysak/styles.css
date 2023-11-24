@@ -268,3 +268,22 @@
 		grid-column: 1;
 	}
 }
+
+/*kde pomahame home page*/
+.kde-pomahame {
+	margin-top: 60px;
+}
+.kde-pomahame p {
+	font-size: 44px;
+	line-height: 52px;
+	margin-bottom: 48px;
+	color: var(--seda-4);
+	font-weight: 800;
+	text-align: center;
+}
+
+.kde-pomahame-loga {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
