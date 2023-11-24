@@ -270,10 +270,10 @@
 }
 
 /*kde pomahame home page*/
-.kde-pomahame {
+.in-index .kde-pomahame {
 	margin-top: 60px;
 }
-.kde-pomahame p {
+.in-index .kde-pomahame p {
 	font-size: 44px;
 	line-height: 52px;
 	margin-bottom: 48px;
