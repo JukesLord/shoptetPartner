@@ -300,6 +300,12 @@
 	position: relative;
 	z-index: 99;
 }
+@media (max-width: 992px) {
+	.top-lista {
+		display: none;
+	}
+}
+
 .top-lista span {
 	display: block;
 	margin: auto;
@@ -310,7 +316,13 @@
 .header-navigation {
 	padding-top: 42px;
 }
-
 .scrolled .header-navigation {
 	padding-top: 12px;
+}
+/*fix popupu*/
+@media (min-width: 992px) {
+	.popup-widget.cart-widget,
+	.popup-widget.search-widget {
+		top: 80px;
+	}
 }
