@@ -223,6 +223,48 @@
 	top: 0;
 	left: 0;
 	max-width: none;
-	width: 80px;
+	width: 90px;
 	margin-top: 10px;
+}
+
+/*konkurencni vyhody*/
+@media (max-width: 768px) {
+	.id-1 .benefitBanner.position--benefitHomepage.container {
+		margin-top: 20px;
+	}
+}
+@media (max-width: 500px) {
+	.id-1 .benefitBanner.position--benefitHomepage.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 5px;
+	}
+	.benefitBanner__picture {
+		max-width: 45px;
+	}
+	.benefitBanner__item {
+		width: 100%;
+	}
+	.benefitBanner__title {
+		font-size: 14px;
+	}
+	.id-1 .benefitBanner.position--benefitHomepage.container::before {
+		display: none;
+	}
+}
+
+/*proc vybrat právě u nás home page*/
+.w-layout-grid.grid-intro > img.proc-vyprat-u-nas {
+	grid-row: 1;
+	grid-column-start: 1;
+	grid-column-end: 3;
+	max-width: 960px;
+	margin: auto;
+	margin-bottom: 40px;
+	width: 100%;
+}
+@media (max-width: 767px) {
+	.w-layout-grid.grid-intro > img.proc-vyprat-u-nas {
+		grid-column: 1;
+	}
 }
