@@ -311,16 +311,15 @@
 	margin: auto;
 	max-width: 90%;
 }
-
-/*header navigation*/
-.header-navigation {
-	padding-top: 42px;
-}
-.scrolled .header-navigation {
-	padding-top: 12px;
-}
-/*fix popupu*/
 @media (min-width: 992px) {
+	/*header navigation*/
+	.header-navigation {
+		padding-top: 42px;
+	}
+	.scrolled .header-navigation {
+		padding-top: 12px;
+	}
+	/*fix popupu*/
 	.popup-widget.cart-widget,
 	.popup-widget.search-widget {
 		top: 80px;
