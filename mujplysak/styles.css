@@ -305,3 +305,12 @@
 	margin: auto;
 	max-width: 90%;
 }
+
+/*header navigation*/
+.header-navigation {
+	padding-top: 42px;
+}
+
+.scrolled .header-navigation {
+	padding-top: 12px;
+}
