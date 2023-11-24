@@ -239,13 +239,13 @@
 		grid-template-columns: 1fr 1fr;
 		column-gap: 5px;
 	}
-	.benefitBanner__picture {
+	.id-1 .benefitBanner__picture {
 		max-width: 45px;
 	}
-	.benefitBanner__item {
+	.id-1 .benefitBanner__item {
 		width: 100%;
 	}
-	.benefitBanner__title {
+	.id-1 .benefitBanner__title {
 		font-size: 14px;
 	}
 	.id-1 .benefitBanner.position--benefitHomepage.container::before {
