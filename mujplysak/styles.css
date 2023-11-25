@@ -134,7 +134,7 @@
 		text-align: center;
 	}
 	.slide-image {
-		display: flex;
+		display: flex !important;
 		grid-column: 1;
 		grid-row: 1;
 		margin-bottom: 30px;
