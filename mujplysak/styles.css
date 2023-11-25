@@ -166,7 +166,7 @@ body {
 		padding-top: 50px;
 	}
 }
-@media (max-width: 446px) {
+@media (max-width: 455px) {
 	body {
 		padding-top: 60px;
 	}
@@ -370,5 +370,61 @@ body.navigation-window-visible .navigation-close {
 	.popup-widget.cart-widget,
 	.popup-widget.search-widget {
 		top: 80px;
+	}
+}
+
+/*kontakt form header*/
+header .contact-box {
+	padding: 0;
+	line-height: 2;
+	padding-top: 2px;
+	min-height: auto;
+}
+header .contact-box > img,
+header .contact-box > strong {
+	display: none;
+}
+
+header .contact-box .footer-platby-online {
+	display: none !important;
+}
+header .contact-box ul li > span:before {
+	color: var(--menu-active-color);
+}
+header .contact-box ul li > span a {
+	color: var(--seda-2);
+	font-weight: 500;
+	font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+	header .contact-box .mail {
+		display: none;
+	}
+
+	header .contact-box .cellphone::before {
+		display: none;
+	}
+	header .contact-box .cellphone a {
+		font-size: 0;
+	}
+	header .contact-box .cellphone a::before {
+		content: "\e92b";
+		speak: none;
+		display: inline-block;
+		font-family: shoptet;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 400;
+		line-height: 0;
+		text-decoration: none;
+		text-transform: none;
+		vertical-align: middle;
+		color: var(--seda-3);
+		left: 0;
+		position: absolute;
+		text-align: center;
+		top: 95%;
+		font-size: 20px;
 	}
 }
