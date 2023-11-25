@@ -166,7 +166,7 @@ body {
 		padding-top: 50px;
 	}
 }
-@media (max-width: 455px) {
+@media (max-width: 446px) {
 	body {
 		padding-top: 60px;
 	}
@@ -341,9 +341,11 @@ body.navigation-window-visible .navigation-close {
 	width: 100%;
 	transition: top 0.2s ease;
 }
+
 .admin-logged .top-lista {
 	top: 25px;
 }
+
 @media (max-width: 992px) {
 	.top-lista {
 		position: relative;
@@ -351,6 +353,9 @@ body.navigation-window-visible .navigation-close {
 		margin-left: -2rem;
 		margin-bottom: 15px;
 		margin-top: 5px;
+	}
+	.admin-logged .top-lista {
+		top: 0px;
 	}
 	.header-navigation {
 		padding-top: 0;
