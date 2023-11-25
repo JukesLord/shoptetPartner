@@ -379,6 +379,14 @@ body.navigation-window-visible .navigation-close {
 	.popup-widget.search-widget {
 		top: 80px;
 	}
+	.admin-logged .popup-widget.cart-widget,
+	.admin-logged .popup-widget.search-widget {
+		top: 100px;
+	}
+	.scrolled .admin-logged .popup-widget.cart-widget,
+	.scrolled .admin-logged .popup-widget.search-widget {
+		top: 80px;
+	}
 }
 
 /*kontakt form header*/
