@@ -345,6 +345,9 @@ body.navigation-window-visible .navigation-close {
 .admin-logged .top-lista {
 	top: 25px;
 }
+.scrolled .admin-logged .top-lista {
+	top: 0;
+}
 
 @media (max-width: 992px) {
 	.top-lista {
