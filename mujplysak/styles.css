@@ -245,6 +245,13 @@ body {
 .scrolled .admin-logged .header-navigation {
 	top: 0;
 }
+/*zavreni menu navigace*/
+.navigation-close {
+	display: none;
+}
+body.navigation-window-visible .navigation-close {
+	display: block;
+}
 
 /*footer*/
 #footer .footer-platby-online {
