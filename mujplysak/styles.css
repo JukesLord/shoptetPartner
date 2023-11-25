@@ -350,6 +350,7 @@ body.navigation-window-visible .navigation-close {
 		width: calc(100% + 4rem);
 		margin-left: -2rem;
 		margin-bottom: 15px;
+		margin-top: 5px;
 	}
 	.header-navigation {
 		padding-top: 0;
