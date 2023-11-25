@@ -377,15 +377,15 @@ body.navigation-window-visible .navigation-close {
 	/*fix popupu*/
 	.popup-widget.cart-widget,
 	.popup-widget.search-widget {
-		top: 80px;
+		top: 80px !important;
 	}
 	.admin-logged .popup-widget.cart-widget,
 	.admin-logged .popup-widget.search-widget {
-		top: 100px;
+		top: 100px !important;
 	}
 	.scrolled .admin-logged .popup-widget.cart-widget,
 	.scrolled .admin-logged .popup-widget.search-widget {
-		top: 80px;
+		top: 80px !important;
 	}
 }
 
