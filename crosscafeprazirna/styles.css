@@ -543,7 +543,6 @@ h1.header-title {
 
 	.scrolled #header .site-name a img,
 	.scrolled #header .site-name a > span {
-		max-height: 50px;
 		height: 50px;
 	}
 
