@@ -535,6 +535,18 @@ h1.header-title {
 
 /*top menu*/
 @media (min-width: 992px) {
+	#header .site-name a img,
+	#header .site-name a > span {
+		max-height: 83px;
+		height: 83px;
+	}
+
+	.scrolled #header .site-name a img,
+	.scrolled #header .site-name a > span {
+		max-height: 50px;
+		height: 50px;
+	}
+
 	.menu-hamburger {
 		display: block;
 		position: absolute;
@@ -622,12 +634,7 @@ h1.header-title {
 	.in-index #header .menu-open .header-navigation > div .navigation-buttons {
 		display: flex;
 	}
-	@media (min-width: 992px) {
-		#header .site-name a img,
-		#header .site-name a > span {
-			max-height: 83px;
-		}
-	}
+
 	#navigation {
 		position: absolute;
 		width: 100%;
