@@ -1,0 +1,320 @@
+:root {
+	--color-black-600: #20232b;
+	--color-gray-400: #f4f4f4;
+	--border-radius-200: 12px;
+	--border-radius-400: 50px;
+	--gap: clamp(10px, 2vw, 20px);
+	--padding-sides: max(1vw, 10px);
+	--lh-large: 1.55;
+}
+/*zakladni html upravy*/
+html {
+	font-size: 16px;
+}
+body {
+	font-size: 1rem;
+	color: var(--color-black-600);
+	text-wrap: balance;
+	line-height: 1.5;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+body,
+p,
+span,
+b,
+strong,
+a,
+div,
+button {
+	color: var(--color-black-600);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	color: var(--color-primary);
+}
+
+h3,
+h4,
+h5,
+h6,
+.h3,
+.h4,
+.h5,
+.h6 {
+	line-height: 1.5;
+}
+
+/*cst button*/
+.cst-button {
+	font-size: 1.25rem;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: var(--border-radius-400);
+	padding: 0.7em 2em;
+
+	transition: background 0.3s ease-out;
+}
+.cst-button.white {
+	color: white;
+	border-color: white;
+}
+.cst-button.white:hover {
+	background: white;
+	color: var(--color-black-600);
+}
+.cst-button.primary {
+	color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+.cst-button.primary:hover {
+	background: var(--color-primary);
+	color: white;
+}
+/*uprava homepage hlavniho blocku*/
+.homepage-box {
+	background: none;
+	border-style: none;
+}
+.banner-wrapper {
+	margin: 0 !important;
+}
+.content-wrapper-in > .container {
+	max-width: 1920px;
+	width: 100%;
+	padding: 0 var(--padding-sides);
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+.banners-row .col-sm-8 {
+	width: 100%;
+}
+.banners-row .col-sm-8 img {
+	border-radius: var(--border-radius-200);
+}
+.container > .banners-row {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.banners-row .col-sm-4 {
+	padding: 0;
+	width: 100%;
+	/*padding: 0 max(5%, 10px);*/
+}
+.next-to-carousel-banners {
+	display: flex;
+	flex-direction: column;
+}
+
+/*chranena dilna block*/
+.chranena-dilna-block {
+	background-image: url("/user/documents/upload/Titulní strana/Chranena dilna pozadi.webp");
+	background-size: cover;
+	border-radius: var(--border-radius-200);
+}
+
+.chranena-dilna-block {
+	margin-top: var(--gap);
+	text-align: center;
+	padding-top: 90px;
+	padding-bottom: 130px;
+}
+.chranena-dilna-block h1,
+.chranena-dilna-block h2,
+.chranena-dilna-block p {
+	color: white;
+}
+.chranena-dilna-block h1 {
+	font-weight: 700;
+	font-size: 5rem;
+	margin: 0;
+	padding-bottom: 50px;
+	margin-bottom: 45px;
+	position: relative;
+}
+.chranena-dilna-block h1::after {
+	position: absolute;
+	content: "";
+	display: block;
+	width: 5%;
+	height: 3px;
+	left: 50%;
+	bottom: 0;
+	transform: translatex(-50%);
+	background: white;
+}
+.chranena-dilna-block h2 {
+	font-weight: 600;
+	font-size: 2rem;
+}
+.chranena-dilna-block p {
+	font-size: 1rem;
+	max-width: 65%;
+	margin: auto;
+}
+/*Proc s nami spolupracovat*/
+.proc-spolupracovat-block {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: var(--gap);
+	margin-top: 100px;
+	padding: 0 max(5%, 10px);
+}
+.proc-spolupracovat-tile {
+	border-radius: var(--border-radius-200);
+	box-shadow: 0 0 30px #dedede;
+	padding-top: 50px;
+	padding-bottom: 75px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.proc-spolupracovat-tile h3 {
+	color: var(--color-black-600);
+	font-weight: 600;
+	font-size: 1.5rem;
+	max-width: 70%;
+	margin: auto;
+	text-align: center;
+	padding-top: 60px;
+}
+.proc-spolupracovat-tile.main {
+	grid-column: 1/3;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-image: url("/user/documents/upload/Titulní strana/proc-s-nami-spolupracovat.webp");
+	background-size: cover;
+	position: relative;
+	background-position: 0 40%;
+}
+.proc-spolupracovat-tile.main::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: black;
+	opacity: 0.68;
+	border-radius: var(--border-radius-200);
+}
+.proc-spolupracovat-tile.main h2 {
+	font-weight: 400;
+	display: flex;
+	flex-direction: column;
+	font-size: 3rem;
+	z-index: 1;
+}
+.proc-spolupracovat-tile.main h2 > * {
+	color: white;
+}
+.proc-spolupracovat-tile.main a {
+	z-index: 1;
+}
+/*nase cinnost*/
+.nase-cinnosti-block {
+	position: relative;
+	margin-top: 85px;
+	padding-bottom: 100px;
+}
+.nase-cinnosti-block::before {
+	content: "";
+	position: absolute;
+	width: 100vw;
+	height: 100%;
+	left: calc((-100vw + 1920px) / 2 - var(--padding-sides) / 2);
+	top: 0;
+	background: var(--color-gray-400);
+	z-index: -1;
+}
+@media (max-width: 1920px) {
+	.nase-cinnosti-block::before {
+		left: calc(var(--padding-sides) / -1);
+	}
+}
+.nase-cinnosti-block h2 {
+	text-align: center;
+	margin: 0;
+	padding-top: 100px;
+	color: var(--color-black-600);
+	font-size: 3rem;
+	font-weight: 700;
+	padding-bottom: 75px;
+}
+.nase-cinnosti-block h3 {
+	margin: 0;
+}
+.nase-cinnosti-first h3 {
+	color: var(--color-primary);
+	font-weight: 700;
+	font-size: 2rem;
+	padding-top: 60px;
+	padding-bottom: 30px;
+}
+.nase-cinnosti-first {
+	display: flex;
+	margin: auto;
+	padding: 0 3%;
+	max-width: 57%;
+	border-radius: var(--border-radius-200);
+	background: white;
+	box-shadow: 0 0 30px #dedede;
+	text-align: center;
+	flex-direction: column;
+}
+.nase-cinnosti-first p {
+	margin-bottom: 50px;
+	line-height: var(--lh-large);
+}
+.nase-cinnosti-first .nase-cinnosti-bold {
+	font-weight: 600;
+	margin-bottom: 40px;
+}
+.nase-cinnosti-grid {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	margin-top: var(--gap);
+	gap: var(--gap);
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 0 var(--gap);
+}
+.nase-cinnosti-tile {
+	background: white;
+	border-radius: var(--border-radius-200);
+	box-shadow: 0 0 30px #dedede;
+	padding: 60px 60px 50px 60px;
+}
+.nase-cinnosti-tile > * {
+	margin: 0;
+}
+.nase-cinnosti-tile h4 {
+	font-size: 1.75rem;
+	color: var(--color-black-600);
+	font-weight: 600;
+	padding: 40px 0 35px 0;
+	line-height: 1.2;
+}
+.nase-cinnosti-tile p {
+	font-size: 1rem;
+}
+/*spoluprace-block*/
+.spoluprace-block {
+	padding-top: 100px;
+	margin-bottom: 100px;
+}
