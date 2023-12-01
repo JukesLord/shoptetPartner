@@ -212,6 +212,8 @@ h6,
 }
 #carousel img {
 	width: 100%;
+	position: relative;
+	top: -250px;
 }
 /*chranena dilna block*/
 .chranena-dilna-block {
