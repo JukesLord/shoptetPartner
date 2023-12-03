@@ -79,6 +79,38 @@ h6,
 	line-height: 1.5;
 }
 
+/*podstranky*/
+.in-kontakty h2 {
+	color: var(--color-primary);
+	font-size: var(--responsive-5rem);
+	font-weight: 700;
+	text-align: center;
+	margin: 1em 0 0.5em 0;
+}
+.content-inner {
+	box-shadow: 0 0 30px #dedede;
+	margin-top: 20px;
+	padding: 20px 20px;
+	border-radius: var(--border-radius-200);
+}
+.in-kontakty .content-inner p,
+.in-kontakty .content-inner h4,
+.in-kontakty .content-inner h3 {
+	margin: 0;
+}
+.in-kontakty .content-inner h3 {
+	font-size: var(--responsive-2rem);
+	font-weight: 600;
+
+	padding-top: 1.25em;
+}
+.in-kontakty .content-inner h4 {
+	font-size: var(--responsive-1_25rem);
+	font-weight: 600;
+	color: var(--color-black-600);
+	padding-bottom: 0.2em;
+}
+
 /*cst button*/
 .cst-button {
 	font-size: var(--responsive-1_25rem);
@@ -113,6 +145,7 @@ h1 {
 	font-size: var(--responsive-5rem);
 	font-weight: 700;
 	text-align: center;
+	margin-top: 0.33em;
 }
 /*header*/
 #header {
@@ -924,6 +957,7 @@ footer .banner {
 	}
 	.footer-mesta {
 		max-width: 100%;
+		text-align: center;
 	}
 	.kontakt-mapa {
 		margin-top: 10px;
