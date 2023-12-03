@@ -7,6 +7,26 @@
 	--padding-sides: max(1vw, 10px);
 	--lh-small: 1.2;
 	--header-height: 80px;
+	--responsive-130: clamp(4.063rem, 4.316vw + 2.946rem, 8.125rem);
+	--responsive-100: clamp(2.063rem, 4.449vw + 0.911rem, 6.25rem);
+	--responsive-90: clamp(1.875rem, 3.984vw + 0.844rem, 5.625rem);
+	--responsive-85: clamp(1.75rem, 3.785vw + 0.771rem, 5.313rem);
+	--responsive-80: clamp(1.625rem, 3.586vw + 0.697rem, 5rem);
+	--responsive-75: clamp(1.563rem, 3.32vw + 0.703rem, 4.688rem);
+	--responsive-60: clamp(1.25rem, 2.656vw + 0.563rem, 3.75rem);
+	--responsive-45: clamp(0.938rem, 1.992vw + 0.422rem, 2.813rem);
+	--responsive-40: clamp(0.813rem, 1.793vw + 0.349rem, 2.5rem);
+	--responsive-35: clamp(0.75rem, 1.527vw + 0.355rem, 2.188rem);
+	--responsive-30: clamp(0.625rem, 1.328vw + 0.281rem, 1.875rem);
+	--responsive-50: clamp(1.25rem, 1.992vw + 0.735rem, 3.125rem);
+	--responsive-5rem: clamp(2.5rem, 2.656vw + 1.813rem, 5rem);
+	--responsive-3rem: clamp(1.75rem, 1.328vw + 1.406rem, 3rem);
+	--responsive-2_5rem: clamp(1.625rem, 0.93vw + 1.384rem, 2.5rem);
+	--responsive-2rem: clamp(1.25rem, 0.797vw + 1.044rem, 2rem);
+	--responsive-1_75rem: clamp(1.25rem, 0.531vw + 1.113rem, 1.75rem);
+	--responsive-1_5rem: clamp(1.125rem, 0.398vw + 1.022rem, 1.5rem);
+	--responsive-1_25rem: clamp(0.875rem, 0.398vw + 0.772rem, 1.25rem);
+	--responsive-1_125rem: clamp(0.938rem, 0.199vw + 0.886rem, 1.125rem);
 }
 /*zakladni html upravy*/
 html {
@@ -60,7 +80,7 @@ h6,
 
 /*cst button*/
 .cst-button {
-	font-size: 1.25rem;
+	font-size: var(--responsive-1_25rem);
 	border-style: solid;
 	border-width: 1px;
 	border-radius: var(--border-radius-400);
@@ -208,16 +228,14 @@ h6,
 	max-height: clamp(200px, 35vw, 670px);
 	overflow: hidden;
 	border-radius: var(--border-radius-200);
-	margin-bottom: 50px;
+	margin-bottom: var(--responsive-50);
 }
 #carousel img {
 	width: 100%;
-	position: relative;
-	top: -250px;
 }
 /*chranena dilna block*/
 .chranena-dilna-block {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/Chranena dilna pozadi.webp");
+	background-image: url("/user/documents/upload/Titulní strana/Chranena dilna pozadi.webp");
 	background-size: cover;
 	border-radius: var(--border-radius-200);
 }
@@ -225,8 +243,8 @@ h6,
 .chranena-dilna-block {
 	margin-top: var(--gap);
 	text-align: center;
-	padding-top: 90px;
-	padding-bottom: 130px;
+	padding-top: var(--responsive-90);
+	padding-bottom: var(--responsive-130);
 }
 .chranena-dilna-block h1,
 .chranena-dilna-block h2,
@@ -235,10 +253,10 @@ h6,
 }
 .chranena-dilna-block h1 {
 	font-weight: 700;
-	font-size: 5rem;
+	font-size: var(--responsive-5rem);
 	margin: 0;
-	padding-bottom: 50px;
-	margin-bottom: 45px;
+	padding-bottom: 0.625em;
+	margin-bottom: 0.563em;
 	position: relative;
 }
 .chranena-dilna-block h1::after {
@@ -254,11 +272,12 @@ h6,
 }
 .chranena-dilna-block h2 {
 	font-weight: 600;
-	font-size: 2rem;
+	font-size: var(--responsive-2rem);
 }
 .chranena-dilna-block p {
-	font-size: 1.1rem;
-	max-width: 65%;
+	font-size: var(--responsive-1_125rem);
+	max-width: clamp(600px, 65%, 1400px);
+	padding: 0 10px;
 	margin: auto;
 }
 /*Proc s nami spolupracovat*/
@@ -267,14 +286,14 @@ h6,
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
 	gap: var(--gap);
-	margin-top: 100px;
+	margin-top: var(--responsive-100);
 	padding: 0 max(5%, 10px);
 }
 .proc-spolupracovat-tile {
 	border-radius: var(--border-radius-200);
 	box-shadow: 0 0 30px #dedede;
-	padding-top: 50px;
-	padding-bottom: 75px;
+	padding-top: var(--responsive-50);
+	padding-bottom: var(--responsive-75);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -282,11 +301,12 @@ h6,
 .proc-spolupracovat-tile h3 {
 	color: var(--color-black-600);
 	font-weight: 600;
-	font-size: 1.5rem;
-	max-width: clamp(100px, 70%, 300px);
+	font-size: var(--responsive-1_5rem);
+	max-width: clamp(150px, 70%, 280px);
 	margin: auto;
 	text-align: center;
-	padding-top: 50px;
+	padding: 0 10px;
+	padding-top: var(--responsive-50);
 	margin: 0;
 }
 .proc-spolupracovat-tile.main {
@@ -294,7 +314,7 @@ h6,
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/proc-s-nami-spolupracovat.webp");
+	background-image: url("/user/documents/upload/Titulní strana/proc-s-nami-spolupracovat.webp");
 	background-size: cover;
 	position: relative;
 	background-position: 0 40%;
@@ -314,7 +334,7 @@ h6,
 	font-weight: 400;
 	display: flex;
 	flex-direction: column;
-	font-size: 3rem;
+	font-size: var(--responsive-3rem);
 	z-index: 1;
 }
 .proc-spolupracovat-tile.main h2 > * {
@@ -325,8 +345,8 @@ h6,
 }
 .proc-spolupracovat-icon {
 	background-color: var(--color-primary);
-	width: 116px;
-	height: 116px;
+	width: clamp(4.75rem, 2.656vw + 4.063rem, 7.25rem);
+	height: clamp(4.75rem, 2.656vw + 4.063rem, 7.25rem);
 	border-radius: 100%;
 	filter: drop-shadow(0px 0px 20px hsla(119, 50%, 60%, 50%));
 	background-repeat: no-repeat;
@@ -334,27 +354,27 @@ h6,
 	background-size: 60%;
 }
 .proc-spolupracovat-block > .side:nth-child(2) .proc-spolupracovat-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/spoluprace_ikona_1.png");
+	background-image: url("user/documents/upload/Titulní strana/spoluprace_ikona_1.png");
 	background-size: 60%;
 	background-position: center bottom 55%;
 }
 .proc-spolupracovat-block > .side:nth-child(3) .proc-spolupracovat-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/spoluprace_ikona_2.png");
+	background-image: url("user/documents/upload/Titulní strana/spoluprace_ikona_2.png");
 	background-size: 45%;
 }
 .proc-spolupracovat-block > .side:nth-child(4) .proc-spolupracovat-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/spoluprace_ikona_3.png");
+	background-image: url("user/documents/upload/Titulní strana/spoluprace_ikona_3.png");
 	background-size: 50%;
 }
 .proc-spolupracovat-block > .side:nth-child(5) .proc-spolupracovat-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/spoluprace_ikona_4.png");
+	background-image: url("user/documents/upload/Titulní strana/spoluprace_ikona_4.png");
 	background-size: 50%;
 }
 /*nase cinnost*/
 .nase-cinnosti-block {
 	position: relative;
-	margin-top: 85px;
-	padding-bottom: 100px;
+	margin-top: var(--responsive-85);
+	padding-bottom: var(--responsive-100);
 }
 .nase-cinnosti-block::before {
 	content: "";
@@ -374,9 +394,9 @@ h6,
 .nase-cinnosti-block h2 {
 	text-align: center;
 	margin: 0;
-	padding-top: 100px;
+	padding-top: var(--responsive-100);
 	color: var(--color-black-600);
-	font-size: 3rem;
+	font-size: var(--responsive-3rem);
 	font-weight: 700;
 	padding-bottom: 75px;
 }
@@ -386,9 +406,9 @@ h6,
 .nase-cinnosti-first h3 {
 	color: var(--color-primary);
 	font-weight: 700;
-	font-size: 2rem;
-	padding-top: 60px;
-	padding-bottom: 30px;
+	font-size: var(--responsive-2rem);
+	padding-top: var(--responsive-60);
+	padding-bottom: var(--responsive-30);
 }
 .nase-cinnosti-first {
 	display: flex;
@@ -402,12 +422,12 @@ h6,
 	flex-direction: column;
 }
 .nase-cinnosti-first p {
-	margin-bottom: 50px;
-	font-size: 1.1rem;
+	margin-bottom: var(--responsive-50);
+	font-size: var(--responsive-1_125rem);
 }
 .nase-cinnosti-first .nase-cinnosti-bold {
 	font-weight: 600;
-	margin-bottom: 40px;
+	margin-bottom: var(--responsive-40);
 }
 .nase-cinnosti-grid {
 	display: grid;
@@ -421,20 +441,20 @@ h6,
 	background: white;
 	border-radius: var(--border-radius-200);
 	box-shadow: 0 0 30px #dedede;
-	padding: 60px 60px 50px 60px;
+	padding: var(--responsive-60) var(--responsive-60) var(--responsive-50) var(--responsive-60);
 }
 .nase-cinnosti-tile > * {
 	margin: 0;
 }
 .nase-cinnosti-tile h4 {
-	font-size: 1.75rem;
+	font-size: var(--responsive-1_75rem);
 	color: var(--color-black-600);
 	font-weight: 600;
-	padding: 40px 0 35px 0;
+	padding: var(--responsive-40) 0 var(--responsive-35) 0;
 	line-height: 1.2;
 }
 .nase-cinnosti-tile p {
-	font-size: 1.1rem;
+	font-size: var(--responsive-1_125rem);
 }
 .nase-cinnosti-icon {
 	width: 68px;
@@ -444,28 +464,28 @@ h6,
 	background-size: 100%;
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(1) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_1.png");
+	background-image: url("user/documents/upload/Titulní strana/naseCinnosti_ikona_1.png");
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(2) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_2.png");
+	background-image: url("user/documents/upload/Titulní strana/naseCinnosti_ikona_2.png");
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(3) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_3.png");
+	background-image: url("user/documents/upload/Titulní strana/naseCinnosti_ikona_3.png");
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(4) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_4.png");
+	background-image: url("user/documents/upload/Titulní strana/naseCinnosti_ikona_4.png");
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(5) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_5.png");
+	background-image: url("user/documents/upload/Titulní strana/naseCinnosti_ikona_5.png");
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(6) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_6.png");
+	background-image: url("user/documents/upload/Titulní strana/naseCinnosti_ikona_6.png");
 }
 /*spoluprace-block*/
 .spoluprace-block {
 	padding: 0 max(5%, 10px);
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: var(--responsive-100);
+	padding-bottom: var(--responsive-100);
 	position: relative;
 }
 .spoluprace-block::before {
@@ -477,7 +497,7 @@ h6,
 	top: 0;
 	left: calc((-100vw + 1920px) / 2 - var(--padding-sides) / 2);
 	z-index: -1;
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/spoluprace Gradients.webp");
+	background-image: url("/user/documents/upload/Titulní strana/spoluprace Gradients.webp");
 	background-size: cover;
 	background-repeat: no-repeat;
 	opacity: 0.6;
@@ -500,7 +520,7 @@ h6,
 .spoluprace-text {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	padding-top: 100px;
+	padding-top: var(--responsive-100);
 }
 .spoluprace-text h3,
 .spoluprace-text p {
@@ -511,14 +531,14 @@ h6,
 	padding-right: 10%;
 	font-weight: 400;
 	color: var(--color-black-600);
-	font-size: 3rem;
+	font-size: var(--responsive-3rem);
 }
 .spoluprace-text-right {
 	padding-top: 0.8rem;
 }
 .spoluprace-text-right p {
-	font-size: 1.1rem;
-	padding-bottom: 45px;
+	font-size: var(--responsive-1_125rem);
+	padding-bottom: var(--responsive-45);
 	text-wrap: wrap;
 }
 .spoluprace-text-right .cst-button {
@@ -527,26 +547,26 @@ h6,
 /*zrizeni dilny*/
 .zrizeni-dilny-block {
 	text-align: center;
-	margin-top: 100px;
-	padding-bottom: 100px;
+	margin-top: var(--responsive-100);
+	padding-bottom: var(--responsive-100);
 }
 .zrizeni-dilny-block > * {
 	margin: 0;
 }
 .zrizeni-dilny-block h2 {
-	font-size: 3rem;
+	font-size: var(--responsive-3rem);
 	font-weight: 700;
-	padding-bottom: 40px;
+	padding-bottom: var(--responsive-40);
 }
 .zrizeni-dilny-block p {
-	font-size: 1.1rem;
-	padding-bottom: 50px;
+	font-size: var(--responsive-1_125rem);
+	padding-bottom: var(--responsive-50);
 }
 /*reference*/
 .referece-block {
 	position: relative;
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: var(--responsive-100);
+	padding-bottom: var(--responsive-100);
 }
 .referece-block::before {
 	content: "";
@@ -564,12 +584,12 @@ h6,
 	}
 }
 .referece-block h2 {
-	font-size: 3rem;
+	font-size: var(--responsive-3rem);
 	text-align: center;
 	margin: 0;
 	font-weight: 700;
 	color: var(--color-black-600);
-	padding-bottom: 80px;
+	padding-bottom: var(--responsive-80);
 }
 .referece-flex {
 	display: flex;
@@ -580,15 +600,15 @@ h6,
 }
 /*kontaktni formular*/
 .title-kontaktni-formular {
-	padding-top: 80px;
-	padding-bottom: 50px;
+	padding-top: var(--responsive-80);
+	padding-bottom: var(--responsive-50);
 }
 .title-kontaktni-formular h3 {
 	margin: 0;
-	font-size: 2.5rem;
+	font-size: var(--responsive-2_5rem);
 	font-weight: 600;
 	text-align: center;
-	padding-bottom: 40px;
+	padding-bottom: var(--responsive-40);
 }
 #formContact {
 	max-width: 43rem;
@@ -709,7 +729,7 @@ footer .banner {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	margin: auto;
-	margin-top: 50px;
+	margin-top: var(--responsive-50);
 	gap: calc(var(--gap) * 2);
 	border-style: none;
 }
@@ -717,19 +737,19 @@ footer .banner {
 	display: flex;
 	flex-direction: column;
 	background: white;
-	padding: 40px 30px 10px 30px;
+	padding: var(--responsive-40) var(--responsive-30) 10px var(--responsive-30);
 	box-shadow: 0 0 30px #dedede;
 	border-radius: var(--border-radius-200);
-	margin-bottom: 60px;
+	margin-bottom: var(--responsive-60);
 }
 .footer-mesto h4 {
 	font-weight: 700;
-	font-size: 1.5rem;
+	font-size: var(--responsive-1_5rem);
 }
 .footer-mesto p {
 	margin: 0;
 	padding-bottom: 0.5em;
-	font-size: 0.85rem;
+	font-size: 0.875rem;
 }
 .footer-mesto a::after {
 	content: "";
