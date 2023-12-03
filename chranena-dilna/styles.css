@@ -125,7 +125,7 @@ h6,
 }
 
 .navigation-in {
-	background: var(--color-secondary-hover);
+	background: var(--color-secondary-hover) !important;
 	backdrop-filter: blur(8px);
 	height: 100%;
 	width: 100% !important;
@@ -869,6 +869,7 @@ footer .banner {
 		height: var(--header-height);
 		width: 100%;
 	}
+
 	.menu-helper {
 		top: 20px;
 		width: 32px;
@@ -885,5 +886,15 @@ footer .banner {
 	}
 	.navigation-close {
 		display: none;
+	}
+	.navigation-in.menu > ul {
+		display: none;
+	}
+	.menu-helper > ul {
+		background: var(--color-secondary-hover);
+		height: auto;
+		right: -30px;
+		border-color: white;
+		border-radius: var(--border-radius-200);
 	}
 }
