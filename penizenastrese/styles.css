@@ -20,6 +20,9 @@
 .type-detail .buy-box .add-to-cart {
 	margin-left: auto;
 }
+.buy-box {
+	padding-right: 10px;
+}
 @media (min-width: 1200px) and (max-width: 1439px) {
 	.additional-buttons .cst-button {
 		width: 215px;
@@ -35,6 +38,9 @@
 	}
 	.type-detail .buy-box .add-to-cart {
 		width: 100%;
+	}
+	.buy-box {
+		padding-right: 0;
 	}
 }
 .cst-button {
