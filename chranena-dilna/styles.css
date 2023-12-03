@@ -52,6 +52,7 @@ div,
 button {
 	color: var(--color-black-600);
 }
+
 h1,
 h2,
 h3,
@@ -107,6 +108,11 @@ h6,
 }
 .content-inner {
 	max-width: 1440px;
+}
+h1 {
+	font-size: var(--responsive-5rem);
+	font-weight: 700;
+	text-align: center;
 }
 /*header*/
 #header {
@@ -374,9 +380,11 @@ h6,
 	background-size: 50%;
 }
 /*nase cinnost*/
+.in-index .nase-cinnosti-block {
+	margin-top: var(--responsive-85);
+}
 .nase-cinnosti-block {
 	position: relative;
-	margin-top: var(--responsive-85);
 	padding-bottom: var(--responsive-100);
 }
 .in-index .nase-cinnosti-block::before {
@@ -394,6 +402,9 @@ h6,
 		left: calc(var(--padding-sides) / -1);
 	}
 }
+.in-index .nase-cinnosti-block h2 {
+	padding-bottom: var(--responsive-75);
+}
 .nase-cinnosti-block h2 {
 	text-align: center;
 	margin: 0;
@@ -401,7 +412,7 @@ h6,
 	color: var(--color-black-600);
 	font-size: var(--responsive-3rem);
 	font-weight: 700;
-	padding-bottom: var(--responsive-75);
+	padding-bottom: var(--responsive-35);
 }
 .nase-cinnosti-block h3 {
 	margin: 0;
