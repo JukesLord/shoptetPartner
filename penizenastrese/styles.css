@@ -17,6 +17,9 @@
 .additional-buttons .cst-button {
 	width: 250px;
 }
+.type-detail .buy-box .add-to-cart {
+	margin-left: auto;
+}
 @media (min-width: 1200px) and (max-width: 1439px) {
 	.additional-buttons .cst-button {
 		width: 215px;
