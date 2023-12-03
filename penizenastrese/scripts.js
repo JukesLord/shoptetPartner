@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-	$(".navigation-in.menu .menu-level-1").prepend($(".header-top .site-name a").addClass("logo"));
-
 	if (document.body.classList.contains("type-detail")) {
 		addButtons();
 	}
@@ -12,4 +10,3 @@ const additionalButtons =
 function addButtons() {
 	$(additionalButtons).insertBefore(".buy-box .add-to-cart");
 }
-addButtons();
