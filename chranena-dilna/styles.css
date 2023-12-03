@@ -984,6 +984,9 @@ footer .banner {
 	.navigation-in.menu > ul > li {
 		display: none;
 	}
+	.navigation-in.menu > ul {
+		overflow: hidden;
+	}
 	.menu-helper > ul {
 		background: var(--color-secondary-hover);
 		height: auto;
