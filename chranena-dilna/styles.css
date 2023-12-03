@@ -105,6 +105,9 @@ h6,
 	background: var(--color-secondary-hover);
 	color: white;
 }
+.content-inner {
+	max-width: 1440px;
+}
 /*header*/
 #header {
 	position: fixed;
@@ -376,7 +379,7 @@ h6,
 	margin-top: var(--responsive-85);
 	padding-bottom: var(--responsive-100);
 }
-.nase-cinnosti-block::before {
+.in-index .nase-cinnosti-block::before {
 	content: "";
 	position: absolute;
 	width: 100vw;
