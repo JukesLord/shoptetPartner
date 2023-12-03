@@ -832,6 +832,46 @@ footer .banner {
 	align-items: flex-end;
 }
 
+.custom-footer {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+@media (min-width: 1200px) {
+	.custom-footer {
+		flex-direction: row;
+	}
+	.custom-footer > div {
+		width: 70% !important;
+	}
+	.footer-mesta {
+		max-width: 90%;
+	}
+}
+
+.custom-footer > .custom-footer__articles {
+	width: auto !important;
+
+	padding-left: var(--gap);
+	display: flex;
+	margin: calc(var(--responsive-40) + var(--responsive-50) + 3px) auto auto;
+	flex-direction: column;
+}
+.custom-footer > .custom-footer__articles h4 span {
+	color: var(--color-primary);
+	font-weight: 700;
+	font-size: var(--responsive-1_5rem);
+}
+.custom-footer > .custom-footer__articles a {
+	color: var(--color-black-600) !important;
+}
+.custom-footer > .custom-footer__articles a:hover {
+	color: var(--color-secondary-hover) !important;
+}
+#footer .container {
+	width: 100%;
+}
+
 #signature {
 	flex: auto;
 	text-align: right;
