@@ -981,7 +981,7 @@ footer .banner {
 	.navigation-close {
 		display: none;
 	}
-	.navigation-in.menu > ul {
+	.navigation-in.menu > ul > li {
 		display: none;
 	}
 	.menu-helper > ul {
