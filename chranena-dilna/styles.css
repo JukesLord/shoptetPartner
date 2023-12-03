@@ -89,9 +89,10 @@ h6,
 }
 .content-inner {
 	box-shadow: 0 0 30px #dedede;
-	margin-top: 20px;
+	margin-top: 20px !important;
 	padding: 20px 20px;
 	border-radius: var(--border-radius-200);
+	max-width: 1440px;
 }
 .in-kontakty .content-inner p,
 .in-kontakty .content-inner h4,
@@ -138,9 +139,7 @@ h6,
 	background: var(--color-secondary-hover);
 	color: white;
 }
-.content-inner {
-	max-width: 1440px;
-}
+
 h1 {
 	font-size: var(--responsive-5rem);
 	font-weight: 700;
