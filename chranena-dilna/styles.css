@@ -398,7 +398,7 @@ h6,
 	color: var(--color-black-600);
 	font-size: var(--responsive-3rem);
 	font-weight: 700;
-	padding-bottom: 75px;
+	padding-bottom: var(--responsive-75);
 }
 .nase-cinnosti-block h3 {
 	margin: 0;
