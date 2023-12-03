@@ -897,4 +897,7 @@ footer .banner {
 		border-color: white;
 		border-radius: var(--border-radius-200);
 	}
+	.menu-helper > ul > li.splitted {
+		display: block;
+	}
 }
