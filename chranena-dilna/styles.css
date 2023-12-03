@@ -884,6 +884,9 @@ footer .banner {
 	.in-index .overall-wrapper {
 		padding-top: 10px !important;
 	}
+	.overall-wrapper {
+		padding-top: 0;
+	}
 	#navigation {
 		height: var(--header-height);
 		width: 100%;
@@ -918,5 +921,11 @@ footer .banner {
 	}
 	.menu-helper > ul > li.splitted {
 		display: block;
+	}
+	.footer-mesta {
+		max-width: 100%;
+	}
+	.kontakt-mapa {
+		margin-top: 10px;
 	}
 }
