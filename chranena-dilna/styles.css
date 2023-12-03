@@ -898,7 +898,7 @@ footer .banner {
 	.menu-helper > ul {
 		background: var(--color-secondary-hover);
 		height: auto;
-		right: -30px;
+		right: -29px;
 		border-color: white;
 		border-radius: var(--border-radius-200);
 	}
