@@ -414,6 +414,7 @@ h1 {
 /*nase cinnost*/
 .in-index .nase-cinnosti-block {
 	margin-top: var(--responsive-85);
+	overflow: hidden;
 }
 .nase-cinnosti-block {
 	position: relative;
