@@ -1007,3 +1007,12 @@ footer .banner {
 		margin-top: 10px;
 	}
 }
+
+@media (min-width: 768px) {
+	.siteCookies__form {
+		max-width: 1200px;
+	}
+	.siteCookies {
+		font-size: 14px;
+	}
+}
