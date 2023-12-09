@@ -414,7 +414,6 @@ h1 {
 /*nase cinnost*/
 .in-index .nase-cinnosti-block {
 	margin-top: var(--responsive-85);
-	overflow: hidden;
 }
 .nase-cinnosti-block {
 	position: relative;
@@ -928,6 +927,9 @@ footer .banner {
 		padding: var(--padding-sides);
 		margin-top: var(--responsive-50);
 		padding-top: 0;
+	}
+	.in-index .nase-cinnosti-block {
+		overflow: hidden;
 	}
 	.nase-cinnosti-grid {
 		display: flex;
