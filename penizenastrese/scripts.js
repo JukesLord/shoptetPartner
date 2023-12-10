@@ -19,6 +19,7 @@ function addButtons() {
 
 let containsSolax = false;
 let cenaBezDotace = "";
+let cenaBezDotaceCastka = "";
 const cenaBezDotaceString = "Cena před dotací: ";
 const invesicePoDotaciString = "Invsestice po dotaci: ";
 function solaxKosikKrok1() {
