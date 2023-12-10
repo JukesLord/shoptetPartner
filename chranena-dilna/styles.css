@@ -132,7 +132,6 @@ h6,
 }
 .cst-button.primary {
 	color: white;
-
 	background: var(--color-primary);
 }
 .cst-button.primary:hover {
