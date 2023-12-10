@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 		solaxKosikKrok1();
 	}
+	if (document.body.classList.contains("in-krok-1")) {
+		document.addEventListener("ShoptetDOMCartContentLoaded", function () {
+			solaxKosikKrok2();
+		});
+		solaxKosikKrok2();
+	}
 });
 
 const additionalButtons =
@@ -47,6 +53,22 @@ function solaxKosikKrok1() {
 			$("<p class='invesicePoDotaciString'>" + invesicePoDotaciString + "</p>").insertBefore(
 				$(this).closest("tr").find(".price-final")
 			);
+		}
+	});
+	if (containsSolax) {
+		$(".summary-wrapper .price-label.price-primary").text("Vaše investice po dotaci:");
+	}
+}
+
+function solaxKosikKrok2() {
+	$(".cart-item-name .main-link").each(function () {
+		if ($(this).text().includes("Solax") || $(this).text().includes("solax") || $(this).text().includes("SOLAX")) {
+			containsSolax = true;
+		}
+		if (containsSolax) {
+			$(".order-summary-inner > h4").text("Rozpočtový list");
+			$(".order-summary-item.helper > div > strong").text("Vaše investice po dotaci:");
+			$(".price-wrapper .price-label.price-primary").text("Vaše investice po dotaci:");
 		}
 	});
 }
