@@ -28,6 +28,9 @@
 .buy-box {
 	padding-right: 10px;
 }
+.buy-box .p-final-price-wrapper {
+	width: 100%;
+}
 @media (min-width: 1200px) and (max-width: 1439px) {
 	.additional-buttons .cst-button {
 		width: 215px;
@@ -37,7 +40,7 @@
 	.p-info-wrapper .add-to-cart {
 		justify-content: flex-end;
 	}
-	.p-info-wrapper .add-to-cart button {
+	.p-info-wrapper .add-to-cart button.btn.add-to-cart-button {
 		width: 239px;
 	}
 }
