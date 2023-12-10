@@ -29,7 +29,9 @@ function solaxKosikKrok1() {
 			cenaBezDotace = $(this).closest("tr").find(".show-tooltip").attr("data-original-title").split("ceny")[1];
 			cenaBezDotace = cenaBezDotace.replace(/\s/g, "");
 			cenaBezDotaceCastka =
-				parseInt(cenaBezDotace.split("Kč")[0]) * $(this).closest("tr").find(".quantity input.amount").val();
+				parseInt(cenaBezDotace.split("Kč")[0].toLocaleString("en-US").replace(/,/g, " ")) *
+				$(this).closest("tr").find(".quantity input.amount").val();
+
 			console.log(cenaBezDotace);
 			console.log(cenaBezDotaceCastka);
 
