@@ -73,3 +73,51 @@
 .cst-button:hover {
 	background: var(--color-secondary-hover);
 }
+/*krok 1 objednavka*/
+
+.cenaBezDotaceString {
+	margin: 0;
+	white-space: normal;
+	color: black;
+	font-weight: 400;
+}
+.cenaBezDotace {
+	color: black;
+	font-weight: 800;
+	margin: 0;
+}
+
+.invesicePoDotaciString {
+	margin: 0;
+	white-space: normal;
+	color: black;
+	font-weight: 400;
+}
+.verticalAlignTop {
+	vertical-align: top;
+}
+@media (max-width: 1440px) {
+	.verticalAlignTop {
+		vertical-align: middle;
+	}
+}
+@media screen and (max-width: 1199px) {
+	.cart-table tr > td.p-total {
+		padding-right: 30px;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.cart-table tr > td.p-total {
+		padding-right: 50px;
+	}
+}
+@media screen and (min-width: 1440px) {
+	.cart-table tr > td.p-total {
+		padding-right: 70px;
+	}
+}
+@media (max-width: 767px) {
+	.additional-buttons {
+		flex-direction: column;
+	}
+}
