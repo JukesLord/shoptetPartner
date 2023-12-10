@@ -17,8 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (document.body.classList.contains("in-krok-2")) {
 		document.addEventListener("ShoptetDOMCartContentLoaded", function () {
 			solaxKosikKrok2();
+			KosikKrok3();
 		});
 		solaxKosikKrok2();
+		KosikKrok3();
 	}
 });
 
