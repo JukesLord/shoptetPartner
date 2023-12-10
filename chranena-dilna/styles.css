@@ -139,6 +139,7 @@ h6,
 	color: white;
 }
 .elektro-subpage.cst-button {
+	margin: auto;
 	margin-bottom: 20px;
 	max-width: 250px;
 }
@@ -618,7 +619,7 @@ h1 {
 	padding-top: var(--responsive-100);
 	padding-bottom: var(--responsive-100);
 }
-.referece-block::before {
+.in-index .referece-block::before {
 	content: "";
 	position: absolute;
 	width: 100vw;
@@ -629,7 +630,7 @@ h1 {
 	z-index: -1;
 }
 @media (max-width: 1920px) {
-	.referece-block::before {
+	.in-index .referece-block::before {
 		left: calc(var(--padding-sides) / -1);
 	}
 }
@@ -1028,6 +1029,6 @@ footer .banner {
 }
 @media (min-width: 1200px) {
 	.one-column-body .content-inner {
-		margin-bottom: 10px;
+		margin-bottom: 20px;
 	}
 }
