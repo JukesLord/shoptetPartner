@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 		solaxKosikKrok2();
 	}
+	if (document.body.classList.contains("in-krok-2")) {
+		document.addEventListener("ShoptetDOMCartContentLoaded", function () {
+			solaxKosikKrok2();
+		});
+		solaxKosikKrok2();
+	}
 });
 
 const additionalButtons =
@@ -71,4 +77,11 @@ function solaxKosikKrok2() {
 			$(".price-wrapper .price-label.price-primary").text("Vaše investice po dotaci:");
 		}
 	});
+}
+function KosikKrok3() {
+	$(".co-contact-information h4").text("Údaje kllienta");
+	$("h4.header-billing").text("Trvalá adresa / Fakturační adresa");
+	$("label.another-shipping").text("Adresa doručení / instalace je odlišná");
+	$(".co-shipping-address h4").text("Adresa doručení / instalace");
+	$(".co-shipping-address").insertAfter($(".co-billing-address"));
 }
