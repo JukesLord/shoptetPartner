@@ -27,7 +27,9 @@ function solaxKosikKrok1() {
 		if ($(this).text().includes("Solax") || $(this).text().includes("solax") || $(this).text().includes("SOLAX")) {
 			containsSolax = true;
 			cenaBezDotace = $(this).closest("tr").find(".show-tooltip").attr("data-original-title").split("ceny")[1];
-			cenaBezDotaceCastka = cenaBezDotace.split("Kč")[0] * $(this).closest("tr").find(".quantity input.amount").val();
+			cenaBezDotace = cenaBezDotace.replace(/\s/g, "");
+			cenaBezDotaceCastka =
+				parseInt(cenaBezDotace.split("Kč")[0]) * $(this).closest("tr").find(".quantity input.amount").val();
 			console.log(cenaBezDotace);
 			console.log(cenaBezDotaceCastka);
 
