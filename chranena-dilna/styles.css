@@ -430,7 +430,7 @@ h1 {
 	z-index: -1;
 }
 @media (max-width: 1920px) {
-	.nase-cinnosti-block::before {
+	.in-index .nase-cinnosti-block::before {
 		left: calc(var(--padding-sides) / -1);
 	}
 }
