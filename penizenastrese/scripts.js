@@ -91,6 +91,7 @@ function KosikKrok3() {
 	$(".co-contact-information h4").text("Údaje kllienta");
 	$("h4.header-billing").text("Trvalá adresa / Fakturační adresa");
 	$("label[for='another-shipping']").text("Adresa doručení / instalace je odlišná");
+	$("label[for='add-note']").text("Zadat poznámku pro obchodníka");
 	$(".co-shipping-address h4").text("Adresa doručení / instalace");
 	$("#shipping-address").insertAfter($(".co-billing-address"));
 

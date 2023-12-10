@@ -121,3 +121,24 @@
 		flex-direction: column;
 	}
 }
+
+/*krok 3 - formular*/
+.block-s-prodejcem label {
+	width: 250px;
+}
+.block-s-prodejcem label,
+.block-s-prodejcem input {
+	margin-bottom: 16px;
+}
+.block-s-prodejcem .form-group input,
+.block-s-prodejcem .form-group label {
+	display: none;
+}
+.block-s-prodejcem .form-group #nakupujiSProdejcem,
+.block-s-prodejcem .form-group label[for="nakupujiSProdejcem"] {
+	display: block;
+}
+.block-s-prodejcem .form-group.checked input,
+.block-s-prodejcem .form-group.checked label {
+	display: block;
+}
