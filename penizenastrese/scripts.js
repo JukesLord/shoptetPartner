@@ -26,6 +26,7 @@ function solaxKosikKrok1() {
 		if ($(this).text().includes("Solax") || $(this).text().includes("solax") || $(this).text().includes("SOLAX")) {
 			containsSolax = true;
 			cenaBezDotace = $(this).closest("tr").find(".show-tooltip").attr("data-original-title").split("ceny")[1];
+			cenaBezDotaceCastka = cenaBezDotace.split("Kč")[0] * $(this).closest("tr").find(".quantity input.amount").val();
 
 			$(this).closest("tr").find(".p-price").text("");
 			$(this)
@@ -35,7 +36,7 @@ function solaxKosikKrok1() {
 			$(this)
 				.closest("tr")
 				.find(".p-price")
-				.append("<p class='cenaBezDotace'>" + cenaBezDotace + "</p>");
+				.append("<p class='cenaBezDotace'>" + cenaBezDotaceCastka + " Kč" + "</p>");
 			$(this).closest("tr").find(".p-total").addClass("verticalAlignTop");
 			$("<p class='invesicePoDotaciString'>" + invesicePoDotaciString + "</p>").insertBefore(
 				$(this).closest("tr").find(".price-final")
