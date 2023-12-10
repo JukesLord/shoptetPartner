@@ -801,6 +801,9 @@ footer .banner {
 	padding-bottom: 0.5em;
 	font-size: 0.875rem;
 }
+.footer-mesto a {
+	position: relative;
+}
 .footer-mesto a::after {
 	content: "";
 	width: calc(100% - 5px);
