@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		addButtons();
 	}
 	if (document.body.classList.contains("in-kosik")) {
-		$(document).on("ajaxComplete", function () {
+		docucment.addEventListener("ShoptetDOMCartContentLoaded", function () {
 			solaxKosikKrok1();
 		});
 		solaxKosikKrok1();
