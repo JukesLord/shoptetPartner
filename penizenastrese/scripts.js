@@ -109,9 +109,9 @@ function KosikKrok3() {
 
 	$("#nakupujiSProdejcem").change(function () {
 		if (this.checked) {
-			this.parent().addClass("checked");
+			$(this).parent().addClass("checked");
 		} else {
-			this.parent().removeClass("checked");
+			$(this).parent().removeClass("checked");
 		}
 	});
 
