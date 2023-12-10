@@ -83,7 +83,39 @@ function solaxKosikKrok2() {
 function KosikKrok3() {
 	$(".co-contact-information h4").text("Údaje kllienta");
 	$("h4.header-billing").text("Trvalá adresa / Fakturační adresa");
-	$("label.another-shipping").text("Adresa doručení / instalace je odlišná");
+	$("label[for='another-shipping']").text("Adresa doručení / instalace je odlišná");
 	$(".co-shipping-address h4").text("Adresa doručení / instalace");
-	$(".co-shipping-address").insertAfter($(".co-billing-address"));
+	$("#shipping-address").insertAfter($(".co-billing-address"));
+
+	$(".co-box-additional #note").append(
+		"<textarea name='remark-2' id='remark-2' class='form-control' placeholder='Vaše poznámka' rows='4' data-testid='remark-2'></textarea>"
+	);
+
+	$(".co-box-additional").prepend(
+		'<div class="block-s-prodejcem"><div class="form-group"><input type="checkbox" name="nakupujiSProdejcem" id="nakupujiSProdejcem" value="0"><label for="nakupujiSProdejcem" class="whole-width">Nakupuji s prodejcem</label></div></div>'
+	);
+	$(".block-s-prodejcem .form-group").append(
+		'<label for="prodejce-jmeno" class="">Jméno a příjmení prodejce</label><input type="text" name="prodejce-jmeno" id="prodejce-jmeno" class="form-control" placeholder=""</input>'
+	);
+	$(".block-s-prodejcem .form-group").append(
+		'<label for="prodejce-id" class="">ID Prodejce</label><input type="text" name="prodejce-id" id="prodejce-id" class="form-control" placeholder="ID000000"</input>'
+	);
+	$(".block-s-prodejcem .form-group").append(
+		'<label for="prodejce-email" class="">E-mail prodejce</label><input type="email" name="prodejce-email" id="prodejce-email" class="form-control" placeholder=""</input>'
+	);
+	$(".block-s-prodejcem .form-group").append(
+		'<label for="prodejce-telefon" class="">Telefon prodejce</label><input type="tel" name="prodejce-telefon" id="prodejce-telefon" class="form-control" placeholder=""</input>'
+	);
+
+	$("#nakupujiSProdejcem").change(function () {
+		if (this.checked) {
+			this.parent().addClass("checked");
+		} else {
+			this.parent().removeClass("checked");
+		}
+	});
+
+	$("#remark-2").bind("input propertychange", function () {
+		$("#remark").val($("#remark-2").val());
+	});
 }
