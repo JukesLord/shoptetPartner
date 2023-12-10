@@ -28,6 +28,8 @@ function solaxKosikKrok1() {
 			containsSolax = true;
 			cenaBezDotace = $(this).closest("tr").find(".show-tooltip").attr("data-original-title").split("ceny")[1];
 			cenaBezDotaceCastka = cenaBezDotace.split("Kč")[0] * $(this).closest("tr").find(".quantity input.amount").val();
+			console.log(cenaBezDotace);
+			console.log(cenaBezDotaceCastka);
 
 			$(this).closest("tr").find(".p-price").text("");
 			$(this)
