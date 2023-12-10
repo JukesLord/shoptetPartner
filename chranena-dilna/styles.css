@@ -644,9 +644,11 @@ h1 {
 .referece-flex {
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
 .reference-tile {
-	max-width: 25%;
+	flex: 33%;
+	padding: 20px 5%;
 }
 /*kontaktni formular*/
 .title-kontaktni-formular {
@@ -1022,5 +1024,10 @@ footer .banner {
 	}
 	.siteCookies {
 		font-size: 14px;
+	}
+}
+@media (min-width: 1200px) {
+	.one-column-body .content-inner {
+		margin-bottom: 10px;
 	}
 }
