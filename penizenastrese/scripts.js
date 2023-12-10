@@ -80,6 +80,13 @@ function solaxKosikKrok2() {
 		}
 	});
 }
+let checkedProdejce = false;
+let jmenoProdejce = "";
+let IDProdejce = "";
+let emailProdejce = "";
+let telefonProdejce = "";
+let poznamkaZakaznika = "";
+
 function KosikKrok3() {
 	$(".co-contact-information h4").text("Údaje kllienta");
 	$("h4.header-billing").text("Trvalá adresa / Fakturační adresa");
@@ -110,12 +117,45 @@ function KosikKrok3() {
 	$("#nakupujiSProdejcem").change(function () {
 		if (this.checked) {
 			$(this).parent().addClass("checked");
+			checkedProdejce = true;
 		} else {
 			$(this).parent().removeClass("checked");
+			checkedProdejce = false;
 		}
 	});
 
+	$("#prodejce-jmeno").bind("input propertychange", function () {
+		jmenoProdejce = $("#prodejce-jmeno").val();
+		$("#remark").val(
+			jmenoProdejce + "\n" + IDProdejce + "\n" + emailProdejce + "\n" + telefonProdejce + "\n" + poznamkaZakaznika
+		);
+	});
+	$("#prodejce-id").bind("input propertychange", function () {
+		IDProdejce = $("#prodejce-id").val();
+		$("#remark").val(
+			jmenoProdejce + "\n" + IDProdejce + "\n" + emailProdejce + "\n" + telefonProdejce + "\n" + poznamkaZakaznika
+		);
+	});
+	$("#prodejce-email").bind("input propertychange", function () {
+		emailProdejce = $("#prodejce-email").val();
+		$("#remark").val(
+			jmenoProdejce + "\n" + IDProdejce + "\n" + emailProdejce + "\n" + telefonProdejce + "\n" + poznamkaZakaznika
+		);
+	});
+	$("#prodejce-telefon").bind("input propertychange", function () {
+		telefonProdejce = $("#prodejce-telefon").val();
+		$("#remark").val(
+			jmenoProdejce + "\n" + IDProdejce + "\n" + emailProdejce + "\n" + telefonProdejce + "\n" + poznamkaZakaznika
+		);
+	});
 	$("#remark-2").bind("input propertychange", function () {
-		$("#remark").val($("#remark-2").val());
+		poznamkaZakaznika = $("#remark-2").val();
+		if (checkedProdejce) {
+			$("#remark").val(
+				jmenoProdejce + "\n" + IDProdejce + "\n" + emailProdejce + "\n" + telefonProdejce + "\n" + poznamkaZakaznika
+			);
+		} else {
+			$("#remark").val(poznamkaZakaznika);
+		}
 	});
 }
