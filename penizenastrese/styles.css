@@ -147,8 +147,9 @@ label[for="add-note"],
 #remark {
 	display: none !important;
 }
-.add-note-dorm-group {
+.add-note-form-group {
 	margin: 0;
+	display: none;
 }
 #remark-2 {
 	display: none;

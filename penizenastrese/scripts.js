@@ -93,7 +93,7 @@ function KosikKrok3() {
 	$("label[for='another-shipping']").text("Adresa doručení / instalace je odlišná");
 	$(".co-shipping-address h4").text("Adresa doručení / instalace");
 	$("#shipping-address").insertAfter($(".co-billing-address"));
-	$("#add-note").parent().addClass("add-note-dorm-group");
+	$("#add-note").parent().addClass("add-note-form-group");
 
 	$(".co-box-additional").prepend(
 		'<div class="form-group note-2-form-group"><input type="checkbox" name="note-2" id="note-2" value="0"><label for="note-2" class="whole-width">Zadat poznámku pro obchodníka</label></div></div>'
