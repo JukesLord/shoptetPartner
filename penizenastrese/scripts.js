@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		solaxKosikKrok2();
 		KosikKrok3();
 	}
+	if (document.body.classList.contains("in-dekujeme")) {
+		inDekujeme();
+	}
 });
 
 const additionalButtons =
@@ -224,4 +227,8 @@ function KosikKrok3() {
 			$("#remark").val(poznamkaZakaznika);
 		}
 	});
+}
+
+function inDekujeme() {
+	$("order-summary-heading h1").text("Závazná objednávka byla odeslána");
 }
