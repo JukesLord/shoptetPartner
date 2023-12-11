@@ -99,7 +99,7 @@ function KosikKrok3() {
 	);
 
 	$(".co-box-additional").prepend(
-		'<div class="form-group"><input type="checkbox" name="note-2" id="note-2" value="0"><label for="note-2" class="whole-width">Zadat poznámku pro obchodníka</label></div></div>'
+		'<div class="form-group note-2-form-group"><input type="checkbox" name="note-2" id="note-2" value="0"><label for="note-2" class="whole-width">Zadat poznámku pro obchodníka</label></div></div>'
 	);
 
 	$(".co-box-additional").prepend(
@@ -127,6 +127,20 @@ function KosikKrok3() {
 		} else {
 			$(this).parent().removeClass("checked");
 			checkedProdejce = false;
+		}
+	});
+
+	$("#note-2").change(function () {
+		if (this.checked) {
+			$(this).parent().addClass("checked");
+			$("#add-note").prop("checked", true);
+			$("#note").addClass("visible");
+		} else {
+			$(this).parent().removeClass("checked");
+			if (!checkedProdejce) {
+				$("#add-note").prop("checked", false);
+				$("#note").removeClass("visible");
+			}
 		}
 	});
 
