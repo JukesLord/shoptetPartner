@@ -123,27 +123,27 @@
 }
 
 /*krok 3 - formular*/
-.block-s-prodejcem label {
+.block-s-poradcem label {
 	width: 250px;
 }
-.block-s-prodejcem label,
-.block-s-prodejcem input {
+.block-s-poradcem label,
+.block-s-poradcem input {
 	margin-bottom: 16px;
 }
-.block-s-prodejcem .form-group input,
-.block-s-prodejcem .form-group label {
+.block-s-poradcem .form-group input,
+.block-s-poradcem .form-group label {
 	display: none;
 }
-.block-s-prodejcem .form-group #nakupujiSProdejcem,
-.block-s-prodejcem .form-group label[for="nakupujiSProdejcem"] {
+.block-s-poradcem .form-group #nakupujiSPoradcem,
+.block-s-poradcem .form-group label[for="nakupujiSPoradcem"] {
 	display: block;
 }
-.block-s-prodejcem .form-group.checked input,
-.block-s-prodejcem .form-group.checked label {
+.block-s-poradcem .form-group.checked input,
+.block-s-poradcem .form-group.checked label {
 	display: block;
 }
 @media (max-width: 479px) {
-	.block-s-prodejcem .form-group {
+	.block-s-poradcem .form-group {
 		margin-bottom: 16px;
 	}
 }
