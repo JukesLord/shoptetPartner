@@ -142,3 +142,11 @@
 .block-s-prodejcem .form-group.checked label {
 	display: block;
 }
+#add-note,
+label[for="add-note"],
+#remark {
+	display: none !important;
+}
+.add-note-dorm-group {
+	margin: 0;
+}

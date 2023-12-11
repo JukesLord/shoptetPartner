@@ -93,6 +93,7 @@ function KosikKrok3() {
 	$("label[for='another-shipping']").text("Adresa doručení / instalace je odlišná");
 	$(".co-shipping-address h4").text("Adresa doručení / instalace");
 	$("#shipping-address").insertAfter($(".co-billing-address"));
+	$("#add-note").parent().addClass("add-note-dorm-group");
 
 	$(".co-box-additional #note").append(
 		"<textarea name='remark-2' id='remark-2' class='form-control' placeholder='Vaše poznámka' rows='4' data-testid='remark-2'></textarea>"
