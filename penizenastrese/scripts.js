@@ -91,12 +91,15 @@ function KosikKrok3() {
 	$(".co-contact-information h4").text("Údaje klienta");
 	$("h4.header-billing").text("Trvalá adresa / Fakturační adresa");
 	$("label[for='another-shipping']").text("Adresa doručení / instalace je odlišná");
-	$("label[for='add-note']").text("Zadat poznámku pro obchodníka");
 	$(".co-shipping-address h4").text("Adresa doručení / instalace");
 	$("#shipping-address").insertAfter($(".co-billing-address"));
 
 	$(".co-box-additional #note").append(
 		"<textarea name='remark-2' id='remark-2' class='form-control' placeholder='Vaše poznámka' rows='4' data-testid='remark-2'></textarea>"
+	);
+
+	$(".co-box-additional").prepend(
+		'<div class="form-group"><input type="checkbox" name="note-2" id="note-2" value="0"><label for="note-2" class="whole-width">Zadat poznámku pro obchodníka</label></div></div>'
 	);
 
 	$(".co-box-additional").prepend(
@@ -118,6 +121,8 @@ function KosikKrok3() {
 	$("#nakupujiSProdejcem").change(function () {
 		if (this.checked) {
 			$(this).parent().addClass("checked");
+			$("#add-note").prop("checked", true);
+			$("#note").addClass("visible");
 			checkedProdejce = true;
 		} else {
 			$(this).parent().removeClass("checked");
