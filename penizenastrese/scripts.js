@@ -95,12 +95,12 @@ function KosikKrok3() {
 	$("#shipping-address").insertAfter($(".co-billing-address"));
 	$("#add-note").parent().addClass("add-note-dorm-group");
 
-	$(".co-box-additional #note").append(
-		"<textarea name='remark-2' id='remark-2' class='form-control' placeholder='Vaše poznámka' rows='4' data-testid='remark-2'></textarea>"
-	);
-
 	$(".co-box-additional").prepend(
 		'<div class="form-group note-2-form-group"><input type="checkbox" name="note-2" id="note-2" value="0"><label for="note-2" class="whole-width">Zadat poznámku pro obchodníka</label></div></div>'
+	);
+
+	$(".co-box-additional .note-2-form-group").append(
+		"<textarea name='remark-2' id='remark-2' class='form-control' placeholder='Vaše poznámka' rows='4' data-testid='remark-2'></textarea>"
 	);
 
 	$(".co-box-additional").prepend(

@@ -150,3 +150,9 @@ label[for="add-note"],
 .add-note-dorm-group {
 	margin: 0;
 }
+#remark-2 {
+	display: none;
+}
+.note-2-form-group.checked #remark-2 {
+	display: block;
+}
