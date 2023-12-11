@@ -88,7 +88,7 @@ let telefonProdejce = "";
 let poznamkaZakaznika = "";
 
 function KosikKrok3() {
-	$(".co-contact-information h4").text("Údaje kllienta");
+	$(".co-contact-information h4").text("Údaje klienta");
 	$("h4.header-billing").text("Trvalá adresa / Fakturační adresa");
 	$("label[for='another-shipping']").text("Adresa doručení / instalace je odlišná");
 	$("label[for='add-note']").text("Zadat poznámku pro obchodníka");
@@ -128,32 +128,77 @@ function KosikKrok3() {
 	$("#prodejce-jmeno").bind("input propertychange", function () {
 		jmenoProdejce = $("#prodejce-jmeno").val();
 		$("#remark").val(
-			jmenoProdejce + "\n" + IDProdejce + "\n" + emailProdejce + "\n" + telefonProdejce + "\n" + poznamkaZakaznika
+			jmenoProdejce +
+				"\n" +
+				IDProdejce +
+				"\n" +
+				emailProdejce +
+				"\n" +
+				telefonProdejce +
+				"\n" +
+				"\n" +
+				poznamkaZakaznika
 		);
 	});
 	$("#prodejce-id").bind("input propertychange", function () {
 		IDProdejce = $("#prodejce-id").val();
 		$("#remark").val(
-			jmenoProdejce + "\n" + IDProdejce + "\n" + emailProdejce + "\n" + telefonProdejce + "\n" + poznamkaZakaznika
+			jmenoProdejce +
+				"\n" +
+				IDProdejce +
+				"\n" +
+				emailProdejce +
+				"\n" +
+				telefonProdejce +
+				"\n" +
+				"\n" +
+				poznamkaZakaznika
 		);
 	});
 	$("#prodejce-email").bind("input propertychange", function () {
 		emailProdejce = $("#prodejce-email").val();
 		$("#remark").val(
-			jmenoProdejce + "\n" + IDProdejce + "\n" + emailProdejce + "\n" + telefonProdejce + "\n" + poznamkaZakaznika
+			jmenoProdejce +
+				"\n" +
+				IDProdejce +
+				"\n" +
+				emailProdejce +
+				"\n" +
+				telefonProdejce +
+				"\n" +
+				"\n" +
+				poznamkaZakaznika
 		);
 	});
 	$("#prodejce-telefon").bind("input propertychange", function () {
 		telefonProdejce = $("#prodejce-telefon").val();
 		$("#remark").val(
-			jmenoProdejce + "\n" + IDProdejce + "\n" + emailProdejce + "\n" + telefonProdejce + "\n" + poznamkaZakaznika
+			jmenoProdejce +
+				"\n" +
+				IDProdejce +
+				"\n" +
+				emailProdejce +
+				"\n" +
+				telefonProdejce +
+				"\n" +
+				"\n" +
+				poznamkaZakaznika
 		);
 	});
 	$("#remark-2").bind("input propertychange", function () {
 		poznamkaZakaznika = $("#remark-2").val();
 		if (checkedProdejce) {
 			$("#remark").val(
-				jmenoProdejce + "\n" + IDProdejce + "\n" + emailProdejce + "\n" + telefonProdejce + "\n" + poznamkaZakaznika
+				jmenoProdejce +
+					"\n" +
+					IDProdejce +
+					"\n" +
+					emailProdejce +
+					"\n" +
+					telefonProdejce +
+					"\n" +
+					"\n" +
+					poznamkaZakaznika
 			);
 		} else {
 			$("#remark").val(poznamkaZakaznika);
