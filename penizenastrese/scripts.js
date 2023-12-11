@@ -230,5 +230,5 @@ function KosikKrok3() {
 }
 
 function inDekujeme() {
-	$("order-summary-heading h1").text("Závazná objednávka byla odeslána");
+	$("h1.order-summary-heading").text("Závazná objednávka byla odeslána");
 }
