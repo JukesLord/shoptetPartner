@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (document.body.classList.contains("in-kosik")) {
 		document.addEventListener("ShoptetDOMCartContentLoaded", function () {
 			solaxKosikKrok1();
+			individualBalicek();
 		});
 		solaxKosikKrok1();
 		individualBalicek();
