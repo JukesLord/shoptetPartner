@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			solaxKosikKrok1();
 		});
 		solaxKosikKrok1();
+		individualBalicek();
 	}
 	if (document.body.classList.contains("in-krok-1")) {
 		document.addEventListener("ShoptetDOMCartContentLoaded", function () {
@@ -75,6 +76,18 @@ function solaxKosikKrok1() {
 	}
 }
 
+function individualBalicek() {
+	$(".p-name").each(function () {
+		if (
+			!$(this).text().includes("na míru") ||
+			!$(this).text().includes("Na míru") ||
+			!$(this).text().includes("Na Míru")
+		) {
+			$(".fvDoplnek.fvDoplnek-upsell").addClass("individualHidden");
+		}
+	});
+}
+
 function solaxKosikKrok2() {
 	$(".cart-item-name .main-link").each(function () {
 		if (
@@ -101,7 +114,7 @@ let poznamkaZakaznika = "";
 function KosikKrok3() {
 	$(".co-contact-information h4").text("Údaje klienta");
 	$("h4.header-billing").text("Trvalá adresa / Fakturační adresa");
-	$("label[for='another-shipping']").text("Adresa doručení / Místo instalace je odlišné");
+	$("label[for='another-shipping']").text("Adresa doručení / Místo instalace");
 	$(".co-shipping-address h4").text("Adresa doručení / Místo instalace");
 	$("#shipping-address").insertAfter($(".co-billing-address"));
 	$("#add-note").parent().addClass("add-note-form-group");
@@ -121,7 +134,7 @@ function KosikKrok3() {
 		'<label for="poradce-jmeno" class="">Jméno a příjmení poradce</label><input type="text" name="poradce-jmeno" id="poradce-jmeno" class="form-control" placeholder=""</input>'
 	);
 	$(".block-s-poradcem .form-group").append(
-		'<label for="poradce-id" class="">ID poradce</label><input type="text" name="poradce-id" id="poradce-id" class="form-control" placeholder="RRMMDD"</input>'
+		'<label for="poradce-id" class="">ID poradce</label><input type="text" name="poradce-id" id="poradce-id" class="form-control" placeholder="RRMMDD (Otočené datum narození Poradce)"</input>'
 	);
 	$(".block-s-poradcem .form-group").append(
 		'<label for="poradce-email" class="">E-mail poradce</label><input type="email" name="poradce-email" id="poradce-email" class="form-control" placeholder=""</input>'
