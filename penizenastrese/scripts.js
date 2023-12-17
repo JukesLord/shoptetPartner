@@ -78,21 +78,17 @@ function solaxKosikKrok1() {
 let individualBalicekHidden = false;
 function individualBalicek() {
 	$(".p-name").each(function () {
-		if (individualBalicekHidden) {
-			return;
-		}
 		if (
-			!$(this).text().includes("na míru") ||
-			!$(this).text().includes("Na míru") ||
-			!$(this).text().includes("Na Míru")
+			$(this).text().includes("na míru") ||
+			$(this).text().includes("Na míru") ||
+			$(this).text().includes("Na Míru")
 		) {
-			$("#cart-wrapper").addClass("individualHidden");
-		} else {
-			$("#cart-wrapper").removeClass("individualHidden");
 			individualBalicekHidden = true;
-			return;
 		}
 	});
+	if (!individualBalicekHidden) {
+		$("#cart-wrapper").addClass("individualHidden");
+	}
 }
 
 function solaxKosikKrok2() {
