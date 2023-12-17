@@ -75,9 +75,12 @@ function solaxKosikKrok1() {
 		$(".summary-wrapper .price-label.price-primary").text("Vaše investice po dotaci:");
 	}
 }
-
+let individualBalicekHidden = false;
 function individualBalicek() {
 	$(".p-name").each(function () {
+		if (individualBalicekHidden) {
+			return;
+		}
 		if (
 			!$(this).text().includes("na míru") ||
 			!$(this).text().includes("Na míru") ||
@@ -86,6 +89,7 @@ function individualBalicek() {
 			$("#cart-wrapper").addClass("individualHidden");
 		} else {
 			$("#cart-wrapper").removeClass("individualHidden");
+			individualBalicekHidden = true;
 			return;
 		}
 	});
