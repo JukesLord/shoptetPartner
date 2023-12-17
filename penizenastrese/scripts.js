@@ -83,7 +83,7 @@ function individualBalicek() {
 			!$(this).text().includes("Na míru") ||
 			!$(this).text().includes("Na Míru")
 		) {
-			$(".fvDoplnek.fvDoplnek-upsell").addClass("individualHidden");
+			$("#cart-wrapper").addClass("individualHidden");
 		}
 	});
 }
