@@ -169,3 +169,7 @@ label[for="add-note"],
 #note {
 	display: none;
 }
+/*schovany doprodej v kosiku*/
+.individualHidden .fvDoplnek.fvDoplnek-upsell {
+	display: none;
+}
