@@ -41,7 +41,11 @@ const cenaBezDotaceString = "Cena před dotací: ";
 const invesicePoDotaciString = "Investice po dotaci: ";
 function solaxKosikKrok1() {
 	$(".p-name").each(function () {
-		if ($(this).text().includes("Solax") || $(this).text().includes("solax") || $(this).text().includes("SOLAX")) {
+		if (
+			$(this).text().includes("elektrárna Solax") ||
+			$(this).text().includes("elektrárna solax") ||
+			$(this).text().includes("elektrárna SOLAX")
+		) {
 			containsSolax = true;
 			cenaBezDotace = $(this).closest("tr").find(".show-tooltip").attr("data-original-title").split("ceny")[1];
 			cenaBezDotace = cenaBezDotace.replace(/\s/g, "");
@@ -73,7 +77,11 @@ function solaxKosikKrok1() {
 
 function solaxKosikKrok2() {
 	$(".cart-item-name .main-link").each(function () {
-		if ($(this).text().includes("Solax") || $(this).text().includes("solax") || $(this).text().includes("SOLAX")) {
+		if (
+			$(this).text().includes("elektrárna Solax") ||
+			$(this).text().includes("elektrárna solax") ||
+			$(this).text().includes("elektrárna SOLAX")
+		) {
 			containsSolax = true;
 		}
 		if (containsSolax) {
