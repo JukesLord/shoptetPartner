@@ -80,9 +80,10 @@ let individualBalicekHidden = false;
 function individualBalicek() {
 	$(".p-name").each(function () {
 		if (
-			$(this).text().includes("na míru") ||
-			$(this).text().includes("Na míru") ||
-			$(this).text().includes("Na Míru")
+			$(this).text().includes("Postav si svou fotovoltaiku") ||
+			$(this).text().includes("Postav si sám svou fotovoltaiku") ||
+			$(this).text().includes("postav si sám svou fotovoltaiku") ||
+			$(this).text().includes("postav si svou fotovoltaiku")
 		) {
 			individualBalicekHidden = true;
 		}
