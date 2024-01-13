@@ -1041,3 +1041,27 @@ footer .banner {
 .pdf a {
 	color: var(--color-primary);
 }
+.nabidka-prace {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+	padding-top: 2rem;
+	margin-bottom: 5rem;
+}
+.nabidka-prace a {
+	padding: 40px 0px;
+	border-radius: var(--border-radius-200);
+	border-style: solid;
+	border-color: var(--color-primary);
+	width: 80%;
+	text-align: center;
+	font-weight: 500;
+	font-size: 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.nabidka-prace a:hover {
+	background-color: var(--color-primary);
+	color: white;
+}
