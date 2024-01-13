@@ -1032,3 +1032,12 @@ footer .banner {
 		margin-bottom: 20px;
 	}
 }
+
+/*pdf*/
+.pdf {
+	font-size: 0.8em;
+	margin-bottom: -0.8em;
+}
+.pdf a {
+	color: var(--color-primary);
+}
