@@ -1485,3 +1485,6 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 	opacity: 1;
 	transform: translate(-50%, -50%);
 }
+#header .site-name {
+	z-index: 5;
+}
