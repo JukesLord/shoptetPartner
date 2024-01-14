@@ -1432,6 +1432,6 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 
 /*Linkedin*/
 .contact-box ul li > span.linkedin:before {
-	content: url(/user/documents/upload/upravyVzhledu/LinkedIn_logo_crosscafe.svg);
+	content: url(https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/LinkedIn_logo_crosscafe.svg);
 	top: 2px;
 }
