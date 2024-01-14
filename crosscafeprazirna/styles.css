@@ -1435,3 +1435,53 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 	content: url(https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/LinkedIn_logo_crosscafe.svg);
 	top: 2px;
 }
+
+/*Social ikonky v detailu produktu*/
+.p-info-wrapper .social-icons {
+	display: flex;
+	gap: 8px;
+}
+.p-info-wrapper .social-icons a {
+	color: white;
+	transition: color 0.2s ease;
+}
+.p-info-wrapper .social-icons a:hover {
+	color: var(--color-tertiary) !important;
+}
+.p-info-wrapper a.social-icon:before {
+	color: inherit !important;
+}
+.p-info-wrapper .social-icons a.facebook {
+	background: #3a559f;
+}
+.p-info-wrapper .social-icons a.instagram {
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+.p-info-wrapper .social-icons a.linkedin {
+	background: #0077b5;
+	position: relative;
+}
+.p-info-wrapper .social-icons a.linkedin::before,
+.p-info-wrapper .social-icons a.linkedin::after {
+	width: 70%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	line-height: 1;
+	font-size: 1rem;
+	display: block;
+}
+.p-info-wrapper .social-icons a.linkedin::before {
+	content: url(https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/LinkedIn_logo_crosscafe_allwhite.svg);
+}
+.p-info-wrapper .social-icons a.linkedin::after {
+	content: url(https://www.crosscafeprazirna.cz/user/documents/upload/upravyVzhledu/LinkedIn_logo_crosscafe_lightbrown.svg);
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.p-info-wrapper .social-icons a.linkedin:hover::after {
+	opacity: 1;
+	transform: translate(-50%, -50%);
+}
