@@ -1429,3 +1429,9 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 	background: var(--color-tertiary);
 	opacity: 0.8;
 }
+
+/*Linkedin*/
+.contact-box ul li > span.linkedin:before {
+	content: url(/user/documents/upload/upravyVzhledu/LinkedIn_logo_crosscafe.svg);
+	top: 2px;
+}
