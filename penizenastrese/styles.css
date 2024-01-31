@@ -173,3 +173,21 @@ label[for="add-note"],
 .individualHidden .fvDoplnek.fvDoplnek-upsell {
 	display: none;
 }
+/*schovani horni listy s menu, telefonem apod*/
+@media (min-width: 768px) {
+	.top-navigation-bar {
+		display: none;
+	}
+}
+
+@media (min-width: 992px) {
+	.popup-widget.login-widget {
+		top: 90px;
+	}
+	.popup-widget.cart-widget {
+		top: 91px;
+	}
+	.empty-cart-hover {
+		top: 109px;
+	}
+}
