@@ -190,4 +190,10 @@ label[for="add-note"],
 	.empty-cart-hover {
 		top: 109px;
 	}
+	.admin-logged .popup-widget.login-widget {
+		top: 115px;
+	}
+	.admin-logged .popup-widget.cart-widget {
+		top: 115px;
+	}
 }
