@@ -79,6 +79,10 @@ h6,
 	line-height: 1.5;
 }
 
+.display-none {
+	display: none !important;
+}
+
 /*podstranky*/
 .in-kontakty h2 {
 	color: var(--color-primary);
