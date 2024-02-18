@@ -444,3 +444,24 @@ header .contact-box ul li > span a {
 		font-size: 20px;
 	}
 }
+
+/*Heureka na mainpage*/
+.w-layout-grid #showHeurekaBadgeHere-11 {
+	grid-row: 1;
+	margin: auto;
+	padding: 0px 0 40px;
+}
+.w-layout-grid.grid-intro > img.proc-vyprat-u-nas {
+	grid-row: 2;
+}
+
+@media (min-width: 768px) {
+	.w-layout-grid .grid-box,
+	.w-layout-grid .grid-image {
+		grid-row: 3;
+	}
+	.w-layout-grid #showHeurekaBadgeHere-11 {
+		padding: 20px 0 40px;
+		grid-column: 1/3;
+	}
+}
