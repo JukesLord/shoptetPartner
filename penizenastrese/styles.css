@@ -197,3 +197,11 @@ label[for="add-note"],
 		top: 115px;
 	}
 }
+.block-s-poradcem .header-billing {
+	display: none;
+	margin-bottom: 0.5em;
+}
+
+.block-s-poradcem .checked .header-billing {
+	display: block;
+}

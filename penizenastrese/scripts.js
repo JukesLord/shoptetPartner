@@ -133,7 +133,7 @@ function KosikKrok3() {
 	);
 
 	$(".co-box-additional").prepend(
-		'<div class="block-s-poradcem"><div class="form-group"><h4 class="header-billing">Váš poradce</h4><input type="checkbox" name="nakupujiSPoradcem" id="nakupujiSPoradcem" value="0"><label for="nakupujiSPoradcem" class="whole-width">Váš poradce PENÍZE NA STŘEŠE</label></div></div>'
+		'<div class="block-s-poradcem"><div class="form-group"><h4 class="header-billing">3. Váš poradce</h4><input type="checkbox" name="nakupujiSPoradcem" id="nakupujiSPoradcem" value="0"><label for="nakupujiSPoradcem" class="whole-width">Váš poradce PENÍZE NA STŘEŠE</label></div></div>'
 	);
 	$(".block-s-poradcem .form-group").append(
 		'<label for="poradce-jmeno" class="">Jméno a příjmení poradce</label><input type="text" name="poradce-jmeno" id="poradce-jmeno" class="form-control" placeholder=""</input>'
@@ -174,35 +174,111 @@ function KosikKrok3() {
 		}
 	});
 
+	let cartItems = getShoptetDataLayer("cartInfo").cartItems;
+	let totalPriceBezSlevy = 0;
+	cartItems.forEach((item) => {
+		totalPriceBezSlevy += Number(item.priceWithoutDiscount);
+	});
+
 	$("#poradce-jmeno").bind("input propertychange", function () {
 		jmenoPoradce = $("#poradce-jmeno").val();
 		$("#remark").val(
-			jmenoPoradce + "\n" + IDPoradce + "\n" + emailPoradce + "\n" + telefonPoradce + "\n" + "\n" + poznamkaZakaznika
+			jmenoPoradce +
+				"\n" +
+				IDPoradce +
+				"\n" +
+				emailPoradce +
+				"\n" +
+				telefonPoradce +
+				"\n" +
+				"\n" +
+				poznamkaZakaznika +
+				"\n" +
+				"\n" +
+				"Cena před dotací s DPH: " +
+				totalPriceBezSlevy +
+				" Kč"
 		);
 	});
 	$("#poradce-id").bind("input propertychange", function () {
 		IDPoradce = $("#poradce-id").val();
 		$("#remark").val(
-			jmenoPoradce + "\n" + IDPoradce + "\n" + emailPoradce + "\n" + telefonPoradce + "\n" + "\n" + poznamkaZakaznika
+			jmenoPoradce +
+				"\n" +
+				IDPoradce +
+				"\n" +
+				emailPoradce +
+				"\n" +
+				telefonPoradce +
+				"\n" +
+				"\n" +
+				poznamkaZakaznika +
+				"\n" +
+				"\n" +
+				"Cena před dotací s DPH: " +
+				totalPriceBezSlevy +
+				" Kč"
 		);
 	});
 	$("#poradce-email").bind("input propertychange", function () {
 		emailPoradce = $("#poradce-email").val();
 		$("#remark").val(
-			jmenoPoradce + "\n" + IDPoradce + "\n" + emailPoradce + "\n" + telefonPoradce + "\n" + "\n" + poznamkaZakaznika
+			jmenoPoradce +
+				"\n" +
+				IDPoradce +
+				"\n" +
+				emailPoradce +
+				"\n" +
+				telefonPoradce +
+				"\n" +
+				"\n" +
+				poznamkaZakaznika +
+				"\n" +
+				"\n" +
+				"Cena před dotací s DPH: " +
+				totalPriceBezSlevy +
+				" Kč"
 		);
 	});
 	$("#poradce-telefon").bind("input propertychange", function () {
 		telefonPoradce = $("#poradce-telefon").val();
 		$("#remark").val(
-			jmenoPoradce + "\n" + IDPoradce + "\n" + emailPoradce + "\n" + telefonPoradce + "\n" + "\n" + poznamkaZakaznika
+			jmenoPoradce +
+				"\n" +
+				IDPoradce +
+				"\n" +
+				emailPoradce +
+				"\n" +
+				telefonPoradce +
+				"\n" +
+				"\n" +
+				poznamkaZakaznika +
+				"\n" +
+				"\n" +
+				"Cena před dotací s DPH: " +
+				totalPriceBezSlevy +
+				" Kč"
 		);
 	});
 	$("#remark-2").bind("input propertychange", function () {
 		poznamkaZakaznika = $("#remark-2").val();
 		if (checkedPoradce) {
 			$("#remark").val(
-				jmenoPoradce + "\n" + IDPoradce + "\n" + emailPoradce + "\n" + telefonPoradce + "\n" + "\n" + poznamkaZakaznika
+				jmenoPoradce +
+					"\n" +
+					IDPoradce +
+					"\n" +
+					emailPoradce +
+					"\n" +
+					telefonPoradce +
+					"\n" +
+					"\n" +
+					poznamkaZakaznika +
+					"\n" +
+					"\n" +
+					"Cena před dotací s DPH: " +
+					totalPriceBezSlevy +
+					" Kč"
 			);
 		} else {
 			$("#remark").val(poznamkaZakaznika);
