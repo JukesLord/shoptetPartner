@@ -133,7 +133,7 @@ function KosikKrok3() {
 	);
 
 	$(".co-box-additional").prepend(
-		'<div class="block-s-poradcem"><div class="test"></div><div class="form-group"><input type="checkbox" name="nakupujiSPoradcem" id="nakupujiSPoradcem" value="0"><label for="nakupujiSPoradcem" class="whole-width">Váš poradce PENÍZE NA STŘEŠE</label></div></div>'
+		'<div class="block-s-poradcem"><div class="form-group"><h4 class="header-billing">Váš poradce</h4><input type="checkbox" name="nakupujiSPoradcem" id="nakupujiSPoradcem" value="0"><label for="nakupujiSPoradcem" class="whole-width">Váš poradce PENÍZE NA STŘEŠE</label></div></div>'
 	);
 	$(".block-s-poradcem .form-group").append(
 		'<label for="poradce-jmeno" class="">Jméno a příjmení poradce</label><input type="text" name="poradce-jmeno" id="poradce-jmeno" class="form-control" placeholder=""</input>'
