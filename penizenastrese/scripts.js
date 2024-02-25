@@ -147,6 +147,9 @@ function KosikKrok3() {
 	$(".block-s-poradcem .form-group").append(
 		'<label for="poradce-telefon" class="">Telefon poradce</label><input type="tel" name="poradce-telefon" id="poradce-telefon" class="form-control" placeholder=""</input>'
 	);
+	$(".block-s-poradcem .form-group").append(
+		'<label for="poradce-cena" class="">Cena před dotací:</label><input disabled type="text" name="poradce-cena" id="poradce-cena" class="form-control" placeholder=""</input>'
+	);
 
 	$("#nakupujiSPoradcem").change(function () {
 		if (this.checked) {
@@ -179,6 +182,8 @@ function KosikKrok3() {
 	cartItems.forEach((item) => {
 		totalPriceBezSlevy += Number(item.priceWithoutDiscount) * Number(item.quantity);
 	});
+
+	$("#poradce-cena").val(totalPriceBezSlevy + " Kč");
 
 	$("#poradce-jmeno").bind("input propertychange", function () {
 		jmenoPoradce = $("#poradce-jmeno").val();
