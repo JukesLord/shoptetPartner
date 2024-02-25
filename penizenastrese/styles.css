@@ -205,3 +205,35 @@ label[for="add-note"],
 .block-s-poradcem .checked .header-billing {
 	display: block;
 }
+#poradce-cena {
+	color: rgba(37, 36, 46, 0.8);
+	background: #f6f6f6;
+}
+
+/*4 produkty na stranku*/
+@media (min-width: 1440px) {
+	#header > .container,
+	.overall-wrapper > .content-wrapper {
+		width: auto;
+		max-width: 1920px;
+		padding: 0 40px !important;
+	}
+	.products-block > div {
+		width: 25%;
+	}
+	.products-block > div .name {
+		font-size: 14px !important;
+	}
+	.popup-widget.login-widget {
+		--left: clamp(10px, 100vw, 50vw + 1920px / 2);
+		left: calc(var(--left) - 865px);
+	}
+	.popup-widget.cart-widget {
+		--left: clamp(10px, 100vw, 50vw + 1920px / 2);
+		left: calc(var(--left) - 755px);
+	}
+	.empty-cart-hover {
+		--left: clamp(10px, 100vw, 50vw + 1920px / 2);
+		left: calc(var(--left) - 755px);
+	}
+}

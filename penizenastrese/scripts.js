@@ -148,7 +148,7 @@ function KosikKrok3() {
 		'<label for="poradce-telefon" class="">Telefon poradce</label><input type="tel" name="poradce-telefon" id="poradce-telefon" class="form-control" placeholder=""</input>'
 	);
 	$(".block-s-poradcem .form-group").append(
-		'<label for="poradce-cena" class="">Cena před dotací:</label><input disabled type="text" name="poradce-cena" id="poradce-cena" class="form-control" placeholder=""</input>'
+		'<label for="poradce-cena" class="">Cena před dotací</label><input disabled type="text" name="poradce-cena" id="poradce-cena" class="form-control" placeholder=""</input>'
 	);
 
 	$("#nakupujiSPoradcem").change(function () {
