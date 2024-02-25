@@ -177,7 +177,7 @@ function KosikKrok3() {
 	let cartItems = getShoptetDataLayer("cartInfo").cartItems;
 	let totalPriceBezSlevy = 0;
 	cartItems.forEach((item) => {
-		totalPriceBezSlevy += Number(item.priceWithoutDiscount);
+		totalPriceBezSlevy += Number(item.priceWithoutDiscount) * Number(item.quantity);
 	});
 
 	$("#poradce-jmeno").bind("input propertychange", function () {
@@ -185,6 +185,7 @@ function KosikKrok3() {
 		$("#remark").val(
 			jmenoPoradce +
 				"\n" +
+				+"Číslo obchodníka: " +
 				IDPoradce +
 				"\n" +
 				emailPoradce +
@@ -205,6 +206,7 @@ function KosikKrok3() {
 		$("#remark").val(
 			jmenoPoradce +
 				"\n" +
+				+"Číslo obchodníka: " +
 				IDPoradce +
 				"\n" +
 				emailPoradce +
@@ -225,6 +227,7 @@ function KosikKrok3() {
 		$("#remark").val(
 			jmenoPoradce +
 				"\n" +
+				+"Číslo obchodníka: " +
 				IDPoradce +
 				"\n" +
 				emailPoradce +
@@ -245,6 +248,7 @@ function KosikKrok3() {
 		$("#remark").val(
 			jmenoPoradce +
 				"\n" +
+				+"Číslo obchodníka: " +
 				IDPoradce +
 				"\n" +
 				emailPoradce +
@@ -266,6 +270,7 @@ function KosikKrok3() {
 			$("#remark").val(
 				jmenoPoradce +
 					"\n" +
+					+"Číslo obchodníka: " +
 					IDPoradce +
 					"\n" +
 					emailPoradce +
