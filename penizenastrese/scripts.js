@@ -190,7 +190,7 @@ function KosikKrok3() {
 		$("#remark").val(
 			jmenoPoradce +
 				"\n" +
-				+"Číslo obchodníka: " +
+				"Číslo obchodníka: " +
 				IDPoradce +
 				"\n" +
 				emailPoradce +
@@ -211,7 +211,7 @@ function KosikKrok3() {
 		$("#remark").val(
 			jmenoPoradce +
 				"\n" +
-				+"Číslo obchodníka: " +
+				"Číslo obchodníka: " +
 				IDPoradce +
 				"\n" +
 				emailPoradce +
@@ -232,7 +232,7 @@ function KosikKrok3() {
 		$("#remark").val(
 			jmenoPoradce +
 				"\n" +
-				+"Číslo obchodníka: " +
+				"Číslo obchodníka: " +
 				IDPoradce +
 				"\n" +
 				emailPoradce +
@@ -253,7 +253,7 @@ function KosikKrok3() {
 		$("#remark").val(
 			jmenoPoradce +
 				"\n" +
-				+"Číslo obchodníka: " +
+				"Číslo obchodníka: " +
 				IDPoradce +
 				"\n" +
 				emailPoradce +
@@ -275,7 +275,7 @@ function KosikKrok3() {
 			$("#remark").val(
 				jmenoPoradce +
 					"\n" +
-					+"Číslo obchodníka: " +
+					"Číslo obchodníka: " +
 					IDPoradce +
 					"\n" +
 					emailPoradce +
