@@ -1494,3 +1494,53 @@ body.in-index.mobile .banners-top > .banner-wrapper:first-child {
 	inset: 0;
 	margin-bottom: 20px;
 }
+
+/*Sidebar fitlery*/
+.param-filter-top form fieldset > div {
+	width: 100%;
+}
+.sidebar-inner .filter-sections {
+	background: transparent;
+	padding-left: 0;
+	font-size: 1.5rem;
+}
+.sidebar-inner .filter-count {
+	background: var(--color-primary-hover);
+	color: white;
+}
+ol.top-products.unified li.display-image {
+	background: transparent !important;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	padding: 0;
+	min-height: auto;
+	align-items: center;
+	padding: 10px 0;
+}
+
+ol.top-products.unified li.display-image .top-products-image {
+	padding-left: 70px;
+	position: relative;
+	grid-column: 1;
+	grid-row: 1;
+	inset: 0;
+	margin: 0;
+	padding: 0 !important;
+	width: auto;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+ol.top-products.unified li.display-image .top-products-content {
+	grid-column: 2;
+	grid-row: 1;
+	text-align: left;
+	padding-left: 10px;
+}
+.sidebar-inner .top-products .top-products-name {
+	text-align: left;
+}
+.sidebar-inner .top-products strong {
+	padding-top: 5px;
+	display: block;
+}
