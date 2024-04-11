@@ -95,9 +95,9 @@ h6,
 .in-kontakty .content-inner header {
 	display: none;
 }
-.kontakt-page .content-inner p,
-.kontakt-page .content-inner h4,
-.kontakt-page .content-inner h3 {
+.kontakt-page p,
+.kontakt-page h4,
+.kontakt-page h3 {
 	margin: 0;
 }
 
