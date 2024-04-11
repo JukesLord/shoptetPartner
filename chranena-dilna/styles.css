@@ -105,6 +105,7 @@ h6,
 	display: grid;
 	grid-template-columns: repeat(3, 30%);
 	gap: 5%;
+	margin: 60px 10px;
 }
 
 .kontakt-page h1,
