@@ -647,6 +647,57 @@ h1 {
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(6) .nase-cinnosti-icon {
 	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_6.png");
 }
+.nase-cinnosti-flex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.nase-cinnosti-flex > * {
+	width: clamp(400px, 25% - 40px, 600px);
+	margin: 20px 20px;
+}
+.nase-cinnosti-tile {
+	text-align: center;
+}
+.nase-cinnosti-icon {
+	margin: auto;
+}
+.nase-cinnosti-flex > a:first-child {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.nase-cinnosti-flex > a:first-child h3 {
+	font-size: var(--responsive-5rem);
+	font-weight: 600;
+}
+.nase-cinnosti-flex > a {
+	transition: all 0.2s ease-in-out;
+	min-height: 200px;
+}
+.nase-cinnosti-flex > a:hover {
+	filter: drop-shadow(6px 4px 8px var(--color-primary));
+	transform: translatey(-3px);
+}
+.nase-cinnosti-flex > a::after {
+	content: "Číst dále →";
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 15px;
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+	font-size: 1rem;
+}
+.nase-cinnosti-flex > a:hover::after {
+	opacity: 1;
+}
+@media (max-width: 1200px) {
+	.nase-cinnosti-flex > a::after {
+		opacity: 1;
+	}
+}
+
 /*spoluprace-block*/
 .spoluprace-block {
 	padding: 0 max(5%, 10px);
