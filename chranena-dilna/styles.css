@@ -122,6 +122,7 @@ h6,
 }
 .kontakt-page h2 {
 	padding-bottom: 0.3em;
+	text-decoration: underline;
 }
 .kontakt-page h3 {
 	font-size: var(--responsive-1_5rem);
@@ -136,6 +137,15 @@ h6,
 }
 .kontakt-page > div > div {
 	margin-bottom: 30px;
+}
+@media (max-width: 1200px) {
+	.kontakt-page {
+		grid-template-columns: 1fr;
+		justify-items: start;
+	}
+	.kontakt-page > div {
+		margin-bottom: 60px;
+	}
 }
 
 /*cst button*/
