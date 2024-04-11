@@ -960,17 +960,35 @@ footer .banner {
 .custom-footer {
 	display: flex;
 	flex-direction: column-reverse;
+	align-items: center;
+}
+.custom-footer .custom-footer__banner10 {
+	width: auto;
+	margin-top: 20px;
+}
+.custom-footer .custom-footer__banner10 .banner {
+	min-height: auto;
 }
 
 @media (min-width: 1200px) {
 	.custom-footer {
 		flex-direction: row;
 	}
-	.custom-footer > div {
-		width: 70% !important;
+
+	.custom-footer > .custom-footer__banner10 .banner-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+	.custom-footer > .custom-footer__banner10 {
+		width: 15% !important;
+		margin-left: 20px;
+		margin: calc(var(--responsive-40) + var(--responsive-50) + 3px) 0px auto 20px;
+	}
+	.custom-footer > .custom-footer__banner9 {
+		flex: 1;
 	}
 	.footer-mesta {
-		max-width: 90%;
+		max-width: 100%;
 	}
 }
 
