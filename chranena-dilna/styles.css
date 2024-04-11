@@ -385,13 +385,52 @@ h1 {
 }
 /*carousel hero*/
 #carousel {
-	max-height: clamp(200px, 35vw, 670px);
+	max-height: clamp(300px, 45vw, 670px);
 	overflow: hidden;
 	border-radius: var(--border-radius-200);
 	margin-bottom: var(--responsive-50);
 }
 #carousel img {
 	width: 100%;
+}
+.carousel-cards {
+	display: flex;
+	position: absolute;
+	bottom: -10px;
+	width: 100%;
+}
+.carousel-cards > div {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: clamp(200px, 20%, 400px);
+	margin: 0 20px;
+	background: var(--color-secondary-hover);
+	border-radius: var(--border-radius-400);
+	color: white;
+}
+.carousel-cards > div * {
+	color: inherit;
+}
+.carousel-cards > div > span {
+	font-size: var(--responsive-1_5rem);
+	padding: 0 10%;
+	line-height: 1.25;
+}
+.carousel-cards > div > span:first-child {
+	font-size: var(--responsive-2_5rem);
+	font-weight: 600;
+	margin-top: 20%;
+	padding-bottom: 0.25em;
+	line-height: 1;
+}
+.carousel-cards > div img {
+	padding: 10%;
+}
+@media (max-width: 1200px) {
+	.carousel-cards {
+		display: none;
+	}
 }
 /*chranena dilna block*/
 .chranena-dilna-block {
@@ -655,6 +694,7 @@ h1 {
 .nase-cinnosti-flex > * {
 	width: clamp(400px, 25% - 40px, 600px);
 	margin: 20px 20px;
+	position: relative;
 }
 .nase-cinnosti-tile {
 	text-align: center;
