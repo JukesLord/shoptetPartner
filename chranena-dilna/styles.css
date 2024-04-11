@@ -138,13 +138,21 @@ h6,
 .kontakt-page > div > div {
 	margin-bottom: 30px;
 }
+.kontakt-page .padding-top {
+	padding-top: 60px;
+}
 @media (max-width: 1200px) {
 	.kontakt-page {
 		grid-template-columns: 1fr;
 		justify-items: start;
+		gap: 0;
+		margin: 60px 10px 20px 10px;
 	}
 	.kontakt-page > div {
 		margin-bottom: 60px;
+	}
+	.kontakt-page .padding-top {
+		margin-top: 20px;
 	}
 }
 
