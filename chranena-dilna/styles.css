@@ -426,6 +426,9 @@ h1 {
 }
 .carousel-cards > div img {
 	padding: 10%;
+	max-height: 230px;
+	width: auto;
+	margin: auto;
 }
 @media (max-width: 1200px) {
 	.carousel-cards {
