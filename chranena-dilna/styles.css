@@ -180,6 +180,12 @@ h6,
 		gap: 20px;
 	}
 }
+.in-spoluprace .spoluprace-block::before {
+	display: none;
+}
+.in-spoluprace .spoluprace-block {
+	padding-top: var(--responsive-30);
+}
 
 /*cst button*/
 .cst-button {
