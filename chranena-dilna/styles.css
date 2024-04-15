@@ -1288,16 +1288,28 @@ footer .banner {
 	align-items: center;
 	justify-content: center;
 }
+
+.inzeraty {
+	padding-top: 2rem;
+	margin-bottom: 3rem;
+}
 .inzeraty h1,
 .inzeraty h2,
 .inzeraty h3 {
-	font-weight: 600;
+	font-weight: 700;
+}
+.inzeraty h1,
+.inzeraty h2 {
+	font-size: var(--responsive-2_5rem);
+}
+.inzeraty h3 {
+	font-size: var(--responsive-1_75rem);
 }
 .inzeraty p {
 	margin: 0;
 }
 .inzeraty ul {
-	margin: 1em 0 2em;
+	margin: 0.5em 0 1.5em;
 }
 .inzeraty td {
 	border-style: solid;
