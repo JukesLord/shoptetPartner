@@ -1273,7 +1273,7 @@ footer .banner {
 	grid-template-columns: 1fr 1fr;
 	justify-items: center;
 	padding-top: 2rem;
-	margin-bottom: 5rem;
+	margin-bottom: 2rem;
 }
 .nabidka-prace div {
 	padding: 40px 0px;
@@ -1288,18 +1288,20 @@ footer .banner {
 	align-items: center;
 	justify-content: center;
 }
-.nabidka-prace h1,
-.nabidka-prace h2,
-.nabidka-prace h3 {
+.inzeraty h1,
+.inzeraty h2,
+.inzeraty h3 {
 	font-weight: 600;
 }
-.nabidka-prace p {
+.inzeraty p {
 	margin: 0;
 }
-.nabidka-prace ul {
+.inzeraty ul {
 	margin: 1em 0 2em;
 }
-.nabidka-prace div:hover {
-	background-color: var(--color-primary);
-	color: white;
+.inzeraty td {
+	border-style: solid;
+	padding: 1rem 2rem;
+	border-color: var(--color-primary);
+	border-width: 1px;
 }
