@@ -1275,7 +1275,7 @@ footer .banner {
 	padding-top: 2rem;
 	margin-bottom: 5rem;
 }
-.nabidka-prace a {
+.nabidka-prace div {
 	padding: 40px 0px;
 	border-radius: var(--border-radius-200);
 	border-style: solid;
@@ -1288,7 +1288,18 @@ footer .banner {
 	align-items: center;
 	justify-content: center;
 }
-.nabidka-prace a:hover {
+.nabidka-prace h1,
+.nabidka-prace h2,
+.nabidka-prace h3 {
+	font-weight: 600;
+}
+.nabidka-prace p {
+	margin: 0;
+}
+.nabidka-prace ul {
+	margin: 1em 0 2em;
+}
+.nabidka-prace div:hover {
 	background-color: var(--color-primary);
 	color: white;
 }
