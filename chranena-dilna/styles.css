@@ -1317,3 +1317,27 @@ footer .banner {
 	border-color: var(--color-primary);
 	border-width: 1px;
 }
+
+/*Social*/
+.social-icons {
+	display: flex;
+	column-gap: 20px;
+	row-gap: 10px;
+	margin-top: 30px;
+	padding-bottom: 10px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.social-icons a {
+	display: flex;
+	height: 2em;
+	width: 2em;
+	transition: transform 0.2s ease-in-out;
+	cursor: pointer;
+}
+.social-icons a:hover {
+	transform: scale(1.1);
+}
+.social-icons * {
+	fill: var(--color-secondary-hover);
+}
