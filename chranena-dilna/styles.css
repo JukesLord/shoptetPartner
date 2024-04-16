@@ -1341,3 +1341,63 @@ footer .banner {
 .social-icons * {
 	fill: var(--color-secondary-hover);
 }
+
+#navigation .menu-level-1 {
+	max-width: calc(100vw - 100px);
+	margin: auto !important;
+}
+@media (max-width: 767px) {
+	.navigation-in {
+		overflow: hidden;
+	}
+}
+#navigation .menu-level-1 > li {
+	position: relative;
+}
+#navigation .menu-level-2 {
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	justify-content: center;
+	text-align: center !important;
+	top: 100%;
+	width: 180px;
+	height: auto;
+	flex-wrap: wrap;
+	flex-direction: column;
+	gap: 30px;
+	align-content: flex-start;
+	padding: 20px 10px;
+	border-style: solid;
+	border-color: var(--color-secondary-hover);
+	border-width: 2px;
+	filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.5));
+}
+#navigation .menu-level-2 li > div {
+	width: auto;
+}
+#navigation .menu-level-2 li {
+	width: 100%;
+	flex-basis: 100%;
+	min-height: auto;
+	justify-content: center;
+}
+#navigation .menu-level-2 * {
+}
+#navigation .menu-level-2 li a {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+#navigation .menu-level-2 li a::after {
+	display: none !important;
+}
+#navigation .menu-level-2 .menu-image {
+	display: none;
+}
+.menu-helper .menu-level-2 {
+	padding-left: 10px;
+}
+.submenu-arrow {
+	padding-left: 1em;
+	color: white;
+}
