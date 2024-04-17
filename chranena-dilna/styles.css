@@ -1096,11 +1096,15 @@ footer .banner {
 
 .custom-footer > .custom-footer__articles {
 	width: auto !important;
-
 	padding-left: var(--gap);
 	display: flex;
 	margin: calc(var(--responsive-40)) auto auto;
 	flex-direction: column;
+}
+@media (max-width: 1200px) {
+	.custom-footer > .custom-footer__articles {
+		margin: calc(var(--responsive-40) + var(--responsive-50)) auto auto;
+	}
 }
 .custom-footer > .custom-footer__articles h4 span {
 	color: var(--color-primary);
