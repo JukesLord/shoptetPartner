@@ -1041,7 +1041,7 @@ footer .banner {
 }
 /*seznam mapa*/
 #footer .custom-footer__banner9 {
-	padding: 20px 40px;
+	padding: calc(var(--responsive-40)) 40px 0;
 }
 #footer .custom-footer__banner9 iframe {
 	border-radius: var(--border-radius-200);
@@ -1084,7 +1084,7 @@ footer .banner {
 	.custom-footer > .custom-footer__banner10 {
 		width: 15% !important;
 		margin-left: 20px;
-		margin: calc(var(--responsive-40) + var(--responsive-50) + 3px) 0px auto 20px;
+		margin: calc(var(--responsive-40)) 0px auto 20px;
 	}
 	.custom-footer > .custom-footer__banner9 {
 		flex: 1;
@@ -1099,7 +1099,7 @@ footer .banner {
 
 	padding-left: var(--gap);
 	display: flex;
-	margin: calc(var(--responsive-40) + var(--responsive-50) + 3px) auto auto;
+	margin: calc(var(--responsive-40)) auto auto;
 	flex-direction: column;
 }
 .custom-footer > .custom-footer__articles h4 span {
