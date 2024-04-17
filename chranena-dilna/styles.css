@@ -1039,6 +1039,14 @@ footer .banner {
 .gmap_canvas iframe {
 	border-radius: var(--border-radius-200);
 }
+/*seznam mapa*/
+#footer .custom-footer__banner9 {
+	padding: 20px 40px;
+}
+#footer .custom-footer__banner9 iframe {
+	border-radius: var(--border-radius-200);
+	overflow: hidden;
+}
 
 #footer .footer-bottom {
 	display: flex;
