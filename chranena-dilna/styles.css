@@ -604,7 +604,7 @@ h1 {
 .nase-cinnosti-block h2 {
 	text-align: center;
 	margin: 0;
-	padding-top: var(--responsive-100);
+	padding-top: var(--responsive-50);
 	color: var(--color-black-600);
 	font-size: var(--responsive-3rem);
 	font-weight: 700;
