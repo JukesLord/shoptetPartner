@@ -440,7 +440,7 @@ h1 {
 }
 /*chranena dilna block*/
 .chranena-dilna-block {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/Chranena dilna pozadi.webp");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/Chranena dilna pozadi.webp");
 	background-size: cover;
 	border-radius: var(--border-radius-200);
 }
@@ -519,7 +519,7 @@ h1 {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/proc-s-nami-spolupracovat.webp");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/proc-s-nami-spolupracovat.webp");
 	background-size: cover;
 	position: relative;
 	background-position: 0 40%;
@@ -559,20 +559,20 @@ h1 {
 	background-size: 60%;
 }
 .proc-spolupracovat-block > .side:nth-child(2) .proc-spolupracovat-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/spoluprace_ikona_1.png");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/spoluprace_ikona_1.png");
 	background-size: 60%;
 	background-position: center bottom 55%;
 }
 .proc-spolupracovat-block > .side:nth-child(3) .proc-spolupracovat-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/spoluprace_ikona_2.png");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/spoluprace_ikona_2.png");
 	background-size: 45%;
 }
 .proc-spolupracovat-block > .side:nth-child(4) .proc-spolupracovat-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/spoluprace_ikona_3.png");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/spoluprace_ikona_3.png");
 	background-size: 50%;
 }
 .proc-spolupracovat-block > .side:nth-child(5) .proc-spolupracovat-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/spoluprace_ikona_4.png");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/spoluprace_ikona_4.png");
 	background-size: 50%;
 }
 /*nase cinnost*/
@@ -675,22 +675,22 @@ h1 {
 	background-size: 100%;
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(1) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_1.png");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/naseCinnosti_ikona_1.png");
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(2) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_2.png");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/naseCinnosti_ikona_2.png");
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(3) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_3.png");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/naseCinnosti_ikona_3.png");
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(4) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_4.png");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/naseCinnosti_ikona_4.png");
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(5) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_5.png");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/naseCinnosti_ikona_5.png");
 }
 .nase-cinnosti-grid > .nase-cinnosti-tile:nth-child(6) .nase-cinnosti-icon {
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/naseCinnosti_ikona_6.png");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/naseCinnosti_ikona_6.png");
 }
 .nase-cinnosti-flex {
 	display: flex;
@@ -760,7 +760,7 @@ h1 {
 	top: 0;
 	left: calc((-100vw + 1920px) / 2 - var(--padding-sides) / 2);
 	z-index: -1;
-	background-image: url("https://625496.myshoptet.com/user/documents/upload/Titulní strana/spoluprace Gradients.webp");
+	background-image: url("https://www.verpet.cz/user/documents/upload/Titulní strana/spoluprace Gradients.webp");
 	background-size: cover;
 	background-repeat: no-repeat;
 	opacity: 0.6;
@@ -1415,4 +1415,19 @@ footer .banner {
 .submenu-arrow {
 	padding-left: 1em;
 	color: white;
+}
+
+/*logo evropske unie ve footeru*/
+#footer .custom-footer__articles ul > li:last-child {
+	display: flex;
+	gap: 0.35em;
+}
+#footer .custom-footer__articles ul > li:last-child::before {
+	content: "";
+	display: block;
+	position: relative;
+	height: 1.5em;
+	width: 2.25em;
+	background-size: cover;
+	background-image: url("https://www.verpet.cz/user/documents/upload/Flag_of_Europe.svg");
 }
