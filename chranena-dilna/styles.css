@@ -698,7 +698,7 @@ h1 {
 	justify-content: center;
 }
 .nase-cinnosti-flex > * {
-	width: clamp(400px, 25% - 40px, 600px);
+	width: clamp(400px, 30% - 40px, 600px);
 	margin: 20px 20px;
 	position: relative;
 }
