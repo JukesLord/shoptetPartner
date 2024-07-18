@@ -603,6 +603,12 @@
 /*zvetseni obr v produktove karte*/
 
 /*popup kosik*/
+.user-action-in .popup-widget {
+	top: 80px;
+}
+.admin-logged .user-action-in .popup-widget {
+	top: 90px;
+}
 @media (min-width: 992px) {
 	.user-action-in .popup-widget {
 		top: 100px;
@@ -616,5 +622,10 @@
 .cart-widget-product-image a {
 	width: 100px;
 	height: 100px;
+}
+@media (max-width: 480px) {
+	.cart-widget-product-name-and-price {
+		width: calc(100% - 100px) !important;
+	}
 }
 /*popup kosik*/
