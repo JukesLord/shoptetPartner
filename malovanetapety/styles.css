@@ -419,8 +419,11 @@
 .custom-carousel-new {
 	color: black;
 	text-align: justify;
-	width: clamp(600px, 70vw - 40px, 1200px - 40px);
-	padding: 0 40px;
+	padding: 0 20px;
+}
+.carousel-div {
+	max-width: 1712px;
+	margin: auto;
 }
 
 @media (max-width: 767px) {
@@ -434,10 +437,6 @@
 
 	.custom-carousel h2,
 	.custom-carousel p {
-		width: 100%;
-		padding: 0 20px;
-	}
-	.custom-carousel-new {
 		width: 100%;
 		padding: 0 20px;
 	}
