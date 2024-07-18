@@ -168,7 +168,7 @@
 }
 .tapety-cards a {
 	margin-bottom: 20px;
-	border: solid 2px var(--color-secondary);
+	border: solid 1px var(--color-secondary);
 	border-radius: 8px;
 	padding: 0.5em 1.5em;
 	transition: all 0.1s ease-out;
