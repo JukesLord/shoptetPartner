@@ -403,16 +403,18 @@
 }
 .custom-carousel h2,
 .custom-carousel-new h2 {
-	font-size: 6.5rem;
+	font-size: clamp(3rem, 2.0789rem + 3.6842vw, 6.5rem);
 	text-align: left;
 	line-height: 1;
 	color: inherit;
 	font-weight: 200;
 	padding-bottom: 0.25em;
+	margin-bottom: 0.5em;
+	margin-top: 1em;
 }
 .custom-carousel p,
 .custom-carousel-new p {
-	font-size: 2.5rem;
+	font-size: clamp(1.5rem, 1.2368rem + 1.0526vw, 2.5rem);
 	line-height: 1.35;
 	font-weight: 400;
 }
