@@ -24,7 +24,9 @@ function editVelkoobchodniCena() {
 		});
 	} else {
 		let soloPriceSelector = $(".l-col .price[data-testid='productCardPrice']");
-		$(".save-price-value").html(soloPriceSelector.text());
+		if (soloPriceSelector.length > 0) {
+			$(".save-price-value").html(soloPriceSelector.text());
+		}
 	}
 
 	// in .parameter-dependent.default-variant remove text azCZ
