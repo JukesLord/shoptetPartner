@@ -17,10 +17,15 @@ function editVelkoobchodniCena() {
 	$(".l-col strong:contains('" + usetriteCZ + "')").text(velkoobchodniCenaCZ);
 
 	//for each .price-final-holder get its html and put it into respective .save-price-value
-	$(".price-final-holder").each(function (i) {
-		let price = $(this).html();
-		$(".save-price-value").eq(i).html(price);
-	});
+	if ($(".price-final-holder").length > 0) {
+		$(".price-final-holder").each(function (i) {
+			let price = $(this).html();
+			$(".save-price-value").eq(i).html(price);
+		});
+	} else {
+		let soloPriceSelector = $(".l-col .price[data-testid='productCardPrice']");
+		$(".save-price-value").html(soloPriceSelector.text());
+	}
 
 	// in .parameter-dependent.default-variant remove text azCZ
 	$(".parameter-dependent.default-variant").each(function () {
