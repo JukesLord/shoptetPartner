@@ -11,11 +11,11 @@ if (document.body.classList.contains("type-product")) {
 
 if (document.body.classList.contains("type-category") || document.body.classList.contains("type-search")) {
 	document.addEventListener("DOMContentLoaded", function () {
-		cebaNaDotazProductList();
+		cenaNaDotazProductList();
 		cenaNaDotazTopCategory();
 	});
 	document.addEventListener("ShoptetDOMPageContentLoaded", function () {
-		cebaNaDotazProductList();
+		cenaNaDotazProductList();
 		cenaNaDotazTopCategory();
 	});
 }
@@ -41,17 +41,32 @@ function contactFormProductDetail() {
 
 	let productName = $("#product-detail-h1 h1").text();
 	let productCode = $("#product-detail-info .variant-code").text();
-	$(".cena-na-dotaz-btn").on("click touch", function () {
-		$(".p-question").click();
-		setTimeout(function () {
-			$("#content-modal textarea").val(
-				"Dobrý den, zajímám se o cenu produktu: " + productName + " s kódem: " + productCode
-			);
-		}, 350);
-	});
+
+	/*má varianty*/
+	if ($("#product-variants").length > 0) {
+		$(".variant-submit").remove();
+		$(".variant-availability").remove();
+		$(".variant-price").html("<strong>Cena na dotaz</strong>");
+		$(".cena-na-dotaz-btn").on("click touch", function () {
+			$(".p-question").click();
+			setTimeout(function () {
+				$("#content-modal textarea").val("Dobrý den, zajímám se o cenu produktu: " + productName);
+			}, 350);
+		});
+	} else {
+		/*nemá varianty*/
+		$(".cena-na-dotaz-btn").on("click touch", function () {
+			$(".p-question").click();
+			setTimeout(function () {
+				$("#content-modal textarea").val(
+					"Dobrý den, zajímám se o cenu produktu: " + productName + " s kódem: " + productCode
+				);
+			}, 350);
+		});
+	}
 }
 
-function cebaNaDotazProductList() {
+function cenaNaDotazProductList() {
 	$(".product").each(function () {
 		let priceText = $(this).find(".p-det-main-price").text();
 		let numericPrice = priceText.replace(/[^\d]/g, "");
