@@ -1,0 +1,165 @@
+.cena-na-dotaz {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 20px;
+	font-weight: 700;
+	font-size: 24px;
+}
+.cena-na-dotaz-btn {
+	display: block;
+	width: auto;
+	background: var(--color-primary);
+	padding: 15px 30px;
+	font-size: 16px;
+	color: white;
+	transition: background 0.2s ease;
+	cursor: pointer;
+	text-align: center;
+}
+@media (max-width: 999px) {
+	.cena-na-dotaz {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5px;
+		margin: 10px 0;
+	}
+}
+.cena-na-dotaz-btn:hover,
+.cena-na-dotaz-btn:focus-within {
+	background: var(--color-primary-hover);
+}
+
+.cena-na-dotaz-form {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	align-items: center;
+	justify-content: center;
+	overflow: auto;
+}
+.cena-na-dotaz-form.show {
+	display: flex;
+}
+.cena-na-dotaz-form::before {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	content: "";
+	z-index: 9998;
+	opacity: 0.35;
+}
+.cena-na-dotaz-form-block {
+	position: relative;
+	z-index: 9999;
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cena-na-dotaz-form-block form {
+	padding: 40px 120px 30px;
+	max-width: 100vw;
+}
+@media (max-width: 768px) {
+	.cena-na-dotaz-form {
+		align-items: flex-start;
+		top: 10px;
+	}
+	.cena-na-dotaz-form-block form {
+		padding: 40px 40px 30px;
+		max-width: 100vw;
+	}
+}
+.cena-na-dotaz-form-block form fieldset {
+	margin: 0;
+}
+.cena-na-dotaz-form-block form fieldset .form-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 20px;
+}
+.cena-na-dotaz-form-block form fieldset div input,
+.cena-na-dotaz-form-block form fieldset div textarea {
+	flex: 1;
+	width: 400px;
+	max-width: 80vw;
+	margin-top: 5px;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 10px 5px;
+	line-height: 1.3;
+}
+.cena-na-dotaz-form-block span {
+	font-weight: 600;
+	font-size: 16px;
+}
+.cena-na-dotaz-form-block .btn {
+	background: var(--color-primary);
+	border-style: none;
+	font-size: 16px;
+	font-weight: 700;
+	color: white;
+	text-transform: uppercase;
+	padding: 15px 5px;
+	transition: background 0.2s ease;
+}
+.cena-na-dotaz-form-block .btn:hover,
+.cena-na-dotaz-form-block .btn:focus-within {
+	background: var(--color-primary-hover);
+}
+.cena-na-dotaz-close {
+	position: absolute;
+	top: 10px;
+	right: 0px;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+.cena-na-dotaz-close span {
+	font-size: 40px;
+	font-weight: 400;
+	padding: 20px;
+
+	pointer-events: none;
+}
+.cena-na-dotaz-close:hover,
+.cena-na-dotaz-close:focus-within {
+	color: var(--color-primary);
+}
+
+/*product list*/
+.product-list-cena-na-dotaz {
+	font-size: 1.313rem;
+	font-weight: 900;
+	color: black;
+	margin-top: 7px;
+}
+.zobrazit-detail {
+	font-size: 0.8125rem;
+	padding: 0.6154rem 1rem;
+	background-color: var(--color-secondary);
+	text-decoration: none !important;
+	text-transform: uppercase !important;
+	font-weight: 900;
+	color: #fff;
+	transition: background 0.2s;
+}
+.zobrazit-detail:hover,
+.zobrazit-detail:focus-within {
+	color: white;
+	background: var(--color-primary-hover);
+}
+@media (max-width: 640px) {
+	.product:hover .product-list-cena-na-dotaz {
+		display: none;
+	}
+}
