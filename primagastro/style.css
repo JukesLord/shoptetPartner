@@ -55,7 +55,7 @@
 	color: white;
 	background: var(--color-primary-hover);
 }
-@media (max-width: 640px) {
+@media (min-width: 641px) {
 	.product:hover .product-list-cena-na-dotaz {
 		display: none;
 	}

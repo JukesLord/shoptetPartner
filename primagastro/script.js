@@ -48,7 +48,7 @@ function contactFormProductDetail() {
 		$("#content-modal textarea").val(
 			"Dobrý den, zajímám se o cenu produktu: " + productName + " s kódem: " + productCode
 		);
-	}, 350);
+	}, 500);
 }
 
 function cebaNaDotazProductList() {
