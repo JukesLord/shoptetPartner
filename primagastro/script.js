@@ -43,12 +43,12 @@ function contactFormProductDetail() {
 	let productCode = $("#product-detail-info .variant-code").text();
 	$(".cena-na-dotaz-btn").on("click touch", function () {
 		$(".p-question").click();
+		setTimeout(function () {
+			$("#content-modal textarea").val(
+				"Dobrý den, zajímám se o cenu produktu: " + productName + " s kódem: " + productCode
+			);
+		}, 350);
 	});
-	setTimeout(function () {
-		$("#content-modal textarea").val(
-			"Dobrý den, zajímám se o cenu produktu: " + productName + " s kódem: " + productCode
-		);
-	}, 500);
 }
 
 function cebaNaDotazProductList() {
