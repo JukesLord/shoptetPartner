@@ -1,55 +1,28 @@
-/* let priceText = $("#product-detail .price[data-testid='productCardPrice']").text();
-let numericPrice = priceText.replace(/[^\d]/g, "");
-let priceInt = parseInt(numericPrice, 10);
-let productName = "...";
-let productCode = "...";
+if (document.body.classList.contains("type-product")) {
+	document.addEventListener("DOMContentLoaded", function () {
+		let priceText = $("#product-detail .price[data-testid='productCardPrice']").text();
+		let numericPrice = priceText.replace(/[^\d]/g, "");
+		let priceInt = parseInt(numericPrice, 10);
+		if (priceInt === 1) {
+			contactFormProductDetail();
+		}
+	});
+}
 
- if (priceInt === 1) {
-	createContactForm();
-	contactFormProductDetail();
-}  */
+if (document.body.classList.contains("type-category") || document.body.classList.contains("type-search")) {
+	document.addEventListener("DOMContentLoaded", function () {
+		cebaNaDotazProductList();
+		cenaNaDotazTopCategory();
+	});
+	document.addEventListener("ShoptetDOMPageContentLoaded", function () {
+		cebaNaDotazProductList();
+		cenaNaDotazTopCategory();
+	});
+}
 
 document.addEventListener("ShoptetDOMSearchResultsLoaded", function () {
 	cenaNaDorazSearch();
 });
-
-function createContactForm() {
-	let formHtml = `
-		<div class="cena-na-dotaz-form">
-			<div class="cena-na-dotaz-form-block">
-				<form  action="/action/MailForm/SendEmail/" method="post" id="formContact">
-					<fieldset>
-						<input type="hidden" name="formId" value="1" />
-						<div class="form-group js-validated-element-wrapper">
-							<label for="fullName"><span class="required-asterisk">Jméno a příjmení</span></label>
-							<input type="text" value="" name="fullName" id="fullName" class="form-control" required="" />
-							<span class="no-display">Nevyplňujte toto pole:</span>
-							<input type="text" name="surname" value="" class="no-display" />
-						</div>
-						<div class="form-group js-validated-element-wrapper">
-							<label for="email"><span class="required-asterisk">E-mail</span></label>
-							<input type="email" value="" name="email" id="email" class="form-control" required="" />
-						</div>
-						<div class="form-group js-validated-element-wrapper">
-							<label for="message"><span class="required-asterisk">Zpráva</span></label>
-							<textarea name="message" rows="7" class="form-control" required=""></textarea>
-						</div>
-						<div>Vložením zprávy souhlasíte s <a href="/ochrana-osobnich-udaju/">podmínkami ochrany osobních údajů</a></div>
-						<div class="form-group submit-wrapper">
-							<input type="submit" value="Odeslat" class="btn btn-primary" />
-						</div>
-					</fieldset>
-				</form>
-				<div class="cena-na-dotaz-close">
-					<span>
-						x
-					</span>
-				</div>
-			</div>
-		</div>
-    `;
-	$("body").append(formHtml);
-}
 
 function contactFormProductDetail() {
 	let cenaNaDotazHtml = `
@@ -65,21 +38,17 @@ function contactFormProductDetail() {
 		</div>
 	`;
 	$("#product-detail").html(cenaNaDotazHtml);
-	$(".cena-na-dotaz-btn").on("click", function () {
-		$(".cena-na-dotaz-form").addClass("show");
-	});
-	$(".cena-na-dotaz-close").on("click", function () {
-		$(".cena-na-dotaz-form").removeClass("show");
-	});
-	$(document).keyup(function (e) {
-		if (e.key === "Escape") {
-			$(".cena-na-dotaz-form").removeClass("show");
-		}
-	});
 
-	productName = $("#product-detail-h1 h1").text();
-	productCode = $("#product-detail-info .variant-code").text();
-	$("#formContact textarea").val("Dobrý den, zajímám se o cenu produktu: " + productName + " s kódem: " + productCode);
+	let productName = $("#product-detail-h1 h1").text();
+	let productCode = $("#product-detail-info .variant-code").text();
+	$(".cena-na-dotaz-btn").on("click touch", function () {
+		$(".p-question").click();
+	});
+	setTimeout(function () {
+		$("#content-modal textarea").val(
+			"Dobrý den, zajímám se o cenu produktu: " + productName + " s kódem: " + productCode
+		);
+	}, 350);
 }
 
 function cebaNaDotazProductList() {
@@ -121,3 +90,72 @@ function cenaNaDorazSearch() {
 		}
 	});
 }
+
+/* function createContactForm() {
+	let formHtml = `
+		<div class="cena-na-dotaz-form">
+			<div class="cena-na-dotaz-form-block">
+				<form  action="/action/MailForm/SendEmail/" method="post" id="formContact">
+					<fieldset>
+						<input type="hidden" name="formId" value="1" />
+						<div class="form-group js-validated-element-wrapper">
+							<label for="fullName"><span class="required-asterisk">Jméno a příjmení</span></label>
+							<input type="text" value="" name="fullName" id="fullName" class="form-control" required="" />
+							<span class="no-display">Nevyplňujte toto pole:</span>
+							<input type="text" name="surname" value="" class="no-display" />
+						</div>
+						<div class="form-group js-validated-element-wrapper">
+							<label for="email"><span class="required-asterisk">E-mail</span></label>
+							<input type="email" value="" name="email" id="email" class="form-control" required="" />
+						</div>
+						<div class="form-group js-validated-element-wrapper">
+							<label for="message"><span class="required-asterisk">Zpráva</span></label>
+							<textarea name="message" rows="7" class="form-control" required=""></textarea>
+						</div>
+						<div>Vložením zprávy souhlasíte s <a href="/ochrana-osobnich-udaju/">podmínkami ochrany osobních údajů</a></div>
+						<div class="form-group submit-wrapper">
+							<input type="submit" value="Odeslat" class="btn btn-primary" />
+						</div>
+					</fieldset>
+				</form>
+				<div class="cena-na-dotaz-close">
+					<span>
+						x
+					</span>
+				</div>
+			</div>
+		</div>
+    `;
+	$("body").append(formHtml);
+} */
+
+/* function contactFormProductDetailCustom() {
+	let cenaNaDotazHtml = `
+		<div class="cena-na-dotaz">
+			<span>
+				Cena na dotaz
+			</span>
+			<div class="cena-na-dotaz-btn">
+				<span>
+					Poptat cenu
+				</span>
+			</div>
+		</div>
+	`;
+	$("#product-detail").html(cenaNaDotazHtml);
+	$(".cena-na-dotaz-btn").on("click", function () {
+		$(".cena-na-dotaz-form").addClass("show");
+	});
+	$(".cena-na-dotaz-close").on("click", function () {
+		$(".cena-na-dotaz-form").removeClass("show");
+	});
+	$(document).keyup(function (e) {
+		if (e.key === "Escape") {
+			$(".cena-na-dotaz-form").removeClass("show");
+		}
+	});
+
+	let productName = $("#product-detail-h1 h1").text();
+	let productCode = $("#product-detail-info .variant-code").text();
+	$("#formContact textarea").val("Dobrý den, zajímám se o cenu produktu: " + productName + " s kódem: " + productCode);
+} */

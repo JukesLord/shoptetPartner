@@ -1,3 +1,6 @@
+#content-modal textarea {
+	line-height: 1.3;
+}
 .cena-na-dotaz {
 	display: flex;
 	flex-direction: row;
@@ -30,7 +33,36 @@
 	background: var(--color-primary-hover);
 }
 
-.cena-na-dotaz-form {
+/*product list*/
+.product-list-cena-na-dotaz {
+	font-size: 1.313rem;
+	font-weight: 900;
+	color: black;
+	margin-top: 7px;
+}
+.zobrazit-detail {
+	font-size: 0.8125rem;
+	padding: 0.6154rem 1rem;
+	background-color: var(--color-secondary);
+	text-decoration: none !important;
+	text-transform: uppercase !important;
+	font-weight: 900;
+	color: #fff;
+	transition: background 0.2s;
+}
+.zobrazit-detail:hover,
+.zobrazit-detail:focus-within {
+	color: white;
+	background: var(--color-primary-hover);
+}
+@media (max-width: 640px) {
+	.product:hover .product-list-cena-na-dotaz {
+		display: none;
+	}
+}
+
+/*Form který se nakonec nepoužije. používá se built in dotaz*/
+/* .cena-na-dotaz-form {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -134,32 +166,4 @@
 .cena-na-dotaz-close:hover,
 .cena-na-dotaz-close:focus-within {
 	color: var(--color-primary);
-}
-
-/*product list*/
-.product-list-cena-na-dotaz {
-	font-size: 1.313rem;
-	font-weight: 900;
-	color: black;
-	margin-top: 7px;
-}
-.zobrazit-detail {
-	font-size: 0.8125rem;
-	padding: 0.6154rem 1rem;
-	background-color: var(--color-secondary);
-	text-decoration: none !important;
-	text-transform: uppercase !important;
-	font-weight: 900;
-	color: #fff;
-	transition: background 0.2s;
-}
-.zobrazit-detail:hover,
-.zobrazit-detail:focus-within {
-	color: white;
-	background: var(--color-primary-hover);
-}
-@media (max-width: 640px) {
-	.product:hover .product-list-cena-na-dotaz {
-		display: none;
-	}
-}
+} */
