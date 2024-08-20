@@ -55,7 +55,7 @@ function contactFormProductDetail() {
 	}
 	$(".cena-na-dotaz-btn").on("click touch", function () {
 		$(".p-question").click();
-		$(body).addClass("poptavka-open");
+		$("body").addClass("poptavka-open");
 		setTimeout(function () {
 			$("#content-modal .tari:contains('Telefon')").addClass("required-asterisk");
 			$("#content-modal input[name='phone']").attr("required", "");
