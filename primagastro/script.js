@@ -104,8 +104,8 @@ function contactFormProductDetail() {
 				const name = $("#jmeno-prijmeni").val();
 				const vat = $("#ico").val();
 				const messageCopy = $("#message-copy").val();
-				const mergedMessage = `Name: ${name}\nVAT: ${vat}\nMessage: ${messageCopy}`;
-				$("#content-modal textarea[name='message']").val(mergedMessage);
+				const mergedMessage = `Jméno a příjmení: ${name}\n\nIČO: ${vat}\n\n ${messageCopy}`;
+				$("#content-modal textarea.last").val(mergedMessage);
 			});
 		}, 350);
 	});
