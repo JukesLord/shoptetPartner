@@ -61,6 +61,45 @@
 	}
 }
 
+/*---------------------------------------------Dotaz uprava vzhledu*/
+.poptavka-open #content-modal .last {
+	display: none;
+}
+
+.poptavka-open #cboxContent {
+	padding: 15px 10px !important;
+}
+.poptavka-open #colorbox {
+	filter: drop-shadow(0px 0px 3px var(--color-primary));
+}
+.poptavka-open #cboxWrapper,
+.poptavka-open #cboxContent,
+.poptavka-open #cboxLoadedContent {
+	height: auto !important;
+}
+
+.poptavka-open #cboxMiddleLeft,
+.poptavka-open #cboxMiddleRight,
+.poptavka-open #cboxTopLeft,
+.poptavka-open #cboxTopCenter,
+.poptavka-open #cboxTopRight,
+.poptavka-open #cboxBottomLeft,
+.poptavka-open #cboxBottomCenter,
+.poptavka-open #cboxBottomRight {
+	display: none !important;
+}
+.poptavka-open #cboxClose {
+	top: 5px;
+	right: 5px;
+}
+@media (max-width: 640px) {
+	.poptavka-open #cboxWrapper,
+	.poptavka-open #cboxContent,
+	.poptavka-open #cboxLoadedContent {
+		min-width: 90vw;
+	}
+}
+
 /*Form který se nakonec nepoužije. používá se built in dotaz*/
 /* .cena-na-dotaz-form {
 	display: none;
