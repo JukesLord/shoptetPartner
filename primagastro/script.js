@@ -62,7 +62,7 @@ function contactFormProductDetail() {
 			$("#content-modal tr:nth-last-child(2)").addClass("last");
 
 			// Create the new rows
-			const nameRow = `
+			let nameRow = `
 				<tr>
 					<td class="tari nowrap">
 						<span class="required-asterisk">Jméno a příjmení</span>
@@ -72,7 +72,7 @@ function contactFormProductDetail() {
 					</td>
 				</tr>`;
 
-			const vatRow = `
+			let vatRow = `
 				<tr>
 					<td class="tari nowrap">
 						<span class="required-asterisk">IČO:</span>
@@ -82,7 +82,7 @@ function contactFormProductDetail() {
 					</td>
 				</tr>`;
 
-			const messageCopyRow = `
+			let messageCopyRow = `
 				<tr>
 					<td class="tari nowrap">
 						<span class="required-asterisk">Zpráva:</span>
@@ -95,18 +95,19 @@ function contactFormProductDetail() {
 			// Prepend the new rows to the tbody
 			$("#content-modal tbody").prepend(nameRow);
 			$("#content-modal tbody").prepend(vatRow);
+			$(messageCopyRow).insertBefore($("#content-modal .last"));
 
 			$("#content-modal textarea").val(textPoptavky);
-		}, 350);
 
-		// Listener for changes in #jmeno-prijmeni, #ico, or #message-copy
-		$("#content-modal").on("input", "#jmeno-prijmeni, #ico, #message-copy", function () {
-			const name = $("#jmeno-prijmeni").val();
-			const vat = $("#ico").val();
-			const messageCopy = $("#message-copy").val();
-			const mergedMessage = `Name: ${name}\nVAT: ${vat}\nMessage: ${messageCopy}`;
-			$("#content-modal textarea[name='message']").val(mergedMessage);
-		});
+			// Listener for changes in #jmeno-prijmeni, #ico, or #message-copy
+			$("#content-modal").on("input", "#jmeno-prijmeni, #ico, #message-copy", function () {
+				const name = $("#jmeno-prijmeni").val();
+				const vat = $("#ico").val();
+				const messageCopy = $("#message-copy").val();
+				const mergedMessage = `Name: ${name}\nVAT: ${vat}\nMessage: ${messageCopy}`;
+				$("#content-modal textarea[name='message']").val(mergedMessage);
+			});
+		}, 350);
 	});
 }
 
