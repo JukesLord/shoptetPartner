@@ -37,7 +37,7 @@
 	transition: none; /*---------------------------------------------------------------asi něco on hover?*/
 }
 .in-index .menu-level-1 {
-	justify-content: flex-end !important;
+	/* justify-content: flex-end !important; */
 }
 
 .background-image {
@@ -82,7 +82,7 @@
 	height: clamp(400px, 100svh, 1080px);
 	max-width: 1920px;
 	margin: auto;
-	background-image: url("/https://668075.myshoptet.com/user/documents/upload/Fotky/Cukrarna.jpg");
+	background-image: url("https://668075.myshoptet.com/user/documents/upload/Fotky/Cukrarna.jpg");
 	--bg-opacity: 0.45;
 	border-radius: 0px 0px var(--br-max) var(--br-max);
 	overflow: hidden;
