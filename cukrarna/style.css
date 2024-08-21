@@ -45,7 +45,7 @@
 	z-index: 1;
 	background: transparent;
 }
-.in-index .site-name a {
+.site-name a {
 	display: flex !important;
 	justify-content: center;
 }
