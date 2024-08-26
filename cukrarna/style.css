@@ -668,4 +668,111 @@ html {
 
 /*---------------------------------------------------------------------MOBIL*/
 @media (max-width: 991px) {
+	:root {
+		--br-small: 10px;
+		--br: 20px;
+		--br-max: 50px;
+		--gap-v: 30px;
+		--gap-h: 20px;
+		--padding-sides: 20px;
+	}
+	#content {
+		padding: var(--padding-sides);
+	}
+	.in-index #content {
+		padding: 0;
+	}
+	#header {
+	}
+	.navigation-in .navigationActions {
+		display: none;
+	}
+	.banners-row {
+		margin: 0;
+	}
+	.welcome-banner,
+	.type-category:not(.in-nase-produkty) .category-top .category-perex {
+		height: clamp(200px, 60vh, 700px);
+	}
+	.welcome-banner-text {
+		text-align: center;
+		padding: 0 5px;
+	}
+	.next-to-carousel-banners {
+		margin: var(--gap-v) auto;
+	}
+	.next-to-carousel-banners .banner-wrapper {
+		margin: 0;
+	}
+	.benefitBanner__item {
+		text-align: center;
+		align-items: center;
+		margin-bottom: var(--gap-v);
+	}
+	.openning-hours,
+	.rozvoz {
+		grid-template-columns: 1fr;
+		padding: 0;
+		margin: 0;
+		justify-items: center;
+	}
+	.rozvoz-image {
+		margin: var(--gap-v) 0;
+	}
+
+	.openning-hours-text {
+		padding: var(--padding-sides);
+		text-align: center;
+	}
+
+	.rozvoz-text {
+		text-align: center;
+		padding: 0 var(--padding-sides);
+		max-width: 100%;
+	}
+	.subcategories {
+		flex-direction: column;
+		gap: var(--gap-v);
+		align-items: center;
+	}
+	.subcategories li {
+		width: 100%;
+	}
+	.type-category .product .p {
+		flex-direction: column;
+		align-items: center;
+		padding: var(--padding-sides);
+	}
+	.type-category .product .p .p-in {
+		padding: 0 !important;
+	}
+	.type-category .product .p .p-in .name,
+	.type-category .availability {
+		text-align: center;
+	}
+	.type-category .product .p .image {
+		margin-bottom: var(--gap);
+	}
+	.type-category .prices,
+	.type-category .availability {
+		position: relative !important;
+		inset: 0 !important;
+		transform: none;
+	}
+	.type-category .p-bottom > div {
+		display: flex;
+		flex-direction: column;
+	}
+	.type-category .products-block > div .p .p-bottom > div .p-tools {
+		order: 3;
+		margin: 0 !important;
+	}
+	.type-category .p-desc {
+		padding: 0 !important;
+		margin: 0 0 var(--gap) 0 !important;
+		text-align: center;
+	}
+	.type-category .prices {
+		margin: 0.75em 0;
+	}
 }
