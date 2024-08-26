@@ -6,4 +6,8 @@ if (document.body.classList.contains("type-category")) {
 			img.setAttribute("src", src.replace("/thumb/", "/orig/"));
 		}
 	});
+
+	if (!document.body.classList.contains("in-nase-produkty")) {
+		$(".category-top .category-perex").append($(".category-title"));
+	}
 }
