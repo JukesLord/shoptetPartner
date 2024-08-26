@@ -389,7 +389,7 @@ html {
 .custom-footer__banner7 h3 {
 	text-align: center;
 	font-size: var(--fs-giga);
-	margin-top: var(--gap);
+	margin-top: var(--gap-v);
 }
 .custom-footer__banner7 iframe {
 	border-radius: var(--br-small);
