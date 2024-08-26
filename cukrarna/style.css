@@ -1,0 +1,662 @@
+html {
+	font-size: 16px;
+}
+:root {
+	--fs-mini: 1rem;
+	--fs-small: clamp(0.75rem, 0.135vw + 0.713rem, 0.875rem);
+	--fs-normal: clamp(0.875rem, 0.405vw + 0.764rem, 1.25rem);
+	--fs-medium: clamp(1rem, 0.608vw + 0.833rem, 1.563rem);
+	--fs-big: clamp(1.125rem, 0.811vw + 0.902rem, 1.875rem);
+	--fs-bigger: clamp(1.25rem, 1.014vw + 0.971rem, 2.188rem);
+	--fs-giga: clamp(1.875rem, 2.365vw + 1.225rem, 4.063rem);
+	--fs-max: clamp(2.5rem, 4.054vw + 1.385rem, 6.25rem);
+	--fw-t: 100;
+	--fw-el: 200;
+	--fw-l: 300;
+	--fw-r: 400;
+	--fw-m: 500;
+	--fw-sb: 600;
+	--fw-b: 700;
+	--fw-eb: 800;
+	--br-small: 20px;
+	--br: 40px;
+	--br-max: 100px;
+	--gap-v: clamp(60px, 7.2vh, 150px);
+	--gap-h: clamp(40px, 10vw, 180px);
+	--gap: 20px;
+	--padding-sides: 40px;
+	--color-shadow: 116, 74, 64;
+	--transparency: 0.5;
+}
+
+#header * {
+	font-weight: var(--fw-r);
+}
+.container,
+.index-content-wrapper,
+.type-category:not(.in-nase-produkty) .category-content-wrapper {
+	width: 100%;
+	max-width: 1920px;
+	padding: 0 var(--padding-sides);
+	margin: auto;
+}
+
+.in-index #header,
+.type-category:not(.in-nase-produkty) #header {
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+	background: transparent;
+}
+#header .login-link {
+	display: none;
+}
+.site-name a {
+	display: flex !important;
+	justify-content: center;
+}
+.in-index .navigation-in,
+.type-category:not(.in-nase-produkty) .navigation-in,
+.navigation-buttons,
+.navigation-buttons > * {
+	background-color: transparent !important;
+	border-style: none !important;
+	transition: none; /*---------------------------------------------------------------asi něco on hover?*/
+}
+
+.background-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.background-image::before {
+	content: "";
+	background: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: var(--bg-opacity);
+}
+.background-image::after {
+	content: "";
+	background: rgb(121, 182, 255);
+	background: linear-gradient(180deg, rgba(121, 182, 255, 0) 50%, rgba(121, 182, 255, 0.4033262963388481) 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.under-wave {
+	padding-bottom: 0.7em;
+	position: relative;
+}
+.under-wave::after {
+	content: "";
+	background: url("https://668075.myshoptet.com/user/documents/upload/Fotky/wave.png");
+	width: 1em;
+	height: 0.35em;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 90%;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translatex(-50%);
+}
+/*---------------------------------------------------------------------------------------------------------------Welcome banner a bannery pod*/
+.in-index #content .banners-row {
+	background: var(--color-tertiary);
+}
+#carousel {
+	--transparency: 0.35;
+	filter: drop-shadow(0px 10px 50px rgba(var(--color-shadow), var(--transparency)));
+}
+.welcome-banner {
+	height: clamp(400px, 100vh, 1080px);
+	height: clamp(400px, 100svh, 1080px);
+	max-width: 1920px;
+	margin: auto;
+	background-image: url("https://668075.myshoptet.com/user/documents/upload/Fotky/Cukrarna.jpg");
+	--bg-opacity: 0.45;
+	border-radius: 0px 0px var(--br-max) var(--br-max);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.welcome-banner h2 {
+	font-size: var(--fs-max);
+	font-weight: var(--fw-sb);
+	color: white;
+	position: relative;
+	z-index: 5;
+	padding-bottom: 1.1em;
+}
+
+.extended-banner-title {
+	background: none;
+	border-style: none;
+	box-shadow: none;
+	pointer-events: none;
+}
+
+.next-to-carousel-banners {
+	margin: auto;
+	gap: var(--gap-h);
+}
+.next-to-carousel-banners .banner-wrapper {
+	margin: var(--gap-v) 0;
+	background: white;
+	padding: 5px;
+	border-radius: var(--br);
+	overflow: hidden;
+	--transparency: 0.3;
+	filter: drop-shadow(5px 15px 400px rgba(var(--color-shadow), var(--transparency)));
+	width: clamp(300px, 25vw, 470px);
+}
+.next-to-carousel-banners .banner-wrapper img {
+	border-radius: calc(var(--br) - 3px) calc(var(--br) - 3px) 0 0;
+}
+.next-to-carousel-banners a {
+	display: flex;
+	flex-direction: column;
+}
+.next-to-carousel-banners .extended-banner-texts {
+	position: relative;
+	display: flex;
+	font-size: var(--fs-bigger);
+}
+.next-to-carousel-banners .extended-banner-texts::after {
+	background-color: var(--color-tertiary-hover);
+	background-image: url("https://668075.myshoptet.com/user/documents/upload/Fotky/Arrow.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 50%;
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	width: 1.1em;
+	height: 1.1em;
+	right: 1.35em;
+	top: 50%;
+	transform: translatey(-50%);
+	transition: background-color 0.3s ease;
+}
+.next-to-carousel-banners a:hover .extended-banner-texts::after {
+	background-color: var(--color-secondary-hover);
+}
+.next-to-carousel-banners .extended-banner-title {
+	position: relative;
+	font-weight: var(--fw-sb);
+	font-size: 1em;
+	padding: 1.35em;
+}
+/*---------------------------------------------------------------------------------------------------------------Konkurencni vyhody*/
+.benefitBanner {
+	margin: var(--gap-v) 0;
+}
+.benefitBanner__picture {
+	max-width: 100px;
+	max-height: 100px;
+	margin: 0;
+	flex: 0 0 100px;
+	align-items: flex-end;
+}
+.benefitBanner__item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.benefitBanner__content {
+	display: flex;
+	flex-direction: column;
+	max-width: 85%;
+}
+.benefitBanner__title {
+	font-size: var(--fs-big);
+	font-weight: var(--fw-sb);
+	line-height: 1.2em;
+	padding: 1em 0 0.85em 0;
+}
+.benefitBanner__data {
+	font-size: var(--fs-normal);
+}
+/*---------------------------------------------------------------------------------------------------------------Otevírací doba*/
+.openning-hours {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: calc(var(--gap) * 1.5);
+	background: var(--color-tertiary);
+	border-radius: var(--br);
+	margin: 0 calc(var(--padding-sides) * -1);
+	align-items: center;
+}
+
+.openning-hours-image img {
+	border-radius: calc(var(--br) - 10px);
+	--transparency: 0.25;
+	filter: drop-shadow(0px 5px 30px rgba(var(--color-shadow), var(--transparency)));
+}
+.openning-hours-text {
+	max-width: 700px;
+	margin: auto;
+}
+.openning-hours h3,
+.rozvoz h3 {
+	color: var(--color-primary);
+	font-weight: var(--fw-sb);
+	font-size: var(--fs-giga);
+	margin: 0;
+	margin-bottom: 0.8em;
+}
+.openning-hours-by-day {
+	display: flex;
+	flex-direction: column;
+}
+.openning-hours-by-day .day {
+	font-size: var(--fs-bigger);
+	font-weight: var(--fw-r);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: calc(var(--gap) * 1.5);
+	padding: 0.5em 0 0.45em 0;
+	align-items: center;
+}
+.openning-hours-by-day .day > p:last-child {
+	font-weight: var(--fw-sb);
+}
+.openning-hours-by-day .weekend p {
+	font-size: 0.85em;
+}
+/*---------------------------------------------------------------------------------------------------------------Rozvoz*/
+.rozvoz {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 0 calc(var(--gap) * 1.5);
+	margin: var(--gap-v) 0;
+	align-items: center;
+}
+.rozvoz h3 {
+	color: black;
+}
+.rozvoz-text {
+	font-size: var(--fs-normal);
+	line-height: 1.6;
+	max-width: 80%;
+	padding-left: 10%;
+}
+.rozvoz-image {
+	max-width: 90%;
+	overflow: hidden;
+}
+.rozvoz-image img {
+	animation-duration: 7s;
+	animation-name: auticko;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+@keyframes auticko {
+	0% {
+		transform: translatex(50vw);
+	}
+	15% {
+		transform: translatex(0%);
+	}
+	80% {
+		transform: translatex(0%);
+	}
+	100% {
+		transform: translatex(-100vw);
+	}
+}
+/*---------------------------------------------------------------------------footer*/
+.homepage-texts-wrapper {
+	display: none;
+}
+#footer {
+	background: var(--color-tertiary);
+	border-style: none;
+}
+.custom-footer {
+	padding: 0;
+}
+.custom-footer > div {
+	width: 100%;
+}
+/*----------newsletter*/
+.footer-newsletter {
+	display: none !important;
+}
+/*----------o nas viditelný jen na indexu*/
+.custom-footer__banner8 {
+	display: none;
+}
+.in-index .custom-footer__banner8 {
+	display: block;
+	padding: 0;
+}
+.custom-footer__banner8 {
+	width: 100%;
+	padding: 0;
+}
+.custom-footer__banner8 .banner {
+	margin: 0;
+}
+.custom-footer__banner8 .banner-wrapper {
+	margin: 0;
+}
+.about-us {
+	margin: var(--gap-v) 0;
+	border-radius: var(--br);
+	overflow: hidden;
+}
+.about-us.background-image {
+	--bg-opacity: 0.5;
+	background-image: url("https://668075.myshoptet.com/user/documents/upload/Fotky/about-us.jpg");
+}
+.about-us-text {
+	color: white;
+	position: relative;
+	z-index: 5;
+	text-align: center;
+	font-size: var(--fs-medium);
+	line-height: 1.6;
+	padding: calc(var(--gap-v) * 1.1) 0 calc(var(--gap-v) * 0.9);
+	width: 900px;
+	max-width: 90%;
+
+	margin: auto;
+}
+.about-us-text h3 {
+	color: white;
+	font-size: var(--fs-giga);
+	font-weight: var(--fw-sb);
+	margin: 0;
+	margin-bottom: 0.8em;
+}
+
+/*-----------------------------------------------------------Kategorie*/
+.type-category #content {
+	max-width: 100%;
+	padding: 0;
+}
+.type-category .breadcrumbs,
+#category-header {
+	display: none !important;
+}
+
+.category-top {
+	background: var(--color-tertiary);
+}
+.category-title {
+	margin: 0;
+}
+.type-category #products {
+	margin: 0;
+}
+.type-category .product {
+	padding: 0 !important;
+	margin: 0;
+	border-style: none;
+	background: var(--color-tertiary);
+	margin-bottom: calc(var(--gap) * 2);
+	width: 100% !important;
+	border-radius: var(--br-small);
+}
+.type-category .product .p {
+	border-style: none;
+	flex-direction: row;
+	padding: calc(var(--gap) * 0.75) calc(var(--gap) * 2) calc(var(--gap) * 0.75) calc(var(--gap) * 0.75);
+}
+.type-category .product .p-in {
+	font-size: var(--fs-normal);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: calc(var(--gap) * 1.5) !important;
+	padding-top: 0 !important;
+	padding-bottom: 1.5em;
+	position: relative;
+}
+.type-category .product .image {
+	max-width: 250px;
+}
+.type-category .product .image img {
+	border-radius: calc(var(--br-small) - 3px);
+	--transparency: 0.25;
+	filter: drop-shadow(2px 2px 30px rgba(var(--color-shadow), var(--transparency)));
+}
+.type-category .name {
+	font-size: var(--fs-bigger);
+	font-weight: var(--fw-sb);
+	height: auto !important;
+	text-align: left;
+	padding: 0 !important;
+}
+.type-category .p-bottom {
+	padding: 0 !important;
+}
+.type-category .p-bottom > div {
+	display: grid;
+	grid-template-columns: 70% 30%;
+	grid-template-rows: 1fr;
+}
+.type-category .p-desc {
+	text-align: left;
+	grid-column: 1;
+	margin: 0 !important;
+	padding-top: 0.75em;
+	grid-row: 1;
+	max-height: none;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+.type-category .p-bottom > div::before,
+.type-category .p-bottom > div::after {
+	display: none !important;
+}
+.type-category .p-tools {
+	grid-column: 2;
+	padding: 0 !important;
+	margin-top: calc(var(--gap) * 2) !important;
+}
+
+.type-category .p-tools a {
+	border-style: none !important;
+	background: var(--color-secondary);
+	color: white;
+	font-weight: var(--fw-sb);
+	font-size: var(--fs-medium);
+	padding: 0.55em 1em !important;
+	text-transform: none;
+	border-radius: 50px;
+	min-width: 150px !important;
+	width: 75% !important;
+}
+.type-category .p-tools a:hover,
+.type-category .p-tools a:focus-within {
+	background: var(--color-secondary-hover);
+	color: white;
+}
+.type-category .prices {
+	font-size: var(--fs-bigger);
+	position: absolute !important;
+	right: 14% !important;
+	top: 50%;
+	transform: translate(50%, -130%);
+	grid-row: 1;
+}
+.type-category .price-final strong {
+	font-size: 1.5em;
+	font-weight: var(--fw-sb);
+}
+.type-category .availability {
+	text-align: left;
+	font-weight: var(--fw-sb);
+	color: var(--color-primary);
+	position: absolute;
+	bottom: 0.5em;
+}
+.type-category .p:hover .flag {
+	opacity: 1;
+}
+/*--------------------------------------------------------------podkategorie*/
+.subcategories {
+	margin: 0 auto var(--gap-v) !important;
+	padding: var(--gap-v) 0;
+	justify-content: space-evenly;
+	max-width: 1920px;
+}
+.subcategories li {
+	margin: var(--gap-v) 0;
+	background: white;
+	padding: 5px !important;
+	border-radius: var(--br);
+	overflow: hidden;
+	--transparency: 0.3;
+	filter: drop-shadow(5px 15px 400px rgba(var(--color-shadow), var(--transparency)));
+	width: calc(25% - var(--gap) * 2);
+	max-width: 350px;
+	margin: var(--gap);
+	justify-content: center;
+}
+.subcategories > li .image {
+	height: 350px !important;
+	margin: 0 !important;
+}
+
+.subcategories > li img {
+	border-radius: calc(var(--br) - 3px) calc(var(--br) - 3px) 0 0;
+	max-height: 350px !important;
+	transition: transform 0.3s ease-in-out;
+}
+.subcategories li:hover img {
+	transform: scale(1.05);
+}
+.subcategories > li a {
+	display: flex !important;
+	flex-direction: column !important;
+	padding: 0 !important;
+}
+
+.subcategories li .text {
+	text-align: left;
+	position: relative;
+	font-weight: var(--fw-sb);
+	font-size: 1em;
+	padding: 0.7em 1.35em;
+	font-size: var(--fs-big);
+	color: black;
+}
+
+.subcategories li .text::after {
+	background-color: var(--color-tertiary-hover);
+	background-image: url("https://668075.myshoptet.com/user/documents/upload/Fotky/Arrow.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 50%;
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	width: 1.1em;
+	height: 1.1em;
+	right: 1.35em;
+	top: 50%;
+	transform: translatey(-50%);
+	transition: background-color 0.3s ease;
+}
+.subcategories li:hover .text::after {
+	background-color: var(--color-secondary-hover);
+}
+
+.type-category .ratings-wrapper > * {
+	display: none;
+}
+.type-category .ratings-wrapper > .availability {
+	display: block;
+}
+
+.type-category:not(.in-nase-produkty) .category-top .category-perex {
+	height: clamp(400px, 100vh, 1080px);
+	height: clamp(400px, 100svh, 1080px);
+	max-width: 1920px;
+	margin: auto;
+	--bg-opacity: 0.45;
+	border-radius: 0px 0px var(--br-max) var(--br-max);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.type-category:not(.in-nase-produkty) .category-top .category-perex::before {
+	content: "";
+	background: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: var(--bg-opacity);
+}
+.type-category:not(.in-nase-produkty) .category-top .category-perex::after {
+	content: "";
+	background: rgb(121, 182, 255);
+	background: linear-gradient(180deg, rgba(121, 182, 255, 0) 50%, rgba(121, 182, 255, 0.4033262963388481) 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.type-category:not(.in-nase-produkty) .category-top .category-perex img {
+	height: 100%;
+	max-width: none;
+}
+.type-category:not(.in-nase-produkty) .category-title {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: var(--fs-max);
+	font-weight: var(--fw-sb);
+	color: white;
+	z-index: 5;
+	padding-bottom: 0.4em;
+}
+.type-category.in-nase-produkty .category-title {
+	font-size: var(--fs-max);
+	font-weight: var(--fw-sb);
+	text-align: center;
+	padding-top: var(--gap-v);
+	margin: 0 !important;
+}
+.type-category.in-nase-produkty .category-content-wrapper {
+	display: none;
+}
+.type-category:not(.in-nase-produkty) .category-title::after {
+	content: "";
+	background: url(https://668075.myshoptet.com/user/documents/upload/Fotky/wave.png);
+	width: 1em;
+	height: 0.35em;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 90%;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translatex(-50%);
+}
+/*--------------------------------------------------------------------------------------------Detail produktu*/
+.type-detail .p-param-block {
+	display: none;
+}
+.type-detail button[type="submit"] {
+	border-radius: var(--br);
+}
