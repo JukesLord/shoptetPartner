@@ -381,6 +381,15 @@ html {
 	margin: 0;
 	margin-bottom: 0.8em;
 }
+.custom-footer__banner7 h3 {
+	text-align: center;
+	font-size: var(--fs-giga);
+	margin-top: 0;
+}
+.custom-footer__banner7 iframe {
+	border-radius: var(--br-small);
+	overflow: hidden;
+}
 
 /*-----------------------------------------------------------Kategorie*/
 .in-vyhledavani #content,
@@ -714,8 +723,6 @@ html {
 	.in-index #content {
 		padding: 0;
 	}
-	#header {
-	}
 	.navigation-in .navigationActions {
 		display: none;
 	}
@@ -735,6 +742,9 @@ html {
 	}
 	.next-to-carousel-banners .banner-wrapper {
 		margin: 0;
+	}
+	.benefitBanner {
+		justify-content: center;
 	}
 	.benefitBanner__item {
 		text-align: center;
@@ -769,6 +779,7 @@ html {
 	}
 	.subcategories li {
 		width: 100%;
+		margin: 0;
 	}
 	.in-vyhledavani .product .p,
 	.type-category .product .p {
