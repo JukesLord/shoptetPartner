@@ -161,8 +161,13 @@ html {
 	filter: drop-shadow(5px 15px 400px rgba(var(--color-shadow), var(--transparency)));
 	width: clamp(300px, 25vw, 470px);
 }
+
 .next-to-carousel-banners .banner-wrapper img {
 	border-radius: calc(var(--br) - 3px) calc(var(--br) - 3px) 0 0;
+	transition: transform 0.3s ease-in-out;
+}
+.next-to-carousel-banners .banner-wrapper a:hover img {
+	transform: scale(1.05);
 }
 .next-to-carousel-banners a {
 	display: flex;
