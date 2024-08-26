@@ -40,13 +40,22 @@ html {
 	padding: 0 var(--padding-sides);
 	margin: auto;
 }
-
-.in-index #header,
-.type-category:not(.in-nase-produkty) #header {
-	position: absolute;
-	width: 100%;
-	z-index: 1;
-	background: transparent;
+@media (min-width: 992px) {
+	.in-index #header,
+	.type-category:not(.in-nase-produkty) #header {
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+		background: transparent;
+	}
+	.in-index .navigation-in,
+	.type-category:not(.in-nase-produkty) .navigation-in,
+	.navigation-buttons,
+	.navigation-buttons > * {
+		background-color: transparent !important;
+		border-style: none !important;
+		transition: none;
+	}
 }
 #header .login-link {
 	display: none;
@@ -54,14 +63,6 @@ html {
 .site-name a {
 	display: flex !important;
 	justify-content: center;
-}
-.in-index .navigation-in,
-.type-category:not(.in-nase-produkty) .navigation-in,
-.navigation-buttons,
-.navigation-buttons > * {
-	background-color: transparent !important;
-	border-style: none !important;
-	transition: none; /*---------------------------------------------------------------asi něco on hover?*/
 }
 
 .background-image {
@@ -134,7 +135,8 @@ html {
 	color: white;
 	position: relative;
 	z-index: 5;
-	padding-bottom: 1.1em;
+	padding-bottom: 0 10px 1.1em;
+	text-align: center;
 }
 
 .extended-banner-title {
@@ -397,6 +399,7 @@ html {
 }
 .type-category #products {
 	margin: 0;
+	margin-top: var(--gap-v);
 }
 .type-category .product {
 	padding: 0 !important;
@@ -456,6 +459,7 @@ html {
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 3;
 	overflow: hidden;
+	max-height: 4.6em;
 }
 .type-category .p-bottom > div::before,
 .type-category .p-bottom > div::after {
@@ -507,8 +511,9 @@ html {
 	opacity: 1;
 }
 /*--------------------------------------------------------------podkategorie*/
+
 .subcategories {
-	margin: 0 auto var(--gap-v) !important;
+	margin: 0 auto !important;
 	padding: var(--gap-v) 0;
 	justify-content: space-evenly;
 	max-width: 1920px;
@@ -659,4 +664,8 @@ html {
 }
 .type-detail button[type="submit"] {
 	border-radius: var(--br);
+}
+
+/*---------------------------------------------------------------------MOBIL*/
+@media (max-width: 991px) {
 }
