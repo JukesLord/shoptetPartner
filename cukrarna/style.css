@@ -358,7 +358,7 @@ html {
 	margin: 0;
 }
 .about-us {
-	margin: var(--gap-v) 0;
+	margin: var(--gap-v) 0 0;
 	border-radius: var(--br);
 	overflow: hidden;
 }
@@ -389,7 +389,7 @@ html {
 .custom-footer__banner7 h3 {
 	text-align: center;
 	font-size: var(--fs-giga);
-	margin-top: 0;
+	margin-top: var(--gap);
 }
 .custom-footer__banner7 iframe {
 	border-radius: var(--br-small);
