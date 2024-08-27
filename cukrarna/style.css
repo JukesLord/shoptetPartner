@@ -835,3 +835,18 @@ html {
 		margin: 0.75em 0;
 	}
 }
+
+.grid-block {
+	display: grid;
+	grid-template-columns: 1.3fr 1fr;
+	gap: calc(var(--gap-h) / 2);
+	align-items: center;
+	text-align: justify;
+}
+@media (max-width: 991px) {
+	.grid-block {
+		grid-template-columns: 1fr;
+		gap: var(--gap-v);
+		text-align: left;
+	}
+}
