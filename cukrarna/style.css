@@ -843,6 +843,12 @@ html {
 	align-items: center;
 	text-align: justify;
 }
+.grid-block img {
+	border-radius: var(--br);
+}
+.grid-block.larger {
+	grid-template-columns: 1fr 1fr;
+}
 @media (max-width: 991px) {
 	.grid-block {
 		grid-template-columns: 1fr;
