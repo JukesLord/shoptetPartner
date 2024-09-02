@@ -103,10 +103,8 @@
 .price-plus-poptejte-cenu td {
 	width: 50%;
 }
-@media (max-width: 999px) {
-	.price-plus-poptejte-cen .cena-na-dotaz {
-		align-items: flex-end;
-	}
+.price-plus-poptejte-cen .cena-na-dotaz {
+	align-items: flex-end;
 }
 
 /*Form který se nakonec nepoužije. používá se built in dotaz*/
