@@ -59,6 +59,7 @@ function contactFormProductDetail() {
 		setTimeout(function () {
 			$("#content-modal .tari:contains('Telefon')").addClass("required-asterisk");
 			$("#content-modal input[name='phone']").attr("required", "");
+			$("#content-modal input[name='email']").attr("required", "");
 			// Add class "last" to the second last tr in #content-modal
 			$("#content-modal tr:nth-last-child(2)").addClass("last");
 
