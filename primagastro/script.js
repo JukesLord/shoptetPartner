@@ -41,79 +41,7 @@ function contactFormProductDetail() {
 		</div>
 	`;
 	$("#product-detail").html(cenaNaDotazHtml);
-
-	let productName = $("#product-detail-h1 h1").text();
-	let productCode = $("#product-detail-info .variant-code").text();
-
-	let textPoptavky;
-	/*má varianty*/
-	if ($("#product-variants").length > 0) {
-		textPoptavky = "Dobrý den, zajímám se o cenu produktu: " + productName;
-		$(".variant-submit").remove();
-		$(".variant-availability").remove();
-		$(".variant-price").html("<strong>Cena na dotaz</strong>");
-	} else {
-		/*nemá varianty*/
-		textPoptavky = "Dobrý den, zajímám se o cenu produktu: " + productName + " s kódem: " + productCode;
-	}
-	$(".cena-na-dotaz-btn").on("click touch", function () {
-		$(".p-question").click();
-		$("body").addClass("poptavka-open");
-		setTimeout(function () {
-			$("#content-modal .tari:contains('Telefon')").addClass("required-asterisk");
-			$("#content-modal input[name='phone']").attr("required", "");
-			$("#content-modal input[name='email']").attr("required", "");
-			// Add class "last" to the second last tr in #content-modal
-			$("#content-modal tr:nth-last-child(2)").addClass("last");
-
-			// Create the new rows
-			let nameRow = `
-				<tr>
-					<td class="tari nowrap">
-						<span class="required-asterisk">Jméno a příjmení</span>
-					</td>
-					<td>
-						<input id="jmeno-prijmeni" type="text" name="name" value="" size="30" required="required">
-					</td>
-				</tr>`;
-
-			let vatRow = `
-				<tr>
-					<td class="tari nowrap">
-						<span class="required-asterisk">IČO:</span>
-					</td>
-					<td>
-						<input id="ico" type="text" name="vat" value="" size="30" required="required">
-					</td>
-				</tr>`;
-
-			let messageCopyRow = `
-				<tr>
-					<td class="tari nowrap">
-						<span class="required-asterisk">Zpráva:</span>
-					</td>
-					<td>
-						<textarea id="message-copy" name="message-copy" rows="7" cols="50" class="s-400 required="required""></textarea>
-					</td>
-				</tr>`;
-
-			// Prepend the new rows to the tbody
-			$("#content-modal tbody").prepend(nameRow);
-			$("#content-modal tbody").prepend(vatRow);
-			$(messageCopyRow).insertBefore($("#content-modal .last"));
-
-			$("#content-modal textarea").val(textPoptavky);
-
-			// Listener for changes in #jmeno-prijmeni, #ico, or #message-copy
-			$("#content-modal").on("input", "#jmeno-prijmeni, #ico, #message-copy", function () {
-				const name = $("#jmeno-prijmeni").val();
-				const vat = $("#ico").val();
-				const messageCopy = $("#message-copy").val();
-				const mergedMessage = `Jméno a příjmení: ${name}\n\nIČO: ${vat}\n\n ${messageCopy}`;
-				$("#content-modal .last textarea").val(mergedMessage);
-			});
-		}, 350);
-	});
+	poptavka();
 }
 
 function cenaNaDotazProductList() {
@@ -169,6 +97,7 @@ function contactFormProductDetailFromFlag() {
 	`;
 	$("#product-detail tbody > tr").eq(0).addClass("price-plus-poptejte-cenu");
 	$("#product-detail tbody > tr").eq(0).append(cenaNaDotazHtml);
+	$("#product-detail colgroup").remove();
 	poptavka();
 }
 
