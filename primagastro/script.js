@@ -69,7 +69,7 @@ function contactFormProductDetail() {
 						<span class="required-asterisk">Jméno a příjmení</span>
 					</td>
 					<td>
-						<input id="jmeno-prijmeni" type="text" name="name" value="" size="30" requiered="required">
+						<input id="jmeno-prijmeni" type="text" name="name" value="" size="30" required="required">
 					</td>
 				</tr>`;
 
@@ -79,7 +79,7 @@ function contactFormProductDetail() {
 						<span class="required-asterisk">IČO:</span>
 					</td>
 					<td>
-						<input id="ico" type="text" name="vat" value="" size="30" requiered="required">
+						<input id="ico" type="text" name="vat" value="" size="30" required="required">
 					</td>
 				</tr>`;
 
@@ -89,7 +89,7 @@ function contactFormProductDetail() {
 						<span class="required-asterisk">Zpráva:</span>
 					</td>
 					<td>
-						<textarea id="message-copy" name="message-copy" rows="7" cols="50" class="s-400 requiered="required""></textarea>
+						<textarea id="message-copy" name="message-copy" rows="7" cols="50" class="s-400 required="required""></textarea>
 					</td>
 				</tr>`;
 
