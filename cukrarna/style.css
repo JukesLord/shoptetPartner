@@ -856,12 +856,3 @@ html {
 		text-align: left;
 	}
 }
-
-.price-plus-poptejte-cenu td {
-	width: 50%;
-}
-@media (max-width: 999px) {
-	.price-plus-poptejte-cen .cena-na-dotaz {
-		align-items: flex-end;
-	}
-}
