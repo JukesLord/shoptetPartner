@@ -167,8 +167,8 @@ function contactFormProductDetailFromFlag() {
 			</div>
 		</div>
 	`;
-	$("#product-detail .l-col").addClass("price-plus-poptejte-cenu");
-	$("#product-detail .l-col").append(cenaNaDotazHtml);
+	$("#product-detail tbody > tr").eq(0).addClass("price-plus-poptejte-cenu");
+	$("#product-detail tbody > tr").eq(0).append(cenaNaDotazHtml);
 	poptavka();
 }
 
