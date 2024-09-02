@@ -6,6 +6,9 @@ if (document.body.classList.contains("type-product")) {
 		if (priceInt === 1) {
 			contactFormProductDetail();
 		}
+		if ($("#td-product-images .bool-poptejte-cenu").length > 0) {
+			contactFormProductDetailFromFlag();
+		}
 	});
 }
 
@@ -164,17 +167,14 @@ function contactFormProductDetailFromFlag() {
 			</div>
 		</div>
 	`;
-	$("#product-detail").html(cenaNaDotazHtml);
-
 	$("#product-detail .l-col").addClass("price-plus-poptejte-cenu");
 	$("#product-detail .l-col").append(cenaNaDotazHtml);
-
-	let productName = $("#product-detail-h1 h1").text();
-	let productCode = $("#product-detail-info .variant-code").text();
 	poptavka();
 }
 
 function poptavka() {
+	let productName = $("#product-detail-h1 h1").text();
+	let productCode = $("#product-detail-info .variant-code").text();
 	let textPoptavky;
 	/*má varianty*/
 	if ($("#product-variants").length > 0) {
