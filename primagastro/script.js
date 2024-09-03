@@ -108,9 +108,11 @@ function poptavka() {
 	/*má varianty*/
 	if ($("#product-variants").length > 0) {
 		textPoptavky = "Dobrý den, zajímám se o cenu produktu: " + productName;
-		$(".variant-submit").remove();
-		$(".variant-availability").remove();
-		$(".variant-price").html("<strong>Cena na dotaz</strong>");
+		if (priceInt === 1) {
+			$(".variant-submit").remove();
+			$(".variant-availability").remove();
+			$(".variant-price").html("<strong>Cena na dotaz</strong>");
+		}
 	} else {
 		/*nemá varianty*/
 		textPoptavky = "Dobrý den, zajímám se o cenu produktu: " + productName + " s kódem: " + productCode;
