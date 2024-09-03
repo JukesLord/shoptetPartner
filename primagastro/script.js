@@ -1,8 +1,9 @@
+let priceInt;
 if (document.body.classList.contains("type-product")) {
 	document.addEventListener("DOMContentLoaded", function () {
 		let priceText = $("#product-detail .price[data-testid='productCardPrice']").text();
 		let numericPrice = priceText.replace(/[^\d]/g, "");
-		let priceInt = parseInt(numericPrice, 10);
+		priceInt = parseInt(numericPrice, 10);
 		if (priceInt === 1) {
 			contactFormProductDetail();
 		}
@@ -48,7 +49,7 @@ function cenaNaDotazProductList() {
 	$(".product").each(function () {
 		let priceText = $(this).find(".p-det-main-price").text();
 		let numericPrice = priceText.replace(/[^\d]/g, "");
-		let priceInt = parseInt(numericPrice, 10);
+		priceInt = parseInt(numericPrice, 10);
 		if (priceInt === 1) {
 			$(this)
 				.find(".product-card-static-source-js")
@@ -66,7 +67,7 @@ function cenaNaDotazTopCategory() {
 	$("#category-top10 .columns").each(function () {
 		let priceText = $(this).find(".p-cat-prices strong").first().text();
 		let numericPrice = priceText.replace(/[^\d]/g, "");
-		let priceInt = parseInt(numericPrice, 10);
+		priceInt = parseInt(numericPrice, 10);
 		if (priceInt === 1) {
 			$(this).find(".p-cat-prices").first().html("<strong>Cena na dotaz</strong>");
 		}
@@ -77,7 +78,7 @@ function cenaNaDorazSearch() {
 	$(".search-whisperer li").each(function () {
 		let priceText = $(this).find(".search-whisperer-price").text();
 		let numericPrice = priceText.replace(/[^\d]/g, "");
-		let priceInt = parseInt(numericPrice, 10);
+		priceInt = parseInt(numericPrice, 10);
 		if (priceInt === 1) {
 			$(this).find(".search-whisperer-price").html("Cena na dotaz");
 		}
@@ -108,6 +109,7 @@ function poptavka() {
 	/*má varianty*/
 	if ($("#product-variants").length > 0) {
 		textPoptavky = "Dobrý den, zajímám se o cenu produktu: " + productName;
+
 		if (priceInt === 1) {
 			$(".variant-submit").remove();
 			$(".variant-availability").remove();
