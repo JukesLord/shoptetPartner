@@ -445,6 +445,7 @@ html {
 	padding-top: 0 !important;
 	padding-bottom: 1.5em;
 	position: relative;
+	width: 100%;
 }
 .in-vyhledavani .product .image,
 .type-category .product .image {
@@ -592,7 +593,7 @@ html {
 	position: relative;
 	font-weight: var(--fw-sb);
 	font-size: 1em;
-	padding: 0.7em 1.35em;
+	padding: 0.7em 2.2em 0.7em 1em;
 	font-size: var(--fs-big);
 	color: black;
 }
@@ -612,6 +613,8 @@ html {
 	top: 50%;
 	transform: translatey(-50%);
 	transition: background-color 0.3s ease;
+	display: flex;
+	align-items: center;
 }
 .subcategories li:hover .text::after {
 	background-color: var(--color-secondary-hover);
@@ -855,4 +858,11 @@ html {
 		gap: var(--gap-v);
 		text-align: left;
 	}
+}
+
+.stars-wrapper {
+	display: none;
+}
+.type-detail .shp-tabs-row {
+	display: none;
 }
