@@ -183,7 +183,9 @@ h6,
 		gap: 20px;
 	}
 }
-.in-spoluprace .spoluprace-block::before {
+.in-spoluprace .spoluprace-block::before,
+.in-collaboration .spoluprace-block::before,
+.in-zusammenarbeit .spoluprace-block::before {
 	display: none;
 }
 .in-spoluprace .spoluprace-block {
