@@ -870,10 +870,10 @@ html {
 /*footer EU*/
 
 @media (min-width: 768px) {
-	.custom-footer__articles.col-sm-4 {
+	.custom-footer__articles {
 		width: 30%;
 	}
-	.financovan-eu {
+	.custom-footer__banner9 {
 		width: 70% !important;
 	}
 }
