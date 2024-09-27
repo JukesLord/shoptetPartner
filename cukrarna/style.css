@@ -866,3 +866,33 @@ html {
 .type-detail .shp-tabs-row {
 	display: none;
 }
+
+/*footer EU*/
+
+@media (min-width: 768px) {
+	.custom-footer__articles.col-sm-4 {
+		width: 30%;
+	}
+	.financovan-eu {
+		width: 70% !important;
+	}
+}
+.financovan-eu {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.financovan-eu > div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	align-items: center;
+}
+@media (max-width: 768px) {
+	.financovan-eu > div {
+		display: flex;
+		flex-wrap: no-wrap;
+		flex-direction: column;
+		align-items: center;
+	}
+}
