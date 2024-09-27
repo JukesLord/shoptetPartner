@@ -871,7 +871,7 @@ html {
 
 @media (min-width: 768px) {
 	.custom-footer__articles {
-		width: 30%;
+		width: 30% !important;
 	}
 	.custom-footer__banner9 {
 		width: 70% !important;
@@ -887,6 +887,16 @@ html {
 	flex-wrap: wrap;
 	gap: 20px;
 	align-items: center;
+}
+.financovan-eu > div img {
+	max-width: 200px;
+}
+.financovan-eu > div p {
+	width: 100%;
+	font-weight: 500;
+	font-size: 1rem;
+	margin-bottom: 0;
+	margin-top: 1em;
 }
 @media (max-width: 768px) {
 	.financovan-eu > div {
