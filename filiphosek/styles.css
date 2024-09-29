@@ -1,0 +1,480 @@
+:root {
+	--max-width: 1440px;
+	--template-font: "Inter";
+	--template-headings-font: "Inter";
+	--border-radius: 1.5em; /*30px*/
+	--border-radius-px: 30px;
+	--shadow-clr: rgba(0, 0, 0, 25%);
+	--margin-top: clamp(30px, 9.2vh, 100px);
+	--margin-top: clamp(30px, 9.2svh, 100px);
+	--margin-side: clamp(40px, 8.3vw, 140px);
+	--_color-header-text: var(--color-primary);
+	--fs-800: clamp(5rem, 1.316vw + 4.4736rem, 14rem);
+	--fs-700: clamp(4rem, calc(var(--fs-800) - 3rem), 11rem);
+	--fs-500: clamp(1.6rem, 0.833vw + 0.4rem, 4rem);
+}
+@media (min-width: 1921px) {
+	:root {
+		--margin-side: 0px;
+	}
+}
+@media (min-width: 2200px) {
+	:root {
+		--max-width: 1920px;
+	}
+}
+.container {
+	max-width: var(--max-width);
+	width: 100%;
+}
+body {
+	text-wrap: pretty;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.banner,
+.banner-category,
+.banner-wrapper,
+.carousel-inner {
+	color: var(--color-primary);
+	line-height: 1.5;
+	font-weight: 300;
+}
+.in-index p,
+.type-product p {
+	font-size: var(--fs-500);
+}
+.btn-block {
+	display: flex;
+}
+
+.custom-btn,
+.btn {
+	text-transform: uppercase;
+	font-weight: 700 !important;
+	border-radius: var(--border-radius) !important;
+	border-style: none !important;
+
+	padding: 0.75em 3.5em !important;
+	filter: drop-shadow(0px 4px 4px var(--shadow-clr));
+	display: inline-block;
+}
+.in-index .custom-btn,
+.in-index .btn,
+.type-product .custom-btn,
+.type-product .btn {
+	font-size: var(--fs-500) !important;
+}
+.custom-btn.primary,
+.btn {
+	background: var(--color-primary-hover) !important;
+	color: white !important;
+}
+.custom-btn.primary:hover,
+.custom-btn.primary:focus-within,
+.btn:hover,
+.btn:focus-within {
+	background: var(--color-tertiary) !important;
+}
+/*-----------------------------------------------------top menu*/
+body::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0.25;
+	z-index: 999;
+	transition: transform 0.5s ease-out;
+	transform: translatex(105%);
+}
+body.open-menu::before {
+	transform: translatex(0);
+}
+#header {
+	z-index: 1000;
+	position: relative;
+	filter: drop-shadow(0px 4px 4px var(--shadow-clr));
+}
+
+.navigation-buttons {
+	display: none;
+}
+.menu-helper {
+	display: none;
+}
+#navigation {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: auto;
+	width: clamp(300px, 30vw, 700px);
+	height: auto;
+	overflow: visible;
+}
+body.open-menu #navigation {
+	display: block;
+}
+.navigation-in.menu {
+	filter: drop-shadow(0px 4px 4px var(--shadow-clr));
+	width: 100% !important;
+}
+.menu-level-1 {
+	flex-direction: column;
+	align-items: flex-start !important;
+}
+.menu-level-1 .splitted {
+	visibility: visible !important;
+}
+.menu-level-1 a::before {
+	content: "";
+	position: absolute;
+	bottom: 24px;
+	width: calc(100% - 32px);
+	left: 16px;
+	height: 1px;
+	background: var(--color-tertiary);
+	transform: scale(0);
+	transition: transform 0.3s ease-out, color 0.3s ease-out;
+	transform-origin: right;
+}
+.menu-level-1 a:hover {
+	color: var(--color-tertiary) !important;
+}
+.menu-level-1 a:hover::before {
+	transform: scale(1);
+	transform-origin: left;
+}
+.hamburger-menu {
+	position: fixed;
+	top: 50%;
+	right: 20px;
+	cursor: pointer;
+	transform: translateY(-50%);
+}
+body.open-menu .hamburger-menu {
+	display: none;
+}
+.close-hamburger {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	background: transparent;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+}
+.close-hamburger::before,
+.close-hamburger::after {
+	content: "";
+	position: absolute;
+	left: 10%;
+	top: 50%;
+	background: var(--color-primary);
+	width: 80%;
+	height: 1px;
+	transition: background 0.2s ease-out;
+}
+.close-hamburger::before {
+	transform: translatey(-50%) rotate(45deg);
+}
+.close-hamburger::after {
+	transform: translatey(-50%) rotate(315deg);
+}
+.close-hamburger:hover::before,
+.close-hamburger:hover::after {
+	background: var(--color-primary-hover);
+}
+
+/*-----------------------------------------------------KONEC top menu*/
+/*-----------------------------------------------------HERO*/
+.in-index #content {
+	padding: 0;
+}
+.banners-row {
+	margin: 0;
+}
+.custom-hero {
+	display: grid;
+	grid-template-rows: 1fr 100%;
+	margin-bottom: calc(var(--margin-top) * 2);
+}
+.custom-hero-image {
+	grid-column: 1;
+	grid-row: 1;
+}
+.custom-hero-image img {
+	width: 100%;
+}
+.custom-hero-content {
+	grid-column: 1;
+	grid-row: 1;
+	max-width: var(--max-width);
+	width: 100%;
+	margin: auto;
+	padding: clamp(20px, 3.7vh, 40px) 0;
+	padding: clamp(20px, 3.7svh, 40px) 0;
+}
+.custom-hero-block {
+	display: flex;
+	flex-direction: column;
+	font-size: var(--fs-500);
+	max-width: 22em;
+	position: relative;
+	margin-left: var(--margin-side);
+}
+.custom-hero-product {
+	position: absolute;
+	width: clamp(319px, 16.6vw, 1000px);
+	right: 0;
+	bottom: 5%;
+	transform: translate(100%, 15%);
+}
+.custom-hero-product img {
+	width: 100%;
+}
+h1,
+.h1 {
+	font-weight: 200;
+	text-transform: uppercase;
+	font-size: var(--fs-800);
+	line-height: 1.21;
+}
+.custom-hero h1 {
+	max-width: 5em;
+	margin: 0;
+	margin-bottom: 0.3em;
+}
+.custom-hero .custom-hero-texts > p:last-of-type {
+	margin-top: 3.5em;
+}
+.custom-hero a {
+	margin: auto;
+}
+/*-----------------------------------------------------KONEC HERO*/
+/*-----------------------------------------------------Home content*/
+h2,
+.h2 {
+	font-weight: 200;
+	text-transform: uppercase;
+	font-size: var(--fs-700);
+	line-height: 1.21;
+}
+.custom-section h2 {
+	max-width: 10em;
+}
+
+.custom-hero .custom-hero-texts > p:last-of-type,
+.custom-section-main-texts p,
+.custom-section-bottom-texts p {
+	margin-bottom: 2em;
+}
+.index-content-wrapper {
+	max-width: var(--max-width);
+}
+.index-content-wrapper .banners-content {
+	margin: 0;
+}
+.body-banners > .banner-wrapper {
+	width: 100%;
+}
+
+.in-index #content-wrapper {
+	background: transparent !important;
+	background-color: transparent !important;
+}
+.custom-section {
+	padding-left: var(--margin-side);
+}
+.custom-section-main {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	position: relative;
+	padding-bottom: calc(var(--margin-top) * 2.5);
+	justify-items: center;
+}
+
+.custom-section-main-texts {
+	font-size: var(--fs-500);
+	max-width: 25em;
+}
+.custom-section-main-image {
+	display: flex;
+	margin-top: 80px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+.custom-section-main-image img {
+	filter: drop-shadow(20px 40px 0px var(--color-primary-hover));
+	width: 60%;
+	margin-left: 30%;
+	margin-right: auto;
+}
+
+.custom-section-main-bg-image {
+	position: absolute;
+	z-index: -1;
+}
+.custom-section-main-bg-image.water {
+	width: clamp(0px, 82vw, 1574px);
+	bottom: 2%;
+}
+@media (max-width: 1440px) {
+	.custom-section-main-bg-image.water {
+		left: calc(0px - var(--margin-side) - 20px);
+	}
+}
+@media (min-width: 1441px) {
+	.custom-section-main-bg-image.water {
+		left: calc((var(--max-width) - 100vw) / 2 - var(--margin-side) - 20px);
+	}
+}
+@media (min-width: 2401px) {
+	.custom-section-main-bg-image.water {
+		left: -0px;
+	}
+}
+.custom-section-main-bg-image.herbs {
+	width: clamp(0px, 60vw, 1000px);
+	bottom: 25%;
+	right: 32%;
+	transform: rotate(-5deg);
+}
+
+.custom-section-main-bg-image img {
+	max-width: none;
+	width: 100%;
+}
+
+.custom-section-bottom {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+}
+.custom-section-bottom-image {
+	display: flex;
+	justify-content: center;
+	max-width: 70%;
+	margin: auto;
+}
+.custom-section-bottom-texts {
+	max-width: 65%;
+}
+.homepage-texts-wrapper {
+	display: none;
+}
+/*-----------------------------------------------------KONEC Home content*/
+/*-----------------------------------------------------footer*/
+.footer-newsletter {
+	display: none !important;
+}
+#footer {
+	background: var(--color-primary-hover);
+	margin: 0;
+	border-style: none;
+	margin-top: calc(var(--margin-top) * 3);
+}
+.container.footer-rows {
+	max-width: none;
+	padding: 0;
+}
+.footer-rows .custom-footer {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 0;
+}
+.custom-footer__banner15 {
+	width: 100%;
+	padding: 0 !important;
+}
+.custom-footer__banner15 .banner {
+	margin: 0;
+}
+.custom-footer__banner15 .banner .banner-wrapper {
+	margin: 0;
+}
+.custom-footer__banner15 img {
+	width: 100%;
+}
+.custom-footer__articles {
+	margin: auto;
+	width: 100%;
+	max-width: var(--max-width);
+	padding-top: 60px !important;
+	padding-bottom: 60px !important;
+	padding-left: clamp(50px, 20%, 200px);
+	padding-right: clamp(50px, 20%, 200px);
+}
+.custom-footer__articles h4 {
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.6rem !important;
+	font-weight: 600 !important;
+	margin: 0 !important;
+	line-height: 1.875;
+}
+.custom-footer__articles ul {
+	padding: 0 !important;
+	margin: 0;
+}
+.custom-footer__articles ul li a {
+	color: white;
+	font-weight: 300;
+	font-size: 1.6rem;
+	line-height: 1.875;
+}
+.custom-footer__articles ul li::before {
+	display: none;
+}
+.footer-bottom {
+	border-style: none;
+	padding: 0;
+	padding-left: clamp(50px, 20%, 200px);
+	padding-right: clamp(50px, 20%, 200px);
+}
+.footer-bottom #signature a,
+.footer-bottom .copyright {
+	color: white;
+}
+/*-----------------------------------------------------KONEC footer*/
+
+/*-----------------------------------------------------DETAIL PRODUKTU*/
+.stars-wrapper,
+.detail-parameters,
+.social-buttons-wrapper,
+.p-basic-info-block,
+.p-param-block,
+.shp-tabs-row,
+.p-image::after,
+.breadcrumbs {
+	display: none !important;
+}
+
+.p-to-cart-block {
+	border-style: none;
+}
+/*-----------------------------------------------------KONEC DETAIL PRODUKU*/
+
+/*-----------------------------------------------------KOSIK*/
+.co-contact-information .form-group .btn {
+	width: auto !important;
+	max-width: none;
+}
+/*-----------------------------------------------------KONEC KOSIK*/
