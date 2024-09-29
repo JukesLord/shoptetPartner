@@ -98,7 +98,7 @@ body::before {
 	height: 100%;
 	background: black;
 	opacity: 0.25;
-	z-index: 999;
+	z-index: 9999;
 	transition: transform 0.2s ease-out;
 	transform: translatex(105%);
 }
@@ -173,7 +173,7 @@ body.open-menu .hamburger-menu {
 }
 .close-hamburger {
 	position: fixed;
-	top: 10px;
+	top: 20px;
 	right: 10px;
 	background: transparent;
 	width: 35px;
