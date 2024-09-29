@@ -121,6 +121,7 @@ body.open-menu::before {
 	display: none;
 	position: fixed;
 	top: 0;
+	z-index: 9999999;
 	right: 0;
 	left: auto;
 	width: clamp(300px, 30vw, 700px);
