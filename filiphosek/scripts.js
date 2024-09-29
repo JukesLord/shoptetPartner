@@ -5,6 +5,7 @@ $(".menu-level-1").append('<div class="close-hamburger"></div>');
 
 $(".hamburger-menu").on("click touchend", function () {
 	$("body").addClass("open-menu");
+	$(document).on("scroll touchmove mousewheel", preventScroll);
 
 	setTimeout(function () {
 		$(document).on("click touchend", closeMenuOnClickOutside);
@@ -18,6 +19,7 @@ $(".close-hamburger").on("click touchend", function () {
 
 function closeMenu() {
 	$("body").removeClass("open-menu");
+	$(document).off("scroll touchmove mousewheel", preventScroll);
 	$(document).off("click touchend", closeMenuOnClickOutside);
 	$(document).off("keydown", closeMenuOnEscape);
 }
@@ -34,7 +36,10 @@ function closeMenuOnEscape(event) {
 	}
 }
 
-//.site-name is <h1>, change it to <p> with same classes and content
+function preventScroll(event) {
+	event.preventDefault();
+}
+
 $(".site-name").replaceWith(function () {
 	return $("<p>", { class: $(this).attr("class"), html: $(this).html() });
 });

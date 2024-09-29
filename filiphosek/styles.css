@@ -99,7 +99,7 @@ body::before {
 	background: black;
 	opacity: 0.25;
 	z-index: 999;
-	transition: transform 0.5s ease-out;
+	transition: transform 0.2s ease-out;
 	transform: translatex(105%);
 }
 body.open-menu::before {
