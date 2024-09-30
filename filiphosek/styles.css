@@ -107,8 +107,9 @@ body.open-menu::before {
 }
 #header {
 	z-index: 1000;
-	position: relative;
 	filter: drop-shadow(0px 4px 4px var(--shadow-clr));
+	position: sticky;
+	top: 0;
 }
 
 .navigation-buttons {
