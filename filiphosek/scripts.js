@@ -41,14 +41,13 @@ $(".site-name").replaceWith(function () {
 });
 
 $(document).ready(function () {
+	let currentValue = 1;
 	$("#increase-amount").on("click", function () {
-		let currentValue = parseInt($("#add-amount").attr("data-value"));
 		currentValue++;
 		$("#add-amount").attr("data-value", currentValue).text(currentValue);
 	});
 
 	$("#decrease-amount").on("click", function () {
-		let currentValue = parseInt($("#add-amount").attr("data-value"));
 		if (currentValue > 1) {
 			currentValue--;
 			$("#add-amount").attr("data-value", currentValue).text(currentValue);
