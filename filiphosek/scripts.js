@@ -39,3 +39,19 @@ function closeMenuOnEscape(event) {
 $(".site-name").replaceWith(function () {
 	return $("<p>", { class: $(this).attr("class"), html: $(this).html() });
 });
+
+$(document).ready(function () {
+	$("#increase-amount").on("click", function () {
+		let currentValue = parseInt($("#add-amount").attr("data-value"));
+		currentValue++;
+		$("#add-amount").attr("data-value", currentValue).text(currentValue);
+	});
+
+	$("#decrease-amount").on("click", function () {
+		let currentValue = parseInt($("#add-amount").attr("data-value"));
+		if (currentValue > 1) {
+			currentValue--;
+			$("#add-amount").attr("data-value", currentValue).text(currentValue);
+		}
+	});
+});

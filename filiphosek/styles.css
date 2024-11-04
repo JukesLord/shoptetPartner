@@ -11,6 +11,7 @@
 	--_color-header-text: var(--color-primary);
 	--fs-800: clamp(5rem, 1.316vw + 4.4736rem, 14rem);
 	--fs-700: clamp(4rem, calc(var(--fs-800) - 3rem), 11rem);
+	--fs-600: clamp(2.4rem, 0.833vw + 1rem, 6rem);
 	--fs-500: clamp(1.6rem, 0.833vw + 0.4rem, 4rem);
 }
 @media (min-width: 1921px) {
@@ -268,6 +269,53 @@ h1,
 .custom-hero a {
 	margin: auto;
 }
+
+.add-to-cart-cst-btn {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.add-amount {
+	font-size: calc(var(--fs-800) * 1.4);
+	font-weight: 700;
+	color: var(--color-primary-hover);
+	position: relative;
+	padding-right: 0.5em;
+}
+.amount-arrows {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0.3em;
+	height: 100%;
+}
+.amount-arrow {
+	width: 0.3em;
+	height: 0.2em;
+	position: absolute;
+}
+#increase-amount {
+	top: 32%;
+}
+#decrease-amount {
+	bottom: 32%;
+	transform: rotate(180deg);
+}
+
+.amount-arrow::before {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	width: 100%;
+	height: 0.2em;
+	background: url(https://606260.myshoptet.com/user/documents/upload/Assets/arrow.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
 /*-----------------------------------------------------KONEC HERO*/
 /*-----------------------------------------------------Home content*/
 h2,
@@ -472,6 +520,80 @@ h2,
 .p-to-cart-block {
 	border-style: none;
 }
+.type-detail {
+	overflow-x: hidden;
+}
+.type-detail h1 {
+	margin-bottom: 0;
+	font-weight: 300;
+}
+.p-short-description h2 {
+	margin-top: 0;
+}
+.type-detail h2 {
+	font-weight: 300;
+}
+.basic-description h2 {
+	margin-bottom: 0.1em;
+}
+.type-detail h3 {
+	font-weight: 500;
+	font-size: var(--fs-600);
+	margin-bottom: 0.1em;
+}
+
+.product-detail-grid {
+	display: grid;
+	grid-template-columns: 1fr 0.8fr;
+	gap: 20px;
+}
+.grid-entry {
+	display: grid;
+	grid-template-columns: 84px 1fr;
+	gap: 5px;
+	align-items: center;
+}
+
+.p-detail-tabs-wrapper {
+	max-width: 100%;
+}
+.p-detail-tabs-wrapper .row,
+.p-detail-tabs-wrapper .col-sm-12,
+.p-detail-tabs-wrapper .tab-content {
+	padding: 0;
+	margin: 0;
+}
+.description-inner::before {
+	content: "";
+	display: block;
+	--image-width: clamp(100px, 60vw, 1440px);
+	width: var(--image-width);
+	background: url("https://606260.myshoptet.com/user/documents/upload/Assets/Purelife herb asset_2x_transparent_2_flip.png");
+	height: calc(var(--image-width) / 3.532);
+	background-size: contain;
+	background-repeat: no-repeat;
+	transform: translatex(-20px);
+	margin-bottom: calc(var(--image-width) / 10);
+}
+.basic-description {
+	width: 1440px;
+	max-width: 80%;
+	margin: auto;
+}
+.detail-desc-image {
+	margin: var(--margin-top) 0;
+}
+
+.detail-desc-image > img {
+	max-width: 650px;
+}
+.detail-desc-image .with-bg {
+	filter: drop-shadow(20px 40px 0px var(--color-primary-hover));
+}
+.asset-img {
+	position: relative;
+}
+
 /*-----------------------------------------------------KONEC DETAIL PRODUKU*/
 
 /*-----------------------------------------------------KOSIK*/
