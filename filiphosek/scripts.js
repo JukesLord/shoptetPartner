@@ -115,4 +115,12 @@ if ($("body").hasClass("type-product")) {
 			"https://606260.myshoptet.com/user/documents/upload/Assets/filter_animation_151024_v1.gif"
 		);
 	});
+	$(".p-thumbnails-inner > div > a")
+		.eq(0)
+		.on("click", function () {
+			$(".p-image img").attr(
+				"src",
+				"https://606260.myshoptet.com/user/documents/upload/Assets/filter_animation_151024_v1.gif"
+			);
+		});
 }
