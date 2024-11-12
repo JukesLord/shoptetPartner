@@ -39,13 +39,49 @@ function closeMenuOnEscape(event) {
 $(".site-name").replaceWith(function () {
 	return $("<p>", { class: $(this).attr("class"), html: $(this).html() });
 });
-/*
+
 $(document).ready(function () {
 	let currentValue = 1;
 	let addedToCart = false;
 	const priceId = 404;
-	const itemId = "404";
+	let itemId = "";
 	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
+
+	getProductInfo();
+
+	let cartInfo;
+	let cartItems;
+	let item;
+	function getProductInfo() {
+		cartInfo = dataLayer.find((item) => item.shoptet && item.shoptet.cartInfo);
+
+		cartItems = cartInfo.shoptet.cartInfo.cartItems;
+		item = cartItems.find((cartItem) => cartItem.priceId === priceId);
+		if (item.quantity > 0) {
+			itemId = item.itemId;
+			currentValue = item.quantity;
+			addedToCart = true;
+			addToCartButton.find("div").text("Zobrazit košík");
+			$("#add-amount").attr("val", currentValue);
+			$("#add-amount span").text(currentValue);
+		}
+	}
+
+	addToCartButton.on("click touchend", function () {
+		if (!addedToCart) {
+			shoptet.cartShared.addToCart({ priceId: priceId, amount: currentValue });
+
+			document.addEventListener(
+				"ShoptetCartUpdated",
+				function () {
+					getProductInfo();
+				},
+				{ once: true }
+			);
+		} else {
+			window.location.href = "/kosik";
+		}
+	});
 
 	$("#increase-amount").on("click", function () {
 		currentValue++;
@@ -64,34 +100,7 @@ $(document).ready(function () {
 			$("#add-amount span").text(currentValue);
 		}
 		if (addedToCart) {
-			shoptet.cartShared.updateQuantityInCart({itemId: '404', priceId: 404, amount: 3});
 			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
 		}
 	});
-
-	if (dataLayer && dataLayer.length > 0) {
-		let cartInfo = dataLayer.find((item) => item.shoptet && item.shoptet.cartInfo);
-		if (cartInfo) {
-			let cartItems = cartInfo.shoptet.cartInfo.cartItems;
-			let item = cartItems.find((cartItem) => cartItem.priceId === priceId);
-			if (item && item.quantity > 0) {
-				currentValue = item.quantity;
-				$("#add-amount").attr("val", currentValue);
-				$("#add-amount span").text(currentValue);
-				addedToCart = true;
-				addToCartButton.find("div").text("Zobrazit košík");
-			}
-		}
-	}
-
-	addToCartButton.on("click touchend", function () {
-		if (!addedToCart) {
-			shoptet.cartShared.addToCart({ productCode: itemId, amount: currentValue });
-			addToCartButton.find("div").text("Zobrazit košík");
-			addedToCart = true;
-		} else {
-			window.location.href = "/kosik";
-		}
-	});
 });
-*/
