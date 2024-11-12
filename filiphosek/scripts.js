@@ -117,7 +117,8 @@ if ($("body").hasClass("type-product")) {
 	});
 	$(".p-thumbnails-inner > div > a")
 		.eq(0)
-		.on("click", function () {
+		.on("click", function (e) {
+			e.preventDefault();
 			$(".p-image img").attr(
 				"src",
 				"https://606260.myshoptet.com/user/documents/upload/Assets/filter_animation_151024_v1.gif"
