@@ -68,7 +68,7 @@ $(document).ready(function () {
 			addedToCart = true;
 		} else {
 			shoptet.cartShared.updateQuantityInCart({ itemId: "404", priceId: 404, amount: currentValue });
-			addToCartButton.text("Upravit počet");
+			addToCartButton.find("div").text("Upravit počet");
 		}
 	});
 });
