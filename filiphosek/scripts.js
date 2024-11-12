@@ -44,13 +44,13 @@ $(document).ready(function () {
 	let currentValue = 1;
 	$("#increase-amount").on("click", function () {
 		currentValue++;
-		$("#add-amount").attr("data-value", currentValue).text(currentValue);
+		$("#add-amount").val(currentValue);
 	});
 
 	$("#decrease-amount").on("click", function () {
 		if (currentValue > 1) {
 			currentValue--;
-			$("#add-amount").attr("data-value", currentValue).text(currentValue);
+			$("#add-amount").val(currentValue);
 		}
 	});
 });
