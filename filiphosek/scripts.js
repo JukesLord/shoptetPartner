@@ -55,15 +55,18 @@ $(document).ready(function () {
 	function getProductInfo() {
 		cartInfo = dataLayer.find((item) => item.shoptet && item.shoptet.cartInfo);
 
-		cartItems = cartInfo.shoptet.cartInfo.cartItems;
-		item = cartItems.find((cartItem) => cartItem.priceId === priceId);
-		if (item.quantity > 0) {
-			itemId = item.itemId;
-			currentValue = item.quantity;
-			addedToCart = true;
-			addToCartButton.find("div").text("Zobrazit košík");
-			$("#add-amount").attr("val", currentValue);
-			$("#add-amount span").text(currentValue);
+		if (cartInfo) {
+			cartItems = cartInfo.shoptet.cartInfo.cartItems;
+			item = cartItems.find((cartItem) => cartItem.priceId === priceId);
+
+			if (item && item.quantity > 0) {
+				itemId = item.itemId;
+				currentValue = item.quantity;
+				addedToCart = true;
+				addToCartButton.find("div").text("Zobrazit košík");
+				$("#add-amount").attr("val", currentValue);
+				$("#add-amount span").text(currentValue);
+			}
 		}
 	}
 
