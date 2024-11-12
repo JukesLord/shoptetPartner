@@ -45,6 +45,8 @@ $(document).ready(function () {
 	let addedToCart = false;
 	const priceId = 404;
 	const itemId = "404";
+	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
+
 	$("#increase-amount").on("click", function () {
 		currentValue++;
 		$("#add-amount").val(currentValue);
@@ -76,7 +78,6 @@ $(document).ready(function () {
 		}
 	}
 
-	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
 	addToCartButton.on("click touchend", function () {
 		if (!addedToCart) {
 			shoptet.cartShared.addToCart({ productCode: itemId, amount: currentValue });
