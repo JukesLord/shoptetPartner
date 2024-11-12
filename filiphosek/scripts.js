@@ -65,10 +65,10 @@ $(document).ready(function () {
 	addToCartButton.on("click touchend", function () {
 		if (!addedToCart) {
 			shoptet.cartShared.addToCart({ productCode: "404", amount: currentValue });
+			addToCartButton.find("div").text("Přejít do košíku");
 			addedToCart = true;
 		} else {
-			shoptet.cartShared.updateQuantityInCart({ itemId: "404", priceId: 404, amount: currentValue });
-			addToCartButton.find("div").text("Upravit počet");
+			window.location.href = "/kosik";
 		}
 	});
 });
