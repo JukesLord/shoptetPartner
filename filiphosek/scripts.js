@@ -42,15 +42,33 @@ $(".site-name").replaceWith(function () {
 
 $(document).ready(function () {
 	let currentValue = 1;
+	let addedToCart = false;
 	$("#increase-amount").on("click", function () {
 		currentValue++;
 		$("#add-amount").val(currentValue);
+
+		if (addedToCart) {
+			shoptet.cartShared.updateQuantityInCart({ itemId: "404", priceId: 404, amount: currentValue });
+		}
 	});
 
 	$("#decrease-amount").on("click", function () {
 		if (currentValue > 1) {
 			currentValue--;
 			$("#add-amount").val(currentValue);
+		}
+		if (addedToCart) {
+			shoptet.cartShared.updateQuantityInCart({ itemId: "404", priceId: 404, amount: currentValue });
+		}
+	});
+	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
+	$(addToCartButton).on("click, touchend", function () {
+		if (!addedToCart) {
+			shoptet.cartShared.addToCart({ productCode: "404", amount: currentValue });
+			addedToCart = true;
+		} else {
+			shoptet.cartShared.updateQuantityInCart({ itemId: "404", priceId: 404, amount: currentValue });
+			addToCartButton.text("Upravit počet");
 		}
 	});
 });
