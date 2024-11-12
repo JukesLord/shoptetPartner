@@ -72,6 +72,10 @@ h6,
 	filter: drop-shadow(0px 4px 4px var(--shadow-clr));
 	display: inline-block;
 }
+.custom-btn:hover,
+.btn:hover {
+	cursor: pointer;
+}
 .in-index .custom-btn,
 .in-index .btn,
 .type-product .custom-btn,
@@ -285,12 +289,14 @@ h1,
 	font-weight: 700;
 	color: var(--color-primary-hover);
 	position: relative;
-	padding-right: 0.3em;
+	padding-right: 0.35em;
 	width: auto;
 }
 .add-amount span {
 	text-align: right;
-	width: 1.45em;
+	display: flex;
+	min-width: 1.35em;
+	width: fit-content;
 }
 .amount-arrows {
 	position: absolute;
