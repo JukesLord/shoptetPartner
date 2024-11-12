@@ -127,4 +127,5 @@ if ($("body").hasClass("type-product")) {
 			"https://606260.myshoptet.com/user/documents/upload/Assets/filter_animation_151024_v1.gif"
 		);
 	});
+	$(".stars-wrapper").insertAfter($(".p-final-price-wrapper"));
 }

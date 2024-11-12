@@ -526,7 +526,6 @@ h2,
 /*-----------------------------------------------------KONEC footer*/
 
 /*-----------------------------------------------------DETAIL PRODUKTU*/
-/*.stars-wrapper,*/
 .detail-parameters,
 .social-buttons-wrapper,
 .p-basic-info-block,
@@ -572,6 +571,12 @@ h2,
 	grid-template-columns: 84px 1fr;
 	gap: 5px;
 	align-items: center;
+}
+.type-detail .quantity {
+	max-width: 48px;
+}
+.type-detail .add-to-cart {
+	align-items: center !important;
 }
 
 .p-detail-tabs-wrapper {
