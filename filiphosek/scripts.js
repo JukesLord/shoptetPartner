@@ -43,12 +43,14 @@ $(".site-name").replaceWith(function () {
 $(document).ready(function () {
 	let currentValue = 1;
 	let addedToCart = false;
+	const priceId = 404;
+	const itemId = "404";
 	$("#increase-amount").on("click", function () {
 		currentValue++;
 		$("#add-amount").val(currentValue);
 
 		if (addedToCart) {
-			shoptet.cartShared.updateQuantityInCart({ itemId: "404", priceId: 404, amount: currentValue });
+			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
 		}
 	});
 
@@ -58,13 +60,26 @@ $(document).ready(function () {
 			$("#add-amount").val(currentValue);
 		}
 		if (addedToCart) {
-			shoptet.cartShared.updateQuantityInCart({ itemId: "404", priceId: 404, amount: currentValue });
+			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
 		}
 	});
+
+	if (dataLayer && dataLayer.length > 0) {
+		let cartInfo = dataLayer.find((item) => item.shoptet && item.shoptet.cartInfo);
+		if (cartInfo) {
+			let cartItems = cartInfo.shoptet.cartInfo.cartItems;
+			let item = cartItems.find((cartItem) => cartItem.priceId === priceId);
+			if (item && item.quantity > 0) {
+				addedToCart = true;
+				addToCartButton.find("div").text("Přejít do košíku");
+			}
+		}
+	}
+
 	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
 	addToCartButton.on("click touchend", function () {
 		if (!addedToCart) {
-			shoptet.cartShared.addToCart({ productCode: "404", amount: currentValue });
+			shoptet.cartShared.addToCart({ productCode: itemId, amount: currentValue });
 			addToCartButton.find("div").text("Přejít do košíku");
 			addedToCart = true;
 		} else {
