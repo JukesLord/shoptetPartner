@@ -72,6 +72,8 @@ $(document).ready(function () {
 			let cartItems = cartInfo.shoptet.cartInfo.cartItems;
 			let item = cartItems.find((cartItem) => cartItem.priceId === priceId);
 			if (item && item.quantity > 0) {
+				currentValue = item.quantity;
+				$("#add-amount").val(currentValue);
 				addedToCart = true;
 				addToCartButton.find("div").text("Přejít do košíku");
 			}

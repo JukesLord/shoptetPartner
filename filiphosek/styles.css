@@ -273,14 +273,15 @@ h1,
 .add-to-cart-cst-btn {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 .add-to-cart-cst-btn .btn-block {
 	justify-content: center;
+	text-align: center;
 }
 
 .add-amount {
-	font-size: calc(var(--fs-800) * 1.4);
+	font-size: calc(var(--fs-800) * 1.2);
 	font-weight: 700;
 	color: var(--color-primary-hover);
 	position: relative;
