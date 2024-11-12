@@ -390,6 +390,7 @@ h2,
 }
 .custom-section-main-image img {
 	filter: drop-shadow(20px 40px 0px var(--color-primary-hover));
+	/*box-shadow: 20px 40px 0px var(--color-primary-hover);*/
 	width: 60%;
 	margin-left: 30%;
 	margin-right: auto;
