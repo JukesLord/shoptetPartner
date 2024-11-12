@@ -573,7 +573,7 @@ h2,
 	align-items: center;
 }
 .type-detail .quantity {
-	max-width: 48px;
+	max-height: 48px;
 }
 .type-detail .add-to-cart {
 	align-items: center !important;
