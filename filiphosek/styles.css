@@ -288,13 +288,9 @@ h1,
 	padding-right: 0.3em;
 	width: auto;
 }
-.add-amount input {
+.add-amount span {
 	text-align: right;
 	width: 1.45em;
-	border-style: none;
-	outline: none !important;
-	box-shadow: none !important;
-	padding: 0;
 }
 .amount-arrows {
 	position: absolute;
