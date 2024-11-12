@@ -46,12 +46,12 @@ $(document).ready(function () {
 	const priceId = 404;
 	let itemId = "";
 	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
-
-	getProductInfo();
-
 	let cartInfo;
 	let cartItems;
 	let item;
+
+	getProductInfo();
+
 	function getProductInfo() {
 		cartInfo = dataLayer.find((item) => item.shoptet && item.shoptet.cartInfo);
 
