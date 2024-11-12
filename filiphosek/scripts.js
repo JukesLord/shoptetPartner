@@ -39,7 +39,7 @@ function closeMenuOnEscape(event) {
 $(".site-name").replaceWith(function () {
 	return $("<p>", { class: $(this).attr("class"), html: $(this).html() });
 });
-
+/*
 $(document).ready(function () {
 	let currentValue = 1;
 	let addedToCart = false;
@@ -64,6 +64,7 @@ $(document).ready(function () {
 			$("#add-amount span").text(currentValue);
 		}
 		if (addedToCart) {
+			shoptet.cartShared.updateQuantityInCart({itemId: '404', priceId: 404, amount: 3});
 			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
 		}
 	});
@@ -93,3 +94,4 @@ $(document).ready(function () {
 		}
 	});
 });
+*/
