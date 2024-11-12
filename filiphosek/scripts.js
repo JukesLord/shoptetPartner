@@ -49,7 +49,8 @@ $(document).ready(function () {
 
 	$("#increase-amount").on("click", function () {
 		currentValue++;
-		$("#add-amount").val(currentValue);
+		$("#add-amount").attr("val", currentValue);
+		$("#add-amount span").text(currentValue);
 
 		if (addedToCart) {
 			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
@@ -59,7 +60,8 @@ $(document).ready(function () {
 	$("#decrease-amount").on("click", function () {
 		if (currentValue > 1) {
 			currentValue--;
-			$("#add-amount").val(currentValue);
+			$("#add-amount").attr("val", currentValue);
+			$("#add-amount span").text(currentValue);
 		}
 		if (addedToCart) {
 			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
@@ -73,9 +75,10 @@ $(document).ready(function () {
 			let item = cartItems.find((cartItem) => cartItem.priceId === priceId);
 			if (item && item.quantity > 0) {
 				currentValue = item.quantity;
-				$("#add-amount").val(currentValue);
+				$("#add-amount").attr("val", currentValue);
+				$("#add-amount span").text(currentValue);
 				addedToCart = true;
-				addToCartButton.find("div").text("Přejít do košíku");
+				addToCartButton.find("div").text("Zobrazit košík");
 			}
 		}
 	}
@@ -83,7 +86,7 @@ $(document).ready(function () {
 	addToCartButton.on("click touchend", function () {
 		if (!addedToCart) {
 			shoptet.cartShared.addToCart({ productCode: itemId, amount: currentValue });
-			addToCartButton.find("div").text("Přejít do košíku");
+			addToCartButton.find("div").text("Zobrazit košík");
 			addedToCart = true;
 		} else {
 			window.location.href = "/kosik";
