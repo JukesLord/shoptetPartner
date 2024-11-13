@@ -713,6 +713,9 @@ h2,
 	.custom-section-main-image img {
 		margin: 0;
 		width: 90%;
+	}
+	.custom-section-main-image img,
+	.detail-desc-image .with-bg {
 		box-shadow: 10px 15px 0px var(--color-primary-hover);
 	}
 	.custom-section-main-texts .btn-block {
@@ -737,5 +740,24 @@ h2,
 	.custom-hero .custom-hero-texts .custom-hero-p > p:last-of-type {
 		margin-top: 1em;
 		margin-bottom: 2em;
+	}
+	.product-detail-grid {
+		grid-template-columns: 1fr;
+	}
+	.p-to-cart-block .p-add-to-cart-wrapper .add-to-cart {
+		justify-content: flex-start !important;
+	}
+	.type-product .stars-wrapper {
+		order: 0;
+	}
+	.type-product .p-final-price-wrapper {
+		order: 1;
+	}
+	.type-product .p-add-to-cart-wrapper {
+		order: 2;
+	}
+	.basic-description {
+		max-width: none;
+		width: auto;
 	}
 }
