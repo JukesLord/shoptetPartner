@@ -252,9 +252,9 @@ body.open-menu .hamburger-menu {
 }
 .custom-hero-product {
 	position: absolute;
-	width: clamp(319px, 16.6vw, 1000px);
+	width: clamp(319px, 25vw, 1000px);
 	right: 0;
-	bottom: 5%;
+	bottom: 15%;
 	transform: translate(100%, 15%);
 }
 .custom-hero-product img {
@@ -602,10 +602,16 @@ h2,
 	transform: translatex(-20px);
 	margin-bottom: calc(var(--image-width) / 10);
 }
-.basic-description {
+.basic-description,
+#ratingTab {
 	width: 1440px;
 	max-width: 80%;
 	margin: auto;
+}
+.tab-content #description,
+.tab-content #ratingTab {
+	display: block;
+	opacity: 1;
 }
 .detail-desc-image {
 	margin: var(--margin-top) 0;

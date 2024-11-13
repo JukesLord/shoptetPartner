@@ -127,5 +127,20 @@ if ($("body").hasClass("type-product")) {
 			"https://606260.myshoptet.com/user/documents/upload/Assets/filter_animation_151024_v1.gif"
 		);
 	});
-	$(".stars-wrapper").insertAfter($(".p-final-price-wrapper"));
+	let starWrapper = $(".stars-wrapper");
+	let star = $(".stars-wrapper .stars .star");
+	let ratingTab = $(".tab-content #ratingTab");
+
+	starWrapper.insertAfter($(".p-final-price-wrapper"));
+	ratingTab.prepend("<h3>Recenze produktu:</h3>");
+
+	star.off("shown");
+	starWrapper.on("click touchend", function () {
+		$("html, body").animate(
+			{
+				scrollTop: ratingTab.offset().top - 140,
+			},
+			500
+		);
+	});
 }
