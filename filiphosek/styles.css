@@ -138,6 +138,7 @@ body.open-menu::before {
 	width: clamp(300px, 30vw, 700px);
 	height: auto;
 	overflow: visible;
+	padding-top: 0;
 }
 body.open-menu #navigation {
 	display: block;
@@ -153,6 +154,10 @@ body.open-menu #navigation {
 .menu-level-1 .splitted {
 	visibility: visible !important;
 }
+.menu-level-1 a {
+	color: var(--color-primary);
+}
+
 .menu-level-1 a::before {
 	content: "";
 	position: absolute;
@@ -172,14 +177,25 @@ body.open-menu #navigation {
 	transform: scale(1);
 	transform-origin: left;
 }
+.navigationActions {
+	display: none;
+}
+
 .hamburger-menu {
 	position: absolute;
 	top: 50%;
 	right: 20px;
+	max-height: 60%;
 	cursor: pointer;
 	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
 }
+
 body.open-menu .hamburger-menu {
+	display: none;
+}
+.navigation-close {
 	display: none;
 }
 .close-hamburger {
@@ -191,6 +207,7 @@ body.open-menu .hamburger-menu {
 	height: 35px;
 	cursor: pointer;
 }
+
 .close-hamburger::before,
 .close-hamburger::after {
 	content: "";
@@ -272,7 +289,7 @@ h1,
 	margin: 0;
 	margin-bottom: 0.3em;
 }
-.custom-hero .custom-hero-texts > p:last-of-type {
+.custom-hero .custom-hero-texts .custom-hero-texts > p:last-of-type {
 	margin-top: 3.5em;
 }
 .custom-hero a {
@@ -636,3 +653,72 @@ h2,
 	max-width: none;
 }
 /*-----------------------------------------------------KONEC KOSIK*/
+
+/*MOBIL*/
+@media (max-width: 1200px) {
+	:root {
+		--margin-top: 15px;
+	}
+}
+
+@media (max-width: 991px) {
+	.overall-wrapper {
+		padding-top: 0px;
+	}
+
+	.navigation-in > ul > li > a::before {
+		bottom: 6px;
+	}
+	.close-hamburger {
+		top: 0px;
+		right: 0px;
+		width: 50px;
+		height: 50px;
+	}
+	.close-hamburger::before,
+	.close-hamburger::after {
+		width: 60%;
+	}
+	.custom-hero {
+		margin-bottom: calc(var(--margin-top) * 2);
+	}
+	.custom-hero-content {
+		padding: 20px 20px 0;
+	}
+	.custom-hero-block {
+		max-width: 100%;
+		margin: 0;
+	}
+	.custom-hero-product {
+		position: relative;
+		inset: 0;
+		transform: none;
+		width: 80%;
+		margin: auto;
+	}
+	.custom-section {
+		padding: 0 20px;
+	}
+	.custom-section-main {
+		padding-bottom: 0;
+	}
+	.custom-section-main-texts .btn-block {
+		display: none;
+	}
+	.custom-section-bottom {
+		grid-template-columns: 1fr;
+		gap: 2em;
+	}
+	.custom-section-bottom-texts {
+		max-width: none;
+	}
+	.custom-section-bottom .btn-block {
+		justify-content: center;
+	}
+	.custom-section-main-bg-image {
+		display: none;
+	}
+	#footer .banner {
+		min-height: auto;
+	}
+}
