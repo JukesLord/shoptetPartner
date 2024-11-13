@@ -134,8 +134,11 @@ if ($("body").hasClass("type-product")) {
 	starWrapper.insertAfter($(".p-final-price-wrapper"));
 	ratingTab.prepend("<h3>Recenze produktu:</h3>");
 
-	star.off("shown");
-	$(".stars-wrapper .stars .star").off("shown");
+	//wait 500ms for listeners to load
+	setTimeout(function () {
+		star.off("shown");
+	}, 500);
+
 	starWrapper.on("click touchend", function () {
 		$("html, body").animate(
 			{
