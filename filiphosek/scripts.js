@@ -135,6 +135,7 @@ if ($("body").hasClass("type-product")) {
 	ratingTab.prepend("<h3>Recenze produktu:</h3>");
 
 	star.off("shown");
+	$(".stars-wrapper .stars .star").off("shown");
 	starWrapper.on("click touchend", function () {
 		$("html, body").animate(
 			{
