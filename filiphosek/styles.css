@@ -189,7 +189,7 @@ body.open-menu #navigation {
 	cursor: pointer;
 	transform: translateY(-50%);
 	display: flex;
-	align-items: center;
+	align-items: normal;
 }
 
 body.open-menu .hamburger-menu {
@@ -701,6 +701,19 @@ h2,
 	}
 	.custom-section-main {
 		padding-bottom: 0;
+		grid-template-columns: 1fr;
+	}
+	.custom-section-main-texts {
+		max-width: none;
+	}
+	.custom-section-main-image {
+		margin-top: 0;
+		margin-bottom: 4em;
+	}
+	.custom-section-main-image img {
+		margin: 0;
+		width: 90%;
+		box-shadow: 10px 15px 0px var(--color-primary-hover);
 	}
 	.custom-section-main-texts .btn-block {
 		display: none;
@@ -720,5 +733,9 @@ h2,
 	}
 	#footer .banner {
 		min-height: auto;
+	}
+	.custom-hero .custom-hero-texts .custom-hero-p > p:last-of-type {
+		margin-top: 1em;
+		margin-bottom: 2em;
 	}
 }
