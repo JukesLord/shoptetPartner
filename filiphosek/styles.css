@@ -173,7 +173,7 @@ body.open-menu #navigation {
 	transform-origin: left;
 }
 .hamburger-menu {
-	position: fixed;
+	position: absolute;
 	top: 50%;
 	right: 20px;
 	cursor: pointer;
