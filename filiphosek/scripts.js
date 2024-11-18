@@ -1,5 +1,5 @@
 $("#header .navigation-wrapper").append(
-	'<div class="hamburger-menu"><img src="https://606260.myshoptet.com/user/documents/upload/Assets/Hamburger menu.svg" alt="Hamburger Menu"></div>'
+	'<div class="hamburger-menu"><img src="https://684632.myshoptet.com/user/documents/upload/Images/Hamburger menu.svg" alt="Hamburger Menu"></div>'
 );
 $(".menu-level-1").append('<div class="close-hamburger"></div>');
 
@@ -43,7 +43,7 @@ $(".site-name").replaceWith(function () {
 $(document).ready(function () {
 	let currentValue = 1;
 	let addedToCart = false;
-	const priceId = 404;
+	const priceId = 44;
 	let itemId = "";
 	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
 	let cartInfo;
@@ -110,21 +110,18 @@ $(document).ready(function () {
 
 if ($("body").hasClass("type-product")) {
 	$(document).ready(function () {
-		$(".p-image img").attr(
-			"src",
-			"https://606260.myshoptet.com/user/documents/upload/Assets/filter_animation_151024_v1.gif"
-		);
+		$(".p-image img").attr("src", "https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif");
 		$(".p-thumbnails-inner > div > a:first-of-type").attr(
 			"href",
-			"https://606260.myshoptet.com/user/documents/upload/Assets/filter_animation_151024_v1.gif"
+			"https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif"
 		);
 		$(".p-thumbnails-inner > div > a:first-of-type img").attr(
 			"src",
-			"https://606260.myshoptet.com/user/documents/upload/Assets/filter_animation_151024_v1.gif"
+			"https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif"
 		);
 		$(".p-thumbnails-inner > div > a:first-of-type img").attr(
 			"data-src",
-			"https://606260.myshoptet.com/user/documents/upload/Assets/filter_animation_151024_v1.gif"
+			"https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif"
 		);
 	});
 	let starWrapper = $(".stars-wrapper");
