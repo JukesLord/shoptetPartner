@@ -487,19 +487,19 @@ h2,
 	padding: 0;
 	margin: 0;
 }
-.custom-footer__banner15 {
+.custom-footer__banner1 {
 	width: 100%;
 	padding: 0 !important;
 }
-.custom-footer__banner15 .banner {
+.custom-footer__banner1 .banner {
 	margin: 0;
 	background: white;
 }
-.custom-footer__banner15 .banner .banner-wrapper {
+.custom-footer__banner1 .banner .banner-wrapper {
 	max-width: 1920px;
 	margin: auto;
 }
-.custom-footer__banner15 img {
+.custom-footer__banner1 img {
 	width: 100%;
 }
 .custom-footer__articles {
