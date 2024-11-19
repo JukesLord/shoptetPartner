@@ -656,14 +656,25 @@ h2,
 }
 
 .detail-desc-image > img {
-	width: clamp(400px, 48.6%, 700px);
+	width: clamp(400px, 60%, 700px);
 }
 .detail-desc-image .with-bg {
 	/*filter: drop-shadow(20px 40px 0px var(--color-primary-hover));*/
 	box-shadow: 20px 40px 0px var(--color-primary-hover);
 }
-.asset-img {
+.detail-desc-image.fw-graphic {
 	position: relative;
+}
+.detail-desc-image.fw-graphic > * {
+	z-index: 1;
+	position: relative;
+}
+.detail-desc-image.fw-graphic .asset-img {
+	position: absolute;
+	z-index: 0;
+	bottom: 0;
+	max-height: 100%;
+	top: calc(var(--margin-top) * -0.7);
 }
 
 /*-----------------------------------------------------KONEC DETAIL PRODUKU*/
@@ -677,7 +688,7 @@ h2,
 
 /*MOBIL*/
 
-@media (max-width: 1200px) {
+@media (max-width: 991px) {
 	:root {
 		--margin-top: 15px;
 	}
