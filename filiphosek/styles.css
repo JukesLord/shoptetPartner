@@ -514,11 +514,16 @@ h2,
 	margin: 0;
 	background: white;
 }
-.custom-footer__banner1 .banner .banner-wrapper,
-.custom-footer__banner4 .banner .banner-wrapper {
+.custom-footer__banner1 .banner .banner-wrapper {
 	max-width: 1920px;
 	margin: auto;
 }
+
+.custom-footer__banner4 .banner .banner-wrapper {
+	max-width: none;
+	margin: auto;
+}
+
 .custom-footer__banner1 img,
 .custom-footer__banner4 img {
 	width: 100%;
