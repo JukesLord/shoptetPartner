@@ -487,19 +487,39 @@ h2,
 	padding: 0;
 	margin: 0;
 }
-.custom-footer__banner1 {
+.custom-footer__banner1,
+.custom-footer__banner4 {
 	width: 100%;
 	padding: 0 !important;
 }
-.custom-footer__banner1 .banner {
+/*herbs footer*/
+.custom-footer__banner1 {
+	display: none;
+}
+.in-index .custom-footer__banner1 {
+	display: block;
+}
+
+/*water footer*/
+.custom-footer__banner4 {
+	display: block;
+}
+.in-index .custom-footer__banner4 {
+	display: none;
+}
+
+.custom-footer__banner1 .banner,
+.custom-footer__banner4 .banner {
 	margin: 0;
 	background: white;
 }
-.custom-footer__banner1 .banner .banner-wrapper {
+.custom-footer__banner1 .banner .banner-wrapper,
+.custom-footer__banner4 .banner .banner-wrapper {
 	max-width: 1920px;
 	margin: auto;
 }
-.custom-footer__banner1 img {
+.custom-footer__banner1 img,
+.custom-footer__banner4 img {
 	width: 100%;
 }
 .custom-footer__articles {
@@ -655,13 +675,11 @@ h2,
 /*-----------------------------------------------------KONEC KOSIK*/
 
 /*MOBIL*/
+
 @media (max-width: 1200px) {
 	:root {
 		--margin-top: 15px;
 	}
-}
-
-@media (max-width: 991px) {
 	.overall-wrapper {
 		padding-top: 0px;
 	}
