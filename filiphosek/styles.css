@@ -30,6 +30,7 @@
 }
 body {
 	text-wrap: pretty;
+	overflow-x: hidden;
 }
 
 .display-none {
@@ -655,7 +656,7 @@ h2,
 }
 
 .detail-desc-image > img {
-	width: clamp(400px, 75%, 1200px);
+	width: clamp(400px, 48.6%, 700px);
 }
 .detail-desc-image .with-bg {
 	/*filter: drop-shadow(20px 40px 0px var(--color-primary-hover));*/
@@ -682,6 +683,10 @@ h2,
 	}
 	.overall-wrapper {
 		padding-top: 0px;
+	}
+	.custom-btn,
+	.btn {
+		padding: 0.5em 2em !important;
 	}
 
 	.navigation-in > ul > li > a::before {
@@ -713,6 +718,12 @@ h2,
 		transform: none;
 		width: 80%;
 		margin: auto;
+		max-width: 500px;
+	}
+	.add-to-cart-cst-btn {
+		max-width: 500px;
+		margin: auto;
+		gap: 10px;
 	}
 	.custom-section {
 		padding: 0 20px;
@@ -736,6 +747,11 @@ h2,
 	.detail-desc-image .with-bg {
 		box-shadow: 10px 15px 0px var(--color-primary-hover);
 	}
+	.description-inner::before {
+		--image-width: 90vw;
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
 	.custom-section-main-texts .btn-block {
 		display: none;
 	}
@@ -749,8 +765,15 @@ h2,
 	.custom-section-bottom .btn-block {
 		justify-content: center;
 	}
-	.custom-section-main-bg-image {
-		display: none;
+	.custom-section-main-bg-image.herb {
+		bottom: 2%;
+		width: 150%;
+		right: -10%;
+		transform: rotate(0deg);
+	}
+	.custom-section-main-bg-image.water {
+		width: 150%;
+		bottom: 15%;
 	}
 	#footer .banner {
 		min-height: auto;
