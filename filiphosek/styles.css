@@ -685,6 +685,10 @@ h2,
 	max-width: none;
 }
 /*-----------------------------------------------------KONEC KOSIK*/
+/*TABLET*/
+//min 992 max 1200
+@media (min-width: 992px) and (max-width: 1200px) {
+}
 
 /*MOBIL*/
 
@@ -694,6 +698,7 @@ h2,
 	}
 	.overall-wrapper {
 		padding-top: 0px;
+		overflow-x: hidden;
 	}
 	.custom-btn,
 	.btn {
@@ -776,7 +781,7 @@ h2,
 	.custom-section-bottom .btn-block {
 		justify-content: center;
 	}
-	.custom-section-main-bg-image.herb {
+	.custom-section-main-bg-image.herbs {
 		bottom: 2%;
 		width: 150%;
 		right: -10%;
@@ -811,5 +816,19 @@ h2,
 	.basic-description {
 		max-width: none;
 		width: auto;
+	}
+	.detail-desc-image > img {
+		width: 70%;
+		margin: auto !important;
+		display: block;
+		max-width: 600px;
+		padding-top: 20px;
+	}
+	.detail-desc-image.fw-graphic {
+		padding-bottom: 60px;
+	}
+	.detail-desc-image.fw-graphic .asset-img {
+		top: auto;
+		bottom: -20px;
 	}
 }
