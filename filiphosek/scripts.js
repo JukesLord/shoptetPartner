@@ -75,43 +75,44 @@ $(document).ready(function () {
 			}
 		}
 	}
+	if (addToCartButton.length > 0) {
+		addToCartButton.on("click touchend", function () {
+			if (!addedToCart) {
+				shoptet.cartShared.addToCart({ priceId: priceId, amount: currentValue });
 
-	addToCartButton.on("click touchend", function () {
-		if (!addedToCart) {
-			shoptet.cartShared.addToCart({ priceId: priceId, amount: currentValue });
+				document.addEventListener(
+					"ShoptetCartUpdated",
+					function () {
+						getProductInfo();
+					},
+					{ once: true }
+				);
+			} else {
+				window.location.href = "/kosik";
+			}
+		});
 
-			document.addEventListener(
-				"ShoptetCartUpdated",
-				function () {
-					getProductInfo();
-				},
-				{ once: true }
-			);
-		} else {
-			window.location.href = "/kosik";
-		}
-	});
-
-	$("#increase-amount").on("click", function () {
-		currentValue++;
-		$("#add-amount").attr("val", currentValue);
-		$("#add-amount span").text(currentValue);
-
-		if (addedToCart) {
-			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
-		}
-	});
-
-	$("#decrease-amount").on("click", function () {
-		if (currentValue > 1) {
-			currentValue--;
+		$("#increase-amount").on("click", function () {
+			currentValue++;
 			$("#add-amount").attr("val", currentValue);
 			$("#add-amount span").text(currentValue);
-		}
-		if (addedToCart) {
-			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
-		}
-	});
+
+			if (addedToCart) {
+				shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
+			}
+		});
+
+		$("#decrease-amount").on("click", function () {
+			if (currentValue > 1) {
+				currentValue--;
+				$("#add-amount").attr("val", currentValue);
+				$("#add-amount span").text(currentValue);
+			}
+			if (addedToCart) {
+				shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
+			}
+		});
+	}
 });
 
 if ($("body").hasClass("type-product")) {
