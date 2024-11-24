@@ -43,7 +43,7 @@ $(".site-name").replaceWith(function () {
 $(document).ready(function () {
 	let currentValue = 1;
 	let addedToCart = false;
-	const priceId = 44;
+	const priceId = 53;
 	let itemId = "";
 	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
 	let cartInfo;
