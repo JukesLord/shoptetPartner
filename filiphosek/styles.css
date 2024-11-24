@@ -837,3 +837,28 @@ h2,
 		bottom: -20px;
 	}
 }
+
+/*varianta produktu*/
+.wide .p-final-price-wrapper {
+	width: auto;
+}
+.p-variants-block .detail-parameters {
+	display: flex !important;
+	justify-content: flex-start;
+	padding: 10px;
+}
+.p-variants-block .detail-parameters tr {
+	display: flex;
+	margin-left: auto;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.detail-parameters tbody tr th {
+	min-width: auto !important;
+}
+.form-control,
+select {
+	color: var(--color-tertiary);
+	border-radius: var(--border-radius) !important;
+}
