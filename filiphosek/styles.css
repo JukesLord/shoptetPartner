@@ -305,6 +305,7 @@ h1,
 .add-to-cart-cst-btn .btn-block {
 	justify-content: center;
 	text-align: center;
+	margin-left: 0.6em;
 }
 
 .add-amount {
@@ -572,8 +573,8 @@ h2,
 .footer-bottom {
 	border-style: none;
 	padding: 0;
-	padding-left: clamp(50px, 20%, 200px);
-	padding-right: clamp(50px, 20%, 200px);
+	padding-left: clamp(20px, 10%, 200px);
+	padding-right: clamp(20px, 10%, 200px);
 }
 .footer-bottom #signature a,
 .footer-bottom .copyright {
@@ -897,4 +898,9 @@ select {
 }
 .href-to-cart:hover a {
 	color: var(--color-tertiary);
+}
+
+/*random kategorie v menu*/
+#navigation .appended-category {
+	display: none !important;
 }
