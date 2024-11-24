@@ -46,7 +46,7 @@ $(document).ready(function () {
 	let priceId = 0;
 	const itemCode = "44/1 K";
 	let itemId = "";
-	let addToCartButton;
+	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
 	let cartInfo;
 	let cartItems;
 	let item;
@@ -67,7 +67,6 @@ $(document).ready(function () {
 				addedToCart = true;
 
 				if ($("body").hasClass("in-index")) {
-					addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
 					addToCartButton.find("div").text("Zobrazit košík");
 					$("#add-amount").attr("val", currentValue);
 					$("#add-amount span").text(currentValue);
@@ -75,44 +74,43 @@ $(document).ready(function () {
 			}
 		}
 	}
-	if (addToCartButton.length > 0) {
-		addToCartButton.on("click touchend", function () {
-			if (!addedToCart) {
-				shoptet.cartShared.addToCart({ priceId: priceId, amount: currentValue });
 
-				document.addEventListener(
-					"ShoptetCartUpdated",
-					function () {
-						getProductInfo();
-					},
-					{ once: true }
-				);
-			} else {
-				window.location.href = "/kosik";
-			}
-		});
+	addToCartButton.on("click touchend", function () {
+		if (!addedToCart) {
+			shoptet.cartShared.addToCart({ productCode: itemCode, amount: currentValue });
 
-		$("#increase-amount").on("click", function () {
-			currentValue++;
+			document.addEventListener(
+				"ShoptetCartUpdated",
+				function () {
+					getProductInfo();
+				},
+				{ once: true }
+			);
+		} else {
+			window.location.href = "/kosik";
+		}
+	});
+
+	$("#increase-amount").on("click", function () {
+		currentValue++;
+		$("#add-amount").attr("val", currentValue);
+		$("#add-amount span").text(currentValue);
+
+		if (addedToCart) {
+			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
+		}
+	});
+
+	$("#decrease-amount").on("click", function () {
+		if (currentValue > 1) {
+			currentValue--;
 			$("#add-amount").attr("val", currentValue);
 			$("#add-amount span").text(currentValue);
-
-			if (addedToCart) {
-				shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
-			}
-		});
-
-		$("#decrease-amount").on("click", function () {
-			if (currentValue > 1) {
-				currentValue--;
-				$("#add-amount").attr("val", currentValue);
-				$("#add-amount span").text(currentValue);
-			}
-			if (addedToCart) {
-				shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
-			}
-		});
-	}
+		}
+		if (addedToCart) {
+			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
+		}
+	});
 });
 
 if ($("body").hasClass("type-product")) {
