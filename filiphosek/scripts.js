@@ -59,9 +59,9 @@ $(document).ready(function () {
 		if (cartInfo) {
 			cartItems = cartInfo.shoptet.cartInfo.cartItems;
 			item = cartItems.find((cartItem) => cartItem.code === itemCode);
-			priceId = item.priceId;
 
 			if (item && item.quantity > 0) {
+				priceId = item.priceId;
 				itemId = item.itemId;
 				currentValue = item.quantity;
 				addedToCart = true;
