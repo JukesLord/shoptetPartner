@@ -529,16 +529,18 @@ h2,
 .custom-footer__banner4 img {
 	width: 100%;
 }
-.custom-footer__articles {
+.custom-footer__articles,
+.custom-footer__contact {
 	margin: auto;
-	width: 100%;
+	width: 50%;
 	max-width: var(--max-width);
 	padding-top: 60px !important;
 	padding-bottom: 60px !important;
-	padding-left: clamp(50px, 20%, 200px);
-	padding-right: clamp(50px, 20%, 200px);
+	padding-left: clamp(20px, 10%, 200px);
+	padding-right: clamp(20px, 10%, 200px);
 }
-.custom-footer__articles h4 {
+.custom-footer__articles h4,
+.custom-footer__contact h4 {
 	color: white;
 	text-transform: uppercase;
 	font-size: 1.6rem !important;
@@ -546,17 +548,20 @@ h2,
 	margin: 0 !important;
 	line-height: 1.875;
 }
-.custom-footer__articles ul {
+.custom-footer__articles ul,
+.custom-footer__contact ul {
 	padding: 0 !important;
 	margin: 0;
 }
-.custom-footer__articles ul li a {
+.custom-footer__articles ul li a,
+.custom-footer__contact ul li {
 	color: white;
 	font-weight: 300;
 	font-size: 1.6rem;
 	line-height: 1.875;
 }
-.custom-footer__articles ul li::before {
+.custom-footer__articles ul li::before,
+.custom-footer__contact ul li::before {
 	display: none;
 }
 .footer-bottom {
