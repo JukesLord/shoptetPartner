@@ -122,6 +122,9 @@ body.open-menu::before {
 	position: sticky;
 	top: 0;
 }
+#header .site-name {
+	margin-left: 10px;
+}
 
 .navigation-buttons {
 	display: none;
