@@ -41,112 +41,138 @@ $(".site-name").replaceWith(function () {
 });
 
 $(document).ready(function () {
-	let currentValue = 1;
-	let addedToCart = false;
-	let priceId = 0;
-	const itemCode = "44/1 K";
-	let itemId = "";
-	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
-	let cartInfo;
-	let cartItems;
-	let item;
+	if ($("body").hasClass("in-index")) {
+		let currentValue = 1;
+		let addedToCart = false;
+		let priceId = 0;
+		const itemCode = "44/1 K";
+		let itemId = "";
+		let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
+		let cartInfo;
+		let cartItems;
+		let item;
 
-	getProductInfo();
+		getProductInfo();
 
-	function getProductInfo() {
-		cartInfo = dataLayer.find((item) => item.shoptet && item.shoptet.cartInfo);
+		function getProductInfo() {
+			cartInfo = dataLayer.find((item) => item.shoptet && item.shoptet.cartInfo);
 
-		if (cartInfo) {
-			cartItems = cartInfo.shoptet.cartInfo.cartItems;
-			item = cartItems.find((cartItem) => cartItem.code === itemCode);
+			if (cartInfo) {
+				cartItems = cartInfo.shoptet.cartInfo.cartItems;
+				item = cartItems.find((cartItem) => cartItem.code === itemCode);
 
-			if (item && item.quantity > 0) {
-				priceId = item.priceId;
-				itemId = item.itemId;
-				currentValue = item.quantity;
-				addedToCart = true;
+				if (item && item.quantity > 0) {
+					priceId = item.priceId;
+					itemId = item.itemId;
+					currentValue = item.quantity;
+					addedToCart = true;
 
-				if ($("body").hasClass("in-index")) {
-					addToCartButton.find("div").text("Zobrazit košík");
-					$("#add-amount").attr("val", currentValue);
-					$("#add-amount span").text(currentValue);
+					if ($("body").hasClass("in-index")) {
+						addToCartButton.find("div").text("Zobrazit košík");
+						$("#add-amount").attr("val", currentValue);
+						$("#add-amount span").text(currentValue);
+					}
 				}
 			}
 		}
-	}
 
-	addToCartButton.on("click touchend", function () {
-		if (!addedToCart) {
-			shoptet.cartShared.addToCart({ productCode: itemCode, amount: currentValue });
+		addToCartButton.on("click touchend", function () {
+			if (!addedToCart) {
+				shoptet.cartShared.addToCart({ productCode: itemCode, amount: currentValue });
 
-			document.addEventListener(
-				"ShoptetCartUpdated",
-				function () {
-					getProductInfo();
-				},
-				{ once: true }
-			);
-		} else {
-			window.location.href = "/kosik";
-		}
-	});
+				document.addEventListener(
+					"ShoptetCartUpdated",
+					function () {
+						getProductInfo();
+					},
+					{ once: true }
+				);
+			} else {
+				window.location.href = "/kosik";
+			}
+		});
 
-	$("#increase-amount").on("click", function () {
-		currentValue++;
-		$("#add-amount").attr("val", currentValue);
-		$("#add-amount span").text(currentValue);
-
-		if (addedToCart) {
-			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
-		}
-	});
-
-	$("#decrease-amount").on("click", function () {
-		if (currentValue > 1) {
-			currentValue--;
+		$("#increase-amount").on("click", function () {
+			currentValue++;
 			$("#add-amount").attr("val", currentValue);
 			$("#add-amount span").text(currentValue);
+
+			if (addedToCart) {
+				shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
+			}
+		});
+
+		$("#decrease-amount").on("click", function () {
+			if (currentValue > 1) {
+				currentValue--;
+				$("#add-amount").attr("val", currentValue);
+				$("#add-amount span").text(currentValue);
+			}
+			if (addedToCart) {
+				shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
+			}
+		});
+	}
+
+	if ($("body").hasClass("type-product")) {
+		$(document).ready(function () {
+			$(".p-image img").attr(
+				"src",
+				"https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif"
+			);
+			$(".p-thumbnails-inner > div > a:first-of-type").attr(
+				"href",
+				"https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif"
+			);
+			$(".p-thumbnails-inner > div > a:first-of-type img").attr(
+				"src",
+				"https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif"
+			);
+			$(".p-thumbnails-inner > div > a:first-of-type img").attr(
+				"data-src",
+				"https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif"
+			);
+		});
+		let starWrapper = $(".stars-wrapper");
+		let star = $(".stars-wrapper .stars .star");
+		let ratingTab = $(".tab-content #ratingTab");
+
+		starWrapper.insertAfter($(".p-final-price-wrapper"));
+		ratingTab.prepend("<h3>Recenze produktu:</h3>");
+
+		//wait 500ms for listeners to load
+		setTimeout(function () {
+			star.off("shown");
+		}, 500);
+
+		starWrapper.on("click touchend", function () {
+			$("html, body").animate(
+				{
+					scrollTop: ratingTab.offset().top - 140,
+				},
+				500
+			);
+		});
+
+		let emptyKosik = true;
+		let appendedHref = false;
+		let cartInfo;
+		let cartItems;
+		function checkCart() {
+			cartInfo = dataLayer.find((item) => item.shoptet && item.shoptet.cartInfo);
+			cartItems = cartInfo.shoptet.cartInfo.cartItems;
+			if (cartItems.length > 0) {
+				emptyKosik = false;
+			} else {
+				emptyKosik = true;
+			}
 		}
-		if (addedToCart) {
-			shoptet.cartShared.updateQuantityInCart({ itemId: itemId, priceId: priceId, amount: currentValue });
+		checkCart();
+		document.addEventListener("ShoptetCartUpdated", checkCart);
+
+		if (!emptyKosik && !appendedHref) {
+			appendedHref = true;
+			$(".p-detail-inner .p-data-wrapper").append('<div class="href-to-cart"><a href="/kosik">Přejít do košíku</div>');
 		}
-	});
+	}
 });
-
-if ($("body").hasClass("type-product")) {
-	$(document).ready(function () {
-		$(".p-image img").attr("src", "https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif");
-		$(".p-thumbnails-inner > div > a:first-of-type").attr(
-			"href",
-			"https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif"
-		);
-		$(".p-thumbnails-inner > div > a:first-of-type img").attr(
-			"src",
-			"https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif"
-		);
-		$(".p-thumbnails-inner > div > a:first-of-type img").attr(
-			"data-src",
-			"https://684632.myshoptet.com/user/documents/upload/Images/Filter_animation_gif.gif"
-		);
-	});
-	let starWrapper = $(".stars-wrapper");
-	let star = $(".stars-wrapper .stars .star");
-	let ratingTab = $(".tab-content #ratingTab");
-
-	starWrapper.insertAfter($(".p-final-price-wrapper"));
-	ratingTab.prepend("<h3>Recenze produktu:</h3>");
-
-	//wait 500ms for listeners to load
-	setTimeout(function () {
-		star.off("shown");
-	}, 500);
-
-	starWrapper.on("click touchend", function () {
-		$("html, body").animate(
-			{
-				scrollTop: ratingTab.offset().top - 140,
-			},
-			500
-		);
-	});
-}
