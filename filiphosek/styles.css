@@ -326,15 +326,16 @@ h1,
 	height: 100%;
 }
 .amount-arrow {
-	width: 0.3em;
-	height: 0.2em;
+	width: 0.6em;
+	height: 0.4em;
 	position: absolute;
+	cursor: pointer;
 }
 #increase-amount {
-	top: 32%;
+	top: 22%;
 }
 #decrease-amount {
-	bottom: 32%;
+	bottom: 22%;
 	transform: rotate(180deg);
 }
 
@@ -342,14 +343,14 @@ h1,
 	content: "";
 	display: block;
 	position: absolute;
-	right: 0;
-	width: 100%;
+	width: 0.3em;
 	height: 0.2em;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	background: url(https://606260.myshoptet.com/user/documents/upload/Assets/arrow.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
-	cursor: pointer;
-	transition: transform 0.2s ease;
 }
 
 /*-----------------------------------------------------KONEC HERO*/
@@ -854,11 +855,26 @@ h2,
 	flex-wrap: wrap;
 	gap: 10px;
 }
+.detail-parameters tbody {
+	display: block;
+	width: 100%;
+}
 .detail-parameters tbody tr th {
 	min-width: auto !important;
+	width: auto !important;
 }
 .form-control,
 select {
 	color: var(--color-tertiary);
 	border-radius: var(--border-radius) !important;
+}
+.href-to-cart {
+	text-decoration: underline;
+	font-weight: 500;
+	font-size: var(--fs-500);
+	text-align: right;
+	padding: 10px;
+}
+.href-to-cart:hover a {
+	color: var(--color-tertiary);
 }

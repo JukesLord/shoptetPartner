@@ -167,12 +167,19 @@ $(document).ready(function () {
 				emptyKosik = true;
 			}
 		}
-		checkCart();
-		document.addEventListener("ShoptetCartUpdated", checkCart);
-
-		if (!emptyKosik && !appendedHref) {
-			appendedHref = true;
-			$(".p-detail-inner .p-data-wrapper").append('<div class="href-to-cart"><a href="/kosik">Přejít do košíku</div>');
+		function appendHref() {
+			if (!emptyKosik && !appendedHref) {
+				appendedHref = true;
+				$(".p-detail-inner .p-data-wrapper").append(
+					'<div class="href-to-cart"><a href="/kosik">Přejít do košíku</div>'
+				);
+			}
 		}
+		checkCart();
+		appendHref();
+		document.addEventListener("ShoptetCartUpdated", function () {
+			checkCart();
+			appendHref();
+		});
 	}
 });
