@@ -43,7 +43,8 @@ $(".site-name").replaceWith(function () {
 $(document).ready(function () {
 	let currentValue = 1;
 	let addedToCart = false;
-	const priceId = 53;
+	let priceId = 0;
+	const itemCode = "44/1 K";
 	let itemId = "";
 	let addToCartButton;
 	let cartInfo;
@@ -57,7 +58,8 @@ $(document).ready(function () {
 
 		if (cartInfo) {
 			cartItems = cartInfo.shoptet.cartInfo.cartItems;
-			item = cartItems.find((cartItem) => cartItem.priceId === priceId);
+			item = cartItems.find((cartItem) => cartItem.code === itemCode);
+			priceId = item.priceId;
 
 			if (item && item.quantity > 0) {
 				itemId = item.itemId;
@@ -65,28 +67,6 @@ $(document).ready(function () {
 				addedToCart = true;
 
 				if ($("body").hasClass("in-index")) {
-					addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
-					addToCartButton.find("div").text("Zobrazit košík");
-					$("#add-amount").attr("val", currentValue);
-					$("#add-amount span").text(currentValue);
-				}
-				if ($("body").hasClass("type-product")) {
-					$(".p-detail-inner .p-add-to-cart-wrapper").html(`
-						<div class="add-to-cart-cst-btn">
-							<div class="add-amount">
-								<div aria-label="input" id="add-amount" val="1"><span>1</span></div>
-								<div class="amount-arrows">
-									<div id="increase-amount" class="amount-arrow"></div>
-									<div id="decrease-amount" class="amount-arrow"></div>
-								</div>
-							</div>
-
-							<div id="add-product-to-cart" class="btn-block">
-								<div class="custom-btn primary">Do košíku</div>
-							</div>
-						</div>
-					`);
-
 					addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
 					addToCartButton.find("div").text("Zobrazit košík");
 					$("#add-amount").attr("val", currentValue);
