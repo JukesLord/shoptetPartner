@@ -532,6 +532,7 @@ h2,
 .custom-footer__articles,
 .custom-footer__contact {
 	margin: auto;
+	margin-top: 0;
 	width: 50%;
 	max-width: var(--max-width);
 	padding-top: 60px !important;
@@ -554,7 +555,7 @@ h2,
 	margin: 0;
 }
 .custom-footer__articles ul li a,
-.custom-footer__contact ul li {
+.custom-footer__contact ul li a {
 	color: white;
 	font-weight: 300;
 	font-size: 1.6rem;
