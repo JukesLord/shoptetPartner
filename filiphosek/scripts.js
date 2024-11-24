@@ -45,7 +45,7 @@ $(document).ready(function () {
 	let addedToCart = false;
 	const priceId = 53;
 	let itemId = "";
-	let addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
+	let addToCartButton;
 	let cartInfo;
 	let cartItems;
 	let item;
@@ -63,9 +63,35 @@ $(document).ready(function () {
 				itemId = item.itemId;
 				currentValue = item.quantity;
 				addedToCart = true;
-				addToCartButton.find("div").text("Zobrazit košík");
-				$("#add-amount").attr("val", currentValue);
-				$("#add-amount span").text(currentValue);
+
+				if ($("body").hasClass("in-index")) {
+					addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
+					addToCartButton.find("div").text("Zobrazit košík");
+					$("#add-amount").attr("val", currentValue);
+					$("#add-amount span").text(currentValue);
+				}
+				if ($("body").hasClass("type-product")) {
+					$(".p-detail-inner .p-add-to-cart-wrapper").html(`
+						<div class="add-to-cart-cst-btn">
+							<div class="add-amount">
+								<div aria-label="input" id="add-amount" val="1"><span>1</span></div>
+								<div class="amount-arrows">
+									<div id="increase-amount" class="amount-arrow"></div>
+									<div id="decrease-amount" class="amount-arrow"></div>
+								</div>
+							</div>
+
+							<div id="add-product-to-cart" class="btn-block">
+								<div class="custom-btn primary">Do košíku</div>
+							</div>
+						</div>
+					`);
+
+					addToCartButton = $(".add-to-cart-cst-btn #add-product-to-cart");
+					addToCartButton.find("div").text("Zobrazit košík");
+					$("#add-amount").attr("val", currentValue);
+					$("#add-amount span").text(currentValue);
+				}
 			}
 		}
 	}
