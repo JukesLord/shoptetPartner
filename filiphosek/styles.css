@@ -535,7 +535,7 @@ h2,
 }
 .custom-footer__articles,
 .custom-footer__contact {
-	margin: auto;
+	margin-bottom: auto;
 	margin-top: 0;
 	width: 50%;
 	max-width: calc(var(--max-width) / 2);
@@ -543,6 +543,12 @@ h2,
 	padding-bottom: 60px !important;
 	padding-left: clamp(20px, 10%, 200px);
 	padding-right: clamp(20px, 10%, 200px);
+}
+.custom-footer__articles {
+	margin-left: auto;
+}
+.custom-footer__contact {
+	margin-right: auto;
 }
 .custom-footer__articles h4,
 .custom-footer__contact h4 {
