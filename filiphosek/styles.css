@@ -913,3 +913,7 @@ select {
 #navigation .appended-category {
 	display: none !important;
 }
+
+.advanced-order .extras-wrap {
+	flex-direction: column;
+}
