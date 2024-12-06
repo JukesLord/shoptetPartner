@@ -139,16 +139,18 @@ $(document).ready(function () {
 
 		starWrapper.insertAfter($(".p-final-price-wrapper"));
 		ratingTab.prepend("<h3>Recenze produktu:</h3>");
+		let ratingTabOffset = ratingTab.offset().top;
 
 		//wait 500ms for listeners to load
 		setTimeout(function () {
 			star.off("shown");
+			ratingTabOffset = ratingTab.offset().top;
 		}, 500);
 
 		starWrapper.on("click touchend", function () {
 			$("html, body").animate(
 				{
-					scrollTop: ratingTab.offset().top - 140,
+					scrollTop: ratingTabOffset - 140,
 				},
 				500
 			);
@@ -171,7 +173,7 @@ $(document).ready(function () {
 			if (!emptyKosik && !appendedHref) {
 				appendedHref = true;
 				$(".p-detail-inner .p-data-wrapper").append(
-					'<div class="href-to-cart"><a href="/kosik">Přejít do košíku</div>'
+					'<div class="href-to-cart"><a href="/kosik">Přejít do košíku →</div>'
 				);
 			}
 		}
