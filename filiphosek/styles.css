@@ -917,3 +917,8 @@ select {
 .advanced-order .extras-wrap {
 	flex-direction: column;
 }
+
+.faq-item label {
+	color: var(--color-primary) !important;
+	font-weight: 500 !important;
+}
