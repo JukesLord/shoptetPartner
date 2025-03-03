@@ -127,7 +127,7 @@ function poptavka() {
 			$("#content-modal input[name='phone']").attr("required", "");
 			$("#content-modal input[name='email']").attr("required", "");
 			// Add class "last" to the second last tr in #content-modal
-			$("#content-modal tr:nth-last-child(2)").addClass("last");
+			$("#content-modal textarea[name='message']").parent().parent().addClass("last");
 
 			// Create the new rows
 			let nameRow = `
@@ -163,6 +163,13 @@ function poptavka() {
 			// Prepend the new rows to the tbody
 			$("#content-modal tbody").prepend(nameRow);
 			$("#content-modal tbody").prepend(vatRow);
+			if ($("#content-modal input#ico").length >= 2) {
+				//remove all but first
+				$("#content-modal input#ico").slice(1).parent().parent().remove();
+			}
+			if ($("#content-modal input#jmeno-prijmeni").length >= 2) {
+				$("#content-modal input#jmeno-prijmeni").slice(1).parent().parent().remove();
+			}
 			$(messageCopyRow).insertBefore($("#content-modal .last"));
 
 			$("#content-modal textarea").val(textPoptavky);
