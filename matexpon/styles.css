@@ -4,7 +4,13 @@
 	transform: none !important;
 	cursor: auto;
 }
-
 .custom-display-none {
 	display: none !important;
+}
+.admin-logged .navigation-tools .dropdown {
+	position: absolute;
+	right: 160px;
+	top: 50%;
+	transform: translatey(-50%);
+	z-index: 2;
 }
