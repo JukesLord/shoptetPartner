@@ -38,3 +38,19 @@
 		line-height: 1.5;
 	}
 }
+
+/*Contact hours v kosiku*/
+.contact-hours {
+	padding-top: 20px;
+}
+.contact-hours h4 {
+	margin-bottom: 0.25em !important;
+	color: var(--color-secondary);
+}
+.contact-hours p {
+	margin-bottom: 10px !important;
+	color: var(--color-secondary);
+}
+.custom-facebook-margin {
+	margin-top: 30px;
+}
