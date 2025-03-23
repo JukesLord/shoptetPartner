@@ -1,0 +1,10 @@
+.admin-logged.in-index #products-1 .products-block {
+	display: flex;
+	width: 100% !important;
+	transform: none !important;
+	cursor: auto;
+}
+
+.custom-display-none {
+	display: none !important;
+}
