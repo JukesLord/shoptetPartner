@@ -1,23 +1,111 @@
 //if body has class in-index and admin-logged
-if (document.body.classList.contains("in-index") && document.body.classList.contains("admin-logged")) {
-	let vsechnyProdukty = document.querySelector("#products-1");
-	let vsechnyProduktyWrapper = vsechnyProdukty.parentElement;
+if ($("body").hasClass("in-index") && $("body").hasClass("admin-logged")) {
+	let vsechnyProduktyMainTitle = $(".homepage-group-title:contains('Všechny produkty')");
+	let vsechnyProduktyWrappery = [];
+	const visibleProductsIncrement = 8;
+	let maxVisibleProducts = visibleProductsIncrement;
+	let allProducts;
 
-	removeNavigationVsechnyProdukty();
-
-	document.addEventListener("resizeEnd", function () {
-		setTimeout(() => {
-			// This code runs when resize has ended
-			removeNavigationVsechnyProdukty();
-		}, 50);
+	vsechnyProduktyMainTitle.each(function () {
+		vsechnyProduktyWrappery.push($(this).next());
 	});
 
-	function removeNavigationVsechnyProdukty() {
-		let vsechnyProduktyPagination = vsechnyProduktyWrapper.querySelector(".product-slider-pagination");
-		let vsechnyProduktyNavigation = vsechnyProduktyWrapper.querySelectorAll(".product-slider-navigation");
-		vsechnyProduktyPagination.classList.add("custom-display-none");
-		vsechnyProduktyNavigation.forEach((item) => {
-			item.classList.add("custom-display-none");
+	vsechnyProduktyMainTitle.slice(1).remove();
+
+	indexFunctions();
+
+	$(document).on("resizeEnd", function () {
+		setTimeout(() => {
+			indexFunctions();
+		}, 1);
+	});
+
+	function removeNavigation(wrapper) {
+		wrapper.find(".product-slider-pagination").addClass("custom-display-none");
+		wrapper.find(".product-slider-navigation").each(function () {
+			$(this).addClass("custom-display-none");
 		});
+	}
+
+	function removeDuplicates(wrapper) {
+		let vsechnyProdukty = wrapper.find(".product");
+		let hasBeenInactive = false;
+
+		let amountOfDuplicates = 0;
+		vsechnyProdukty.each(function () {
+			if ($(this).hasClass("inactive")) {
+				hasBeenInactive = true;
+				amountOfDuplicates++;
+			} else {
+				if (!hasBeenInactive) {
+					amountOfDuplicates++;
+				} else {
+					return false;
+				}
+			}
+		});
+		if (amountOfDuplicates > 0) {
+			//remove first x products and last x products not in for loop but slice
+			vsechnyProdukty.slice(0, amountOfDuplicates).remove();
+			vsechnyProdukty.slice(-amountOfDuplicates).remove();
+		}
+	}
+
+	function mergeWrapperIntoMain(wrapper) {
+		let vsechnyProdukty = wrapper.find(".product");
+		vsechnyProdukty.each(function () {
+			$(this).appendTo(vsechnyProduktyWrappery[0].find(".products-block"));
+		});
+		wrapper.remove();
+	}
+
+	function showNumberOfProducts() {
+		allProducts.each(function (index) {
+			if (index >= maxVisibleProducts) {
+				$(this).addClass("custom-display-none");
+			} else {
+				$(this).removeClass("custom-display-none");
+			}
+		});
+		if (allProducts.length <= maxVisibleProducts) {
+			$(".custom-show-more-button").addClass("custom-display-none");
+		}
+	}
+
+	function addShowMoreButton() {
+		vsechnyProduktyWrappery[0].append("<div class='custom-show-more-button'><span>Zobrazit více</span></div>");
+		$(".custom-show-more-button").on("click touchend", function () {
+			maxVisibleProducts += visibleProductsIncrement;
+			console.log(maxVisibleProducts);
+			showNumberOfProducts();
+		});
+		if (allProducts.length <= maxVisibleProducts) {
+			$(".custom-show-more-button").addClass("custom-display-none");
+		}
+	}
+
+	function indexFunctions() {
+		vsechnyProduktyWrappery.forEach(function (wrapper) {
+			removeNavigation(wrapper);
+			removeDuplicates(wrapper);
+
+			if (vsechnyProduktyWrappery.length > 1) {
+				if (vsechnyProduktyWrappery.indexOf(wrapper) !== 0) {
+					mergeWrapperIntoMain(wrapper);
+				}
+			}
+		});
+		allProducts = vsechnyProduktyWrappery[0].find(".product");
+		showNumberOfProducts();
+	}
+	addShowMoreButton();
+}
+
+//if body has class in-index and admin-logged is not
+if ($("body").hasClass("in-index") && !$("body").hasClass("admin-logged")) {
+	$("#products-4").parent().remove();
+	let vsechnyProduktyMainTitle = $(".homepage-group-title:contains('Všechny produkty')");
+	if (vsechnyProduktyMainTitle.length > 1) {
+		vsechnyProduktyMainTitle.slice(1).remove();
 	}
 }

@@ -9,8 +9,41 @@
 }
 .admin-logged .navigation-tools .dropdown {
 	position: absolute;
-	right: 160px;
+	right: 0px;
 	top: 50%;
 	transform: translatey(-50%);
 	z-index: 2;
+}
+@media (min-width: 768px) {
+	.admin-logged .navigation-buttons {
+		padding-right: 60px;
+	}
+}
+.custom-show-more-button {
+	background-color: #fff;
+	border-color: var(--color-secondary);
+	color: var(--color-secondary);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 8px;
+	border-style: solid;
+	border-width: 1px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 16px;
+	padding: 16px;
+	text-align: center;
+	text-transform: none;
+	transition: all 0.3s ease-out;
+	white-space: normal;
+	margin: 20px auto;
+	display: block;
+	max-width: max-content;
+}
+.custom-show-more-button:hover {
+	background-color: var(--color-secondary);
+	border-color: var(--color-secondary);
+	color: #fff;
 }
