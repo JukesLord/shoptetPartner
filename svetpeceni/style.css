@@ -1,0 +1,40 @@
+/*customer page sidebar*/
+.customer-page .sidebar-inner .box > ul {
+	position: relative;
+	padding-bottom: 2em;
+}
+.customer-page .sidebar-inner .box > ul a.btn.btn-primary {
+	position: relative;
+}
+.customer-page .sidebar-inner li a:after {
+	display: none;
+}
+.customer-page .sidebar-inner .logout {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: auto !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+.customer-page .sidebar-inner .logout a {
+	font-size: 1em;
+	padding-right: 1.25em !important;
+}
+.customer-page .sidebar-inner .logout a::after {
+	display: block;
+	margin-top: 0;
+	right: 0;
+	top: calc(50% + 0.05em);
+}
+/*upsell po vložení do košíku - modal*/
+@media (max-width: 900px) {
+	#cboxContent .products-block .product .prices {
+		position: relative;
+		bottom: 0;
+		left: 0;
+	}
+	#cboxContent .products-block .product .p .name {
+		line-height: 1.5;
+	}
+}
