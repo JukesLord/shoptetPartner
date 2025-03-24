@@ -1,4 +1,4 @@
-.admin-logged.in-index #products-1 .products-block {
+.in-index #products-1 .products-block {
 	display: flex;
 	width: 100% !important;
 	transform: none !important;
@@ -7,7 +7,7 @@
 .custom-display-none {
 	display: none !important;
 }
-.admin-logged .navigation-tools .dropdown {
+.navigation-tools .dropdown {
 	position: absolute;
 	right: 0px;
 	top: 50%;
@@ -15,7 +15,7 @@
 	z-index: 2;
 }
 @media (min-width: 768px) {
-	.admin-logged .navigation-buttons {
+	.navigation-buttons {
 		padding-right: 60px;
 	}
 }
