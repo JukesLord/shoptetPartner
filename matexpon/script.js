@@ -2,7 +2,7 @@
 if ($("body").hasClass("in-index")) {
 	let vsechnyProduktyMainTitle = $(".homepage-group-title:contains('Všechny produkty')");
 	let vsechnyProduktyWrappery = [];
-	const visibleProductsIncrement = 24;
+
 	let maxVisibleProducts = visibleProductsIncrement;
 	let allProducts;
 
@@ -25,7 +25,6 @@ if ($("body").hasClass("in-index")) {
 		wrapper.find(".product-slider-navigation").each(function () {
 			$(this).addClass("custom-display-none");
 		});
-		console.log("remove nav");
 	}
 
 	function removeDuplicates(wrapper) {
@@ -50,7 +49,6 @@ if ($("body").hasClass("in-index")) {
 			vsechnyProdukty.slice(0, amountOfDuplicates).remove();
 			vsechnyProdukty.slice(-amountOfDuplicates).remove();
 		}
-		console.log("remove duplicates");
 	}
 
 	function mergeWrapperIntoMain(wrapper) {
@@ -59,7 +57,6 @@ if ($("body").hasClass("in-index")) {
 			$(this).appendTo(vsechnyProduktyWrappery[0].find(".products-block"));
 		});
 		wrapper.remove();
-		console.log("merge wrapper into main");
 	}
 
 	function showNumberOfProducts() {
@@ -73,7 +70,6 @@ if ($("body").hasClass("in-index")) {
 		if (allProducts.length <= maxVisibleProducts) {
 			$(".custom-show-more-button").addClass("custom-display-none");
 		}
-		console.log("show number of products");
 	}
 
 	function addShowMoreButton() {
@@ -86,7 +82,6 @@ if ($("body").hasClass("in-index")) {
 		if (allProducts.length <= maxVisibleProducts) {
 			$(".custom-show-more-button").addClass("custom-display-none");
 		}
-		console.log("add show more button");
 	}
 
 	function indexFunctions() {
