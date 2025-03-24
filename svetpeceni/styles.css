@@ -46,6 +46,7 @@
 .contact-hours h4 {
 	margin-bottom: 0.25em !important;
 	color: var(--color-secondary);
+	text-transform: none !important;
 }
 .contact-hours p {
 	margin-bottom: 10px !important;
