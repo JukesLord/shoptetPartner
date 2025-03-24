@@ -1,8 +1,8 @@
 //if body has class in-index and admin-logged
-if ($("body").hasClass("in-index") && $("body").hasClass("admin-logged")) {
+if ($("body").hasClass("in-index")) {
 	let vsechnyProduktyMainTitle = $(".homepage-group-title:contains('Všechny produkty')");
 	let vsechnyProduktyWrappery = [];
-	const visibleProductsIncrement = 8;
+
 	let maxVisibleProducts = visibleProductsIncrement;
 	let allProducts;
 
@@ -99,13 +99,4 @@ if ($("body").hasClass("in-index") && $("body").hasClass("admin-logged")) {
 		showNumberOfProducts();
 	}
 	addShowMoreButton();
-}
-
-//if body has class in-index and admin-logged is not
-if ($("body").hasClass("in-index") && !$("body").hasClass("admin-logged")) {
-	$("#products-4").parent().remove();
-	let vsechnyProduktyMainTitle = $(".homepage-group-title:contains('Všechny produkty')");
-	if (vsechnyProduktyMainTitle.length > 1) {
-		vsechnyProduktyMainTitle.slice(1).remove();
-	}
 }
