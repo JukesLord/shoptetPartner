@@ -2,7 +2,7 @@
 if ($("body").hasClass("in-index")) {
 	let vsechnyProduktyMainTitle = $(".homepage-group-title:contains('Všechny produkty')");
 	let vsechnyProduktyWrappery = [];
-
+	const visibleProductsIncrement = 24;
 	let maxVisibleProducts = visibleProductsIncrement;
 	let allProducts;
 
