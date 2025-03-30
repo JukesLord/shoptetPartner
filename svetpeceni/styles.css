@@ -55,3 +55,7 @@
 .custom-facebook-margin {
 	margin-top: 30px;
 }
+/*fix hodnoceni na homepage*/
+.ajaxWraper {
+	overflow: hidden;
+}
