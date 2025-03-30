@@ -1,4 +1,3 @@
-//if body has class in-index and admin-logged
 if ($("body").hasClass("in-index")) {
 	let vsechnyProduktyMainTitle = $(".homepage-group-title:contains('Všechny produkty')");
 	let vsechnyProduktyWrappery = [];
@@ -14,11 +13,13 @@ if ($("body").hasClass("in-index")) {
 
 	indexFunctions();
 
-	/* 	$(document).on("resizeEnd", function () {
-		setTimeout(() => {
-			indexFunctions();
-		}, 1);
-	}); */
+	$(window).on("resize", function () {
+		indexFunctions();
+	});
+
+	$(document).on("resizeEnd", function () {
+		indexFunctions();
+	});
 
 	function removeNavigation(wrapper) {
 		wrapper.find(".product-slider-pagination").addClass("custom-display-none");
@@ -51,19 +52,10 @@ if ($("body").hasClass("in-index")) {
 		}
 	}
 
-	function createMainWrapper() {
-		if ($("#products-custom").length < 1) {
-			let mainWrapper = $(
-				"<div id='products-wrapper-custom' class='x'><div class='x'><div id='products-custom' class='x'></div></div></div>"
-			);
-			mainWrapper.insertAfter(vsechnyProduktyMainTitle[0]);
-		}
-	}
-
 	function mergeWrapperIntoMain(wrapper) {
 		let vsechnyProdukty = wrapper.find(".product");
 		vsechnyProdukty.each(function () {
-			$(this).appendTo($("#products-custom"));
+			$(this).appendTo(vsechnyProduktyWrappery[0].find(".products-block"));
 		});
 		wrapper.remove();
 	}
@@ -82,7 +74,7 @@ if ($("body").hasClass("in-index")) {
 	}
 
 	function addShowMoreButton() {
-		$("#products-wrapper-custom").append("<div class='custom-show-more-button'><span>Zobrazit více</span></div>");
+		vsechnyProduktyWrappery[0].append("<div class='custom-show-more-button'><span>Zobrazit více</span></div>");
 		$(".custom-show-more-button").on("click touchend", function () {
 			maxVisibleProducts += visibleProductsIncrement;
 			console.log(maxVisibleProducts);
@@ -94,14 +86,18 @@ if ($("body").hasClass("in-index")) {
 	}
 
 	function indexFunctions() {
-		createMainWrapper();
 		vsechnyProduktyWrappery.forEach(function (wrapper) {
 			removeNavigation(wrapper);
 			removeDuplicates(wrapper);
-			mergeWrapperIntoMain(wrapper);
+
+			if (vsechnyProduktyWrappery.length > 1) {
+				if (vsechnyProduktyWrappery.indexOf(wrapper) !== 0) {
+					mergeWrapperIntoMain(wrapper);
+				}
+			}
 		});
-		allProducts = $("#products-custom").find(".product");
+		allProducts = vsechnyProduktyWrappery[0].find(".product");
 		showNumberOfProducts();
-		addShowMoreButton();
 	}
+	addShowMoreButton();
 }
