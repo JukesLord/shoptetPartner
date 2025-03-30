@@ -84,6 +84,18 @@ if ($("body").hasClass("in-index")) {
 		}
 	}
 
+	function removeAllResizeEvents() {} // Remove all resize event listeners from the window
+	const resizeListeners = getEventListeners(window).resize;
+
+	if (resizeListeners) {
+		resizeListeners.forEach((listener) => {
+			window.removeEventListener("resize", listener.listener);
+		});
+		console.log("All resize event listeners have been removed.");
+	} else {
+		console.log("No resize event listeners found.");
+	}
+
 	function indexFunctions() {
 		vsechnyProduktyWrappery.forEach(function (wrapper) {
 			removeNavigation(wrapper);
@@ -97,6 +109,6 @@ if ($("body").hasClass("in-index")) {
 		});
 		allProducts = vsechnyProduktyWrappery[0].find(".product");
 		showNumberOfProducts();
+		addShowMoreButton();
 	}
-	addShowMoreButton();
 }
