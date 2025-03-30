@@ -52,7 +52,7 @@ if ($("body").hasClass("in-index")) {
 	}
 
 	function createMainWrapper() {
-		if ($("#products-custom").length > 0) {
+		if ($("#products-custom").length < 1) {
 			let mainWrapper = $(
 				"<div id='products-wrapper-custom' class='products-wrapper'><div class='products'><div id='products-custom' class='products-block'></div></div></div>"
 			);
