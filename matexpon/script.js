@@ -13,11 +13,7 @@ if ($("body").hasClass("in-index")) {
 
 	indexFunctions();
 
-	$(window).on("resize", function () {
-		indexFunctions();
-	});
-
-	$(document).on("resizeEnd", function () {
+	$(document).on("shoptet.modal.shoptetResize", function () {
 		indexFunctions();
 	});
 
