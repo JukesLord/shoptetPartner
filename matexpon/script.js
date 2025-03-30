@@ -86,24 +86,7 @@ if ($("body").hasClass("in-index")) {
 
 	// Remove all resize event listeners from the window
 	function removeAllResizeEvents() {
-		// Track resize event listeners manually
-		const resizeListeners = [];
-
-		// Add a wrapper function to track listeners when adding them
-		const originalAddEventListener = window.addEventListener;
-		window.addEventListener = function (type, listener, options) {
-			if (type === "resize") {
-				resizeListeners.push(listener);
-			}
-			originalAddEventListener.call(this, type, listener, options);
-		};
-
-		// Remove all resize event listeners
-		resizeListeners.forEach((listener) => {
-			window.removeEventListener("resize", listener);
-		});
-
-		console.log("All resize event listeners have been removed.");
+		$(window).off("resize");
 	}
 
 	function indexFunctions() {
