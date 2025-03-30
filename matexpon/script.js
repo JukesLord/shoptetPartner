@@ -51,10 +51,19 @@ if ($("body").hasClass("in-index")) {
 		}
 	}
 
+	function createMainWrapper() {
+		if ($("#products-custom").length < 1) {
+			let mainWrapper = $(
+				"<div id='products-wrapper-custom' class='x'><div class='x'><div id='x' class='x'></div></div></div>"
+			);
+			mainWrapper.insertAfter(vsechnyProduktyMainTitle[0]);
+		}
+	}
+
 	function mergeWrapperIntoMain(wrapper) {
 		let vsechnyProdukty = wrapper.find(".product");
 		vsechnyProdukty.each(function () {
-			$(this).appendTo(vsechnyProduktyWrappery[0].find(".products-block"));
+			$(this).appendTo($("#products-custom"));
 		});
 		wrapper.remove();
 	}
@@ -73,7 +82,7 @@ if ($("body").hasClass("in-index")) {
 	}
 
 	function addShowMoreButton() {
-		vsechnyProduktyWrappery[0].append("<div class='custom-show-more-button'><span>Zobrazit více</span></div>");
+		$("#products-wrapper-custom").append("<div class='custom-show-more-button'><span>Zobrazit více</span></div>");
 		$(".custom-show-more-button").on("click touchend", function () {
 			maxVisibleProducts += visibleProductsIncrement;
 			console.log(maxVisibleProducts);
@@ -84,24 +93,14 @@ if ($("body").hasClass("in-index")) {
 		}
 	}
 
-	// Remove all resize event listeners from the window
-	function removeAllResizeEvents() {
-		$(window).off("resize");
-	}
-
 	function indexFunctions() {
-		removeAllResizeEvents();
+		createMainWrapper();
 		vsechnyProduktyWrappery.forEach(function (wrapper) {
 			removeNavigation(wrapper);
 			removeDuplicates(wrapper);
-
-			if (vsechnyProduktyWrappery.length > 1) {
-				if (vsechnyProduktyWrappery.indexOf(wrapper) !== 0) {
-					mergeWrapperIntoMain(wrapper);
-				}
-			}
+			mergeWrapperIntoMain(wrapper);
 		});
-		allProducts = vsechnyProduktyWrappery[0].find(".product");
+		allProducts = $("#products-custom").find(".product");
 		showNumberOfProducts();
 		addShowMoreButton();
 	}
