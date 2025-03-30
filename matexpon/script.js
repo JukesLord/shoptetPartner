@@ -84,19 +84,22 @@ if ($("body").hasClass("in-index")) {
 		}
 	}
 
-	function removeAllResizeEvents() {} // Remove all resize event listeners from the window
-	const resizeListeners = getEventListeners(window).resize;
+	function removeAllResizeEvents() {
+		// Remove all resize event listeners from the window
+		const resizeListeners = getEventListeners(window).resize;
 
-	if (resizeListeners) {
-		resizeListeners.forEach((listener) => {
-			window.removeEventListener("resize", listener.listener);
-		});
-		console.log("All resize event listeners have been removed.");
-	} else {
-		console.log("No resize event listeners found.");
+		if (resizeListeners) {
+			resizeListeners.forEach((listener) => {
+				window.removeEventListener("resize", listener.listener);
+			});
+			console.log("All resize event listeners have been removed.");
+		} else {
+			console.log("No resize event listeners found.");
+		}
 	}
 
 	function indexFunctions() {
+		removeAllResizeEvents();
 		vsechnyProduktyWrappery.forEach(function (wrapper) {
 			removeNavigation(wrapper);
 			removeDuplicates(wrapper);
