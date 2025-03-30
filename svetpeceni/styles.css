@@ -59,3 +59,58 @@
 .ajaxWraper {
 	overflow: hidden;
 }
+
+/*skrytí podbarvení ikon v headeru*/
+.icon-cart:after,
+.icon-login:after,
+.icon-search:after {
+	display: none;
+}
+
+/*zapnutí dostupnosti v kategorii*/
+.admin-logged .products-block .product .availability {
+	display: block;
+	font-size: 11px;
+}
+
+/*připravené úpravy pro zobrazení množství do košíku na HP a kategorie*/
+/*
+.admin-logged .products-block .product button.btn.btn-cart.add-to-cart-button {
+    position: relative;
+    right: 0;
+    bottom: 0;
+}
+.admin-logged .products-block form {
+    position: absolute;
+    right: 7px;
+    bottom: 10px;
+    width: auto!important;
+    max-height: 35px;
+}
+.admin-logged .quantity {
+    margin-right: 5px;
+}
+
+.admin-logged .products-block .quantity {
+    display: inline-block;
+}
+
+.admin-logged .products-block .quantity,
+.admin-logged .products-block .quantity .decrease,
+.admin-logged .products-block .quantity .increase {
+    border-color: #b7b7b7;
+    background-color: rgba(0, 0, 0, 0);
+    color: #757575;
+    height: 35px;
+}
+.admin-logged .products-block .quantity .decrease,
+.admin-logged .products-block .quantity .increase {
+    height: 33px;
+}
+.admin-logged .products-block .quantity input {
+    height: 35px;
+    width: 50px;
+    font-family: inherit;
+    font-size: 12px;
+}
+*/
