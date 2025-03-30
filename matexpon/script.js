@@ -14,11 +14,11 @@ if ($("body").hasClass("in-index")) {
 
 	indexFunctions();
 
-	$(document).on("resizeEnd", function () {
+	/* 	$(document).on("resizeEnd", function () {
 		setTimeout(() => {
 			indexFunctions();
 		}, 1);
-	});
+	}); */
 
 	function removeNavigation(wrapper) {
 		wrapper.find(".product-slider-pagination").addClass("custom-display-none");
