@@ -13,8 +13,14 @@ if ($("body").hasClass("in-index")) {
 
 	indexFunctions();
 
-	$(window).on("resize", function () {
+	$(document).on("resize", function () {
 		indexFunctions();
+	});
+
+	$(document).on("resizeEnd", function () {
+		setTimeout(() => {
+			indexFunctions();
+		}, 1);
 	});
 
 	function removeNavigation(wrapper) {
