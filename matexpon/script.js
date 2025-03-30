@@ -13,7 +13,7 @@ if ($("body").hasClass("in-index")) {
 
 	indexFunctions();
 
-	$(document).on("resize", function () {
+	$(window).on("resize", function () {
 		indexFunctions();
 	});
 
