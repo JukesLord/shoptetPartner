@@ -54,7 +54,7 @@ if ($("body").hasClass("in-index")) {
 	function createMainWrapper() {
 		if ($("#products-custom").length < 1) {
 			let mainWrapper = $(
-				"<div id='products-wrapper-custom' class='products-wrapper-custom'><div class='products'><div id='products-custom' class='products-block'></div></div></div>"
+				"<div id='products-wrapper-custom' class='products-wrapper-custom'><div class='productsX'><div id='products-custom' class='products-blockX'></div></div></div>"
 			);
 			mainWrapper.insertAfter(vsechnyProduktyMainTitle[0]);
 		}
