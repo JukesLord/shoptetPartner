@@ -17,14 +17,26 @@ if ($("body").hasClass("in-index")) {
 		indexFunctions();
 	});
 
-	if (window.matchMedia("(min-width: 1024px)").matches) {
-		// Adjust the breakpoint as needed
+	const userAgent = navigator.userAgent;
+
+	if (/Mobi|Android/i.test(userAgent)) {
+	} else if (/Tablet|iPad/i.test(userAgent)) {
+	} else {
 		$(document).on("resizeEnd", function () {
 			setTimeout(() => {
 				indexFunctions();
 			}, 1);
 		});
 	}
+
+	/* 	if (window.matchMedia("(min-width: 1024px)").matches) {
+		// Adjust the breakpoint as needed
+		$(document).on("resizeEnd", function () {
+			setTimeout(() => {
+				indexFunctions();
+			}, 1);
+		});
+	} */
 
 	function removeNavigation(wrapper) {
 		wrapper.find(".product-slider-pagination").addClass("custom-display-none");
