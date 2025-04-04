@@ -1,0 +1,51 @@
+.admin-logged .benefitBanner .benefitBanner__item .benefitBanner__link {
+	overflow: hidden;
+}
+.admin-logged .benefitBanner .benefitBanner__item img {
+	transition: transform 0.2s ease-out;
+}
+.admin-logged .benefitBanner .benefitBanner__item:hover img {
+	transform: scale(1.05);
+}
+
+/*Varianty*/
+.admin-logged .variant-list {
+	display: none;
+}
+.admin-logged .variant-flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 30px;
+}
+.admin-logged .variant-flex-container .variant-option {
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 25px;
+	border-color: var(--color-secondary);
+	color: var(--color-secondary);
+	transition: all 0.2s ease-out;
+	cursor: pointer;
+}
+.admin-logged .variant-flex-container .variant-option:hover {
+	background: var(--color-secondary-hover);
+	border-color: var(--color-secondary-hover);
+	color: white;
+}
+.admin-logged .variant-flex-container .variant-option.active {
+	background: var(--color-secondary);
+	border-color: var(--color-secondary);
+	color: white;
+}
+
+.admin-logged .variant-flex-container .variant-option > div {
+	padding: 5px 30px;
+	display: flex;
+	flex-direction: column;
+	min-width: 9em;
+	gap: 3px;
+}
+.admin-logged .variant-mnozstvi {
+	font-weight: 600;
+}
