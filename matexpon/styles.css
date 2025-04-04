@@ -78,11 +78,11 @@
 	}
 	.type-product .social-buttons-wrapper {
 		justify-content: center;
-		padding-top: 8px;
+		padding-top: 16px;
 	}
 	.type-product .p-detail-inner .add-to-cart {
 		flex-direction: column;
-		gap: 15px;
+		gap: 24px;
 		padding-top: 8px;
 	}
 	.type-product .p-detail-inner .add-to-cart .quantity {
