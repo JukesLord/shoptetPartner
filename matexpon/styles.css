@@ -91,4 +91,12 @@
 	.type-product .p-detail-inner .add-to-cart .add-to-cart-button {
 		width: 80%;
 	}
+	.type-product .p-short-description {
+		padding-left: 24px !important;
+		padding-right: 24px !important;
+	}
+	.type-product .p-thumbnails-wrapper {
+		padding-left: 24px !important;
+		padding-right: 24px !important;
+	}
 }
