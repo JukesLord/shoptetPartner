@@ -42,15 +42,15 @@ document.addEventListener("DOMContentLoaded", function () {
 				const price = priceMatch ? priceMatch[1] : "";
 
 				// Extract weight from the option text
-				const weightMatch = text.match(/Množství: ([^-]+)/);
-				const weight = weightMatch ? weightMatch[1].trim() : "";
+				const parameterMatch = text.match(/: ([^-]+)/);
+				const parameter = parameterMatch ? parameterMatch[1].trim() : "";
 
 				// Create a clickable div for each option
 				const $optionDiv = $("<div>", {
 					class: "variant-option",
 					"data-value": value,
 					"data-index": index,
-					html: `<div><span class="variant-mnozstvi">${weight}</span><span class="variant-price">${price}</span></div>`,
+					html: `<div><span class="variant-mnozstvi">${parameter}</span><span class="variant-price">${price}</span></div>`,
 				});
 
 				// Click handler to select the option in the original dropdown
