@@ -82,7 +82,7 @@
 	}
 	.type-product .p-detail-inner .add-to-cart {
 		flex-direction: column;
-		gap: 24px;
+		gap: 32px;
 		padding-top: 14px;
 	}
 	.type-product .p-detail-inner .add-to-cart .quantity {
