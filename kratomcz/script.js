@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				let variantHTML = `<div><span class="variant-mnozstvi">${parameter}</span>`;
 
 				if (originalPrice && discount) {
-					variantHTML += `<span class="variant-original-price">${originalPrice}</span>`;
-					variantHTML += `<span class="variant-discount">${discount}</span>`;
+					variantHTML += `<div class="variant-sale"><span class="variant-original-price">${originalPrice}</span>`;
+					variantHTML += `<span class="variant-discount">${discount}</span></div>`;
 				}
 
 				variantHTML += `<span class="variant-price">${finalPrice}</span></div>`;
