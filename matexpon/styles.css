@@ -79,4 +79,14 @@
 	.type-product .social-buttons-wrapper {
 		justify-content: center;
 	}
+	.type-product .p-detail-inner .add-to-cart {
+		flex-direction: column;
+		gap: 15px;
+	}
+	.type-product .p-detail-inner .add-to-cart .quantity {
+		margin: 0;
+	}
+	.type-product .p-detail-inner .add-to-cart .add-to-cart-button {
+		width: 80%;
+	}
 }
