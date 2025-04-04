@@ -19,9 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //--------------------------------------------------------------------VARIANTY
-//--------------------------------------------------------------------VARIANTY
 document.addEventListener("DOMContentLoaded", function () {
-	if (document.body.classList.contains("type-product") && document.body.classList.contains("admin-loggedx")) {
+	if (document.body.classList.contains("type-product") && document.body.classList.contains("admin-logged")) {
 		// Check if we're on a page with the variants select
 		if ($("#simple-variants-select").length) {
 			// Create flexbox container for variant options
@@ -36,21 +35,39 @@ document.addEventListener("DOMContentLoaded", function () {
 				const $option = $(this);
 				const text = $option.html();
 				const value = $option.val();
+				const dataIndex = $option.data("index");
 
-				// Extract price from the option text
-				const priceMatch = text.match(/\(([^)]+)\)/);
-				const price = priceMatch ? priceMatch[1] : "";
-
-				// Extract weight from the option text
+				// Extract parameter value from the option text
 				const parameterMatch = text.match(/: ([^-]+)/);
 				const parameter = parameterMatch ? parameterMatch[1].trim() : "";
+
+				// Get discount information
+				const originalPrice = $(`.p-info-wrapper .p-final-price-wrapper .price-standard .choose-variant.${dataIndex}`)
+					.text()
+					.trim();
+				const discount = $(`.p-info-wrapper .p-final-price-wrapper .price-save .choose-variant.${dataIndex}`)
+					.text()
+					.trim();
+				const finalPrice = $(`.p-info-wrapper .p-final-price-wrapper .price-final-holder.choose-variant.${dataIndex}`)
+					.text()
+					.trim();
+
+				// Prepare HTML content with original price and discount if available
+				let variantHTML = `<div><span class="variant-mnozstvi">${parameter}</span>`;
+
+				if (originalPrice && discount) {
+					variantHTML += `<span class="variant-original-price">${originalPrice}</span>`;
+					variantHTML += `<span class="variant-discount">${discount}</span>`;
+				}
+
+				variantHTML += `<span class="variant-price">${finalPrice}</span></div>`;
 
 				// Create a clickable div for each option
 				const $optionDiv = $("<div>", {
 					class: "variant-option",
 					"data-value": value,
-					"data-index": index,
-					html: `<div><span class="variant-mnozstvi">${parameter}</span><span class="variant-price">${price}</span></div>`,
+					"data-index": dataIndex,
+					html: variantHTML,
 				});
 
 				// Click handler to select the option in the original dropdown
