@@ -78,10 +78,12 @@
 	}
 	.type-product .social-buttons-wrapper {
 		justify-content: center;
+		padding-top: 8px;
 	}
 	.type-product .p-detail-inner .add-to-cart {
 		flex-direction: column;
 		gap: 15px;
+		padding-top: 8px;
 	}
 	.type-product .p-detail-inner .add-to-cart .quantity {
 		margin: 0;
