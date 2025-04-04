@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //--------------------------------------------------------------------VARIANTY
 //--------------------------------------------------------------------VARIANTY
 document.addEventListener("DOMContentLoaded", function () {
-	if (document.body.classList.contains("type-product") && document.body.classList.contains("admin-logged")) {
+	if (document.body.classList.contains("type-product") && document.body.classList.contains("admin-loggedx")) {
 		// Check if we're on a page with the variants select
 		if ($("#simple-variants-select").length) {
 			// Create flexbox container for variant options
