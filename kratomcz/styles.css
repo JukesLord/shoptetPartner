@@ -42,9 +42,11 @@
 .admin-logged .variant-flex-container .variant-option > div {
 	padding: 5px 15px;
 	display: grid;
+	justify-items: center;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto auto auto;
 	min-width: 9em;
+	gap: 3px;
 }
 
 .admin-logged .variant-sale {
@@ -65,7 +67,6 @@
 	grid-row: 1;
 
 	font-weight: 600;
-	padding-bottom: 3px;
 }
 
 .admin-logged .variant-price {
