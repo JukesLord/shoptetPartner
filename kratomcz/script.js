@@ -100,5 +100,20 @@ document.addEventListener("DOMContentLoaded", function () {
 				});
 			});
 		}
+		aElementToBtnStyle();
 	}
 });
+
+function aElementToBtnStyle() {
+	// Find all a elements
+	$(".p-short-description a").each(function () {
+		// Get the text content of the link
+		const linkText = $(this).text().trim().toLowerCase();
+
+		// Check if the text matches "co je kratom?" (case insensitive)
+		if (linkText === "co je kratom?") {
+			// Add the btn class
+			$(this).addClass("btn");
+		}
+	});
+}
