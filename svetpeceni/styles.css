@@ -147,3 +147,68 @@
     font-size: 12px;
 }
 */
+
+/*NEW FAQ na homepage*/
+.faq-new {
+	max-width: 800px;
+	margin: 80px auto auto;
+}
+.faq-new h3 {
+	text-align: center;
+	font-family: "Champ-Black";
+	font-size: 30px;
+	font-weight: 400;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	line-height: 1.2;
+}
+
+.faq-new .faq-wrapper {
+	padding-top: 20px;
+}
+.faq-new .faq-content {
+	border-bottom-style: solid;
+	border-width: 1px;
+}
+.faq-new .faq-question {
+	padding: 18px 36px 18px 18px;
+	position: relative;
+	cursor: pointer;
+}
+.faq-new .faq-question::after {
+	position: absolute;
+	right: 18px;
+	top: calc(50% + 5px);
+	transform: translateY(-50%) rotate(0deg);
+	content: "";
+	height: 14px;
+	width: 14px;
+	speak: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: shoptet;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 0;
+	text-decoration: none;
+	text-transform: none;
+	vertical-align: middle;
+	font-size: 12px;
+	transition: transform 0.2s ease-in-out;
+}
+.faq-new .faq-content.active .faq-question::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+.faq-new .faq-question p {
+	margin: 0;
+}
+.faq-new .faq-answer {
+	padding: 18px;
+	background: #f2f4f7;
+}
+.faq-new .faq-answer > *:last-child {
+	margin-bottom: 0;
+}

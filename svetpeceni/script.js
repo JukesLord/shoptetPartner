@@ -67,7 +67,7 @@ $(document).ready(function () {
 
 		// Add click handlers for toggling answers
 		$(".faq-wrapper").on("click", ".faq-question", function () {
-			$(this).siblings(".faq-answer").slideToggle();
+			$(this).siblings(".faq-answer").slideToggle(200);
 			$(this).parent(".faq-content").toggleClass("active");
 		});
 
