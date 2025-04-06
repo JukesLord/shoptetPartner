@@ -110,8 +110,8 @@ function aElementToBtnStyle() {
 		// Get the text content of the link
 		const linkText = $(this).text().trim().toLowerCase();
 
-		// Check if the text matches "co je kratom?" (case insensitive)
-		if (linkText === "co je kratom?") {
+		// Check if the text contains "co je" (case insensitive)
+		if (linkText.includes("co je")) {
 			// Add the btn class
 			$(this).addClass("btn");
 		}
