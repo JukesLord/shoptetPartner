@@ -68,9 +68,42 @@
 }
 
 /*zapnutí dostupnosti v kategorii*/
-.admin-logged .products-block .product .availability {
+.products-block .product .availability {
 	display: block;
 	font-size: 11px;
+}
+/*fix prekryvani textu po yobrayeni dostupnosti*/
+@media (max-width: 900px) {
+	.products-block > div .p .p-in .p-bottom > div .p-desc {
+		margin-bottom: 80px;
+	}
+}
+
+/*Carousel max width*/
+#carousel {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 768px) {
+	#carousel {
+		width: 739px;
+	}
+}
+@media (min-width: 992px) {
+	#carousel {
+		width: 964px;
+	}
+}
+@media (min-width: 1200px) {
+	#carousel {
+		width: 1170px;
+	}
+}
+@media (min-width: 1440px) {
+	#carousel {
+		width: 1712px;
+	}
 }
 
 /*připravené úpravy pro zobrazení množství do košíku na HP a kategorie*/
