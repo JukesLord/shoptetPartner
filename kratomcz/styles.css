@@ -1,82 +1,82 @@
-.admin-logged .benefitBanner .benefitBanner__item .benefitBanner__picture {
+.benefitBanner .benefitBanner__item .benefitBanner__picture {
 	overflow: hidden;
 }
-.admin-logged .benefitBanner .benefitBanner__item img {
+.benefitBanner .benefitBanner__item img {
 	transition: transform 0.2s ease-out;
 }
-.admin-logged .benefitBanner .benefitBanner__item:hover img {
+.benefitBanner .benefitBanner__item:hover img {
 	transform: scale(1.05);
 }
 
 /*Varianty*/
-.admin-logged .variant-list {
+.variant-list {
 	display: none;
 }
-.admin-logged .variant-flex-container {
+.variant-flex-container {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px;
 	margin-bottom: 30px;
 }
-.admin-logged .variant-flex-container .variant-option {
+.variant-flex-container .variant-option {
 	text-align: center;
 	border-style: solid;
 	border-width: 1px;
-	border-radius: 25px;
+	border-radius: 10px;
 	border-color: var(--color-secondary);
 	color: var(--color-secondary);
 	transition: all 0.2s ease-out;
 	cursor: pointer;
 }
-.admin-logged .variant-flex-container .variant-option:hover {
+.variant-flex-container .variant-option:hover {
 	background: var(--color-secondary-hover);
 	border-color: var(--color-secondary-hover);
 	color: white;
 }
-.admin-logged .variant-flex-container .variant-option.active {
+.variant-flex-container .variant-option.active {
 	background: var(--color-secondary);
 	border-color: var(--color-secondary);
 	color: white;
 }
 
-.admin-logged .variant-flex-container .variant-option > div {
+.variant-flex-container .variant-option > div {
 	padding: 5px 15px;
 	display: grid;
 	justify-items: center;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto auto auto;
-	min-width: 9em;
+	min-width: 8.5em;
 	gap: 3px;
 }
 
-.admin-logged .variant-sale {
+.variant-sale {
 	grid-row: 3;
 	display: flex;
 	gap: 5px;
 }
 
-.admin-logged .variant-discount {
+.variant-discount {
 	font-size: 12px;
 }
 
-.admin-logged .variant-original-price {
+.variant-original-price {
 	font-size: 12px;
 	text-decoration: line-through;
 }
-.admin-logged .variant-mnozstvi {
+.variant-mnozstvi {
 	grid-row: 1;
 
 	font-weight: 600;
 }
 
-.admin-logged .variant-price {
+.variant-price {
 	grid-row: 2;
 
 	font-size: 16px;
 }
 
 @media (max-width: 500px) {
-	.admin-logged .variant-flex-container .variant-option {
+	.variant-flex-container .variant-option {
 		min-width: calc(50% - 5px);
 	}
 }
