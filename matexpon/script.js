@@ -104,10 +104,12 @@ if ($("body").hasClass("in-index")) {
 
 	function indexFunctions() {
 		vsechnyProduktyWrappery.forEach(function (wrapper) {
+			console.log("REMOVE NAVIGATION");
 			removeNavigation(wrapper);
+			console.log("REMOVE DUPLICATES");
 			removeDuplicates(wrapper);
 
-			console.log(wrapper);
+			console.log("Wrapper: ", wrapper);
 
 			if (vsechnyProduktyWrappery.length > 1) {
 				if (vsechnyProduktyWrappery.indexOf(wrapper) !== 0) {
@@ -117,7 +119,7 @@ if ($("body").hasClass("in-index")) {
 		});
 
 		allProducts = vsechnyProduktyWrappery[0].find(".product");
-		console.log(allProducts);
+		console.log("PRODUCTS: ", allProducts);
 		showNumberOfProducts();
 	}
 	addShowMoreButton();
