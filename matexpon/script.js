@@ -2,6 +2,8 @@ if ($("body").hasClass("in-index")) {
 	let vsechnyProduktyMainTitle = $(".homepage-group-title:contains('Všechny produkty')");
 	let vsechnyProduktyWrappery = [];
 
+	console.log("Tady 1");
+
 	let maxVisibleProducts = visibleProductsIncrement;
 	let allProducts;
 
@@ -9,24 +11,33 @@ if ($("body").hasClass("in-index")) {
 		vsechnyProduktyWrappery.push($(this).next());
 	});
 
+	console.log("Tady 2");
+
 	vsechnyProduktyMainTitle.slice(1).remove();
 
 	indexFunctions();
+
+	console.log("Tady 3");
 
 	$(window).on("resize", function () {
 		indexFunctions();
 	});
 
+	console.log("Tady 4");
+
 	const userAgent = navigator.userAgent;
 
 	if (/Mobi|Android/i.test(userAgent)) {
+		console.log("Tady 5");
 	} else if (/Tablet|iPad/i.test(userAgent)) {
+		console.log("Tady 6");
 	} else {
 		$(document).on("resizeEnd", function () {
 			setTimeout(() => {
 				indexFunctions();
 			}, 1);
 		});
+		console.log("Tady 7");
 	}
 
 	/* 	if (window.matchMedia("(min-width: 1024px)").matches) {
