@@ -47,8 +47,7 @@ if ($("body").hasClass("in-index")) {
 
 	function removeDuplicates(wrapper) {
 		let vsechnyProdukty = wrapper.find(".product");
-		console.log("Removing duplicates from: ", wrapper);
-		console.log("All products: ", vsechnyProdukty);
+
 		let hasBeenInactive = false;
 
 		let amountOfDuplicates = 0;
@@ -109,7 +108,7 @@ if ($("body").hasClass("in-index")) {
 			console.log("REMOVE NAVIGATION");
 			removeNavigation(wrapper);
 			console.log("REMOVE DUPLICATES");
-			removeDuplicates(wrapper);
+			/* 		removeDuplicates(wrapper); */
 
 			console.log("Wrapper: ", wrapper);
 
