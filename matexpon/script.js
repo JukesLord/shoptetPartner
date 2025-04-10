@@ -108,7 +108,7 @@ if ($("body").hasClass("in-index")) {
 		vsechnyProduktyWrappery.forEach(function (wrapper) {
 			removeNavigation(wrapper);
 
-			removeDuplicates(wrapper);
+			/* 	removeDuplicates(wrapper); */
 
 			if (vsechnyProduktyWrappery.length > 1) {
 				if (vsechnyProduktyWrappery.indexOf(wrapper) !== 0) {
