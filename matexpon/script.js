@@ -47,7 +47,6 @@ if ($("body").hasClass("in-index")) {
 
 	function removeDuplicates(wrapper) {
 		let vsechnyProdukty = wrapper.find(".product");
-
 		let hasBeenInactive = false;
 
 		let amountOfDuplicates = 0;
@@ -59,7 +58,7 @@ if ($("body").hasClass("in-index")) {
 				if (!hasBeenInactive) {
 					amountOfDuplicates++;
 				} else {
-					return;
+					return false;
 				}
 			}
 		});
@@ -107,8 +106,7 @@ if ($("body").hasClass("in-index")) {
 	function indexFunctions() {
 		vsechnyProduktyWrappery.forEach(function (wrapper) {
 			removeNavigation(wrapper);
-
-			/* 	removeDuplicates(wrapper); */
+			removeDuplicates(wrapper);
 
 			if (vsechnyProduktyWrappery.length > 1) {
 				if (vsechnyProduktyWrappery.indexOf(wrapper) !== 0) {
