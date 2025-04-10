@@ -59,10 +59,11 @@ if ($("body").hasClass("in-index")) {
 				if (!hasBeenInactive) {
 					amountOfDuplicates++;
 				} else {
-					return false;
+					return;
 				}
 			}
 		});
+		console.log("amountOfDuplicates: " + amountOfDuplicates);
 		if (amountOfDuplicates > 0) {
 			//remove first x products and last x products not in for loop but slice
 			vsechnyProdukty.slice(0, amountOfDuplicates).remove();
@@ -105,12 +106,9 @@ if ($("body").hasClass("in-index")) {
 
 	function indexFunctions() {
 		vsechnyProduktyWrappery.forEach(function (wrapper) {
-			console.log("REMOVE NAVIGATION");
 			removeNavigation(wrapper);
-			console.log("REMOVE DUPLICATES");
-			/* 		removeDuplicates(wrapper); */
 
-			console.log("Wrapper: ", wrapper);
+			removeDuplicates(wrapper);
 
 			if (vsechnyProduktyWrappery.length > 1) {
 				if (vsechnyProduktyWrappery.indexOf(wrapper) !== 0) {
@@ -120,7 +118,7 @@ if ($("body").hasClass("in-index")) {
 		});
 
 		allProducts = vsechnyProduktyWrappery[0].find(".product");
-		console.log("PRODUCTS: ", allProducts);
+
 		showNumberOfProducts();
 	}
 	addShowMoreButton();
