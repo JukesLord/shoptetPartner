@@ -55,27 +55,22 @@ document.addEventListener("DOMContentLoaded", function () {
 				if ($(this).hasClass("inactive")) {
 					hasBeenInactive = true;
 					amountOfDuplicates++;
-					console.log($(this));
-					console.log("+1 inactive: ");
 				} else {
 					if (!hasBeenInactive) {
 						amountOfDuplicates++;
-						console.log($(this));
-						console.log("+1 active: ");
 					} else {
-						console.log($(this));
-						console.log("+shouldnt see after this ");
 						return false;
-
-						console.log("break");
 					}
 				}
 			});
+			if (!hasBeenInactive) {
+				amountOfDuplicates = 0;
+			}
 			console.log("amountOfDuplicates: " + amountOfDuplicates);
 			if (amountOfDuplicates > 0) {
 				//remove first x products and last x products not in for loop but slice
-				/* 			vsechnyProdukty.slice(0, amountOfDuplicates).remove();
-			vsechnyProdukty.slice(-amountOfDuplicates).remove(); */
+				vsechnyProdukty.slice(0, amountOfDuplicates).remove();
+				vsechnyProdukty.slice(-amountOfDuplicates).remove();
 			}
 		}
 
