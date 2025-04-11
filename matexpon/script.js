@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 					}
 				}
 			});
-			if (!hasBeenInactive) {
+			if (!hasBeenInactive || amountOfDuplicates > 4) {
 				amountOfDuplicates = 0;
 			}
 			console.log("amountOfDuplicates: " + amountOfDuplicates);
