@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		const userAgent = navigator.userAgent;
 
 		if (/Mobi|Android/i.test(userAgent)) {
-			$(document).one("resizeEnd", function () {
+			$(document).on("resizeEnd", function () {
 				setTimeout(() => {
 					indexFunctions();
 				}, 1);
 			});
 		} else if (/Tablet|iPad/i.test(userAgent)) {
-			$(document).one("resizeEnd", function () {
+			$(document).on("resizeEnd", function () {
 				setTimeout(() => {
 					indexFunctions();
 				}, 1);
