@@ -132,3 +132,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		}
 	}
 });
+
+/*-------------------měrná cena S DPH*/
+document.addEventListener("DOMContentLoaded", function (event) {
+	if (document.body.classList.contains("admin-logged")) {
+		$(".price-measure span").each(function () {
+			let text = $(this).html();
+			// Replace "Kč" with "Kč s DPH"
+			text = text.replace("Kč", "Kč s DPH");
+			$(this).html(text);
+		});
+	}
+});

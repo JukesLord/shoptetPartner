@@ -318,3 +318,8 @@
 .admin-logged.type-product .products-alternative-wrapper .product .p .name span {
 	-webkit-line-clamp: 3;
 }
+
+/*-------------------měrná cena S DPH*/
+.price-measure {
+	color: hsl(var(--color-tertiary-hover-h), var(--color-tertiary-hover-s), var(--color-tertiary-hover-l), 0.56);
+}
