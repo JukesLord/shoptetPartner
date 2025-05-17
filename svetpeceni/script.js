@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					let dataSrc = image.attr("data-src");
 					image.attr("src", dataSrc);
 				});
-				$(".products-alternative-header").remove();
 			}
+			$(".products-alternative-header").remove();
 			if (productsAlternative.length > 4) {
 				$("<div id='show-more-variants'>Všechny varianty</div>").insertAfter(productAlternativeWrapper);
 

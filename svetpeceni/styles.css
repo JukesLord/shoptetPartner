@@ -219,7 +219,7 @@
 	flex: 0 0 75px;
 }
 
-/*varianty produktů*/
+/*-------------------------------------------------------------------------------varianty produktů*/
 .admin-logged.type-product .variants-text {
 	font-weight: 700;
 }
@@ -235,13 +235,18 @@
 
 .admin-logged.type-product .products-alternative-wrapper .product .p-desc,
 .admin-logged.type-product .products-alternative-wrapper .product .p-code,
-.admin-logged.type-product .products-alternative-wrapper .product .availability {
+.admin-logged.type-product .products-alternative-wrapper .product .availability,
+.admin-logged.type-product .products-alternative-wrapper .product-slider-pagination,
+.admin-logged.type-product .products-alternative-wrapper .product-slider-navigation {
 	display: none !important;
 }
 
 .admin-logged.type-product .products-alternative-wrapper .products-block {
 	display: flex;
 	gap: var(--gap);
+	width: 100% !important;
+	transform: none !important;
+	transition: none !important;
 }
 .admin-logged.type-product .products-alternative-wrapper .products-block .product {
 	width: calc(50% - var(--gap) / 2) !important;
@@ -253,13 +258,13 @@
 .admin-logged.type-product .products-alternative-wrapper .products-block .product:hover .p {
 	box-shadow: none;
 }
-.products-alternative-wrapper .products-block .product .p {
+.admin-logged.type-product .products-alternative-wrapper .products-block .product .p {
 	flex-direction: row;
 	padding: 5px;
 	margin: 0;
 	align-items: center;
 }
-.products-alternative-wrapper .products-block .product .p .image {
+.admin-logged.type-product .products-alternative-wrapper .products-block .product .p .image {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -270,30 +275,30 @@
 	align-content: center;
 	margin: 0;
 }
-.products-alternative-wrapper .products-block .product .p .image img {
+.admin-logged.type-product .products-alternative-wrapper .products-block .product .p .image img {
 	width: 85px;
 	min-width: 85px;
 	margin: 0;
 }
-.products-alternative-wrapper .product .prices {
+.admin-logged.type-product .products-alternative-wrapper .product .prices {
 	position: relative;
 	inset: 0;
 	padding: 0 !important;
 }
 
-.products-alternative-wrapper .product .p-tools {
+.admin-logged.type-product .products-alternative-wrapper .product .p-tools {
 	display: none;
 }
-.products-alternative-wrapper .product .p-in {
+.admin-logged.type-product .products-alternative-wrapper .product .p-in {
 	display: flex;
 	padding: 0 !important;
 	align-items: center;
 }
-.products-alternative-wrapper .product .p-bottom > div {
+.admin-logged.type-product .products-alternative-wrapper .product .p-bottom > div {
 	display: flex;
 }
 
-.products-alternative-wrapper .product .p .name {
+.admin-logged.type-product .products-alternative-wrapper .product .p .name {
 	height: auto !important;
 	-webkit-line-clamp: 3 !important;
 	-webkit-box-orient: vertical;
@@ -303,6 +308,6 @@
 	padding-right: 15px;
 }
 
-.products-alternative-wrapper .product .p .name span {
+.admin-logged.type-product .products-alternative-wrapper .product .p .name span {
 	-webkit-line-clamp: 3;
 }
