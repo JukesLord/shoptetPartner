@@ -298,6 +298,7 @@
 	padding: 0 !important;
 	align-items: center;
 	justify-content: space-between;
+	width: 100%;
 }
 .admin-logged.type-product .products-alternative-wrapper .product .p-bottom > div {
 	display: flex;

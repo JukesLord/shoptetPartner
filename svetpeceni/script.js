@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			}
 
 			function removeDuplicates() {
+				console.log("removeDuplicates");
 				let productsAllAlternatives = $(".products-alternative-wrapper .product");
 				let seenMicroIds = new Set();
 				let removedCount = 0;
@@ -133,7 +134,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				removeDuplicates();
 			});
 			document.addEventListener("resizeEnd", function () {
-				removeDuplicates();
+				//timeout 100ms
+				setTimeout(function () {
+					removeDuplicates();
+				}, 100);
 			});
 		}
 	}
