@@ -288,6 +288,7 @@
 	position: relative;
 	inset: 0;
 	padding: 0 !important;
+	pointer-events: none;
 }
 
 .admin-logged.type-product .products-alternative-wrapper .product .p-tools {
