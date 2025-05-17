@@ -252,8 +252,12 @@
 	width: calc(50% - var(--gap) / 2) !important;
 	min-width: 350px;
 	padding: 0;
-
 	min-height: 6em;
+}
+@media (max-width: 1400px) {
+	.admin-logged.type-product .products-alternative-wrapper .products-block .product {
+		width: 100% !important;
+	}
 }
 .admin-logged.type-product .products-alternative-wrapper .products-block .product:hover .p {
 	box-shadow: none;
