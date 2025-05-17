@@ -132,6 +132,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			window.addEventListener("resize", function () {
 				removeDuplicates();
 			});
+			document.addEventListener("resizeEnd", function () {
+				removeDuplicates();
+			});
 		}
 	}
 });
