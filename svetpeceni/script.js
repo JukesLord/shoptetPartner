@@ -123,12 +123,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			window.addEventListener("resize", function () {
 				removeDuplicates();
 			});
-			/* 			document.addEventListener("resizeEnd", function () {
+			document.addEventListener("resizeEnd", function () {
 				//timeout 100ms
 				setTimeout(function () {
 					removeDuplicates();
-				}, 100);
-			}); */
+				}, 1);
+			});
 		}
 	}
 });
