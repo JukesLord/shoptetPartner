@@ -212,3 +212,97 @@
 .faq-new .faq-answer > *:last-child {
 	margin-bottom: 0;
 }
+
+/*fix konkurencnich vyhod*/
+.benefitBanner .benefitBanner__picture {
+	height: 75px;
+	flex: 0 0 75px;
+}
+
+/*varianty produktů*/
+.admin-logged.type-product .variants-text {
+	font-weight: 700;
+}
+.admin-logged.type-product .products-alternative-wrapper {
+	padding: 0 !important;
+	margin: 15px 0 40px !important;
+	--gap: 10px;
+}
+.admin-logged.type-product .products-alternative-wrapper .products {
+	width: 100% !important;
+	cursor: auto !important;
+}
+
+.admin-logged.type-product .products-alternative-wrapper .product .p-desc,
+.admin-logged.type-product .products-alternative-wrapper .product .p-code,
+.admin-logged.type-product .products-alternative-wrapper .product .availability {
+	display: none !important;
+}
+
+.admin-logged.type-product .products-alternative-wrapper .products-block {
+	display: flex;
+	gap: var(--gap);
+}
+.admin-logged.type-product .products-alternative-wrapper .products-block .product {
+	width: calc(50% - var(--gap) / 2) !important;
+	min-width: 350px;
+	padding: 0;
+
+	min-height: 6em;
+}
+.admin-logged.type-product .products-alternative-wrapper .products-block .product:hover .p {
+	box-shadow: none;
+}
+.products-alternative-wrapper .products-block .product .p {
+	flex-direction: row;
+	padding: 5px;
+	margin: 0;
+	align-items: center;
+}
+.products-alternative-wrapper .products-block .product .p .image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	margin: 0;
+}
+.products-alternative-wrapper .products-block .product .p .image img {
+	width: 85px;
+	min-width: 85px;
+	margin: 0;
+}
+.products-alternative-wrapper .product .prices {
+	position: relative;
+	inset: 0;
+	padding: 0 !important;
+}
+
+.products-alternative-wrapper .product .p-tools {
+	display: none;
+}
+.products-alternative-wrapper .product .p-in {
+	display: flex;
+	padding: 0 !important;
+	align-items: center;
+}
+.products-alternative-wrapper .product .p-bottom > div {
+	display: flex;
+}
+
+.products-alternative-wrapper .product .p .name {
+	height: auto !important;
+	-webkit-line-clamp: 3 !important;
+	-webkit-box-orient: vertical;
+	font-size: 13px;
+	line-height: 1.45;
+	padding-left: 95px;
+	padding-right: 15px;
+}
+
+.products-alternative-wrapper .product .p .name span {
+	-webkit-line-clamp: 3;
+}
