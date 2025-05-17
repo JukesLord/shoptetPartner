@@ -106,29 +106,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				});
 			}
 
-			function removeDuplicates() {
-				console.log("removeDuplicates");
-				let productsAllAlternatives = $(".products-alternative-wrapper .product");
-				let seenMicroIds = new Set();
-				let removedCount = 0;
-
-				productsAllAlternatives.each(function (index, product) {
-					let $product = $(product);
-					let $p = $product.find(".p");
-					let microId = $p.attr("data-micro-identifier");
-
-					if (microId && seenMicroIds.has(microId)) {
-						// This is a duplicate, remove it
-						$product.remove();
-						removedCount++;
-					} else if (microId) {
-						// First time seeing this microId, add to set
-						seenMicroIds.add(microId);
-					}
-				});
-			}
-
-			// Call the function to execute
 			removeDuplicates();
 			window.addEventListener("resize", function () {
 				removeDuplicates();
@@ -142,3 +119,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		}
 	}
 });
+
+function removeDuplicates() {
+	console.log("removeDuplicates");
+	let productsAllAlternatives = $(".products-alternative-wrapper .product");
+	let seenMicroIds = new Set();
+	let removedCount = 0;
+
+	productsAllAlternatives.each(function (index, product) {
+		let $product = $(product);
+		let $p = $product.find(".p");
+		let microId = $p.attr("data-micro-identifier");
+
+		if (microId && seenMicroIds.has(microId)) {
+			// This is a duplicate, remove it
+			$product.remove();
+			removedCount++;
+		} else if (microId) {
+			// First time seeing this microId, add to set
+			seenMicroIds.add(microId);
+		}
+	});
+}
