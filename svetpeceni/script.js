@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 /*-------------------měrná cena S DPH*/
 document.addEventListener("DOMContentLoaded", function (event) {
-	if (document.body.classList.contains("admin-logged")) {
+	if (document.body.classList.contains("type-product")) {
 		$(".price-measure span").each(function () {
 			let text = $(this).html();
 			// Replace "Kč" with "Kč s DPH"
@@ -144,3 +144,45 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		});
 	}
 });
+
+/*-------------------slevový kupón osobní odběr*/
+document.addEventListener("DOMContentLoaded", function () {
+	if (document.body.classList.contains("admin-logged")) {
+		if (document.body.classList.contains("in-krok-1")) {
+			if (dataLayer[0].shoptet.cartInfo.discountCoupon.code) {
+				let osobniOdberMethod = document.querySelector("#shipping-4");
+
+				if (osobniOdberMethod.classList.contains("active")) {
+					disableAllPaymentsExceptCard();
+				}
+
+				document.addEventListener("ShoptetBillingMethodUpdated", function () {
+					if (osobniOdberMethod.classList.contains("active")) {
+						disableAllPaymentsExceptCard();
+					}
+				});
+			}
+		}
+	}
+});
+
+function disableAllPaymentsExceptCard() {
+	let paymentMenthodCardDataId = ["billing-65", "billingId-68", "billing-71"];
+	let paymentMethods = document.querySelectorAll("#order-billing-methods > .radio-wrapper");
+
+	paymentMethods.forEach(function (method) {
+		let radioInput = method.querySelector("input[type='radio']");
+		let label = method.querySelector("label");
+		console.log("label", label);
+
+		// Check if the data-id is included in the paymentMenthodCardDataId array
+		if (!paymentMenthodCardDataId.includes(method.getAttribute("data-id"))) {
+			method.classList.add("inactive-child");
+			method.classList.remove("active");
+			radioInput.checked = false;
+			radioInput.disabled = true;
+			label.classList.add("inactive");
+			label.classList.remove("active");
+		}
+	});
+}
