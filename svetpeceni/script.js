@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function disableAllPaymentsExceptCard() {
-	let paymentMenthodCardDataId = ["billing-65", "billingId-68", "billing-71", "billing-83 "];
+	let paymentMenthodCardDataId = ["billing-65", "billingId-68", "billing-71", "billing-83"];
 	let paymentMethods = document.querySelectorAll("#order-billing-methods > .radio-wrapper");
 
 	paymentMethods.forEach(function (method) {
