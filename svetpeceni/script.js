@@ -145,40 +145,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	}
 });
 
+let addedTextToDelivery = false;
 /*-------------------slevový kupón osobní odběr*/
 document.addEventListener("DOMContentLoaded", function () {
-	if (document.body.classList.contains("admin-logged")) {
-		if (document.body.classList.contains("in-krok-1")) {
-			if (dataLayer[0].shoptet.cartInfo.discountCoupon.code) {
-				let osobniOdberMethod = document.querySelector("#shipping-4");
+	if (document.body.classList.contains("in-krok-1")) {
+		if (dataLayer[0].shoptet.cartInfo.discountCoupon.code) {
+			let osobniOdberMethod = document.querySelector("#shipping-4");
 
+			if (osobniOdberMethod.classList.contains("active")) {
+				disableAllPaymentsExceptCard();
+			}
+
+			document.addEventListener("ShoptetBillingMethodUpdated", function () {
 				if (osobniOdberMethod.classList.contains("active")) {
 					disableAllPaymentsExceptCard();
 				}
-
-				document.addEventListener("ShoptetBillingMethodUpdated", function () {
-					if (osobniOdberMethod.classList.contains("active")) {
-						disableAllPaymentsExceptCard();
-					}
-				});
-			}
+			});
 		}
 	}
 });
 
 function disableAllPaymentsExceptCard() {
 	let paymentMenthodCardDataId = ["billing-65", "billingId-68", "billing-71", "billing-83"];
-	let peymentMethodCardName = ["Online", "Google", "Apple", "předem", "Rychlá platba"];
+	let paymentMethodCardName = ["Online", "Google", "Apple", "Platba předem", "Rychlá platba"];
 	let paymentMethods = document.querySelectorAll("#order-billing-methods > .radio-wrapper");
-	let paymentName;
 
 	paymentMethods.forEach(function (method) {
 		let radioInput = method.querySelector("input[type='radio']");
 		let paymentName = method.querySelector(".shipping-billing-name").textContent.trim();
 		let label = method.querySelector("label");
 
+		console.log("Payment Name:", paymentName);
+
 		// Check if the payment method name is in the peymentMethodCardName array
-		if (peymentMethodCardName.includes(paymentName)) {
+		if (!paymentMethodCardName.some((cardName) => paymentName.includes(cardName))) {
 			method.classList.add("inactive-child");
 			method.classList.remove("active");
 			radioInput.checked = false;
@@ -197,4 +197,14 @@ function disableAllPaymentsExceptCard() {
 			label.classList.remove("active");
 		} */
 	});
+	if (addedTextToDelivery) {
+		return;
+	} else {
+		addedTextToDelivery = true;
+		let osobniOdberMethod = document.querySelector("#shipping-4");
+		const kuponTextSpan = document.createElement("span");
+		kuponTextSpan.className = "delivery-text-coupon";
+		kuponTextSpan.innerHTML = "Při uplatnění kódu a osobním odběru na brněnské pobočce je nutné provést platbu předem.";
+		osobniOdberMethod.append(kuponTextSpan);
+	}
 }
