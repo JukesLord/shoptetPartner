@@ -168,15 +168,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function disableAllPaymentsExceptCard() {
 	let paymentMenthodCardDataId = ["billing-65", "billingId-68", "billing-71", "billing-83"];
+	let peymentMethodCardName = ["Online", "Google", "Apple", "předem", "Rychlá platba"];
 	let paymentMethods = document.querySelectorAll("#order-billing-methods > .radio-wrapper");
+	let paymentName;
 
 	paymentMethods.forEach(function (method) {
 		let radioInput = method.querySelector("input[type='radio']");
+		let paymentName = method.querySelector(".shipping-billing-name").textContent.trim();
 		let label = method.querySelector("label");
-		console.log("label", label);
 
-		// Check if the data-id is included in the paymentMenthodCardDataId array
-		if (!paymentMenthodCardDataId.includes(method.getAttribute("data-id"))) {
+		// Check if the payment method name is in the peymentMethodCardName array
+		if (peymentMethodCardName.includes(paymentName)) {
 			method.classList.add("inactive-child");
 			method.classList.remove("active");
 			radioInput.checked = false;
@@ -184,5 +186,15 @@ function disableAllPaymentsExceptCard() {
 			label.classList.add("inactive");
 			label.classList.remove("active");
 		}
+
+		// Check if the data-id is included in the paymentMenthodCardDataId array
+		/* 		if (!paymentMenthodCardDataId.includes(method.getAttribute("data-id"))) {
+			method.classList.add("inactive-child");
+			method.classList.remove("active");
+			radioInput.checked = false;
+			radioInput.disabled = true;
+			label.classList.add("inactive");
+			label.classList.remove("active");
+		} */
 	});
 }
