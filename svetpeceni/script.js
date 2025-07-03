@@ -140,6 +140,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			let text = $(this).html();
 			// Replace "Kč" with "Kč s DPH"
 			text = text.replace("Kč", "Kč s DPH");
+			//add (jednotková cena) after the price
+			text = text + " (jednotková cena)";
 			$(this).html(text);
 		});
 	}
