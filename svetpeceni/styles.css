@@ -220,55 +220,55 @@
 }
 
 /*-------------------------------------------------------------------------------varianty produktů*/
-.admin-logged.type-product .variants-text {
+.type-product .variants-text {
 	font-weight: 700;
 }
-.admin-logged.type-product .products-alternative-wrapper {
+.type-product .products-alternative-wrapper {
 	padding: 0 !important;
 	margin: 15px 0 40px !important;
 	--gap: 10px;
 }
-.admin-logged.type-product .products-alternative-wrapper .products {
+.type-product .products-alternative-wrapper .products {
 	width: 100% !important;
 	cursor: auto !important;
 }
 
-.admin-logged.type-product .products-alternative-wrapper .product .p-desc,
-.admin-logged.type-product .products-alternative-wrapper .product .p-code,
-.admin-logged.type-product .products-alternative-wrapper .product .availability,
-.admin-logged.type-product .products-alternative-wrapper .product-slider-pagination,
-.admin-logged.type-product .products-alternative-wrapper .product-slider-navigation {
+.type-product .products-alternative-wrapper .product .p-desc,
+.type-product .products-alternative-wrapper .product .p-code,
+.type-product .products-alternative-wrapper .product .availability,
+.type-product .products-alternative-wrapper .product-slider-pagination,
+.type-product .products-alternative-wrapper .product-slider-navigation {
 	display: none !important;
 }
 
-.admin-logged.type-product .products-alternative-wrapper .products-block {
+.type-product .products-alternative-wrapper .products-block {
 	display: flex;
 	gap: var(--gap);
 	width: 100% !important;
 	transform: none !important;
 	transition: none !important;
 }
-.admin-logged.type-product .products-alternative-wrapper .products-block .product {
+.type-product .products-alternative-wrapper .products-block .product {
 	width: calc(50% - var(--gap) / 2) !important;
 	min-width: 350px;
 	padding: 0;
 	min-height: 6em;
 }
 @media (max-width: 1400px) {
-	.admin-logged.type-product .products-alternative-wrapper .products-block .product {
+	.type-product .products-alternative-wrapper .products-block .product {
 		width: 100% !important;
 	}
 }
-.admin-logged.type-product .products-alternative-wrapper .products-block .product:hover .p {
+.type-product .products-alternative-wrapper .products-block .product:hover .p {
 	box-shadow: none;
 }
-.admin-logged.type-product .products-alternative-wrapper .products-block .product .p {
+.type-product .products-alternative-wrapper .products-block .product .p {
 	flex-direction: row;
 	padding: 5px;
 	margin: 0;
 	align-items: center;
 }
-.admin-logged.type-product .products-alternative-wrapper .products-block .product .p .image {
+.type-product .products-alternative-wrapper .products-block .product .p .image {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -279,33 +279,33 @@
 	align-content: center;
 	margin: 0;
 }
-.admin-logged.type-product .products-alternative-wrapper .products-block .product .p .image img {
+.type-product .products-alternative-wrapper .products-block .product .p .image img {
 	width: 85px;
 	min-width: 85px;
 	margin: 0;
 }
-.admin-logged.type-product .products-alternative-wrapper .product .prices {
+.type-product .products-alternative-wrapper .product .prices {
 	position: relative;
 	inset: 0;
 	padding: 0 !important;
 	pointer-events: none;
 }
 
-.admin-logged.type-product .products-alternative-wrapper .product .p-tools {
+.type-product .products-alternative-wrapper .product .p-tools {
 	display: none;
 }
-.admin-logged.type-product .products-alternative-wrapper .product .p-in {
+.type-product .products-alternative-wrapper .product .p-in {
 	display: flex;
 	padding: 0 !important;
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
 }
-.admin-logged.type-product .products-alternative-wrapper .product .p-bottom > div {
+.type-product .products-alternative-wrapper .product .p-bottom > div {
 	display: flex;
 }
 
-.admin-logged.type-product .products-alternative-wrapper .product .p .name {
+.type-product .products-alternative-wrapper .product .p .name {
 	height: auto !important;
 	-webkit-line-clamp: 3 !important;
 	-webkit-box-orient: vertical;
@@ -315,7 +315,7 @@
 	padding-right: 15px;
 }
 
-.admin-logged.type-product .products-alternative-wrapper .product .p .name span {
+.type-product .products-alternative-wrapper .product .p .name span {
 	-webkit-line-clamp: 3;
 }
 
