@@ -337,3 +337,48 @@
 		padding: 0 24px;
 	}
 }
+
+/*SLEVY VLAJKY*/
+.p-image-wrapper .flag.flag-discount {
+	background: var(--color-secondary);
+	border-radius: 8px !important;
+	height: auto;
+	min-height: auto;
+	min-width: auto;
+	width: auto;
+	padding: 1em 1em;
+	margin: 0;
+}
+.p-image-wrapper .flags-extra {
+	left: 15px;
+	bottom: 15px;
+}
+.p-image-wrapper .flags.flags-default {
+	top: 15px;
+	left: 15px;
+}
+.p-data-wrapper .standard-price-label,
+.p-data-wrapper .price-standard {
+	color: #333;
+}
+.p-data-wrappe .price-save {
+	font-weight: 700;
+}
+
+.products-block span.price-standard strong,
+.products-block span.price-standard {
+	font-size: 11px;
+	color: #333;
+	font-weight: 400;
+}
+.products-block span.price-save {
+	font-size: 11px !important;
+	font-weight: 700;
+	width: max-content;
+	margin-left: 2em !important;
+}
+.products-alternative-wrapper .products .price-save {
+	position: relative !important;
+	inset: 0 !important;
+	margin: 0 !important;
+}
