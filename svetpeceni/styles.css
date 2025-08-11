@@ -350,7 +350,8 @@
 	margin: 0;
 }
 .p-image-wrapper .flags-extra {
-	left: 15px;
+	left: auto;
+	right: 15px;
 	bottom: 15px;
 }
 .p-image-wrapper .flags.flags-default {
