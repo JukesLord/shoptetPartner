@@ -208,3 +208,15 @@ function disableAllPaymentsExceptCard() {
 		osobniOdberMethod.append(kuponTextSpan);
 	}
 }
+
+/*HOMEPAGEBLOG*/
+document.addEventListener("DOMContentLoaded", function () {
+	if (document.body.classList.contains("in-index")) {
+		let welcomeWrapper = document.querySelector(".welcome-wrapper");
+		let homepageBlogWrapper = document.querySelector(".homepage-blog-wrapper");
+		if (welcomeWrapper && homepageBlogWrapper) {
+			// Move the homepage blog wrapper before the welcome wrapper
+			welcomeWrapper.insertAdjacentElement("afterend", homepageBlogWrapper);
+		}
+	}
+});
