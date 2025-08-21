@@ -1,32 +1,33 @@
-if (document.body.classList.contains("admin-logged")) {
-	if (document.body.classList.contains("type-product")) {
-		addVacuumExplanation();
-		addScrollToTopButton();
+document.addEventListener("DOMContentLoaded", function () {
+	if (document.body.classList.contains("admin-logged")) {
+		if (document.body.classList.contains("type-product")) {
+			addVacuumExplanation();
+			addScrollToTopButton();
 
-		function addVacuumExplanation() {
-			let customVariantsElement = document.querySelector(".custom-variants");
-			if (!customVariantsElement) {
-				console.warn("Custom variants element not found.");
-				return;
-			}
-			let thVakuoveBaleni = Array.from(customVariantsElement.querySelectorAll("th")).find(
-				(th) => th.textContent.trim().toLowerCase() === "vakuové balení"
-			);
-			if (!thVakuoveBaleni) {
-				console.warn("Vakuové balení element not found.");
-				return;
-			}
-			let basicDescription = document.querySelector("#description .basic-description");
-			if (!basicDescription) {
-				console.warn("Basic description element not found.");
-				return;
-			}
+			function addVacuumExplanation() {
+				let customVariantsElement = document.querySelector(".custom-variants");
+				if (!customVariantsElement) {
+					console.warn("Custom variants element not found.");
+					return;
+				}
+				let thVakuoveBaleni = Array.from(customVariantsElement.querySelectorAll("th")).find(
+					(th) => th.textContent.trim().toLowerCase() === "vakuové balení"
+				);
+				if (!thVakuoveBaleni) {
+					console.warn("Vakuové balení element not found.");
+					return;
+				}
+				let basicDescription = document.querySelector("#description .basic-description");
+				if (!basicDescription) {
+					console.warn("Basic description element not found.");
+					return;
+				}
 
-			thVakuoveBaleni.classList.add("vacuum-questionmark");
+				thVakuoveBaleni.classList.add("vacuum-questionmark");
 
-			const customVacuumExplanation = document.createElement("div");
-			customVacuumExplanation.className = "vacuum-explanation";
-			customVacuumExplanation.innerHTML = `
+				const customVacuumExplanation = document.createElement("div");
+				customVacuumExplanation.className = "vacuum-explanation";
+				customVacuumExplanation.innerHTML = `
 			<div class="vacuum-description-wrapper">
 	<h3 class="vacuum-title">Co je to vakuové balení?</h3>
 	<div class="vacuum-description">
@@ -53,45 +54,38 @@ if (document.body.classList.contains("admin-logged")) {
 		</div>
 	</div>
 </div>`;
-			basicDescription.appendChild(customVacuumExplanation);
+				basicDescription.appendChild(customVacuumExplanation);
 
-			thVakuoveBaleni.addEventListener("click", function () {
-				const offset = 200; // Offset in pixels
-				const elementPosition = customVacuumExplanation.getBoundingClientRect().top + window.pageYOffset;
-				const offsetPosition = elementPosition - offset;
+				thVakuoveBaleni.addEventListener("click", function () {
+					const offset = 200; // Offset in pixels
+					const elementPosition = customVacuumExplanation.getBoundingClientRect().top + window.pageYOffset;
+					const offsetPosition = elementPosition - offset;
 
-				window.scrollTo({
-					top: offsetPosition,
-					behavior: "smooth",
+					window.scrollTo({
+						top: offsetPosition,
+						behavior: "smooth",
+					});
 				});
-			});
-		}
-
-		function addScrollToTopButton() {
-			let basicDescription = document.querySelector("#description .basic-description");
-			if (!basicDescription) {
-				console.warn("Basic description element not found.");
-				return;
 			}
-			const scrollToTopButton = document.createElement("div");
-			scrollToTopButton.className = "scroll-to-top";
-			scrollToTopButton.textContent = "Zpět na produkt ↑";
-			basicDescription.appendChild(scrollToTopButton);
 
-			scrollToTopButton.addEventListener("click", () => {
-				window.scrollTo({
-					top: 0,
-					behavior: "smooth",
-				});
-			});
-
-			window.addEventListener("scroll", () => {
-				if (window.scrollY > 300) {
-					scrollToTopButton.style.display = "block";
-				} else {
-					scrollToTopButton.style.display = "none";
+			function addScrollToTopButton() {
+				let basicDescription = document.querySelector("#description .basic-description");
+				if (!basicDescription) {
+					console.warn("Basic description element not found.");
+					return;
 				}
-			});
+				const scrollToTopButton = document.createElement("div");
+				scrollToTopButton.className = "scroll-to-top";
+				scrollToTopButton.textContent = "Zpět na produkt ↑";
+				basicDescription.appendChild(scrollToTopButton);
+
+				scrollToTopButton.addEventListener("click", () => {
+					window.scrollTo({
+						top: 0,
+						behavior: "smooth",
+					});
+				});
+			}
 		}
 	}
-}
+});
