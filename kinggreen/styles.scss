@@ -1,0 +1,110 @@
+.admin-logged {
+	.product-top .discount-side .default-variant {
+		visibility: hidden;
+	}
+	&.type-product {
+		.product-top {
+			.custom-variants {
+				.variant-text {
+					background: var(--varianta-gramaz-pozadi);
+					color: var(--varianta-gramaz-barva);
+					font-size: var(--varianta-gramaz-velikost);
+				}
+				.variant {
+					background: var(--varianta-cena-pozadi) !important;
+
+					&.active {
+						border: 1px solid var(--varianta-vybrana-barva) !important;
+						box-shadow: 0 0 2px var(--varianta-vybrana-barva) !important;
+						.variant-price {
+							color: var(--varianta-vybrana-barva);
+						}
+					}
+				}
+				.variant-price {
+					color: var(--varianta-cena-barva);
+					font-size: var(--varianta-cena-velikost);
+				}
+				.price-per-kg {
+					color: var(--varianta-cena-za-kg-barva);
+					font-size: var(--varianta-cena-za-kg-velikost);
+				}
+			}
+		}
+		.vacuum-questionmark {
+			max-width: max-content;
+			position: relative;
+			cursor: pointer;
+			&:after {
+				position: absolute;
+				content: "?";
+				font-weight: 700;
+				background: #ffc702;
+				border-radius: 50%;
+				width: 1.25em;
+				height: 1.25em;
+				right: -1.75em;
+				top: 50%;
+				transform: translatey(-50%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		.vacuum-explanation {
+			padding-top: 20px;
+			.vacuum-title {
+				font-size: 2.8em !important;
+				line-height: 1.2;
+			}
+			.vacuum-description {
+				display: flex;
+				gap: 20px;
+				align-items: center;
+				.vacuum-description-image {
+					width: 350px;
+					max-width: 100%;
+				}
+				@media screen and (max-width: 981px) {
+					flex-direction: column;
+					align-items: center;
+				}
+			}
+		}
+		.scroll-to-top {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 30px;
+			margin-bottom: 10px;
+			cursor: pointer;
+
+			border-radius: 10px;
+			padding: 10px 20px;
+			margin-left: auto;
+			width: max-content;
+			border-style: solid;
+			border-width: 1px;
+			border-color: #000;
+			color: black;
+			background: transparent;
+			&:hover {
+				background: #000;
+				color: white;
+			}
+		}
+	}
+}
+:root {
+	--varianta-gramaz-pozadi: #000000;
+	--varianta-gramaz-barva: #ffffff;
+	--varianta-gramaz-velikost: 13px;
+
+	--varianta-cena-pozadi: #ffffff;
+	--varianta-cena-barva: #000000;
+	--varianta-cena-velikost: 13px;
+
+	--varianta-cena-za-kg-barva: #666666;
+	--varianta-cena-za-kg-velikost: 13px;
+
+	--varianta-vybrana-barva: #22a000;
+}
