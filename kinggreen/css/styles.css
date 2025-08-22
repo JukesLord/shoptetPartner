@@ -1,38 +1,39 @@
-.admin-logged .product-top .discount-side .default-variant {
+.product-top .discount-side .default-variant {
   visibility: hidden;
 }
-.admin-logged.type-product .product-top .custom-variants .variant-text {
-  background: var(--varianta-gramaz-pozadi);
-  color: var(--varianta-gramaz-barva);
-  font-size: var(--varianta-gramaz-velikost);
+
+.type-product .product-top .custom-variants .variant-text {
+  background: var(--varianta-gramaz-pozadi) !important;
+  color: var(--varianta-gramaz-barva) !important;
+  font-size: var(--varianta-gramaz-velikost) !important;
 }
-.admin-logged.type-product .product-top .custom-variants .variant {
+.type-product .product-top .custom-variants .variant {
   background: var(--varianta-cena-pozadi) !important;
 }
-.admin-logged.type-product .product-top .custom-variants .variant.active {
+.type-product .product-top .custom-variants .variant.active {
   border: 1px solid var(--varianta-vybrana-barva) !important;
   -webkit-box-shadow: 0 0 2px var(--varianta-vybrana-barva) !important;
           box-shadow: 0 0 2px var(--varianta-vybrana-barva) !important;
 }
-.admin-logged.type-product .product-top .custom-variants .variant.active .variant-price {
-  color: var(--varianta-vybrana-barva);
+.type-product .product-top .custom-variants .variant.active .variant-price {
+  color: var(--varianta-vybrana-barva) !important;
 }
-.admin-logged.type-product .product-top .custom-variants .variant-price {
-  color: var(--varianta-cena-barva);
-  font-size: var(--varianta-cena-velikost);
+.type-product .product-top .custom-variants .variant-price {
+  color: var(--varianta-cena-barva) !important;
+  font-size: var(--varianta-cena-velikost) !important;
 }
-.admin-logged.type-product .product-top .custom-variants .price-per-kg {
-  color: var(--varianta-cena-za-kg-barva);
-  font-size: var(--varianta-cena-za-kg-velikost);
+.type-product .product-top .custom-variants .price-per-kg {
+  color: var(--varianta-cena-za-kg-barva) !important;
+  font-size: var(--varianta-cena-za-kg-velikost) !important;
 }
-.admin-logged.type-product .vacuum-questionmark {
+.type-product .vacuum-questionmark {
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
   position: relative;
   cursor: pointer;
 }
-.admin-logged.type-product .vacuum-questionmark:after {
+.type-product .vacuum-questionmark:after {
   position: absolute;
   content: "?";
   font-weight: 700;
@@ -54,15 +55,15 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-.admin-logged.type-product .vacuum-explanation {
+.type-product .vacuum-explanation {
   padding-top: 20px;
 }
-.admin-logged.type-product .vacuum-explanation .vacuum-title {
+.type-product .vacuum-explanation .vacuum-title {
   font-size: 2.8em !important;
   line-height: 1.2;
   font-weight: 400 !important;
 }
-.admin-logged.type-product .vacuum-explanation .vacuum-description {
+.type-product .vacuum-explanation .vacuum-description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,17 +72,17 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.admin-logged.type-product .vacuum-explanation .vacuum-description .vacuum-description-image {
+.type-product .vacuum-explanation .vacuum-description .vacuum-description-image {
   width: 200px;
   max-width: 100%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
 @media screen and (max-width: 981px) {
-  .admin-logged.type-product .vacuum-explanation .vacuum-title {
+  .type-product .vacuum-explanation .vacuum-title {
     font-size: 2.2em !important;
   }
-  .admin-logged.type-product .vacuum-explanation .vacuum-description {
+  .type-product .vacuum-explanation .vacuum-description {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -93,11 +94,11 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .admin-logged.type-product .vacuum-explanation .vacuum-title {
+  .type-product .vacuum-explanation .vacuum-title {
     font-size: 1.8em !important;
   }
 }
-.admin-logged.type-product .scroll-to-top {
+.type-product .scroll-to-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,7 +120,7 @@
   color: black;
   background: transparent;
 }
-.admin-logged.type-product .scroll-to-top:hover {
+.type-product .scroll-to-top:hover {
   background: #000;
   color: white;
 }

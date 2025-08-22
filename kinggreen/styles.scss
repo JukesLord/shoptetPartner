@@ -1,13 +1,13 @@
 .product-top .discount-side .default-variant {
 	visibility: hidden;
 }
-&.type-product {
+.type-product {
 	.product-top {
 		.custom-variants {
 			.variant-text {
-				background: var(--varianta-gramaz-pozadi);
-				color: var(--varianta-gramaz-barva);
-				font-size: var(--varianta-gramaz-velikost);
+				background: var(--varianta-gramaz-pozadi) !important;
+				color: var(--varianta-gramaz-barva) !important;
+				font-size: var(--varianta-gramaz-velikost) !important;
 			}
 			.variant {
 				background: var(--varianta-cena-pozadi) !important;
@@ -16,17 +16,17 @@
 					border: 1px solid var(--varianta-vybrana-barva) !important;
 					box-shadow: 0 0 2px var(--varianta-vybrana-barva) !important;
 					.variant-price {
-						color: var(--varianta-vybrana-barva);
+						color: var(--varianta-vybrana-barva) !important;
 					}
 				}
 			}
 			.variant-price {
-				color: var(--varianta-cena-barva);
-				font-size: var(--varianta-cena-velikost);
+				color: var(--varianta-cena-barva) !important;
+				font-size: var(--varianta-cena-velikost) !important;
 			}
 			.price-per-kg {
-				color: var(--varianta-cena-za-kg-barva);
-				font-size: var(--varianta-cena-za-kg-velikost);
+				color: var(--varianta-cena-za-kg-barva) !important;
+				font-size: var(--varianta-cena-za-kg-velikost) !important;
 			}
 		}
 	}
