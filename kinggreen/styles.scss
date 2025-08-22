@@ -1,120 +1,119 @@
-.admin-logged {
-	.product-top .discount-side .default-variant {
-		visibility: hidden;
-	}
-	&.type-product {
-		.product-top {
-			.custom-variants {
-				.variant-text {
-					background: var(--varianta-gramaz-pozadi);
-					color: var(--varianta-gramaz-barva);
-					font-size: var(--varianta-gramaz-velikost);
-				}
-				.variant {
-					background: var(--varianta-cena-pozadi) !important;
+.product-top .discount-side .default-variant {
+	visibility: hidden;
+}
+&.type-product {
+	.product-top {
+		.custom-variants {
+			.variant-text {
+				background: var(--varianta-gramaz-pozadi);
+				color: var(--varianta-gramaz-barva);
+				font-size: var(--varianta-gramaz-velikost);
+			}
+			.variant {
+				background: var(--varianta-cena-pozadi) !important;
 
-					&.active {
-						border: 1px solid var(--varianta-vybrana-barva) !important;
-						box-shadow: 0 0 2px var(--varianta-vybrana-barva) !important;
-						.variant-price {
-							color: var(--varianta-vybrana-barva);
-						}
+				&.active {
+					border: 1px solid var(--varianta-vybrana-barva) !important;
+					box-shadow: 0 0 2px var(--varianta-vybrana-barva) !important;
+					.variant-price {
+						color: var(--varianta-vybrana-barva);
 					}
 				}
-				.variant-price {
-					color: var(--varianta-cena-barva);
-					font-size: var(--varianta-cena-velikost);
-				}
-				.price-per-kg {
-					color: var(--varianta-cena-za-kg-barva);
-					font-size: var(--varianta-cena-za-kg-velikost);
-				}
+			}
+			.variant-price {
+				color: var(--varianta-cena-barva);
+				font-size: var(--varianta-cena-velikost);
+			}
+			.price-per-kg {
+				color: var(--varianta-cena-za-kg-barva);
+				font-size: var(--varianta-cena-za-kg-velikost);
 			}
 		}
-		.vacuum-questionmark {
-			max-width: max-content;
-			position: relative;
-			cursor: pointer;
-			&:after {
-				position: absolute;
-				content: "?";
-				font-weight: 700;
-				background: #ffc702;
-				border-radius: 50%;
-				width: 1.25em;
-				height: 1.25em;
-				right: -1.75em;
-				top: 50%;
-				transform: translatey(-50%);
-				display: flex;
-				align-items: center;
-				justify-content: center;
+	}
+	.vacuum-questionmark {
+		max-width: max-content;
+		position: relative;
+		cursor: pointer;
+		&:after {
+			position: absolute;
+			content: "?";
+			font-weight: 700;
+			background: #ffc702;
+			border-radius: 50%;
+			width: 1.25em;
+			height: 1.25em;
+			right: -1.75em;
+			top: 50%;
+			transform: translatey(-50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	.vacuum-explanation {
+		padding-top: 20px;
+		.vacuum-title {
+			font-size: 2.8em !important;
+			line-height: 1.2;
+			font-weight: 400 !important;
+		}
+		.vacuum-description {
+			display: flex;
+			gap: 40px;
+			align-items: center;
+			.vacuum-description-image {
+				width: 200px;
+				max-width: 100%;
+				flex-shrink: 0;
 			}
 		}
-		.vacuum-explanation {
-			padding-top: 20px;
+		@media screen and (max-width: 981px) {
 			.vacuum-title {
-				font-size: 2.8em !important;
-				line-height: 1.2;
-				font-weight: 400 !important;
+				font-size: 2.2em !important;
 			}
 			.vacuum-description {
-				display: flex;
-				gap: 40px;
+				flex-direction: column;
 				align-items: center;
-				.vacuum-description-image {
-					width: 200px;
-					max-width: 100%;
-					flex-shrink: 0;
-				}
-			}
-			@media screen and (max-width: 981px) {
-				.vacuum-title {
-					font-size: 2.2em !important;
-				}
-				.vacuum-description {
-					flex-direction: column;
-					align-items: center;
-					gap: 30px;
-				}
-			}
-			@media screen and (max-width: 768px) {
-				.vacuum-title {
-					font-size: 1.8em !important;
-				}
+				gap: 30px;
 			}
 		}
-		.scroll-to-top {
-			display: flex;
-			justify-content: flex-end;
-			margin-top: 30px;
-			margin-bottom: 10px;
-			cursor: pointer;
-
-			border-radius: 10px;
-			padding: 10px 20px;
-			margin-left: auto;
-			width: max-content;
-			border-style: solid;
-			border-width: 1px;
-			border-color: #000;
-			color: black;
-			background: transparent;
-			&:hover {
-				background: #000;
-				color: white;
+		@media screen and (max-width: 768px) {
+			.vacuum-title {
+				font-size: 1.8em !important;
 			}
+		}
+	}
+	.scroll-to-top {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 30px;
+		margin-bottom: 10px;
+		cursor: pointer;
+
+		border-radius: 10px;
+		padding: 10px 20px;
+		margin-left: auto;
+		width: max-content;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #000;
+		color: black;
+		background: transparent;
+		&:hover {
+			background: #000;
+			color: white;
 		}
 	}
 }
+
 :root {
 	--varianta-gramaz-pozadi: #000000;
 	--varianta-gramaz-barva: #ffffff;
-	--varianta-gramaz-velikost: 13px;
+	--varianta-gramaz-velikost: 14px;
 
 	--varianta-cena-pozadi: #ffffff;
 	--varianta-cena-barva: #000000;
-	--varianta-cena-velikost: 13px;
+	--varianta-cena-velikost: 15px;
 
 	--varianta-cena-za-kg-barva: #666666;
 	--varianta-cena-za-kg-velikost: 13px;
