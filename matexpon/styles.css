@@ -1,3 +1,7 @@
+:root {
+	--tlacitko-na-hover: #419f1f; /*← Zde můžete změnit barvu tlačítka do košíku po najetí myší*/
+}
+
 .in-index #products-1 .products-block {
 	display: flex;
 	width: 100% !important;
@@ -102,6 +106,5 @@
 }
 /*custom barva na hover*/
 .add-to-cart-button:hover {
-	background: #419f1f !important;
 	background: var(--tlacitko-na-hover) !important;
 }
