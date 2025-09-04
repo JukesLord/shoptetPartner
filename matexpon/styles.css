@@ -134,13 +134,8 @@
 	font-size: 14px;
 	padding: 4px 7px;
 }
+
 @media screen and (max-width: 1600px) {
-	.in-index .flags-default {
-		top: 2.5%;
-		left: 1.5%;
-	}
-}
-@media screen and (max-width: 1441px) {
 	.in-index .flags-default {
 		top: 2.5%;
 		left: 0%;
