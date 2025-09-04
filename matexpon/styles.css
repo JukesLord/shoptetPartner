@@ -138,10 +138,15 @@
 @media screen and (max-width: 1600px) {
 	.in-index .flags-default {
 		top: 2.5%;
-		left: 0%;
+		left: 2.5%;
 	}
 	.in-index .flags-default .flag {
 		font-size: 12px;
+	}
+}
+@media screen and (max-width: 1441px) {
+	.in-index .flags-default {
+		left: 0%;
 	}
 }
 
