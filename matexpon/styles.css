@@ -100,3 +100,8 @@
 		padding-right: 24px !important;
 	}
 }
+/*custom barva na hover*/
+.add-to-cart-button:hover {
+	background: #419f1f !important;
+	background: var(--tlacitko-na-hover) !important;
+}
