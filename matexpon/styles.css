@@ -110,6 +110,11 @@
 	border-color: var(--tlacitko-na-hover) !important;
 }
 
+.p-thumbnails a.highlighted img,
+.p-thumbnails a.highlighted:hover img {
+	border-style: none !important;
+}
+
 .flags-default {
 	display: flex;
 	flex-direction: column;
@@ -135,13 +140,15 @@
 	padding: 4px 7px;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1700px) {
 	.in-index .flags-default {
 		top: 2.5%;
 		left: 2.5%;
+		gap: 4px;
 	}
 	.in-index .flags-default .flag {
 		font-size: 12px;
+		padding: 3px 6px;
 	}
 }
 @media screen and (max-width: 1441px) {
@@ -158,6 +165,6 @@
 	}
 	.in-index .flags-default .flag {
 		font-size: 12px;
-		padding: 4px 6px;
+		padding: 3px 6px;
 	}
 }
