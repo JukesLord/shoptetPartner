@@ -115,9 +115,8 @@
 	flex-direction: column;
 	gap: 5px;
 	align-items: flex-start;
-	top: 50%;
+	top: 5%;
 	left: 12.5%;
-	transform: translatey(-50%);
 
 	.flag {
 		margin: 0;
