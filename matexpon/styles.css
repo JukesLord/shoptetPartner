@@ -107,4 +107,21 @@
 /*custom barva na hover*/
 .add-to-cart-button:hover {
 	background: var(--tlacitko-na-hover) !important;
+	border-color: var(--tlacitko-na-hover) !important;
+}
+
+.flags-default {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	align-items: flex-start;
+
+	.flag {
+		margin: 0;
+		min-width: auto;
+	}
+}
+.p-thumbnails a.highlighted img,
+.p-thumbnails a.highlighted:hover img {
+	border-style: none;
 }
