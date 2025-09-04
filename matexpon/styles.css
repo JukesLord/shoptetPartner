@@ -121,7 +121,3 @@
 		min-width: auto;
 	}
 }
-.p-thumbnails a.highlighted img,
-.p-thumbnails a.highlighted:hover img {
-	border-style: none;
-}
