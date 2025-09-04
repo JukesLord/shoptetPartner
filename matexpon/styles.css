@@ -138,6 +138,7 @@
 .in-index .flags-default .flag {
 	font-size: 14px;
 	padding: 4px 7px;
+	line-height: 1.6;
 }
 
 @media screen and (max-width: 1700px) {
@@ -148,16 +149,16 @@
 	}
 	.in-index .flags-default .flag {
 		font-size: 12px;
-		padding: 3px 6px;
+		padding: 2px 6px;
 	}
 }
 @media screen and (max-width: 1441px) {
 	.in-index .flags-default {
-		left: 2.5%;
+		left: 1.5%;
 	}
 	.in-index .flags-default .flag {
-		font-size: 10px;
-		padding: 3px 6px;
+		font-size: 11px;
+		padding: 2px 6px;
 	}
 }
 
