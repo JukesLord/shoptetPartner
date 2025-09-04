@@ -164,7 +164,7 @@
 
 @media screen and (max-width: 768px) {
 	.in-index .flags-default {
-		top: 0;
+		top: 2.5%;
 		left: 0;
 		gap: 3px;
 	}
