@@ -80,3 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+	if (!document.body.classList.contains("in-kontakty")) {
+		const formContact = document.getElementById("formContact");
+		if (formContact) {
+			const paragraphs = document.querySelectorAll("p");
+			paragraphs.forEach(function (p) {
+				if (p.textContent.includes("Máte nějaké otázky?")) {
+					p.remove();
+				}
+			});
+		}
+	}
+});
