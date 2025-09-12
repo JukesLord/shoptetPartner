@@ -560,3 +560,10 @@
 		grid-row-gap: 30px;
 	}
 }
+
+.type-post .next-prev {
+	margin-bottom: 60px;
+}
+.type-post .next-prev a {
+	position: initial;
+}
