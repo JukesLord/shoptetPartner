@@ -130,45 +130,61 @@
 	border-radius: 0;
 }
 
-.in-index .flags-default {
+.in-index .flags-default,
+.in-vyhledavani .flags-default,
+.type-category .flags-default {
 	top: 2.5%;
 	left: 3.5%;
 }
 
-.in-index .flags-default .flag {
+.in-index .flags-default .flag,
+.in-vyhledavani .flags-default .flag,
+.type-category .flags-default .flag {
 	font-size: 14px;
 	padding: 4px 7px;
 	line-height: 1.6;
 }
 
 @media screen and (max-width: 1700px) {
-	.in-index .flags-default {
+	.in-index .flags-default,
+	.in-vyhledavani .flags-default,
+	.type-category .flags-default {
 		top: 2.5%;
 		left: 5%;
 		gap: 4px;
 	}
-	.in-index .flags-default .flag {
+	.in-index .flags-default .flag,
+	.in-vyhledavani .flags-default .flag,
+	.type-category .flags-default .flag {
 		font-size: 12px;
 		padding: 2px 6px;
 	}
 }
 @media screen and (max-width: 1441px) {
-	.in-index .flags-default {
+	.in-index .flags-default,
+	.in-vyhledavani .flags-default,
+	.type-category .flags-default {
 		left: 1.5%;
 	}
-	.in-index .flags-default .flag {
+	.in-index .flags-default .flag,
+	.in-vyhledavani .flags-default .flag,
+	.type-category .flags-default .flag {
 		font-size: 11px;
 		padding: 2px 6px;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	.in-index .flags-default {
+	.in-index .flags-default,
+	.in-vyhledavani .flags-default,
+	.type-category .flags-default {
 		top: 2.5%;
 		left: 0;
 		gap: 3px;
 	}
-	.in-index .flags-default .flag {
+	.in-index .flags-default .flag,
+	.in-vyhledavani .flags-default .flag,
+	.type-category .flags-default .flag {
 		font-size: 10px;
 		padding: 3px 6px;
 	}
