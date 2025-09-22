@@ -586,3 +586,54 @@
 .type-post .next-prev a {
 	position: initial;
 }
+
+.admin-logged {
+	.subcategories {
+		justify-content: flex-start;
+	}
+	.subcategories .col-xs-12 {
+		width: 20%;
+	}
+	@media screen and (max-width: 1440px) {
+		.subcategories .col-xs-12 {
+			width: 25%;
+		}
+	}
+	@media screen and (max-width: 1200px) {
+		.subcategories .col-xs-12 {
+			width: 33.33%;
+		}
+	}
+	@media screen and (max-width: 1000px) {
+		.subcategories .col-xs-12 {
+			width: 50%;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.subcategories .col-xs-12 {
+			width: 100%;
+		}
+	}
+	.subcategories .col-xs-12 a {
+		border-style: solid;
+		transition: none;
+	}
+	.subcategories .col-xs-12 a .text {
+		font-size: 14px;
+		font-weight: 400;
+		padding-left: 14px !important;
+	}
+	.subcategories .col-xs-12 a:hover,
+	.subcategories .col-xs-12 a:focus {
+		border-color: var(--color-primary-hover) !important;
+	}
+	@media (min-width: 768px) {
+		.submenu-visible .navigation-in > ul > li.ext.exp > ul {
+			justify-content: flex-start;
+		}
+	}
+
+	.menu-level-2 > li > div > a[data-testid="headerMenuItem"] span {
+		font-size: 16px;
+	}
+}
