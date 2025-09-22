@@ -533,6 +533,8 @@
 	margin: 0.5em 0 0.75em !important;
 	width: 100%;
 	font-weight: 600;
+	color: #402512 !important;
+	font-size: 17px;
 }
 .type-posts-listing .blog-wrapper .news-item .text .description {
 	display: -webkit-box;
@@ -543,6 +545,9 @@
 }
 .type-posts-listing .blog-wrapper .news-item:hover .title,
 .type-posts-listing .blog-wrapper .news-item:focus-within .title {
+	text-decoration: underline;
+}
+.type-posts-listing .blog-wrapper .news-item .text .title-link:hover {
 	text-decoration: underline;
 }
 .blog-wrapper .news-item .read-article {
