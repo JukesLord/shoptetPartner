@@ -15,7 +15,7 @@ if ($("body").hasClass("in-krok-1")) {
 
 /*FAQ*/
 $(document).ready(function () {
-	if ($(".faq-new").length > 0) {
+	if ($(".faq-new").length > 0 && $("body").hasClass("admin-logged")) {
 		// Create a wrapper for the FAQ section
 		$(".faq-new").removeClass("display-none");
 		$(".faq-new").wrapInner('<div class="faq-wrapper"></div>');
