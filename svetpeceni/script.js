@@ -17,6 +17,7 @@ if ($("body").hasClass("in-krok-1")) {
 $(document).ready(function () {
 	if ($(".faq-new").length > 0) {
 		// Create a wrapper for the FAQ section
+		$(".faq-new").removeClass("display-none");
 		$(".faq-new").wrapInner('<div class="faq-wrapper"></div>');
 
 		// Keep the heading outside the wrapper
