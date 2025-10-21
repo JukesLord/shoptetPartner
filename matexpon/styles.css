@@ -199,6 +199,10 @@
 .banner-wrapper video {
 	width: 100%;
 }
+.banner-wrapper img {
+	max-width: auto;
+	width: 100%;
+}
 .banner-wrapper .extended-banner-texts {
 	display: none !important;
 }
