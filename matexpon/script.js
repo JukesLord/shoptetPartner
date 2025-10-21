@@ -156,10 +156,9 @@ function loadVideosFromBanners(banners) {
 			return;
 		}
 
-		if (!aHrefUrl === "/#") {
+		if (aHrefUrl !== "/#") {
 			banner.classList.add("has-href");
 			console.warn("Banner has real href other than '/#':", banner);
-			return;
 		}
 		console.log("Banner href is '/#':", aHrefUrl);
 
