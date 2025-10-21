@@ -192,11 +192,15 @@ function loadVideosFromBanners(banners) {
 		videoElement.setAttribute("playsinline", "");
 
 		// Wait for video to be ready before replacing the image
-		videoElement.addEventListener("canplaythrough", () => {
-			// Remove the image and prepend the video to the anchor tag
-			bannerImg.remove();
-			aHref.prepend(videoElement);
-		});
+		videoElement.addEventListener(
+			"canplaythrough",
+			() => {
+				// Remove the image and prepend the video to the anchor tag
+				bannerImg.remove();
+				aHref.prepend(videoElement);
+			},
+			{ once: true }
+		);
 
 		// Start loading the video
 		videoElement.load();

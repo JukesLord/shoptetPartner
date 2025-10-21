@@ -199,3 +199,6 @@
 .banner-wrapper.has-href {
 	pointer-events: auto;
 }
+video {
+	max-width: 100%;
+}
