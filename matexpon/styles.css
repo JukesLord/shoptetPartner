@@ -193,12 +193,15 @@
 .banner-wrapper {
 	pointer-events: none;
 }
+.banner-wrapper {
+	width: 100%;
+}
+.banner-wrapper video {
+	width: 100%;
+}
 .banner-wrapper .extended-banner-texts {
 	display: none !important;
 }
 .banner-wrapper.has-href {
 	pointer-events: auto;
-}
-video {
-	max-width: 100%;
 }
