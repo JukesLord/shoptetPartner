@@ -134,5 +134,65 @@ document.addEventListener("DOMContentLoaded", function () {
 			showNumberOfProducts();
 		}
 		addShowMoreButton();
+
+		let bannerWrappers = document.querySelectorAll(".banner-wrapper");
+		if (bannerWrappers && bannerWrappers.length > 0) {
+			loadVideosFromBanners(bannerWrappers);
+		}
 	}
 });
+
+function loadVideosFromBanners(banners) {
+	banners.forEach(function (banner) {
+		let aHref = banner.querySelector("a");
+		if (!aHref) {
+			console.warn("No <a> tag found in banner:", banner);
+			return;
+		}
+
+		const aHrefUrl = aHref.getAttribute("href");
+		if (!aHrefUrl) {
+			console.warn("No href found in <a> tag:", aHref);
+			return;
+		}
+
+		if (!aHrefUrl === "/#") {
+			banner.classList.add("has-href");
+			console.warn("Banner has real href other than '/#':", banner);
+			return;
+		}
+
+		let bannerImg = banner.querySelector("img");
+		if (!bannerImg) {
+			console.warn("No <img> tag found in banner:", banner);
+			return;
+		}
+
+		let bannerExtendedText = banner.querySelector(".extended-banner-text");
+		if (!bannerExtendedText) {
+			console.warn("No .extended-banner-text found in banner:", banner);
+			return;
+		}
+
+		// Extract only the URL from the text content
+		let videoSrcMatch = bannerExtendedText.textContent.match(/https?:\/\/\S+\.mp4\b/);
+		let videoSrc = videoSrcMatch ? videoSrcMatch[0] : null;
+		if (!videoSrc) {
+			console.warn("No mp4 video source found in banner:", banner);
+			return;
+		}
+		console.log("MP4 video source found:", videoSrc);
+
+		// Load video and replace image with video element
+		let videoElement = document.createElement("video");
+		videoElement.src = videoSrc;
+		videoElement.muted = true;
+		videoElement.loop = true;
+		videoElement.autoplay = true;
+		videoElement.setAttribute("playsinline", "");
+
+		// Remove the image and prepend the video to the anchor tag
+		bannerImg.remove();
+		aHref.prepend(videoElement);
+	});
+}

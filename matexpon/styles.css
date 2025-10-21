@@ -189,3 +189,13 @@
 		padding: 3px 6px;
 	}
 }
+
+.banner-wrapper {
+	pointer-events: none;
+}
+.banner-wrapper .extended-banner-texts {
+	display: none;
+}
+.banner-wrapper.has-href {
+	pointer-events: auto;
+}
