@@ -183,7 +183,7 @@ function loadVideosFromBanners(banners) {
 		}
 		console.log("MP4 video source found:", videoSrc);
 
-		// Load video and replace image with video element
+		// Create video element
 		let videoElement = document.createElement("video");
 		videoElement.src = videoSrc;
 		videoElement.muted = true;
@@ -191,8 +191,14 @@ function loadVideosFromBanners(banners) {
 		videoElement.autoplay = true;
 		videoElement.setAttribute("playsinline", "");
 
-		// Remove the image and prepend the video to the anchor tag
-		bannerImg.remove();
-		aHref.prepend(videoElement);
+		// Wait for video to be ready before replacing the image
+		videoElement.addEventListener("canplaythrough", () => {
+			// Remove the image and prepend the video to the anchor tag
+			bannerImg.remove();
+			aHref.prepend(videoElement);
+		});
+
+		// Start loading the video
+		videoElement.load();
 	});
 }
