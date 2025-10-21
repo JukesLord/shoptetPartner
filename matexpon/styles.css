@@ -194,7 +194,7 @@
 	pointer-events: none;
 }
 .banner-wrapper .extended-banner-texts {
-	display: none;
+	display: none !important;
 }
 .banner-wrapper.has-href {
 	pointer-events: auto;

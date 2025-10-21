@@ -161,6 +161,7 @@ function loadVideosFromBanners(banners) {
 			console.warn("Banner has real href other than '/#':", banner);
 			return;
 		}
+		console.log("Banner href is '/#':", aHrefUrl);
 
 		let bannerImg = banner.querySelector("img");
 		if (!bannerImg) {
