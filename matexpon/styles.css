@@ -193,6 +193,9 @@
 .banner-wrapper {
 	pointer-events: none;
 }
+.banner-wrapper.has-href {
+	pointer-events: auto;
+}
 .banner-wrapper {
 	width: 100%;
 }
@@ -206,6 +209,18 @@
 .banner-wrapper .extended-banner-texts {
 	display: none !important;
 }
-.banner-wrapper.has-href {
+
+#carousel .item {
+	pointer-events: none;
+}
+#carousel .item .has-href {
 	pointer-events: auto;
+}
+
+#carousel .item video {
+	width: 100%;
+}
+
+#carousel .item .extended-banner-texts {
+	display: none !important;
 }

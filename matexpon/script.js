@@ -139,6 +139,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		if (bannerWrappers && bannerWrappers.length > 0) {
 			loadVideosFromBanners(bannerWrappers);
 		}
+
+		let carouselItems = document.querySelectorAll("#carousel .item");
+		if (carouselItems && carouselItems.length > 0) {
+			loadVideosFromBanners(carouselItems);
+		}
 	}
 });
 
