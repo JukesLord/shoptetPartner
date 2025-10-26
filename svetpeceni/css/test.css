@@ -34,6 +34,18 @@
   left: 7px;
   top: 7px;
 }
+.admin-logged .products-block .product .p .image .flags-default .flag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
 .admin-logged .products-block .product .p .image .price-save {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -313,6 +325,9 @@
   text-decoration: line-through;
   font-size: 1em;
   font-weight: 400;
+  margin: 0;
+  padding-left: 10px;
+  position: initial;
 }
 .admin-logged .products-block .product .p-in .p-bottom > div .prices .price-standard strong {
   font-size: inherit;
@@ -500,6 +515,8 @@
   max-width: -moz-fit-content;
   max-width: fit-content;
   color: #009901;
+  position: relative;
+  left: -2px;
 }
 .admin-logged .products-block .product .p-in .p-bottom .availability span {
   font-weight: 700;

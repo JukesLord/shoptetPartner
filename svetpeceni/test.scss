@@ -84,6 +84,11 @@ $desktop-large-min: 1680px;
 					.flags-default {
 						left: 7px;
 						top: 7px;
+						.flag {
+							display: flex;
+							flex-direction: column;
+							width: max-content;
+						}
 					}
 					/* .flag-action {
 						display: none !important;
@@ -209,6 +214,9 @@ $desktop-large-min: 1680px;
 								text-decoration: line-through;
 								font-size: 1em;
 								font-weight: 400;
+								margin: 0;
+								padding-left: 10px;
+								position: initial;
 								strong {
 									font-size: inherit;
 									color: inherit;
@@ -386,6 +394,8 @@ $desktop-large-min: 1680px;
 						border-radius: 20px;
 						max-width: fit-content;
 						color: #009901;
+						position: relative;
+						left: -2px;
 						span {
 							font-weight: 700;
 						}
