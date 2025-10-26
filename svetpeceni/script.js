@@ -229,6 +229,14 @@ function editProductsBlock() {
 		if (pCode && pIn) {
 			pIn.appendChild(pCode);
 		}
+
+		const priceSave = product.querySelector(".price-save");
+		const image = product.querySelector(".image");
+		if (priceSave && image) {
+			priceSave.textContent = priceSave.textContent.replace("(", "");
+			priceSave.textContent = priceSave.textContent.replace(")", "");
+			image.appendChild(priceSave);
+		}
 	});
 }
 

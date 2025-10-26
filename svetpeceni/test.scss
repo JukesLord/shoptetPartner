@@ -10,7 +10,7 @@ $desktop-medium-min: 1440px;
 $desktop-large-min: 1680px;
 
 :root {
-	--lh-1-4: 1.4;
+	--lh-1-4: 1.5;
 }
 
 @mixin products-block-grid-layout {
@@ -18,7 +18,7 @@ $desktop-large-min: 1680px;
 	grid-row: 1;
 	grid-column: 1;
 	grid-template-columns: 1fr;
-	row-gap: 6px;
+	row-gap: 8px;
 
 	--padding-capsules-vertical: 2px;
 	/* 	--add-to-cart-button-height: calc(2.4615em + 1px); //1px for shadow */
@@ -83,6 +83,12 @@ $desktop-large-min: 1680px;
 					}
 					.flag-freeshipping {
 						display: none !important;
+					}
+					.price-save {
+						display: flex;
+						position: absolute;
+						right: 0;
+						top: 0;
 					}
 				}
 			}
@@ -182,8 +188,18 @@ $desktop-large-min: 1680px;
 								}
 							}
 							.price-standard {
-								color: red;
+								color: #d44b6c;
 								text-decoration: line-through;
+								font-size: 1em;
+								font-weight: 400;
+								strong {
+									font-size: inherit;
+									color: inherit;
+									font-weight: inherit;
+								}
+							}
+							.price-save {
+								display: none !important;
 							}
 
 							.price-additional {
@@ -425,10 +441,10 @@ $desktop-large-min: 1680px;
 						display: flex;
 						align-items: center;
 						padding: var(--padding-capsules);
-						background: greenyellow;
+						background: #e1ffda;
 						border-radius: 20px;
 						max-width: fit-content;
-						color: green;
+						color: #009901;
 						span {
 							font-weight: 700;
 						}
@@ -439,8 +455,8 @@ $desktop-large-min: 1680px;
 							padding-right: 1px;
 						}
 						&:not(:has(.availability-amount)) {
-							background: purple !important;
-							color: red !important;
+							background: #e9cbd0 !important;
+							color: #d44b6c !important;
 							white-space: nowrap;
 							overflow: hidden;
 							@media screen and (max-width: 380px) {
