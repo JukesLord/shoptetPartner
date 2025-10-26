@@ -91,6 +91,15 @@ $desktop-large-min: 1680px;
 						position: absolute;
 						right: 0;
 						top: 0;
+						left: auto;
+						bottom: auto;
+						margin: 0;
+						padding: 0.9em 0.4em;
+						border-radius: 0 var(--br-12) 0 var(--br-12);
+						background-color: var(--color-primary);
+						color: white;
+						font-size: 10px !important;
+						font-weight: 700;
 					}
 				}
 			}
