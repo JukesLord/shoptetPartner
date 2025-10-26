@@ -44,9 +44,10 @@
   --desc-number-of-lines: 2;
   --desc-height: calc(1em * var(--desc-number-of-lines) * var(--lh-1-4));
   --availability-height: calc(1em * var(--lh-1-4) + var(--padding-capsules-vertical) * 2);
-  --prices-height: calc(1.231em * var(--lh-1-4));
-  --price-per-unit-height: calc(0.846em * var(--lh-1-4));
-  grid-template-rows: var(--add-to-cart-button-height) var(--p-code-height) var(--name-height) var(--desc-height) var(--availability-height) var(--prices-height) var(--price-per-unit-height);
+  --prices-height: calc(0.846em * var(--lh-1-4) + 1.231em * var(--lh-1-4));
+  /* --price-per-unit-height: calc(0.846em * var(--lh-1-4)); */
+  grid-template-rows: var(--add-to-cart-button-height) var(--p-code-height) var(--name-height) var(--desc-height) var(--availability-height) var(--prices-height);
+  /* 	var(--price-per-unit-height); */
 }
 @media screen and (min-width: 768px) {
   .admin-logged .products-block .product .p-in {
@@ -75,9 +76,10 @@
   --desc-number-of-lines: 2;
   --desc-height: calc(1em * var(--desc-number-of-lines) * var(--lh-1-4));
   --availability-height: calc(1em * var(--lh-1-4) + var(--padding-capsules-vertical) * 2);
-  --prices-height: calc(1.231em * var(--lh-1-4));
-  --price-per-unit-height: calc(0.846em * var(--lh-1-4));
-  grid-template-rows: var(--add-to-cart-button-height) var(--p-code-height) var(--name-height) var(--desc-height) var(--availability-height) var(--prices-height) var(--price-per-unit-height);
+  --prices-height: calc(0.846em * var(--lh-1-4) + 1.231em * var(--lh-1-4));
+  /* --price-per-unit-height: calc(0.846em * var(--lh-1-4)); */
+  grid-template-rows: var(--add-to-cart-button-height) var(--p-code-height) var(--name-height) var(--desc-height) var(--availability-height) var(--prices-height);
+  /* 	var(--price-per-unit-height); */
 }
 @media screen and (min-width: 768px) {
   .admin-logged .products-block .product .p-in .p-in-in {
@@ -126,9 +128,10 @@
   --desc-number-of-lines: 2;
   --desc-height: calc(1em * var(--desc-number-of-lines) * var(--lh-1-4));
   --availability-height: calc(1em * var(--lh-1-4) + var(--padding-capsules-vertical) * 2);
-  --prices-height: calc(1.231em * var(--lh-1-4));
-  --price-per-unit-height: calc(0.846em * var(--lh-1-4));
-  grid-template-rows: var(--add-to-cart-button-height) var(--p-code-height) var(--name-height) var(--desc-height) var(--availability-height) var(--prices-height) var(--price-per-unit-height);
+  --prices-height: calc(0.846em * var(--lh-1-4) + 1.231em * var(--lh-1-4));
+  /* --price-per-unit-height: calc(0.846em * var(--lh-1-4)); */
+  grid-template-rows: var(--add-to-cart-button-height) var(--p-code-height) var(--name-height) var(--desc-height) var(--availability-height) var(--prices-height);
+  /* 	var(--price-per-unit-height); */
   grid-template-columns: 1fr 1fr;
 }
 @media screen and (min-width: 768px) {
@@ -200,9 +203,10 @@
   --desc-number-of-lines: 2;
   --desc-height: calc(1em * var(--desc-number-of-lines) * var(--lh-1-4));
   --availability-height: calc(1em * var(--lh-1-4) + var(--padding-capsules-vertical) * 2);
-  --prices-height: calc(1.231em * var(--lh-1-4));
-  --price-per-unit-height: calc(0.846em * var(--lh-1-4));
-  grid-template-rows: var(--add-to-cart-button-height) var(--p-code-height) var(--name-height) var(--desc-height) var(--availability-height) var(--prices-height) var(--price-per-unit-height);
+  --prices-height: calc(0.846em * var(--lh-1-4) + 1.231em * var(--lh-1-4));
+  /* --price-per-unit-height: calc(0.846em * var(--lh-1-4)); */
+  grid-template-rows: var(--add-to-cart-button-height) var(--p-code-height) var(--name-height) var(--desc-height) var(--availability-height) var(--prices-height);
+  /* 	var(--price-per-unit-height); */
 }
 @media screen and (min-width: 768px) {
   .admin-logged .products-block .product .p-in .p-bottom {
@@ -231,9 +235,10 @@
   --desc-number-of-lines: 2;
   --desc-height: calc(1em * var(--desc-number-of-lines) * var(--lh-1-4));
   --availability-height: calc(1em * var(--lh-1-4) + var(--padding-capsules-vertical) * 2);
-  --prices-height: calc(1.231em * var(--lh-1-4));
-  --price-per-unit-height: calc(0.846em * var(--lh-1-4));
-  grid-template-rows: var(--add-to-cart-button-height) var(--p-code-height) var(--name-height) var(--desc-height) var(--availability-height) var(--prices-height) var(--price-per-unit-height);
+  --prices-height: calc(0.846em * var(--lh-1-4) + 1.231em * var(--lh-1-4));
+  /* --price-per-unit-height: calc(0.846em * var(--lh-1-4)); */
+  grid-template-rows: var(--add-to-cart-button-height) var(--p-code-height) var(--name-height) var(--desc-height) var(--availability-height) var(--prices-height);
+  /* 	var(--price-per-unit-height); */
 }
 @media screen and (min-width: 768px) {
   .admin-logged .products-block .product .p-in .p-bottom > div {
@@ -267,10 +272,12 @@
   gap: 0.31em; */
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
+  font-weight: 700;
+  font-size: 1.231em;
 }
 .admin-logged .products-block .product .p-in .p-bottom > div .prices .price-final strong {
   font-weight: 700;
-  font-size: 1.231em;
+  font-size: 1em;
 }
 .admin-logged .products-block .product .p-in .p-bottom > div .prices .price-standard {
   color: red;

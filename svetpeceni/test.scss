@@ -34,9 +34,9 @@ $desktop-large-min: 1680px;
 
 	--availability-height: calc(1em * var(--lh-1-4) + var(--padding-capsules-vertical) * 2); //4px for padding
 
-	--prices-height: calc(1.231em * var(--lh-1-4));
+	--prices-height: calc(0.846em * var(--lh-1-4) + 1.231em * var(--lh-1-4));
 
-	--price-per-unit-height: calc(0.846em * var(--lh-1-4));
+	/* --price-per-unit-height: calc(0.846em * var(--lh-1-4)); */
 
 	@media screen and (min-width: $tablet-min) {
 		--add-to-cart-button-height: calc(1em * 2 + 1.231em + 1px + 1em); //1px for shadow 1em for margin
@@ -54,8 +54,8 @@ $desktop-large-min: 1680px;
 		var(--name-height)
 		var(--desc-height)
 		var(--availability-height)
-		var(--prices-height)
-		var(--price-per-unit-height);
+		var(--prices-height);
+	/* 	var(--price-per-unit-height); */
 }
 .admin-logged {
 	.products-block {
@@ -170,9 +170,11 @@ $desktop-large-min: 1680px;
 								align-items: center;
 								gap: 0.31em; */
 								flex-basis: auto;
+								font-weight: 700;
+								font-size: 1.231em;
 								strong {
 									font-weight: 700;
-									font-size: 1.231em;
+									font-size: 1em;
 								}
 							}
 							.price-standard {
