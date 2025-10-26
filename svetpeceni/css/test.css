@@ -2,6 +2,7 @@
   --lh-1-4: 1.5;
   --padding-capsules: 2px 4px;
   --color-secondary-hover-cst: #cc151b;
+  --add-to-cart-button-width: 3.231em;
 }
 
 .admin-logged *:not(.products-alternative-wrapper) .products-block .product {
