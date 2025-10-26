@@ -11,6 +11,8 @@ $desktop-large-min: 1680px;
 
 :root {
 	--lh-1-4: 1.5;
+	--padding-capsules: 2px 4px;
+	--color-secondary-hover-cst: #cc151b;
 }
 
 @mixin products-block-grid-layout {
@@ -24,7 +26,7 @@ $desktop-large-min: 1680px;
 	/* 	--add-to-cart-button-height: calc(2.4615em + 1px); //1px for shadow */
 	--add-to-cart-button-height: calc(3.231em + 1px); //1px for shadow
 
-	--p-code-height: 12px;
+	--p-code-height: calc(12px + 6px); //font-size + padding-bottom
 
 	--name-number-of-lines: 2;
 	--name-height: calc(1em * var(--name-number-of-lines) * var(--lh-1-4));
@@ -220,8 +222,7 @@ $desktop-large-min: 1680px;
 							margin-right: 7px;
 							margin-top: calc(8px * -1);
 							padding: 0;
-							button,
-							.increase-decrease-wrapper {
+							button {
 								width: var(--add-to-cart-button-width);
 								height: var(--add-to-cart-button-height);
 								background-color: var(--color-secondary);
@@ -238,7 +239,7 @@ $desktop-large-min: 1680px;
 
 								&:hover,
 								&:focus-within {
-									background-color: var(--color-secondary-hover);
+									background-color: var(--color-secondary-hover-cst);
 								}
 
 								span {
@@ -296,11 +297,10 @@ $desktop-large-min: 1680px;
 
 							@media screen and (min-width: $tablet-min) {
 								margin-top: 0;
-								margin-right: 11px;
-								button,
-								.increase-decrease-wrapper {
+								width: 100%;
+								button {
 									height: auto;
-									width: auto;
+									width: 100%;
 									transition: background-color 0.1s ease;
 									padding: 1em 2.231em;
 
@@ -312,7 +312,7 @@ $desktop-large-min: 1680px;
 									}
 									&:hover {
 										transform: none;
-										background-color: var(--color-secondary-hover);
+										background-color: var(--color-secondary-hover-cst);
 									}
 									&:focus-within {
 										transform: none;
@@ -342,80 +342,6 @@ $desktop-large-min: 1680px;
 										transform: none;
 										background-color: var(--color-primary);
 									}
-								}
-							}
-						}
-						.increase-decrease-wrapper {
-							z-index: 1;
-							display: flex;
-							padding: 0 !important;
-							border-radius: 16px;
-							&:hover,
-							&:focus-within {
-								background-color: var(--color-secondary) !important;
-							}
-							.increase-button,
-							.decrease-button {
-								flex: 1;
-								padding: 1em calc(2.231em / 2);
-								color: white;
-								transition: background-color 0.1s ease;
-								display: flex;
-								align-items: center;
-							}
-							.increase-button {
-								border-radius: 0 16px 16px 0;
-								@media screen and (max-width: $mobile-max) {
-									border-radius: 0 8px 8px 0;
-								}
-								&:hover,
-								&:focus-within {
-									background-color: var(--color-secondary-hover);
-								}
-							}
-							.decrease-button {
-								border-radius: 16px 0 0 16px;
-								@media screen and (max-width: $mobile-max) {
-									border-radius: 8px 0 0 8px;
-								}
-								&:hover,
-								&:focus-within {
-									background-color: var(--color-secondary-hover);
-								}
-							}
-							input {
-								margin: 0;
-								padding: 0;
-								border-style: none;
-								background: var(--color-secondary);
-								color: white;
-								font-size: 14px;
-								display: flex;
-								text-align: center;
-								width: 3em;
-								min-width: 3em;
-								border-radius: 0;
-								/* 		@include disable-input-controls; */
-								transition: background-color 0.1s ease;
-								&:hover,
-								&:focus-within {
-									background-color: var(--color-secondary-hover);
-									outline: none;
-								}
-								@media screen and (max-width: $mobile-max) {
-									font-size: 14px;
-									width: 2em;
-								}
-							}
-							&:hover,
-							&:focus-within {
-								background-color: var(--color-secondary);
-							}
-							@media screen and (max-width: $mobile-max) {
-								width: auto !important;
-								width: min-content !important;
-								&::after {
-									display: none !important;
 								}
 							}
 						}
@@ -470,6 +396,7 @@ $desktop-large-min: 1680px;
 					grid-row: 2;
 					font-size: 12px;
 					line-height: 1;
+					padding-bottom: 6px;
 				}
 			}
 			.p-code {
@@ -477,12 +404,9 @@ $desktop-large-min: 1680px;
 			}
 			@media screen and (min-width: $tablet-min) {
 				&:not(.product-in-cart) {
-					/* .p-tools {
+					.p-tools {
 						display: none !important;
-						.increase-decrease-wrapper {
-							display: none !important;
-						}
-					} */
+					}
 				}
 				&:hover,
 				&:focus-within {

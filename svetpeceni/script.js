@@ -224,13 +224,13 @@ function editProductsBlock() {
 	let productsInProductsBlock = document.querySelectorAll(".products-block .product");
 	if (!productsInProductsBlock || productsInProductsBlock.length === 0) return;
 	productsInProductsBlock.forEach(function (product) {
-		const pCode = product.querySelector(".p-code");
+		const pCode = product.querySelector("p-in-in > .p-code");
 		const pIn = product.querySelector(".p-in");
 		if (pCode && pIn) {
 			pIn.appendChild(pCode);
 		}
 
-		const priceSave = product.querySelector(".price-save");
+		const priceSave = product.querySelector(".prices .price-save");
 		const image = product.querySelector(".image");
 		if (priceSave && image) {
 			priceSave.textContent = priceSave.textContent.replace("(", "");
