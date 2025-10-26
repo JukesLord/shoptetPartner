@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		let productsAlternative = productAlternativeWrapper.find(".product");
 
 		if (productAlternativeWrapper.length) {
-			productAlternativeWrapper.find(".products-alternative").addClass("products-block-alternatives");
+			productAlternativeWrapper.find(".products-block").addClass("products-block-alternatives");
 		}
 
 		if (productsAlternative.length > 0) {
