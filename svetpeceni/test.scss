@@ -158,28 +158,33 @@ $desktop-large-min: 1680px;
 					> div {
 						@include products-block-grid-layout;
 						.prices {
-							@include products-block-grid-layout;
+							display: flex;
+							flex-direction: row;
+							width: 100%;
+							position: initial;
+							grid-row: 6;
+							/* 	@include products-block-grid-layout; */
 							.price-final {
-								grid-row: 6;
+								/* 	grid-row: 6;
 								display: flex;
 								align-items: center;
-								gap: 0.31em;
+								gap: 0.31em; */
 								strong {
 									font-weight: 700;
 									font-size: 1.231em;
 								}
-								.price-standard {
-									color: red;
-									text-decoration: line-through;
-								}
+							}
+							.price-standard {
+								color: red;
+								text-decoration: line-through;
 							}
 
-							.price-additional {
+							/* .price-additional {
 								grid-row: 7;
 								font-size: 0.846em;
 								color: black;
 								opacity: 0.6;
-							}
+							} */
 						}
 						.p-tools {
 							grid-row: 1;
