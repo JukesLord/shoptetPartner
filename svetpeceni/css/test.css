@@ -16,17 +16,23 @@
   			.flags-extra {
   				@include flags-extra-in-product-image;
   			}
+  				.
   */
+  /* .flag-action {
+  	display: none !important;
+  }
+  .flag-freeshipping {
+  	display: none !important;
+  }
+  	*/
 }
 .admin-logged .products-block .product .p .image img {
   width: 100%;
   height: auto;
 }
-.admin-logged .products-block .product .p .image .flag-action {
-  display: none !important;
-}
-.admin-logged .products-block .product .p .image .flag-freeshipping {
-  display: none !important;
+.admin-logged .products-block .product .p .image .flags-default {
+  left: 7px;
+  top: 7px;
 }
 .admin-logged .products-block .product .p .image .price-save {
   display: -webkit-box;
@@ -37,10 +43,10 @@
   top: 0;
   left: auto;
   bottom: auto;
-  margin: 0;
+  margin: 0 !important;
   padding: 0.9em 0.4em;
-  border-radius: 0 var(--br-12) 0 var(--br-12);
-  background-color: var(--color-primary);
+  border-radius: 0 12px 0 12px;
+  background-color: var(--color-secondary);
   color: white;
   font-size: 10px !important;
   font-weight: 700;
