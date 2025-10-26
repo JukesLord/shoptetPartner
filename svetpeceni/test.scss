@@ -102,6 +102,9 @@ $desktop-large-min: 1680px;
 						-webkit-line-clamp: var(--name-number-of-lines);
 						-webkit-box-orient: vertical;
 						overflow: hidden;
+						line-height: var(--lh-1-4);
+						font-size: 1em;
+						height: auto;
 
 						@media screen and (min-width: $desktop-min) {
 							font-size: 1.231em;
@@ -163,6 +166,7 @@ $desktop-large-min: 1680px;
 							width: 100%;
 							position: initial;
 							grid-row: 6;
+							padding: 0;
 							/* 	@include products-block-grid-layout; */
 							.price-final {
 								/* 	grid-row: 6;
@@ -188,6 +192,8 @@ $desktop-large-min: 1680px;
 								color: black;
 								opacity: 0.6;
 								width: 100%;
+								order: 3;
+								text-align: left;
 							}
 						}
 						.p-tools {

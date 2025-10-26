@@ -101,6 +101,9 @@
   -webkit-line-clamp: var(--name-number-of-lines);
   -webkit-box-orient: vertical;
   overflow: hidden;
+  line-height: var(--lh-1-4);
+  font-size: 1em;
+  height: auto;
 }
 @media screen and (min-width: 1280px) {
   .admin-logged .products-block .product .p-in .p-in-in .name {
@@ -263,6 +266,7 @@
   width: 100%;
   position: initial;
   grid-row: 6;
+  padding: 0;
   /* 	@include products-block-grid-layout; */
 }
 .admin-logged .products-block .product .p-in .p-bottom > div .prices .price-final {
@@ -289,6 +293,10 @@
   color: black;
   opacity: 0.6;
   width: 100%;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  text-align: left;
 }
 .admin-logged .products-block .product .p-in .p-bottom > div .p-tools {
   grid-row: 1;
