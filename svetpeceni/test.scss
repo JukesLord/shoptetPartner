@@ -61,7 +61,7 @@ $desktop-large-min: 1680px;
 	/* 	var(--price-per-unit-height); */
 }
 .admin-logged {
-	*:not(.products-alternative-wrapper) {
+	.products:not(.products-alternative) {
 		.products-block {
 			.product {
 				position: relative;
