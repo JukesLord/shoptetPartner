@@ -29,7 +29,7 @@ $desktop-large-min: 1680px;
 	--p-code-height: calc(12px + 6px); //font-size + padding-bottom
 
 	--name-number-of-lines: 2;
-	--name-height: calc(1em * var(--name-number-of-lines) * var(--lh-1-4));
+	--name-height: calc(1.155em * var(--name-number-of-lines) * var(--lh-1-4));
 
 	--desc-number-of-lines: 2;
 	--desc-height: calc(1em * var(--desc-number-of-lines) * var(--lh-1-4));
@@ -105,7 +105,7 @@ $desktop-large-min: 1680px;
 						left: auto;
 						bottom: auto;
 						margin: 0 !important;
-						padding: 0.9em 0.4em;
+						padding: 0.9em 0.6em;
 						border-radius: 0 12px 0 12px;
 						background-color: var(--color-secondary);
 						color: white;
@@ -131,7 +131,7 @@ $desktop-large-min: 1680px;
 						-webkit-box-orient: vertical;
 						overflow: hidden;
 						line-height: var(--lh-1-4);
-						font-size: 1em;
+						font-size: 1.155em;
 						height: auto;
 
 						@media screen and (min-width: $desktop-min) {

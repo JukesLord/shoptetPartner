@@ -224,7 +224,7 @@ function editProductsBlock() {
 	let productsInProductsBlock = document.querySelectorAll(".products-block .product");
 	if (!productsInProductsBlock || productsInProductsBlock.length === 0) return;
 	productsInProductsBlock.forEach(function (product) {
-		const pCode = product.querySelector("p-in-in > .p-code");
+		const pCode = product.querySelector(".p > .p-code");
 		const pIn = product.querySelector(".p-in");
 		if (pCode && pIn) {
 			pIn.appendChild(pCode);
