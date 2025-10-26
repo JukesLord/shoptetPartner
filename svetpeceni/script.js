@@ -218,3 +218,23 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 });
+
+/*Products block edit*/
+function editProductsBlock() {
+	let productsInProductsBlock = document.querySelectorAll(".products-block .product");
+	if (!productsInProductsBlock || productsInProductsBlock.length === 0) return;
+	productsInProductsBlock.forEach(function (product) {
+		const pCode = product.querySelector(".p-code");
+		const pIn = product.querySelector(".p-in");
+		if (pCode && pIn) {
+			pIn.appendChild(pCode);
+		}
+	});
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+	if (!document.body.classList.contains("admin-logged")) {
+		return;
+	}
+	editProductsBlock();
+});
