@@ -407,11 +407,12 @@
 .admin-logged *:not(.products-alternative-wrapper) .products-block .product .p-in .p-bottom > div .p-tools > a {
   width: var(--add-to-cart-button-width);
   height: var(--add-to-cart-button-height);
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   color: var(--color-primary);
   border-radius: 8px;
   position: relative;
   cursor: pointer;
+  inset: 0;
   /* 	@include bottom-primary-shadow-small; */
   -webkit-transition: -webkit-transform 0.2s ease-out;
   transition: -webkit-transform 0.2s ease-out;
@@ -472,7 +473,7 @@
     display: none;
   }
   .admin-logged *:not(.products-alternative-wrapper) .products-block .product .p-in .p-bottom > div .p-tools > a {
-    width: auto;
+    width: 100%;
     height: 2.65em;
     height: -webkit-max-content;
     height: -moz-max-content;
@@ -485,6 +486,7 @@
     color: white;
     font-weight: 700;
     line-height: 1;
+    inset: 0;
   }
   .admin-logged *:not(.products-alternative-wrapper) .products-block .product .p-in .p-bottom > div .p-tools > a::after {
     display: none;
@@ -492,7 +494,7 @@
   .admin-logged *:not(.products-alternative-wrapper) .products-block .product .p-in .p-bottom > div .p-tools > a:hover, .admin-logged *:not(.products-alternative-wrapper) .products-block .product .p-in .p-bottom > div .p-tools > a:focus-within {
     -webkit-transform: none;
             transform: none;
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary-hover-cst);
   }
 }
 .admin-logged *:not(.products-alternative-wrapper) .products-block .product .p-in .p-bottom > div .p-desc {
