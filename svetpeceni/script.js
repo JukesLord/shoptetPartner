@@ -228,7 +228,7 @@ function editProductsBlock() {
 	if (!document.body.classList.contains("admin-logged")) {
 		return;
 	}
-	let productsInProductsBlock = document.querySelectorAll(".products-block .product");
+	let productsInProductsBlock = document.querySelectorAll(".products-block:not(.products-block-alternatives) .product");
 	if (!productsInProductsBlock || productsInProductsBlock.length === 0) return;
 	productsInProductsBlock.forEach(function (product) {
 		const pCode = product.querySelector(".p-code");
