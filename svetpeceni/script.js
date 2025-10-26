@@ -81,6 +81,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		let productAlternativeWrapper = $(".products-alternative-wrapper");
 		let productsAlternative = productAlternativeWrapper.find(".product");
 
+		if (productAlternativeWrapper.length) {
+			productAlternativeWrapper.find(".products-alternative").addClass("products-block-alternatives");
+		}
+
 		if (productsAlternative.length > 0) {
 			productAlternativeWrapper.insertBefore(".p-detail-inner .social-buttons-wrapper");
 			$("<span class='variants-text'>Další varianty:</span>").insertBefore(productAlternativeWrapper);
@@ -221,6 +225,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*Products block edit*/
 function editProductsBlock() {
+	if (!document.body.classList.contains("admin-logged")) {
+		return;
+	}
 	let productsInProductsBlock = document.querySelectorAll(".products-block .product");
 	if (!productsInProductsBlock || productsInProductsBlock.length === 0) return;
 	productsInProductsBlock.forEach(function (product) {
@@ -241,8 +248,9 @@ function editProductsBlock() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-	if (!document.body.classList.contains("admin-logged")) {
-		return;
-	}
+	editProductsBlock();
+});
+
+document.addEventListener("ShoptetDOMContentLoaded", function () {
 	editProductsBlock();
 });
