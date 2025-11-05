@@ -254,3 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("ShoptetDOMContentLoaded", function () {
 	editProductsBlock();
 });
+
+document.addEventListener("luigiSearchDone", function () {
+	editProductsBlock();
+});
