@@ -1,3 +1,61 @@
+/*slider*/
+.carousel-control {
+	opacity: 1;
+}
+.carousel-control::before {
+	transition: all 0.2s ease-out;
+}
+.carousel-control:hover::before {
+	background: white;
+	color: black;
+}
+#carousel {
+	max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+	.in-index #carousel {
+		margin-top: 20px;
+	}
+}
+#carousel .carousel-inner {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin-left: -11px;
+	overflow: hidden;
+	min-height: auto !important;
+}
+#carousel .carousel-inner .item {
+	display: block;
+	flex-basis: 25%;
+	flex-shrink: 0;
+	padding-left: 10px;
+	transition: transform 0.3s ease-in-out;
+}
+#carousel .carousel-inner .item img {
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+	#carousel .carousel-inner .item {
+		flex-basis: 33.33%;
+	}
+}
+@media screen and (max-width: 768px) {
+	#carousel .carousel-inner .item {
+		flex-basis: min(90%, 300px);
+	}
+	.carousel-control {
+		display: none;
+	}
+	#carousel .carousel-inner {
+		overflow-y: hidden;
+		overflow-x: auto;
+		margin-left: 0;
+	}
+}
+
 /*customer page sidebar*/
 .customer-page .sidebar-inner .box > ul {
 	position: relative;
