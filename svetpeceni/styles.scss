@@ -987,7 +987,8 @@ $desktop-large-min: 1680px;
 						}
 						//nedostupný produkt - detail
 						> a {
-							width: var(--add-to-cart-button-width);
+							/* width: var(--add-to-cart-button-width); */
+							width: auto;
 							height: var(--add-to-cart-button-height);
 							background-color: var(--color-secondary);
 							color: var(--color-primary);
@@ -1006,7 +1007,10 @@ $desktop-large-min: 1680px;
 								outline: solid 3px black;
 								outline-offset: 1px;
 							}
-							&::after {
+							.icon-arrow-right {
+								display: none;
+							}
+							/* 	&::after {
 								content: "";
 								display: block;
 								position: absolute;
@@ -1018,6 +1022,10 @@ $desktop-large-min: 1680px;
 								background-position: center;
 								background-repeat: no-repeat;
 								background-size: 60%;
+							} */
+							&::before,
+							&::after {
+								display: none !important;
 							}
 						}
 

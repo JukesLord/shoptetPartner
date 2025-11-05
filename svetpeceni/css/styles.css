@@ -1251,7 +1251,8 @@
   background-size: 60%;
 }
 .products-block:not(.products-block-alternatives) .product .p-in .p-bottom > div .p-tools > a {
-  width: var(--add-to-cart-button-width);
+  /* width: var(--add-to-cart-button-width); */
+  width: auto;
   height: var(--add-to-cart-button-height);
   background-color: var(--color-secondary);
   color: var(--color-primary);
@@ -1265,6 +1266,19 @@
   transition: transform 0.2s ease-out;
   transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
   overflow: hidden;
+  /* 	&::after {
+  	content: "";
+  	display: block;
+  	position: absolute;
+  	left: 0;
+  	top: 0;
+  	width: 100%;
+  	height: 100%;
+  	background-image: url("https://cdn.myshoptet.com/usr/www.svetpeceni.com/user/documents/upload/assets/ico/icon_search_glass_white.svg");
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: 60%;
+  } */
 }
 .products-block:not(.products-block-alternatives) .product .p-in .p-bottom > div .p-tools > a:hover, .products-block:not(.products-block-alternatives) .product .p-in .p-bottom > div .p-tools > a:focus-within {
   -webkit-transform: scale(1.1);
@@ -1274,18 +1288,11 @@
   outline: solid 3px black;
   outline-offset: 1px;
 }
-.products-block:not(.products-block-alternatives) .product .p-in .p-bottom > div .p-tools > a::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://cdn.myshoptet.com/usr/www.svetpeceni.com/user/documents/upload/assets/ico/icon_search_glass_white.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 60%;
+.products-block:not(.products-block-alternatives) .product .p-in .p-bottom > div .p-tools > a .icon-arrow-right {
+  display: none;
+}
+.products-block:not(.products-block-alternatives) .product .p-in .p-bottom > div .p-tools > a::before, .products-block:not(.products-block-alternatives) .product .p-in .p-bottom > div .p-tools > a::after {
+  display: none !important;
 }
 @media screen and (min-width: 768px) {
   .products-block:not(.products-block-alternatives) .product .p-in .p-bottom > div .p-tools {
