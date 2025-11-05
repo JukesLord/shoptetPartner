@@ -819,6 +819,12 @@
   font-size: 14px;
   font-weight: 400;
   padding-left: 14px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .subcategories .col-xs-12 a:hover,
