@@ -225,9 +225,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*Products block edit*/
 function editProductsBlock() {
-	if (!document.body.classList.contains("admin-logged")) {
+	/* if (!document.body.classList.contains("admin-logged")) {
 		return;
-	}
+	} */
 	let productsInProductsBlock = document.querySelectorAll(".products-block:not(.products-block-alternatives) .product");
 	if (!productsInProductsBlock || productsInProductsBlock.length === 0) return;
 	productsInProductsBlock.forEach(function (product) {
