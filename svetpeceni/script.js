@@ -295,7 +295,9 @@ function editProductsBlock() {
 	} */
 	let productsInProductsBlock = document.querySelectorAll(".products-block:not(.products-block-alternatives) .product");
 	if (!productsInProductsBlock || productsInProductsBlock.length === 0) return;
+
 	productsInProductsBlock.forEach(function (product) {
+		if (product.parentElement.classList.contains("products-alternative")) return;
 		const pCode = product.querySelector(".p-code");
 		const pIn = product.querySelector(".p-in");
 		if (pCode && pIn) {
