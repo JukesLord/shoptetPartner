@@ -325,3 +325,9 @@ document.addEventListener("ShoptetDOMContentLoaded", function () {
 document.addEventListener("luigiSearchDone", function () {
 	editProductsBlock();
 });
+
+document.addEventListener("resizeEnd", function () {
+	if (document.body.classList.contains("type-product")) {
+		editProductsBlock();
+	}
+});
