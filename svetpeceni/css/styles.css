@@ -840,7 +840,151 @@
   }
 }
 .menu-level-2 > li > div > a[data-testid=headerMenuItem] span {
-  font-size: 16px;
+  font-size: 1em;
+}
+
+@media (min-width: 768px) {
+  .navigation-in > ul > li.ext > ul > li > a.menu-image {
+    width: 80px !important;
+  }
+  .navigation-in > ul > li.ext > ul > li > a.menu-image img {
+    max-width: 80px !important;
+    max-height: 80px !important;
+  }
+  .navigation-in > ul > li.ext > ul > li > div > a {
+    padding-bottom: 4px;
+    font-size: 14px;
+  }
+  .navigation-in > ul > li.ext > ul > li > div > a span {
+    font-size: 1em;
+  }
+  .navigation-in > ul > li.ext > ul > li > div > ul a {
+    opacity: 0.7;
+  }
+}
+.menu-level-3 > .more-items-trigger::before {
+  display: block;
+  content: "+ další" !important;
+  text-decoration: underline;
+  color: var(--color-secondary) !important;
+  margin-top: 4px !important;
+}
+
+.menu-level-3 > .more-items-trigger:hover::before {
+  color: #ce141b !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(5)::before {
+  content: "+ další 1" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(6)::before {
+  content: "+ další 2" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(7)::before {
+  content: "+ další 3" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(8)::before {
+  content: "+ další 4" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(9)::before {
+  content: "+ dalších 5" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(10)::before {
+  content: "+ dalších 6" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(11)::before {
+  content: "+ dalších 7" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(12)::before {
+  content: "+ dalších 8" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(13)::before {
+  content: "+ dalších 9" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(14)::before {
+  content: "+ dalších 10" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(15)::before {
+  content: "+ dalších 11" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(16)::before {
+  content: "+ dalších 12" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(17)::before {
+  content: "+ dalších 13" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(18)::before {
+  content: "+ dalších 14" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(19)::before {
+  content: "+ dalších 15" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(20)::before {
+  content: "+ dalších 16" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(21)::before {
+  content: "+ dalších 17" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(22)::before {
+  content: "+ dalších 18" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(23)::before {
+  content: "+ dalších 19" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(24)::before {
+  content: "+ dalších 20" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(25)::before {
+  content: "+ dalších 21" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(26)::before {
+  content: "+ dalších 22" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(27)::before {
+  content: "+ dalších 23" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(28)::before {
+  content: "+ dalších 24" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(29)::before {
+  content: "+ dalších 25" !important;
+}
+
+.menu-level-3 > .more-items-trigger:nth-child(30)::before {
+  content: "+ dalších 26" !important;
+}
+
+.up-banner-category-products {
+  margin: 0 !important;
+  padding: 15px 6px 4px !important;
+}
+
+.up-banner-category-products img {
+  border-radius: var(--radius-radius-minimal, 20px);
 }
 
 /*ROZLOZENI PRODUKTU*/
