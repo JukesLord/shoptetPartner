@@ -165,6 +165,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 		function removeDuplicates() {
 			console.log("removeDuplicates");
+			let productsAlternativeProductsBlock = $(".products-alternative-wrapper .products-block");
+			productsAlternativeProductsBlock.classList.add("products-block-alternatives");
 			let productsAllAlternatives = $(".products-alternative-wrapper .product");
 			let seenMicroIds = new Set();
 			let removedCount = 0;
@@ -186,15 +188,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		}
 
 		removeDuplicates();
-		/* window.addEventListener("resize", function () {
+		window.addEventListener("resize", function () {
 			removeDuplicates();
-		}); */
-		/* 	document.addEventListener("resizeEnd", function () {
-			//timeout 100ms
+		});
+		document.addEventListener("resizeEnd", function () {
+			//timeout 1ms
 			setTimeout(function () {
 				removeDuplicates();
 			}, 1);
-		}); */
+		});
 	}
 });
 
