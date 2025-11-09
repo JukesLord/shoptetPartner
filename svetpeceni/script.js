@@ -326,8 +326,17 @@ document.addEventListener("luigiSearchDone", function () {
 	editProductsBlock();
 });
 
-document.addEventListener("resizeEnd", function () {
+if (document.body.classList.contains("type-product")) {
+	document.addEventListener("resizeEnd", function () {
+		//timeout 100ms
+		setTimeout(function () {
+			editProductsBlock();
+		}, 1);
+	});
+}
+/* document.addEventListener("resizeEnd", function () {
 	if (document.body.classList.contains("type-product")) {
 		editProductsBlock();
 	}
 });
+ */
