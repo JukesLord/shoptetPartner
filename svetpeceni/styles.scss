@@ -714,6 +714,24 @@
 		opacity: 0.7;
 	}
 }
+@media (min-width: 768px) {
+	.navigation-in > ul > li.ext > ul > li {
+		flex-basis: 50%;
+		width: 50%;
+	}
+}
+@media (min-width: 1200px) {
+	.navigation-in > ul > li.ext > ul > li {
+		flex-basis: 33.33%;
+		width: 33.33%;
+	}
+}
+@media (min-width: 1440px) {
+	.navigation-in > ul > li.ext > ul > li {
+		flex-basis: 25%;
+		width: 25%;
+	}
+}
 .menu-level-3 > .more-items-trigger::before {
 	display: block;
 	content: "+ další" !important;
