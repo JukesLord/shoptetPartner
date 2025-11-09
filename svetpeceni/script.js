@@ -186,15 +186,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		}
 
 		removeDuplicates();
-		window.addEventListener("resize", function () {
+		/* window.addEventListener("resize", function () {
 			removeDuplicates();
-		});
-		document.addEventListener("resizeEnd", function () {
+		}); */
+		/* 	document.addEventListener("resizeEnd", function () {
 			//timeout 100ms
 			setTimeout(function () {
 				removeDuplicates();
 			}, 1);
-		});
+		}); */
 	}
 });
 
@@ -325,18 +325,3 @@ document.addEventListener("ShoptetDOMContentLoaded", function () {
 document.addEventListener("luigiSearchDone", function () {
 	editProductsBlock();
 });
-
-if (document.body.classList.contains("type-product")) {
-	document.addEventListener("resizeEnd", function () {
-		//timeout 100ms
-		setTimeout(function () {
-			editProductsBlock();
-		}, 1);
-	});
-}
-/* document.addEventListener("resizeEnd", function () {
-	if (document.body.classList.contains("type-product")) {
-		editProductsBlock();
-	}
-});
- */
