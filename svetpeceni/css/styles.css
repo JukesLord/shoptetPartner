@@ -883,6 +883,12 @@
     width: 25%;
   }
 }
+@media (min-width: 768px) {
+  .navigation-in > ul > li.ext > ul > li > div > ul {
+    max-height: 16em;
+    line-height: 1.2;
+  }
+}
 .menu-level-3 > .more-items-trigger::before {
   display: block;
   content: "+ další" !important;
