@@ -119,6 +119,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					// First time seeing this microId, add to set
 					seenMicroIds.add(microId);
 				}
+				const pDesc = $product.find(".p-desc");
+				if (pDesc) {
+					pDesc.remove();
+				}
 			});
 		}
 
