@@ -1,4 +1,4 @@
-$large-mobile-min: 500px;
+/* $large-mobile-min: 500px;
 $mobile-max: 767px;
 
 $tablet-min: 768px;
@@ -202,14 +202,14 @@ $desktop-large-min: 1680px;
 
 .carousel-inner {
 	min-height: auto !important;
-	/*img*/
+
 	a:has(img) {
 		background: linear-gradient(to bottom, var(--color-white), var(--color-gray-500));
 	}
 }
 
 @mixin customSlider {
-	position: relative; /*carousel inner, .products-block*/
+	position: relative; 
 	user-select: none;
 	display: block;
 	&:not(.content) > *,
@@ -235,7 +235,7 @@ $desktop-large-min: 1680px;
 			display: none;
 		}
 
-		/*.item, .product*/
+
 		> * {
 			width: calc(
 				100% / var(--number-of-items) - var(--gap) * ((var(--number-of-items) - 1) / var(--number-of-items)) -
@@ -335,3 +335,4 @@ $desktop-large-min: 1680px;
 		@include customSlider;
 	}
 }
+ */
