@@ -5,7 +5,7 @@ if (body.classList.contains("in-index")) {
 	let carouselItems = document.querySelectorAll("#carousel .item");
 	inicializeSliderElement(carousel, carouselInner, carouselItems, "carousel-slider", "a");
 
-	let carouselTitles = document.querySelectorAll("#carousel .item .carousel-title");
+	let carouselTitles = document.querySelectorAll("#carousel .item .extended-banner-title");
 	let carouselLinks = document.querySelectorAll("#carousel .item .extended-banner-link");
 
 	if (carouselTitles && carouselTitles.length > 0) {
@@ -26,6 +26,19 @@ if (body.classList.contains("in-index")) {
 		//split span to 2 parts - before &nbsp; and after &nbsp;
 		let text = textElement.innerHTML;
 		let parts = text.split("&nbsp;");
+
+		// Create two spans
+		if (parts.length < 2) return; // No &nbsp; found, do nothing
+		let span1 = document.createElement("span");
+		span1.textContent = parts[0];
+
+		let span2 = document.createElement("span");
+		span2.textContent = parts[1];
+
+		// Clear the original element and append the new spans
+		textElement.innerHTML = "";
+		textElement.appendChild(span1);
+		textElement.appendChild(span2);
 	}
 
 	/* 	addedWhiteBanners = false;
