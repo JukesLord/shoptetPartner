@@ -1,3 +1,4 @@
+let body = document.querySelector("body");
 if (body.classList.contains("in-index")) {
 	let carousel = document.querySelector("#carousel");
 	let carouselInner = document.querySelector(".carousel-inner");
