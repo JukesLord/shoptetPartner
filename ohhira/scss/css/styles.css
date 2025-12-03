@@ -93,6 +93,9 @@
   line-height: 1.2;
   padding-bottom: 0.375em;
 }
+#carousel .carousel-inner .item .extended-banner-title > span:nth-child(2) {
+  color: var(--color-primary);
+}
 #carousel .carousel-inner .item .extended-banner-text {
   position: initial;
   padding: 0;
@@ -112,6 +115,9 @@
   background-color: var(--color-primary);
   padding: 0.75em 1.5em;
   z-index: 1;
+}
+#carousel .carousel-inner .item .extended-banner-link > span:nth-child(1) {
+  color: black;
 }
 #carousel .carousel-inner .item .extended-banner-link:hover {
   background-color: var(--color-secondary-hover);
