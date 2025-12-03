@@ -29,6 +29,17 @@
   margin-right: 0;
   min-height: auto !important;
 }
+#carousel .carousel-inner::-webkit-scrollbar {
+  display: none;
+}
+#carousel .carousel-inner.grabbing {
+  cursor: -webkit-grabbing !important;
+  cursor: grabbing !important;
+}
+#carousel .carousel-inner.grabbing a {
+  cursor: -webkit-grabbing !important;
+  cursor: grabbing !important;
+}
 #carousel .carousel-inner .item {
   display: block;
   position: relative;
@@ -57,7 +68,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 30px 10px 30px 33px;
+  padding: 30px 20px 30px 33px;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -77,33 +88,51 @@
   display: block;
   padding: 0;
   position: initial;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.2;
   padding-bottom: 0.375em;
 }
 #carousel .carousel-inner .item .extended-banner-text {
   position: initial;
   padding: 0;
   font-size: 16px;
+  line-height: 1.2;
   padding-bottom: 1em;
 }
 #carousel .carousel-inner .item .extended-banner-link {
   position: initial;
   inset: 0;
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
-  font-size: 13px;
   font-weight: 700;
   line-height: 1;
   border-radius: 12px;
   background-color: var(--color-primary);
-  padding: 1.077em 1.538em;
+  padding: 0.75em 1.5em;
   z-index: 1;
 }
 #carousel .carousel-inner .item .extended-banner-link:hover {
   background-color: var(--color-secondary-hover);
+}
+#carousel .carousel-inner .item a,
+#carousel .carousel-inner .item img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#carousel .carousel-inner .item img {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+#carousel .carousel-inner .item:hover img {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
 }
 #carousel .carousel-control.left {
   left: -15px;

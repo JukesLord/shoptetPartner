@@ -5,6 +5,7 @@
 #carousel {
 	position: relative;
 	padding-top: 22px;
+
 	user-select: none;
 	display: block;
 	.carousel-inner {
@@ -17,6 +18,15 @@
 		margin-left: 0;
 		margin-right: 0;
 		min-height: auto !important;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		&.grabbing {
+			cursor: grabbing !important;
+			a {
+				cursor: grabbing !important;
+			}
+		}
 		.item {
 			display: block;
 			position: relative;
@@ -26,8 +36,10 @@
 				100% / var(--number-of-items) - var(--gap) * (var(--number-of-items) - 1) / var(--number-of-items) -
 					var(--next-item-preview) / var(--number-of-items)
 			);
+
 			flex-shrink: 0;
 			scroll-snap-align: start;
+
 			flex-basis: auto;
 			a {
 				background: linear-gradient(to bottom, white, #f9f9f9);
@@ -44,7 +56,7 @@
 				bottom: 0;
 				left: 0;
 				width: 100%;
-				padding: 30px 10px 30px 33px;
+				padding: 30px 20px 30px 33px;
 				height: auto;
 				display: flex;
 				flex-direction: column;
@@ -57,32 +69,46 @@
 				display: block;
 				padding: 0;
 				position: initial;
-				font-size: 20px;
+				font-size: 30px;
 				font-weight: 700;
-				line-height: 1.4;
+				line-height: 1.2;
 				padding-bottom: 0.375em;
 			}
 			.extended-banner-text {
 				position: initial;
 				padding: 0;
 				font-size: 16px;
+				line-height: 1.2;
 				padding-bottom: 1em;
 			}
 			.extended-banner-link {
 				position: initial;
 				inset: 0;
 				margin: 0;
-				font-size: 18px;
+				font-size: 16px;
 				color: white;
-				font-size: 13px;
 				font-weight: 700;
 				line-height: 1;
 				border-radius: 12px;
 				background-color: var(--color-primary);
-				padding: 1.077em 1.538em;
+				padding: 0.75em 1.5em;
 				z-index: 1;
 				&:hover {
 					background-color: var(--color-secondary-hover);
+				}
+			}
+			a,
+			img {
+				-webkit-user-drag: none;
+
+				user-select: none;
+			}
+			img {
+				transition: transform 0.3s ease;
+			}
+			&:hover {
+				img {
+					transform: scale(1.025);
 				}
 			}
 		}

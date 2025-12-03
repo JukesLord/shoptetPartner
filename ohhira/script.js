@@ -5,6 +5,29 @@ if (body.classList.contains("in-index")) {
 	let carouselItems = document.querySelectorAll("#carousel .item");
 	inicializeSliderElement(carousel, carouselInner, carouselItems, "carousel-slider", "a");
 
+	let carouselTitles = document.querySelectorAll("#carousel .item .carousel-title");
+	let carouselLinks = document.querySelectorAll("#carousel .item .extended-banner-link");
+
+	if (carouselTitles && carouselTitles.length > 0) {
+		carouselTitles.forEach((titleElement, index) => {
+			splitTextsInBannner(titleElement);
+		});
+	}
+
+	if (carouselLinks && carouselLinks.length > 0) {
+		carouselLinks.forEach((linkElement, index) => {
+			splitTextsInBannner(linkElement);
+		});
+	}
+
+	function splitTextsInBannner(textElement) {
+		if (!textElement) return;
+
+		//split span to 2 parts - before &nbsp; and after &nbsp;
+		let text = textElement.innerHTML;
+		let parts = text.split("&nbsp;");
+	}
+
 	/* 	addedWhiteBanners = false;
 
 	if (!addedWhiteBanners) {
