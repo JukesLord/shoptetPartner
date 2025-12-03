@@ -30,7 +30,7 @@ if (body.classList.contains("in-index")) {
 		// Create two spans
 		if (parts.length < 2) return; // No &nbsp; found, do nothing
 		let span1 = document.createElement("span");
-		span1.textContent = parts[0];
+		span1.textContent = parts[0] + " "; // add &nbsp; back to the first span
 
 		let span2 = document.createElement("span");
 		span2.textContent = parts[1];
