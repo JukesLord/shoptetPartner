@@ -1,3 +1,205 @@
+/*PREDFESLY KODER*/
+const timestamp = Date.now();
+
+const downloadData = "/user/documents/upload/data.json?" + timestamp;
+let setupData;
+$.getJSON(downloadData, function (data) {
+	setupData = data.settings;
+});
+
+initheader();
+jQuery(document).ready(function ($) {
+	setTimeout(function () {
+		$("#loader-container").remove();
+		// const loaderContainer = document.getElementById("loader-container");
+		// const content = document.getElementById("content");
+
+		// // Skryjeme načítací animaci a zobrazíme obsah stránky
+		// loaderContainer.style.display = "none";
+		// content.style.display = "block";
+	}, 500);
+
+	initIndex();
+	initProductBlock();
+	initFooter();
+	changeCategory();
+	addAssessment();
+});
+
+function initheader() {
+	const topHeader = $("<div>", { class: "header-up" }).insertBefore(".header-top");
+	const container = $("<div>", { class: "container" }).appendTo(topHeader);
+	const leftMenu = $("<div>", { class: "header-left" }).appendTo(container);
+
+	let openHours = "";
+	setTimeout(function () {
+		const days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+		const today = new Date().getDay();
+		openHours = "Dnes: " + setupData[days[today]];
+
+		const rightMenu = $("<div>", {
+			class: "header-right",
+			html: setupData.headerMenu,
+		}).appendTo(container);
+		$(
+			`<ul>
+        <li><a href="mailto:` +
+				setupData.email +
+				`">` +
+				setupData.email +
+				`</a></li>
+        <li><a href="tel:00` +
+				setupData.tel.replaceAll(" ", "") +
+				`">+` +
+				setupData.tel +
+				`</a></li>
+        <li class='black'>` +
+				openHours +
+				`</li>
+    </ul>`
+		).appendTo(leftMenu);
+
+		$("#header-placeholder").addClass("inactive");
+	}, 400);
+}
+
+function initIndex() {
+	$(".next-to-carousel-banners").insertAfter(".benefitBanner.position--benefitHomepage");
+	$("section#topBanners").insertAfter(".full-width.benefit-banners-full-width");
+	$("section.middle-banner.full-width:eq(0)").insertAfter(
+		".products-wrapper.product-slider-holder.has-navigation:eq(0)"
+	);
+	$("section.middle-banner.full-width:eq(1)").insertAfter(
+		".products-wrapper.product-slider-holder.has-navigation:eq(1)"
+	);
+	$("section.welcome.full-width").insertAfter(".products-wrapper.product-slider-holder.has-navigation:eq(2)");
+
+	$(".blog-wrap").load("/recepty/ #newsWrapper");
+
+	setTimeout(function () {
+		$(".news-item img").each(function () {
+			const src = $(this).attr("data-src");
+			$(this).attr("src", src);
+		});
+	}, 500);
+}
+
+function initProductBlock() {
+	$(".products-block .product").each(function () {
+		$(this).find("i.icon-cart").removeClass("icon-cart").addClass("icon-plus");
+	});
+}
+
+function initFooter() {
+	$(".footer-newsletter h2").text("Přihlaste se k odběru novinek na Svetpeceni.com");
+}
+
+function changeCategory() {
+	//$('.breadcrumbs.navigation-home-icon-wrapper').prependTo('#content-wrapper');
+	$(".category-top").insertAfter(".breadcrumbs");
+	$("ul.active").prevAll("a").addClass("active-button");
+}
+
+function addAssessment() {
+	// Zkontrolujte, zda jsou data již uložena v sessionStorage
+	if (!sessionStorage.getItem("assessmentData")) {
+		// Pokud ne, stáhněte data pomocí AJAX
+		$.ajax({
+			url: "cache/hodnoceni-obchodu/",
+			type: "GET",
+			success: function (response) {
+				// Najděte obsah elementu s třídou .content-inner
+				var content = $(response).find(".content-inner").html();
+
+				// Uložte obsah do sessionStorage
+				sessionStorage.setItem("assessmentData", content);
+			},
+			error: function (error) {
+				console.error("Chyba při stahování dat:", error);
+			},
+		});
+	}
+
+	addReference();
+
+	setTimeout(function () {
+		if (!$(".assessment-wrapper")[0]) {
+			addReference();
+		}
+		$(".vote-pic").each(function () {
+			$(this).find(" img").remove();
+		});
+	}, 2000);
+
+	function addReference() {
+		var assessmentData = sessionStorage.getItem("assessmentData");
+
+		if (assessmentData) {
+			// Vytvoření obalu pro data
+			const wrappedData = $('<div class="assessment-wrapper container"></div>');
+
+			$("<h2/>").text("Hodnocení obchodu").appendTo(wrappedData);
+			$("<div/>").addClass("ajaxWraper").html(assessmentData).appendTo(wrappedData);
+
+			// Vložení dat za zadaný element
+			$(".full-width.homepage-latest-contribution-full-width").after(wrappedData);
+		} else {
+			console.warn("Nebyla nalezena žádná uložená data v sessionStorage.");
+		}
+
+		$(".in-index .votes-wrap.simple-vote").slick({
+			centerMode: false,
+			infinite: true,
+			slidesToShow: 5,
+			slidesToScroll: 2,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			arrows: false,
+			dots: true,
+
+			responsive: [
+				{
+					breakpoint: 1480,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 2,
+						arrows: true,
+					},
+				},
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+					},
+				},
+				{
+					breakpoint: 570,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+
+						autoplay: false,
+					},
+				},
+			],
+		});
+		$("div#ratingWrapper").removeClass("full-width");
+		$("div#ratingWrapper h1").remove();
+		$("div#ratingWrapper a.star").each(function () {
+			const $a = $(this);
+			const span = $("<span></span>").html($a.html()).addClass($a.attr("class"));
+			$.each(this.attributes, function () {
+				if (this.name !== "class" && this.name !== "href") {
+					span.attr(this.name, this.value);
+				}
+			});
+			$a.replaceWith(span);
+		});
+	}
+}
+/*KONEC PREDESLY KODER*/
+
 if ($("body").hasClass("in-krok-1")) {
 	addContactHours();
 
