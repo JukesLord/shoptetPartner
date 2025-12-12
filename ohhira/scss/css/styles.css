@@ -1,37 +1,8 @@
 :root {
   --number-of-items: 4;
-  --next-item-preview: 40px;
+  --next-item-preview: 80px;
 }
 
-@media screen and (max-width: 1439px) {
-  :root {
-    --number-of-items: 3;
-  }
-}
-@media screen and (max-width: 991px) {
-  :root {
-    --number-of-items: 2;
-    --next-item-preview: 80px;
-  }
-}
-@media screen and (max-width: 740px) {
-  :root {
-    --number-of-items: 2;
-    --next-item-preview: 40px;
-  }
-}
-@media screen and (max-width: 650px) {
-  :root {
-    --number-of-items: 1;
-    --next-item-preview: 200px;
-  }
-}
-@media (max-width: 767px) {
-  #carousel {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
 #carousel {
   position: relative;
   padding-top: 22px;
@@ -92,7 +63,6 @@
   overflow: hidden;
 }
 #carousel .carousel-inner .item .extended-banner-texts {
-  padding: 20px 10px 20px 20px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -183,4 +153,49 @@
 }
 #carousel .carousel-control.right {
   right: -15px;
+}
+
+@media screen and (max-width: 1439px) {
+  :root {
+    --number-of-items: 3;
+  }
+}
+@media screen and (max-width: 991px) {
+  :root {
+    --number-of-items: 2;
+    --next-item-preview: 80px;
+  }
+  .extended-banner-texts {
+    padding: 30px 15px 24px 24px;
+  }
+  .extended-banner-title {
+    font-size: 24px;
+  }
+  .extended-banner-text {
+    font-size: 14px;
+  }
+  .extended-banner-link {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 740px) {
+  :root {
+    --number-of-items: 2;
+    --next-item-preview: 40px;
+  }
+  .extended-banner-texts {
+    padding: 30px 20px 30px 33px;
+  }
+}
+@media screen and (max-width: 650px) {
+  :root {
+    --number-of-items: 1;
+    --next-item-preview: 240px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #carousel {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
