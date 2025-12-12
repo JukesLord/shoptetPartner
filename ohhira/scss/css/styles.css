@@ -3,6 +3,35 @@
   --next-item-preview: 40px;
 }
 
+@media screen and (max-width: 1439px) {
+  :root {
+    --number-of-items: 3;
+  }
+}
+@media screen and (max-width: 991px) {
+  :root {
+    --number-of-items: 2;
+    --next-item-preview: 80px;
+  }
+}
+@media screen and (max-width: 740px) {
+  :root {
+    --number-of-items: 2;
+    --next-item-preview: 40px;
+  }
+}
+@media screen and (max-width: 650px) {
+  :root {
+    --number-of-items: 1;
+    --next-item-preview: 200px;
+  }
+}
+@media (max-width: 767px) {
+  #carousel {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
 #carousel {
   position: relative;
   padding-top: 22px;
@@ -85,7 +114,13 @@
   top: auto;
 }
 #carousel .carousel-inner .item .extended-banner-title {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 0;
   position: initial;
   font-size: 26px;
@@ -113,7 +148,7 @@
   line-height: 1;
   border-radius: 12px;
   background-color: var(--color-primary);
-  padding: 0.75em 1.5em;
+  padding: 0.75em 1.5em !important;
   z-index: 1;
 }
 #carousel .carousel-inner .item .extended-banner-link > span:nth-child(1) {
@@ -121,6 +156,9 @@
 }
 #carousel .carousel-inner .item .extended-banner-link:hover {
   background-color: var(--color-secondary-hover);
+}
+#carousel .carousel-inner .item .extended-banner-link:before {
+  display: none !important;
 }
 #carousel .carousel-inner .item a,
 #carousel .carousel-inner .item img {
