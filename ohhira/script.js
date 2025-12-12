@@ -31,6 +31,7 @@ if (body.classList.contains("in-index")) {
 		if (parts.length < 2) return; // No &nbsp; found, do nothing
 		let span1 = document.createElement("span");
 		span1.textContent = parts[0] + " "; // add &nbsp; back to the first span
+		span1.textContent = span1.textContent.replace(/\s/g, " "); //  &nbsp with normal space;
 
 		let span2 = document.createElement("span");
 		span2.textContent = parts[1];

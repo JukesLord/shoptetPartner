@@ -1,6 +1,6 @@
 :root {
-  --number-of-items: 3;
-  --next-item-preview: 100px;
+  --number-of-items: 4;
+  --next-item-preview: 40px;
 }
 
 #carousel {
@@ -88,7 +88,7 @@
   display: block;
   padding: 0;
   position: initial;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
   line-height: 1.2;
   padding-bottom: 0.375em;
