@@ -206,6 +206,7 @@
 		display: flex !important;
 		flex-wrap: nowrap !important;
 		overflow-x: auto;
+		padding-bottom: 6px !important;
 		> * {
 			flex: 0 0 50%;
 			--width: 65vw;

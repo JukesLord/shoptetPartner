@@ -231,6 +231,7 @@
     -ms-flex-wrap: nowrap !important;
         flex-wrap: nowrap !important;
     overflow-x: auto;
+    padding-bottom: 6px !important;
   }
   .vyhody > *,
   .benefitBanner > * {
