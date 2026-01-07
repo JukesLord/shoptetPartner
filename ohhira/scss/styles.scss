@@ -129,6 +129,14 @@
 	.carousel-control.right {
 		right: -15px;
 	}
+	.carousel-control.hidden-control {
+		display: none !important;
+	}
+}
+
+.product-slider-navigation,
+.carousel-control {
+	border-radius: 30%;
 }
 
 @media screen and (max-width: 1439px) {
@@ -189,5 +197,21 @@
 	#carousel {
 		margin-left: 20px;
 		margin-right: 20px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.vyhody,
+	.benefitBanner {
+		display: flex !important;
+		flex-wrap: nowrap !important;
+		overflow-x: auto;
+		> * {
+			flex: 0 0 50%;
+			--width: 65vw;
+			flex-basis: var(--width) !important;
+			width: var(--width) !important;
+			max-width: 400px !important;
+		}
 	}
 }

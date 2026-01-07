@@ -154,6 +154,14 @@
 #carousel .carousel-control.right {
   right: -15px;
 }
+#carousel .carousel-control.hidden-control {
+  display: none !important;
+}
+
+.product-slider-navigation,
+.carousel-control {
+  border-radius: 30%;
+}
 
 @media screen and (max-width: 1439px) {
   :root {
@@ -212,5 +220,27 @@
   #carousel {
     margin-left: 20px;
     margin-right: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .vyhody,
+  .benefitBanner {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: nowrap !important;
+        flex-wrap: nowrap !important;
+    overflow-x: auto;
+  }
+  .vyhody > *,
+  .benefitBanner > * {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    --width: 65vw;
+    -ms-flex-preferred-size: var(--width) !important;
+        flex-basis: var(--width) !important;
+    width: var(--width) !important;
+    max-width: 400px !important;
   }
 }
