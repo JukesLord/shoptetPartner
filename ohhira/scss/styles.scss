@@ -244,7 +244,7 @@
 				height: var(--content-width);
 				position: absolute;
 				left: 0;
-				top: 100%;
+				top: 50%;
 				transform: translatey(-50%);
 				background: url("https://www.ohhira.sk/user/documents/upload/header/header_kontakt_foto.png");
 				background-size: cover;
@@ -253,8 +253,7 @@
 			}
 			&::after {
 				position: relative;
-				left: calc(var(--content-width) + 10px);
-				right: auto;
+				inset: 0;
 			}
 		}
 	}
@@ -282,30 +281,35 @@
 		.header-reviews {
 			&.visible {
 				display: grid !important;
-				grid-template-columns: 55px 55px 130px;
+				grid-template-columns: 55px 55px 110px;
 				grid-template-rows: auto;
 				align-items: center;
-				column-gap: 10px;
+				column-gap: 0px;
 			}
 			.header-checkmark-icon {
 				grid-column: 1;
 				grid-row: 1/3;
+				margin-right: 10px;
 			}
 			.header-reviews-percentage {
 				grid-column: 2;
 				grid-row: 1;
-				font-size: 24px;
+				font-size: 20px;
 				font-weight: 700;
 				color: var(--color-primary);
+				margin-right: 5px;
+				line-height: 1;
 			}
 			.header-stars {
 				grid-column: 3;
 				grid-row: 1;
+				position: relative;
+				top: -2px;
 			}
 			.header-reviews-text {
 				grid-column: 2/-1;
 				grid-row: 2;
-				font-size: 18px;
+				font-size: 16px;
 				color: #252729;
 			}
 		}
