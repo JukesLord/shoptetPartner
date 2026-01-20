@@ -313,19 +313,19 @@
             order: 99;
   }
   .admin-logged .navigation-buttons .header-reviews {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-  .admin-logged .navigation-buttons .tel {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
   }
-  .admin-logged .navigation-buttons a.btn {
+  .admin-logged .navigation-buttons .tel {
     -webkit-box-ordinal-group: 11;
         -ms-flex-order: 10;
             order: 10;
+  }
+  .admin-logged .navigation-buttons a.btn {
+    -webkit-box-ordinal-group: 21;
+        -ms-flex-order: 20;
+            order: 20;
   }
   .admin-logged .header-reviews.visible {
     display: grid !important;
