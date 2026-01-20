@@ -273,6 +273,7 @@
             align-items: flex-start;
     --content-width: 56px;
     padding-left: calc(var(--content-width) + 10px);
+    margin-bottom: auto;
   }
   .admin-logged #header .navigation-buttons .tel a::before {
     content: "";
@@ -281,7 +282,7 @@
     height: var(--content-width);
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 100%;
     -webkit-transform: translatey(-50%);
             transform: translatey(-50%);
     background: url("https://www.ohhira.sk/user/documents/upload/header/header_kontakt_foto.png");
@@ -289,12 +290,53 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+  .admin-logged #header .navigation-buttons .tel a::after {
+    position: relative;
+    left: calc(var(--content-width) + 10px);
+    right: auto;
+  }
 }
 @media screen and (min-width: 1420px) {
+  .admin-logged #header .header-top-wrapper > div.search {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 25%;
+            flex: 0 1 25%;
+  }
+  .admin-logged #header .header-top-wrapper > div.navigation-buttons {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 55%;
+            flex: 0 1 55%;
+  }
+  .admin-logged .navigation-buttons * {
+    -webkit-box-ordinal-group: 100;
+        -ms-flex-order: 99;
+            order: 99;
+  }
+  .admin-logged .navigation-buttons .header-reviews {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .admin-logged .navigation-buttons .tel {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  .admin-logged .navigation-buttons a.btn {
+    -webkit-box-ordinal-group: 11;
+        -ms-flex-order: 10;
+            order: 10;
+  }
   .admin-logged .header-reviews.visible {
     display: grid !important;
-    grid-template-columns: 50px 50px 1fr;
+    grid-template-columns: 55px 55px 130px;
     grid-template-rows: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px;
   }
   .admin-logged .header-reviews .header-checkmark-icon {
     grid-column: 1;
@@ -314,5 +356,7 @@
   .admin-logged .header-reviews .header-reviews-text {
     grid-column: 2/-1;
     grid-row: 2;
+    font-size: 18px;
+    color: #252729;
   }
 }
