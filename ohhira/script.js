@@ -259,3 +259,20 @@ function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, custom
 		}
 	}
 }
+
+function addReviewsToHeader() {
+	let headerReviews = document.querySelector(".header-reviews");
+	if (!headerReviews) {
+		console.warn("No header reviews found to add.");
+		return;
+	}
+
+	let navigationButtons = document.querySelector("#header .navigation-buttons");
+	if (!navigationButtons) {
+		console.warn("No navigation buttons found to add reviews to header.");
+		return;
+	}
+
+	navigationButtons.prepend(headerReviews);
+	headerReviews.classList.add("visible");
+}

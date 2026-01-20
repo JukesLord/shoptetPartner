@@ -245,3 +245,75 @@
     max-width: 400px !important;
   }
 }
+/*Header*/
+#header .search input {
+  border-radius: 12px;
+}
+
+@media screen and (min-width: 991px) {
+  #header .header-top-wrapper > div.search {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 40%;
+            flex: 0 1 40%;
+  }
+  #header .header-top-wrapper > div.navigation-buttons {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 40%;
+            flex: 0 1 40%;
+  }
+  #header .navigation-buttons .tel a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    --content-width: 56px;
+    padding-left: calc(var(--content-width) + 10px);
+  }
+  #header .navigation-buttons .tel a::before {
+    content: "";
+    display: block;
+    width: var(--content-width);
+    height: var(--content-width);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translatey(-50%);
+            transform: translatey(-50%);
+    background: url("https://www.ohhira.sk/user/documents/upload/header/header_kontakt_foto.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+@media screen and (min-width: 1420px) {
+  .header-reviews.visible {
+    display: grid !important;
+    grid-template-columns: 50px 50px 1fr;
+    grid-template-rows: auto;
+  }
+  .header-reviews .header-checkmark-icon {
+    grid-column: 1;
+    grid-row: 1/3;
+  }
+  .header-reviews .header-reviews-percentage {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  .header-reviews .header-stars {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .header-reviews .header-reviews-text {
+    grid-column: 2/-1;
+    grid-row: 2;
+  }
+}
