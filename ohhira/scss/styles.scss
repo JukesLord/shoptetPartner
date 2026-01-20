@@ -218,64 +218,66 @@
 }
 
 /*Header*/
-#header .search input {
-	border-radius: 12px;
-}
+.admin-logged {
+	#header .search input {
+		border-radius: 12px;
+	}
 
-@media screen and (min-width: 991px) {
-	#header .header-top-wrapper > div.search {
-		flex: 0 1 40%;
-	}
-	#header .header-top-wrapper > div.navigation-buttons {
-		flex: 0 1 40%;
-	}
-	#header .navigation-buttons .tel a {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		--content-width: 56px;
-		padding-left: calc(var(--content-width) + 10px);
-		&::before {
-			content: "";
-			display: block;
-			width: var(--content-width);
-			height: var(--content-width);
-			position: absolute;
-			left: 0;
-			top: 50%;
-			transform: translatey(-50%);
-			background: url("https://www.ohhira.sk/user/documents/upload/header/header_kontakt_foto.png");
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
+	@media screen and (min-width: 991px) {
+		#header .header-top-wrapper > div.search {
+			flex: 0 1 40%;
+		}
+		#header .header-top-wrapper > div.navigation-buttons {
+			flex: 0 1 40%;
+		}
+		#header .navigation-buttons .tel a {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			--content-width: 56px;
+			padding-left: calc(var(--content-width) + 10px);
+			&::before {
+				content: "";
+				display: block;
+				width: var(--content-width);
+				height: var(--content-width);
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translatey(-50%);
+				background: url("https://www.ohhira.sk/user/documents/upload/header/header_kontakt_foto.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
 		}
 	}
-}
-@media screen and (min-width: 1420px) {
-	.header-reviews {
-		&.visible {
-			display: grid !important;
-			grid-template-columns: 50px 50px 1fr;
-			grid-template-rows: auto;
-		}
-		.header-checkmark-icon {
-			grid-column: 1;
-			grid-row: 1/3;
-		}
-		.header-reviews-percentage {
-			grid-column: 2;
-			grid-row: 1;
-			font-size: 24px;
-			font-weight: 700;
-			color: var(--color-primary);
-		}
-		.header-stars {
-			grid-column: 3;
-			grid-row: 1;
-		}
-		.header-reviews-text {
-			grid-column: 2/-1;
-			grid-row: 2;
+	@media screen and (min-width: 1420px) {
+		.header-reviews {
+			&.visible {
+				display: grid !important;
+				grid-template-columns: 50px 50px 1fr;
+				grid-template-rows: auto;
+			}
+			.header-checkmark-icon {
+				grid-column: 1;
+				grid-row: 1/3;
+			}
+			.header-reviews-percentage {
+				grid-column: 2;
+				grid-row: 1;
+				font-size: 24px;
+				font-weight: 700;
+				color: var(--color-primary);
+			}
+			.header-stars {
+				grid-column: 3;
+				grid-row: 1;
+			}
+			.header-reviews-text {
+				grid-column: 2/-1;
+				grid-row: 2;
+			}
 		}
 	}
 }

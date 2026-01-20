@@ -260,6 +260,7 @@ function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, custom
 	}
 }
 
+addReviewsToHeader();
 function addReviewsToHeader() {
 	let headerReviews = document.querySelector(".header-reviews");
 	if (!headerReviews) {
