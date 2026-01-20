@@ -257,12 +257,12 @@
 			}
 		}
 	}
-	@media screen and (min-width: 1420px) {
+	@media screen and (min-width: 1440px) {
 		#header .header-top-wrapper > div.search {
-			flex: 0 1 25%;
+			flex: 0 1 27%;
 		}
 		#header .header-top-wrapper > div.navigation-buttons {
-			flex: 0 1 55%;
+			flex: 0 1 53%;
 		}
 		.navigation-buttons {
 			* {
@@ -273,6 +273,7 @@
 			}
 			.tel {
 				order: 10;
+				margin-right: 20px;
 			}
 			a.btn {
 				order: 20;
@@ -281,7 +282,7 @@
 		.header-reviews {
 			&.visible {
 				display: grid !important;
-				grid-template-columns: 55px 55px 110px;
+				grid-template-columns: 55px 55px 115px;
 				grid-template-rows: auto;
 				align-items: center;
 				column-gap: 0px;
