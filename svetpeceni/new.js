@@ -5,7 +5,7 @@ if (document.body.classList.contains("admin-logged")) {
 			console.log("CUSTOM EVENT RECEIVED: votesWrapLoaded");
 			let votesWrap = document.querySelector(".hodnoceni-obchodu-section .votes-wrap");
 			let votesItems = document.querySelectorAll(".hodnoceni-obchodu-section .votes-wrap .vote-wrap");
-			inicializeSliderElement(null, votesWrap, votesItems, "votes-slider", votesItems[0]);
+			inicializeSliderElement(null, votesWrap, votesItems, "votes-slider", ".vote-wrap");
 		});
 
 		function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, customClass, itemForHeightForControls) {
