@@ -79,7 +79,7 @@ if (document.body.classList.contains("admin-logged")) {
 				}
 
 				//if sliderParent is not scrollable hide controls
-				if (sliderParent.scrollWidth <= sliderParent.clientWidth - 5) {
+				if (sliderParent.scrollWidth <= sliderParent.clientWidth) {
 					leftControl.classList.add("hidden-control");
 					rightControl.classList.add("hidden-control");
 				}
