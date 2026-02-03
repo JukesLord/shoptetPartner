@@ -56,7 +56,7 @@ function initheader() {
         <li class='black'>` +
 				openHours +
 				`</li>
-    </ul>`
+    </ul>`,
 		).appendTo(leftMenu);
 
 		$("#header-placeholder").addClass("inactive");
@@ -67,10 +67,10 @@ function initIndex() {
 	$(".next-to-carousel-banners").insertAfter(".benefitBanner.position--benefitHomepage");
 	$("section#topBanners").insertAfter(".full-width.benefit-banners-full-width");
 	$("section.middle-banner.full-width:eq(0)").insertAfter(
-		".products-wrapper.product-slider-holder.has-navigation:eq(0)"
+		".products-wrapper.product-slider-holder.has-navigation:eq(0)",
 	);
 	$("section.middle-banner.full-width:eq(1)").insertAfter(
-		".products-wrapper.product-slider-holder.has-navigation:eq(1)"
+		".products-wrapper.product-slider-holder.has-navigation:eq(1)",
 	);
 	$("section.welcome.full-width").insertAfter(".products-wrapper.product-slider-holder.has-navigation:eq(2)");
 
@@ -521,5 +521,75 @@ function carouselSlider() {
 				}
 			});
 		});
+	}
+}
+
+/*-----*/
+if (document.body.classList.contains("admin-logged")) {
+	if (document.body.classList.contains("in-index")) {
+		let hodnoceniObchoduAdded = false;
+		hodnoceniObchodu();
+		async function hodnoceniObchodu() {
+			if (hodnoceniObchoduAdded) {
+				return;
+			}
+
+			hodnoceniObchoduAdded = true;
+			const hodnoceniObchoduSection = document.createElement("div");
+			hodnoceniObchoduSection.className = "hodnoceni-obchodu-section";
+
+			const hodnoceniTitle = document.createElement("h2");
+			hodnoceniTitle.className = "hodnoceni-obchodu-title";
+			hodnoceniTitle.textContent = "Hodnocení obchodu";
+
+			let welcomeWrapper = document.querySelector(".welcome-wrapper");
+			if (welcomeWrapper) {
+				welcomeWrapper.parentNode.insertBefore(hodnoceniObchoduSection, welcomeWrapper);
+			}
+
+			hodnoceniObchoduSection.appendChild(hodnoceniTitle);
+
+			let fetchAddress = "https://www.svetpeceni.com/hodnoceni-obchodu/";
+
+			//get .content-inner from the adress and append it to the hodnoceniObchoduSection
+			try {
+				const response = await fetch(fetchAddress);
+				if (!response.ok) {
+					throw new Error("Failed to fetch data from the server.");
+				}
+
+				const html = await response.text();
+				const parser = new DOMParser();
+				const doc = parser.parseFromString(html, "text/html");
+				const votesWrap = doc.querySelector(".votes-wrap");
+				let numberOfReviews = doc.querySelector("#ratingWrapper .stars-label");
+				//change span number of reviews to a
+				let numberOfReviewsLink = document.createElement("a");
+				if (numberOfReviews) {
+					numberOfReviewsLink.href = fetchAddress;
+					numberOfReviewsLink.classList.add("stars-label-link");
+					numberOfReviewsLink.appendChild(numberOfReviews);
+				}
+
+				document.addEventListener("votesWrapLoaded", function () {
+					//remove img from .vote-pic
+					let latestContributionFullWidth = document.querySelector(".homepage-latest-contribution-full-width");
+					if (latestContributionFullWidth) {
+						hodnoceniObchoduSection.insertAdjacentElement("afterend", latestContributionFullWidth);
+					}
+				});
+
+				if (votesWrap) {
+					hodnoceniObchoduSection.appendChild(numberOfReviewsLink);
+					hodnoceniObchoduSection.appendChild(votesWrap);
+					console.log("CUSTOM EVENT DISPATCHED: votesWrapLoaded");
+					document.dispatchEvent(new CustomEvent("votesWrapLoaded"));
+				} else {
+					console.warn("No .content-inner found in the fetched content.");
+				}
+			} catch (error) {
+				console.error("Error fetching or processing hodnoceni obchodu:", error);
+			}
+		}
 	}
 }
