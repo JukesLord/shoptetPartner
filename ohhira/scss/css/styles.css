@@ -246,21 +246,22 @@
   }
 }
 /*Header*/
-.admin-logged #header .search input {
+#header .search input {
   border-radius: 12px;
 }
+
 @media screen and (min-width: 991px) {
-  .admin-logged #header .header-top-wrapper > div.search {
+  #header .header-top-wrapper > div.search {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 40%;
             flex: 0 1 40%;
   }
-  .admin-logged #header .header-top-wrapper > div.navigation-buttons {
+  #header .header-top-wrapper > div.navigation-buttons {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 40%;
             flex: 0 1 40%;
   }
-  .admin-logged #header .navigation-buttons .tel a {
+  #header .navigation-buttons .tel a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -275,7 +276,7 @@
     padding-left: calc(var(--content-width) + 10px);
     margin-bottom: auto;
   }
-  .admin-logged #header .navigation-buttons .tel a::before {
+  #header .navigation-buttons .tel a::before {
     content: "";
     display: block;
     width: var(--content-width);
@@ -285,49 +286,49 @@
     top: 50%;
     -webkit-transform: translatey(-50%);
             transform: translatey(-50%);
-    background: url("https://www.ohhira.sk/user/documents/upload/header/header_kontakt_foto.png");
+    background: url("https://www.ohhira.cz/user/documents/upload/header/header_kontakt_foto.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
-  .admin-logged #header .navigation-buttons .tel a::after {
+  #header .navigation-buttons .tel a::after {
     position: relative;
     inset: 0;
   }
 }
 @media screen and (min-width: 1440px) {
-  .admin-logged #header .header-top-wrapper > div.search {
+  #header .header-top-wrapper > div.search {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 27%;
             flex: 0 1 27%;
   }
-  .admin-logged #header .header-top-wrapper > div.navigation-buttons {
+  #header .header-top-wrapper > div.navigation-buttons {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 53%;
             flex: 0 1 53%;
   }
-  .admin-logged .navigation-buttons * {
+  .navigation-buttons * {
     -webkit-box-ordinal-group: 100;
         -ms-flex-order: 99;
             order: 99;
   }
-  .admin-logged .navigation-buttons .header-reviews {
+  .navigation-buttons .header-reviews {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
   }
-  .admin-logged .navigation-buttons .tel {
+  .navigation-buttons .tel {
     -webkit-box-ordinal-group: 11;
         -ms-flex-order: 10;
             order: 10;
     margin-right: 20px;
   }
-  .admin-logged .navigation-buttons a.btn {
+  .navigation-buttons a.btn {
     -webkit-box-ordinal-group: 21;
         -ms-flex-order: 20;
             order: 20;
   }
-  .admin-logged .header-reviews.visible {
+  .header-reviews.visible {
     display: grid !important;
     grid-template-columns: 55px 55px 115px;
     grid-template-rows: auto;
@@ -338,12 +339,12 @@
        -moz-column-gap: 0px;
             column-gap: 0px;
   }
-  .admin-logged .header-reviews .header-checkmark-icon {
+  .header-reviews .header-checkmark-icon {
     grid-column: 1;
     grid-row: 1/3;
     margin-right: 10px;
   }
-  .admin-logged .header-reviews .header-reviews-percentage {
+  .header-reviews .header-reviews-percentage {
     grid-column: 2;
     grid-row: 1;
     font-size: 20px;
@@ -352,13 +353,13 @@
     margin-right: 5px;
     line-height: 1;
   }
-  .admin-logged .header-reviews .header-stars {
+  .header-reviews .header-stars {
     grid-column: 3;
     grid-row: 1;
     position: relative;
     top: -2px;
   }
-  .admin-logged .header-reviews .header-reviews-text {
+  .header-reviews .header-reviews-text {
     grid-column: 2/-1;
     grid-row: 2;
     font-size: 16px;

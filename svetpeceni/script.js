@@ -23,7 +23,7 @@ jQuery(document).ready(function ($) {
 	initProductBlock();
 	initFooter();
 	changeCategory();
-	addAssessment();
+	/* 	addAssessment(); */
 });
 
 function initheader() {
@@ -100,7 +100,7 @@ function changeCategory() {
 	$("ul.active").prevAll("a").addClass("active-button");
 }
 
-function addAssessment() {
+/* function addAssessment() {
 	// Zkontrolujte, zda jsou data již uložena v sessionStorage
 	if (!sessionStorage.getItem("assessmentData")) {
 		// Pokud ne, stáhněte data pomocí AJAX
@@ -197,7 +197,7 @@ function addAssessment() {
 			$a.replaceWith(span);
 		});
 	}
-}
+} */
 /*KONEC PREDESLY KODER*/
 
 if ($("body").hasClass("in-krok-1")) {

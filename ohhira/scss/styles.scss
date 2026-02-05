@@ -218,101 +218,99 @@
 }
 
 /*Header*/
-.admin-logged {
-	#header .search input {
-		border-radius: 12px;
-	}
+#header .search input {
+	border-radius: 12px;
+}
 
-	@media screen and (min-width: 991px) {
-		#header .header-top-wrapper > div.search {
-			flex: 0 1 40%;
+@media screen and (min-width: 991px) {
+	#header .header-top-wrapper > div.search {
+		flex: 0 1 40%;
+	}
+	#header .header-top-wrapper > div.navigation-buttons {
+		flex: 0 1 40%;
+	}
+	#header .navigation-buttons .tel a {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		--content-width: 56px;
+		padding-left: calc(var(--content-width) + 10px);
+		margin-bottom: auto;
+		&::before {
+			content: "";
+			display: block;
+			width: var(--content-width);
+			height: var(--content-width);
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translatey(-50%);
+			background: url("https://www.ohhira.cz/user/documents/upload/header/header_kontakt_foto.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
 		}
-		#header .header-top-wrapper > div.navigation-buttons {
-			flex: 0 1 40%;
-		}
-		#header .navigation-buttons .tel a {
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			--content-width: 56px;
-			padding-left: calc(var(--content-width) + 10px);
-			margin-bottom: auto;
-			&::before {
-				content: "";
-				display: block;
-				width: var(--content-width);
-				height: var(--content-width);
-				position: absolute;
-				left: 0;
-				top: 50%;
-				transform: translatey(-50%);
-				background: url("https://www.ohhira.sk/user/documents/upload/header/header_kontakt_foto.png");
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-position: center;
-			}
-			&::after {
-				position: relative;
-				inset: 0;
-			}
+		&::after {
+			position: relative;
+			inset: 0;
 		}
 	}
-	@media screen and (min-width: 1440px) {
-		#header .header-top-wrapper > div.search {
-			flex: 0 1 27%;
-		}
-		#header .header-top-wrapper > div.navigation-buttons {
-			flex: 0 1 53%;
-		}
-		.navigation-buttons {
-			* {
-				order: 99;
-			}
-			.header-reviews {
-				order: 5;
-			}
-			.tel {
-				order: 10;
-				margin-right: 20px;
-			}
-			a.btn {
-				order: 20;
-			}
+}
+@media screen and (min-width: 1440px) {
+	#header .header-top-wrapper > div.search {
+		flex: 0 1 27%;
+	}
+	#header .header-top-wrapper > div.navigation-buttons {
+		flex: 0 1 53%;
+	}
+	.navigation-buttons {
+		* {
+			order: 99;
 		}
 		.header-reviews {
-			&.visible {
-				display: grid !important;
-				grid-template-columns: 55px 55px 115px;
-				grid-template-rows: auto;
-				align-items: center;
-				column-gap: 0px;
-			}
-			.header-checkmark-icon {
-				grid-column: 1;
-				grid-row: 1/3;
-				margin-right: 10px;
-			}
-			.header-reviews-percentage {
-				grid-column: 2;
-				grid-row: 1;
-				font-size: 20px;
-				font-weight: 700;
-				color: var(--color-primary);
-				margin-right: 5px;
-				line-height: 1;
-			}
-			.header-stars {
-				grid-column: 3;
-				grid-row: 1;
-				position: relative;
-				top: -2px;
-			}
-			.header-reviews-text {
-				grid-column: 2/-1;
-				grid-row: 2;
-				font-size: 16px;
-				color: #252729;
-			}
+			order: 5;
+		}
+		.tel {
+			order: 10;
+			margin-right: 20px;
+		}
+		a.btn {
+			order: 20;
+		}
+	}
+	.header-reviews {
+		&.visible {
+			display: grid !important;
+			grid-template-columns: 55px 55px 115px;
+			grid-template-rows: auto;
+			align-items: center;
+			column-gap: 0px;
+		}
+		.header-checkmark-icon {
+			grid-column: 1;
+			grid-row: 1/3;
+			margin-right: 10px;
+		}
+		.header-reviews-percentage {
+			grid-column: 2;
+			grid-row: 1;
+			font-size: 20px;
+			font-weight: 700;
+			color: var(--color-primary);
+			margin-right: 5px;
+			line-height: 1;
+		}
+		.header-stars {
+			grid-column: 3;
+			grid-row: 1;
+			position: relative;
+			top: -2px;
+		}
+		.header-reviews-text {
+			grid-column: 2/-1;
+			grid-row: 2;
+			font-size: 16px;
+			color: #252729;
 		}
 	}
 }
