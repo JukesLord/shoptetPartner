@@ -34,7 +34,10 @@
 				margin-bottom: 0;
 			}
 			.news-wrapper .news-item:first-child .image {
-				height: 23vw;
+				height: 275px;
+				@media screen and (max-width: 1440px) {
+					height: 23vw;
+				}
 			}
 			.news-wrapper .news-item:first-child .image img {
 				position: absolute;
@@ -64,17 +67,16 @@
 
 	/*blog*/
 	.clanky-container {
-		max-width: 1640px;
+		/* max-width: 1640px; */
 		width: 100%;
 		margin: 0 auto;
 		position: relative;
-		padding: 20px 15px 10px;
+		padding: 20px 0px 10px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		column-gap: 60px;
 		overflow: auto;
-		padding-bottom: 10px;
 
 		@media screen and (max-width: 1440px) {
 			column-gap: 40px;

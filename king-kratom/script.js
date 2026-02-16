@@ -40,7 +40,13 @@ if (document.body.classList.contains("admin-logged")) {
 				let footer = document.querySelector("#footer");
 				if (footer) {
 					//insert it before footer
-					footer.parentNode.insertBefore(clankyContainer, footer);
+					/* footer.parentNode.insertBefore(clankyContainer, footer); */
+
+					//prepend it to footer rows
+					let footerRows = footer.querySelector(".footer-rows");
+					if (footerRows) {
+						footerRows.prepend(clankyContainer);
+					}
 				}
 				for (let url of clankyUrls) {
 					try {
