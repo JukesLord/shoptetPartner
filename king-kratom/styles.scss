@@ -68,13 +68,19 @@
 	/*blog*/
 	.clanky-container {
 		padding: 20px 0;
+
+		.homepage-group-title {
+			&::before {
+				display: none !important;
+			}
+		}
 	}
 	.clanky-wrapper {
 		/* max-width: 1640px; */
 		width: 100%;
 		margin: 0 auto;
 		position: relative;
-		padding: 20px 0px 10px;
+		padding: 0px 0px 10px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
@@ -86,11 +92,6 @@
 		}
 		@media screen and (max-width: 992px) {
 			column-gap: 20px;
-		}
-		.homepage-group-title {
-			&::before {
-				display: none !important;
-			}
 		}
 
 		.news-item-custom {

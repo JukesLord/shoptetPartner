@@ -73,12 +73,15 @@
 .admin-logged .clanky-container {
   padding: 20px 0;
 }
+.admin-logged .clanky-container .homepage-group-title::before {
+  display: none !important;
+}
 .admin-logged .clanky-wrapper {
   /* max-width: 1640px; */
   width: 100%;
   margin: 0 auto;
   position: relative;
-  padding: 20px 0px 10px;
+  padding: 0px 0px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,9 +109,6 @@
        -moz-column-gap: 20px;
             column-gap: 20px;
   }
-}
-.admin-logged .clanky-wrapper .homepage-group-title::before {
-  display: none !important;
 }
 .admin-logged .clanky-wrapper .news-item-custom {
   -webkit-box-flex: 1;
