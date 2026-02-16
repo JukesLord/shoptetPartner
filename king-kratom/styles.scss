@@ -84,6 +84,11 @@
 		@media screen and (max-width: 992px) {
 			column-gap: 20px;
 		}
+		.homepage-group-title {
+			&::before {
+				display: none !important;
+			}
+		}
 
 		.news-item-custom {
 			flex: 1;

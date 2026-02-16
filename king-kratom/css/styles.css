@@ -104,6 +104,9 @@
             column-gap: 20px;
   }
 }
+.admin-logged .clanky-container .homepage-group-title::before {
+  display: none !important;
+}
 .admin-logged .clanky-container .news-item-custom {
   -webkit-box-flex: 1;
       -ms-flex: 1;
