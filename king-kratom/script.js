@@ -43,6 +43,9 @@ if (document.body.classList.contains("admin-logged")) {
 				clankyTitle.textContent = "Nové články";
 				clankyContainer.appendChild(clankyTitle);
 
+				let clankyWrapper = document.createElement("div");
+				clankyWrapper.classList.add("clanky-wrapper");
+				clankyContainer.appendChild(clankyWrapper);
 				let footer = document.querySelector("#footer");
 				if (footer) {
 					//insert it before footer
@@ -97,7 +100,7 @@ if (document.body.classList.contains("admin-logged")) {
 									<span class="read-article">Číst článek</span>
 								</div>
 							</a>`;
-						clankyContainer.appendChild(newsItem);
+						clankyWrapper.appendChild(newsItem);
 					} catch (error) {
 						console.error(`Error fetching ${url}:`, error);
 					}
