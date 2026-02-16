@@ -37,6 +37,12 @@ if (document.body.classList.contains("admin-logged")) {
 				let clankyUrls = [clanek1, clanek2, clanek3];
 				const clankyContainer = document.createElement("div");
 				clankyContainer.classList.add("clanky-container");
+
+				const clankyTitle = document.createElement("div");
+				clankyTitle.classList.add("homepage-group-title", "h4");
+				clankyTitle.textContent = "Nové články";
+				clankyContainer.appendChild(clankyTitle);
+
 				let footer = document.querySelector("#footer");
 				if (footer) {
 					//insert it before footer
