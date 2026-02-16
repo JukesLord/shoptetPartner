@@ -1,0 +1,17 @@
+.admin-logged {
+	@media screen and (max-width: 768px) {
+		&.in-index {
+			.products-block {
+				.slick-track {
+					width: auto !important;
+
+					.product {
+						width: 100% !important;
+						min-width: 100%;
+						flex-basis: 100% !important;
+					}
+				}
+			}
+		}
+	}
+}

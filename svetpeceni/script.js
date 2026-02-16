@@ -60,6 +60,7 @@ function initheader() {
 		).appendTo(leftMenu);
 
 		$("#header-placeholder").addClass("inactive");
+		$(".header-up").addClass("active");
 	}, 400);
 }
 

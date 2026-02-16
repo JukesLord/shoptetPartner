@@ -3,12 +3,6 @@
   --width-multiplier-of-1st-item: 1;
   --number-of-items: 5;
   --next-item-preview: 100px;
-  position: relative; /*carousel inner, .products-block*/
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  display: block;
 }
 @media screen and (max-width: 1440px) {
   .votes-slider {
@@ -46,6 +40,14 @@
     --next-item-preview: 40px;
   }
 }
+.votes-slider {
+  position: relative; /*carousel inner, .products-block*/
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: block;
+}
 .votes-slider:not(.content) > *, .votes-slider.content > .products-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,17 +58,18 @@
           flex-direction: row;
   overflow-x: scroll;
   --gap: var(--gap-20);
-  gap: var(--gap);
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  margin-left: 0;
-  margin-right: 0;
-  /*.item, .product*/
 }
 @media screen and (max-width: 1024px) {
   .votes-slider:not(.content) > *, .votes-slider.content > .products-block {
     --gap: var(--gap-10);
   }
+}
+.votes-slider:not(.content) > *, .votes-slider.content > .products-block {
+  gap: var(--gap);
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-left: 0;
+  margin-right: 0;
 }
 .votes-slider:not(.content) > *.grabbing, .votes-slider:not(.content) > *.grabbing *, .votes-slider.content > .products-block.grabbing, .votes-slider.content > .products-block.grabbing * {
   cursor: -webkit-grabbing !important;
@@ -74,6 +77,9 @@
 }
 .votes-slider:not(.content) > *::-webkit-scrollbar, .votes-slider.content > .products-block::-webkit-scrollbar {
   display: none;
+}
+.votes-slider:not(.content) > *, .votes-slider.content > .products-block {
+  /*.item, .product*/
 }
 .votes-slider:not(.content) > * > *, .votes-slider.content > .products-block > * {
   width: calc(100% / var(--number-of-items) - var(--gap) * (var(--number-of-items) - 1) / var(--number-of-items) - var(--next-item-preview) / var(--number-of-items));

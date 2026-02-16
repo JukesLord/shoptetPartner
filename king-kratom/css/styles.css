@@ -1,0 +1,11 @@
+@media screen and (max-width: 768px) {
+  .admin-logged.in-index .products-block .slick-track {
+    width: auto !important;
+  }
+  .admin-logged.in-index .products-block .slick-track .product {
+    width: 100% !important;
+    min-width: 100%;
+    -ms-flex-preferred-size: 100% !important;
+        flex-basis: 100% !important;
+  }
+}
