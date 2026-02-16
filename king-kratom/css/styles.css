@@ -70,6 +70,9 @@
 .admin-logged {
   /*blog*/
 }
+.admin-logged .clanky-container {
+  padding: 20px 0;
+}
 .admin-logged .clanky-wrapper {
   /* max-width: 1640px; */
   width: 100%;
