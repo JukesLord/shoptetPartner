@@ -61,6 +61,113 @@
 			}
 		}
 	}
+
+	/*blog*/
+	.clanky-container {
+		max-width: 1640px;
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+		padding: 20px 15px 10px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		column-gap: 60px;
+		overflow: auto;
+		padding-bottom: 10px;
+
+		@media screen and (max-width: 1440px) {
+			column-gap: 40px;
+		}
+		@media screen and (max-width: 992px) {
+			column-gap: 20px;
+		}
+
+		.news-item-custom {
+			flex: 1;
+			display: flex;
+			a {
+				text-decoration: none;
+				&:hover {
+					.title {
+						text-decoration: underline;
+					}
+				}
+				.title {
+					margin-top: 0;
+					font-size: 1.8em;
+					margin-bottom: 0;
+					font-weight: 300;
+					color: #000;
+					min-height: inherit;
+					line-height: 1.4em;
+				}
+				.description {
+					line-height: 1.8em;
+					letter-spacing: 0.3px;
+					padding-right: 10px;
+					margin-top: 8px;
+				}
+				.read-article {
+					text-decoration: none;
+					color: #000;
+					font-size: 1.2em;
+					letter-spacing: 0.1px;
+					font-weight: 300;
+					margin-top: 15px;
+					transition: 0.3s;
+					height: auto;
+					min-height: inherit;
+					line-height: inherit;
+					padding: 10px 0;
+					display: inline-block;
+					width: -webkit-max-content;
+					width: -moz-max-content;
+					width: max-content;
+					position: relative;
+					&:after {
+						width: 50%;
+						height: 1px;
+						content: "";
+						background: #000;
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						transition: 0.3s;
+					}
+					&:hover {
+						color: var(--color-primary-hover);
+						border-bottom-color: var(--color-primary-hover);
+						&:after {
+							width: 100%;
+							background: var(--color-primary-hover);
+						}
+					}
+				}
+			}
+			img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				border-radius: 6px;
+				overflow: hidden;
+			}
+
+			@media screen and (max-width: 798px) {
+				min-width: 70vw;
+			}
+			@media screen and (max-width: 550px) {
+				min-width: 80vw;
+				.title {
+					font-size: 1.4em;
+				}
+				.description {
+					line-height: 1.6em;
+					font-size: 0.9em;
+				}
+			}
+		}
+	}
 }
 
 /* 
