@@ -66,6 +66,9 @@
 	}
 
 	/*blog*/
+	.homepage-blog-wrapper {
+		display: none;
+	}
 	.clanky-container {
 		padding: 20px 0;
 
@@ -76,11 +79,11 @@
 		}
 	}
 	.clanky-wrapper {
-		/* max-width: 1640px; */
+		max-width: 1640px;
 		width: 100%;
 		margin: 0 auto;
 		position: relative;
-		padding: 0px 0px 10px;
+		padding: 0px 15px 10px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;

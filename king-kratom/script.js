@@ -139,7 +139,7 @@ if ($("body").hasClass("admin-logged") && $("body").hasClass("in-index")) {
 								},
 							},
 							{
-								breakpoint: 480,
+								breakpoint: 520,
 								settings: {
 									slidesToShow: 1,
 									slidesToScroll: 1,

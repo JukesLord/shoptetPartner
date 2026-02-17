@@ -70,6 +70,9 @@
 .admin-logged {
   /*blog*/
 }
+.admin-logged .homepage-blog-wrapper {
+  display: none;
+}
 .admin-logged .clanky-container {
   padding: 20px 0;
 }
@@ -77,11 +80,11 @@
   display: none !important;
 }
 .admin-logged .clanky-wrapper {
-  /* max-width: 1640px; */
+  max-width: 1640px;
   width: 100%;
   margin: 0 auto;
   position: relative;
-  padding: 0px 0px 10px;
+  padding: 0px 15px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
