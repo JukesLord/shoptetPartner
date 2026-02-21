@@ -49,13 +49,13 @@ if (document.body.classList.contains("admin-logged")) {
 				let footer = document.querySelector("#footer");
 				if (footer) {
 					//insert it before footer
-					footer.parentNode.insertBefore(clankyContainer, footer);
+					/* 	footer.parentNode.insertBefore(clankyContainer, footer); */
 
 					//prepend it to footer rows
-					/* 	let footerRows = footer.querySelector(".footer-rows");
+					let footerRows = footer.querySelector(".footer-rows");
 					if (footerRows) {
 						footerRows.prepend(clankyContainer);
-					} */
+					}
 				}
 				for (let url of clankyUrls) {
 					try {
@@ -106,6 +106,17 @@ if (document.body.classList.contains("admin-logged")) {
 					}
 				}
 			}
+		}
+	}
+
+	if (document.body.classList.contains("in-blog") && document.body.classList.contains("type-post")) {
+		let textElement = document.querySelector("#content  .text");
+		if (textElement) {
+			const customBuyButton = document.createElement("a");
+			customBuyButton.href = "https://www.king-kratom.cz/kratom/";
+			customBuyButton.classList.add("custom-buy-button", "btn");
+			customBuyButton.textContent = "Nakoupit";
+			textElement.appendChild(customBuyButton);
 		}
 	}
 }
