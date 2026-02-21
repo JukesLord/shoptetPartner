@@ -1,0 +1,134 @@
+.admin-logged {
+	--color-primary: #0f3b2e;
+	--color-primary-hover: #82ad44;
+	--color-secondary: #82ad44;
+	--color-secondary-hover: #0f3b2e;
+	--color-tertiary: #82ad44;
+	--color-tertiary-hover: #0f3b2e;
+
+	#header .search-form button {
+		border-style: none;
+	}
+
+	&.in-index {
+		h2,
+		h3,
+		h4,
+		.h2,
+		.h3,
+		.h4 {
+			text-align: left;
+		}
+		#hodnoceniobchodu {
+			h2 {
+				text-align: left;
+			}
+			.rate-average-inner {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	.welcome-wrapper {
+		.welcome {
+			div,
+			h1 {
+				max-width: none;
+				width: 100%;
+			}
+		}
+	}
+
+	#footer {
+		background: var(--color-primary);
+		color: white;
+		* {
+			color: inherit;
+		}
+		a {
+			color: white;
+			transition: none;
+			&:hover,
+			&:focus {
+				color: var(--color-secondary);
+			}
+		}
+		.container {
+			background: transparent;
+		}
+		.custom-footer {
+			background-color: transparent;
+			border-style: none;
+		}
+	}
+
+	.flags-extra {
+		bottom: auto;
+		top: 0;
+		.flag-discount {
+			border-radius: 0;
+			height: auto;
+			margin-left: 0;
+			width: auto;
+			background-color: var(--color-primary);
+		}
+	}
+	.product-top .p-image-wrapper {
+		.flags-extra {
+			left: 0;
+			right: auto;
+			.flag {
+				min-width: auto;
+				min-height: auto;
+				padding: 1em 1.5em;
+			}
+		}
+	}
+
+	.description-inner {
+		flex-direction: column;
+		.extended-description {
+			padding: 20px 20px;
+			background: var(--colors-surface-secondary);
+			width: 100%;
+
+			h3,
+			.detail-parameters {
+				max-width: 360px;
+				margin: auto;
+			}
+			h3 {
+				text-align: center;
+				padding-bottom: 1em;
+			}
+			.detail-parameters {
+				background: white;
+				width: 100%;
+				padding: 15px 25px;
+				border-collapse: separate;
+				tr {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					gap: 10px;
+
+					align-items: center;
+					padding: 10px 0;
+					border-bottom-style: solid;
+					border-bottom-width: 1px;
+					border-bottom-color: var(--colors-foregrounds-borders-secondary);
+					&:first-child {
+						padding-top: 0;
+					}
+					&:last-child {
+						border-bottom-style: none;
+						padding-bottom: 0;
+					}
+					th,
+					td {
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+}
