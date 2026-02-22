@@ -382,6 +382,7 @@ body:not(.admin-logged) #carousel .carousel-control {
   color: black;
   text-wrap: pretty;
   width: calc(100% / var(--number-of-items) - var(--gap) * (var(--number-of-items) - 1) / var(--number-of-items) - var(--next-item-preview) / var(--number-of-items));
+  border-top-style: none;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   scroll-snap-align: start;
@@ -470,12 +471,26 @@ body:not(.admin-logged) #carousel .carousel-control {
   -webkit-transform: scale(1.025);
           transform: scale(1.025);
 }
-.admin-logged .products-slider .carousel-control.left {
+.admin-logged .slider-custom-wrapper .carousel-control {
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+}
+.admin-logged .slider-custom-wrapper .carousel-control::before {
+  inset: 0;
+  margin: 0;
+  border-radius: 0;
+  background: var(--color-secondary);
+}
+.admin-logged .slider-custom-wrapper .carousel-control:hover::before, .admin-logged .slider-custom-wrapper .carousel-control:focus::before {
+  background: var(--color-secondary-hover);
+}
+.admin-logged .slider-custom-wrapper .carousel-control.left {
   left: -15px;
 }
-.admin-logged .products-slider .carousel-control.right {
+.admin-logged .slider-custom-wrapper .carousel-control.right {
   right: -15px;
 }
-.admin-logged .products-slider .carousel-control.hidden-control {
+.admin-logged .slider-custom-wrapper .carousel-control.hidden-control {
   display: none !important;
 }
