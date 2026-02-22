@@ -139,6 +139,9 @@ body:not(.admin-logged) #carousel .carousel-control {
 .admin-logged #carousel .carousel-inner {
   min-height: auto !important;
 }
+.admin-logged #carousel .carousel-inner .item {
+  display: block;
+}
 .admin-logged #carousel .carousel-inner .item:first-child {
   display: none;
 }

@@ -155,6 +155,9 @@ body:not(.admin-logged) {
 	#carousel {
 		.carousel-inner {
 			min-height: auto !important;
+			.item {
+				display: block;
+			}
 			.item:first-child {
 				display: none;
 			}
