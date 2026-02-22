@@ -333,17 +333,8 @@ body:not(.admin-logged) #carousel .carousel-control {
   -webkit-transform: scale(1.025);
           transform: scale(1.025);
 }
-.admin-logged #carousel .carousel-control.left {
-  left: -15px;
-}
-.admin-logged #carousel .carousel-control.right {
-  right: -15px;
-}
-.admin-logged #carousel .carousel-control.hidden-control {
-  display: none !important;
-}
 @media screen and (max-width: 768px) {
-  .admin-logged .before-carousel .row {
+  .admin-logged .row.banners-row {
     margin-left: -5px;
     margin-right: -5px;
   }

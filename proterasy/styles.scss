@@ -335,23 +335,12 @@ body:not(.admin-logged) {
 				}
 			}
 		}
-		.carousel-control.left {
-			left: -15px;
-		}
-		.carousel-control.right {
-			right: -15px;
-		}
-		.carousel-control.hidden-control {
-			display: none !important;
-		}
 	}
 
 	@media screen and (max-width: 768px) {
-		.before-carousel {
-			.row {
-				margin-left: -5px;
-				margin-right: -5px;
-			}
+		.row.banners-row {
+			margin-left: -5px;
+			margin-right: -5px;
 		}
 	}
 
