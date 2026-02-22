@@ -9,6 +9,18 @@
 .admin-logged #header .search-form button {
   border-style: none;
 }
+.admin-logged #header .navigation-in {
+  font-size: 16px;
+  line-height: 1;
+}
+@media (min-width: 768px) {
+  .admin-logged #header #navigation {
+    height: 36px;
+  }
+  .admin-logged #header .navigation-in {
+    height: 100%;
+  }
+}
 .admin-logged.in-index h2,
 .admin-logged.in-index h3,
 .admin-logged.in-index h4,

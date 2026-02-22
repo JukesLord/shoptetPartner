@@ -6,8 +6,22 @@
 	--color-tertiary: #82ad44;
 	--color-tertiary-hover: #0f3b2e;
 
-	#header .search-form button {
-		border-style: none;
+	#header {
+		.search-form button {
+			border-style: none;
+		}
+		.navigation-in {
+			font-size: 16px;
+			line-height: 1;
+		}
+		@media (min-width: 768px) {
+			#navigation {
+				height: 36px;
+			}
+			.navigation-in {
+				height: 100%;
+			}
+		}
 	}
 
 	&.in-index {
