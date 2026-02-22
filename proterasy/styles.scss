@@ -469,15 +469,20 @@ body:not(.admin-logged) {
 			width: 44px;
 			height: 44px;
 			opacity: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			@media screen and (max-width: 768px) {
 				width: 32px;
 				height: 32px;
 			}
 			&::before {
+				position: relative;
 				width: 100%;
 				height: 100%;
-				inset: 0;
+				inset: 0 !important;
 				margin: 0;
+				line-height: 1;
 				border-radius: 0;
 				background: var(--color-secondary);
 			}
