@@ -20,6 +20,15 @@
   .admin-logged #header .navigation-in {
     height: 100%;
   }
+  .admin-logged #header .navigation-in .menu-level-1 {
+    height: 100%;
+  }
+  .admin-logged #header .navigation-in .menu-level-1 > li {
+    height: 100%;
+  }
+  .admin-logged #header .navigation-in .menu-level-1 > li > a {
+    height: 100%;
+  }
 }
 .admin-logged.in-index h2,
 .admin-logged.in-index h3,
