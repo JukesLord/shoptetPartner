@@ -24,7 +24,7 @@ if (document.body.classList.contains("admin-logged")) {
 		let productsBlocks = document.querySelectorAll(".products-block");
 		productsBlocks.forEach((block) => {
 			let products = block.querySelectorAll(".product");
-			inicializeSliderElement(null, productsWrapper, products, "products-slider", ".image");
+			inicializeSliderElement(null, block, products, "products-slider", ".image");
 		});
 	}
 	function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, customClass, itemForHeightForControls) {
