@@ -20,6 +20,12 @@ if (document.body.classList.contains("admin-logged")) {
 		let carouselInner = document.querySelector(".carousel-inner");
 		let carouselItems = document.querySelectorAll("#carousel .item");
 		inicializeSliderElement(carousel, carouselInner, carouselItems, "carousel-slider", "a");
+
+		let productsBlocks = document.querySelectorAll(".products-block");
+		productsBlocks.forEach((block) => {
+			let products = block.querySelectorAll(".product");
+			inicializeSliderElement(null, productsWrapper, products, "products-slider", ".image");
+		});
 	}
 	function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, customClass, itemForHeightForControls) {
 		if (!sliderParent || !sliderItem || sliderItem.length === 0) {

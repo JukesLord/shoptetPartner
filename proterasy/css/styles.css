@@ -25,8 +25,12 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-.admin-logged .welcome-wrapper .welcome div,
-.admin-logged .welcome-wrapper .welcome h1 {
+.admin-logged .homepage-box.welcome-wrapper {
+  padding-left: 0;
+  padding-right: 0;
+}
+.admin-logged .homepage-box.welcome-wrapper .welcome div,
+.admin-logged .homepage-box.welcome-wrapper .welcome h1 {
   max-width: none;
   width: 100%;
 }
