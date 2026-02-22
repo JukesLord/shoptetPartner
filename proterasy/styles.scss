@@ -137,14 +137,27 @@
 }
 
 /*carousel*/
-#carousel {
-	.carousel-inner {
-		min-height: auto !important;
-		.item:not(:first-child) {
+body:not(.admin-logged) {
+	#carousel {
+		.carousel-inner {
+			min-height: auto !important;
+			.item:not(:first-child) {
+				display: none;
+			}
+		}
+		.carousel-control {
 			display: none;
 		}
 	}
-	.carousel-control {
-		display: none;
+}
+
+.admin-logged {
+	#carousel {
+		.carousel-inner {
+			min-height: auto !important;
+			.item:first-child {
+				display: none;
+			}
+		}
 	}
 }

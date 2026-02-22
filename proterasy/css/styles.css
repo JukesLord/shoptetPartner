@@ -126,12 +126,19 @@
 }
 
 /*carousel*/
-#carousel .carousel-inner {
+body:not(.admin-logged) #carousel .carousel-inner {
   min-height: auto !important;
 }
-#carousel .carousel-inner .item:not(:first-child) {
+body:not(.admin-logged) #carousel .carousel-inner .item:not(:first-child) {
   display: none;
 }
-#carousel .carousel-control {
+body:not(.admin-logged) #carousel .carousel-control {
+  display: none;
+}
+
+.admin-logged #carousel .carousel-inner {
+  min-height: auto !important;
+}
+.admin-logged #carousel .carousel-inner .item:first-child {
   display: none;
 }
