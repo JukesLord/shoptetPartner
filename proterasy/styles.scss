@@ -142,7 +142,7 @@ body:not(.admin-logged) {
 		.carousel-inner {
 			min-height: auto !important;
 			.item:not(:first-child) {
-				display: none;
+				display: none !important;
 			}
 		}
 		.carousel-control {
@@ -216,7 +216,7 @@ body:not(.admin-logged) {
 					color: inherit;
 					text-decoration: none;
 					display: block;
-					border-radius: 20px;
+
 					overflow: hidden;
 				}
 				.extended-banner-texts {
@@ -261,7 +261,7 @@ body:not(.admin-logged) {
 					color: white;
 					font-weight: 700;
 					line-height: 1;
-					border-radius: 12px;
+
 					background-color: var(--color-primary);
 					padding: 0.75em 1.5em !important;
 					z-index: 1;

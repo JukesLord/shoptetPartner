@@ -43,6 +43,7 @@ if (document.body.classList.contains("admin-logged")) {
 			let initialControls = sliderWrapper.querySelectorAll(".carousel-control");
 			if (initialControls && initialControls.length > 0) {
 				initialControls.forEach((control) => control.remove());
+				console.log("Existing controls removed before creating new ones.");
 			}
 
 			const leftControl = document.createElement("div");
