@@ -40,12 +40,13 @@ if (document.body.classList.contains("admin-logged")) {
 		enableDragging();
 
 		function createControls() {
+			console.log("Creating controls for slider:", sliderWrapper);
 			let initialControls = sliderWrapper.querySelectorAll(".carousel-control");
 			if (initialControls && initialControls.length > 0) {
 				initialControls.forEach((control) => control.remove());
 				console.log("Existing controls removed before creating new ones.");
 			}
-
+			console.log("Za ifem");
 			const leftControl = document.createElement("div");
 			leftControl.classList.add("carousel-control", "left", "hidden-control");
 			leftControl.setAttribute("role", "button");
