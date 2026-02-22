@@ -15,7 +15,7 @@ if (document.body.classList.contains("admin-logged")) {
 		blogHeader.appendChild(link);
 	}
 
-	if (!document.body.classList.contains("in-index")) {
+	if (document.body.classList.contains("in-index")) {
 		let carousel = document.querySelector("#carousel");
 		let carouselInner = document.querySelector(".carousel-inner");
 		let carouselItems = document.querySelectorAll("#carousel .item");
