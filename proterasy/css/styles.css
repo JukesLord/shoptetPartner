@@ -52,6 +52,9 @@
   background-color: transparent;
   border-style: none;
 }
+.admin-logged #footer .fb-page {
+  display: block;
+}
 .admin-logged .flags-extra {
   bottom: auto;
   top: 0;
