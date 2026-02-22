@@ -135,3 +135,16 @@
 		}
 	}
 }
+
+/*carousel*/
+#carousel {
+	.carousel-inner {
+		min-height: auto !important;
+		.item:not(:first-child) {
+			display: none;
+		}
+	}
+	.carousel-control {
+		display: none;
+	}
+}

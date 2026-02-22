@@ -124,3 +124,14 @@
 .admin-logged .description-inner .extended-description .detail-parameters tr td {
   padding: 0;
 }
+
+/*carousel*/
+#carousel .carousel-inner {
+  min-height: auto !important;
+}
+#carousel .carousel-inner .item:not(:first-child) {
+  display: none;
+}
+#carousel .carousel-control {
+  display: none;
+}
