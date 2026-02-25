@@ -29,67 +29,67 @@ const clanek3 = "https://www.king-kratom.cz/blog/kratom-a-antibiotika/";
 */
 
 // if body has class admin-logged and in-index
-if (document.body.classList.contains("admin-logged")) {
-	if (document.body.classList.contains("in-index")) {
-		renderClanky();
-		async function renderClanky() {
-			if (clanek1 && clanek2 && clanek3) {
-				let clankyUrls = [clanek1, clanek2, clanek3];
-				const clankyContainer = document.createElement("div");
-				clankyContainer.classList.add("clanky-container");
+/* if (document.body.classList.contains("admin-logged")) { */
+if (document.body.classList.contains("in-index")) {
+	renderClanky();
+	async function renderClanky() {
+		if (clanek1 && clanek2 && clanek3) {
+			let clankyUrls = [clanek1, clanek2, clanek3];
+			const clankyContainer = document.createElement("div");
+			clankyContainer.classList.add("clanky-container");
 
-				const clankyTitle = document.createElement("div");
-				clankyTitle.classList.add("homepage-group-title", "h4");
-				clankyTitle.textContent = "Nové články";
-				clankyContainer.appendChild(clankyTitle);
+			const clankyTitle = document.createElement("div");
+			clankyTitle.classList.add("homepage-group-title", "h4");
+			clankyTitle.textContent = "Nové články";
+			clankyContainer.appendChild(clankyTitle);
 
-				let clankyWrapper = document.createElement("div");
-				clankyWrapper.classList.add("clanky-wrapper");
-				clankyContainer.appendChild(clankyWrapper);
-				let footer = document.querySelector("#footer");
-				if (footer) {
-					//insert it before footer
-					/* 	footer.parentNode.insertBefore(clankyContainer, footer); */
+			let clankyWrapper = document.createElement("div");
+			clankyWrapper.classList.add("clanky-wrapper");
+			clankyContainer.appendChild(clankyWrapper);
+			let footer = document.querySelector("#footer");
+			if (footer) {
+				//insert it before footer
+				/* 	footer.parentNode.insertBefore(clankyContainer, footer); */
 
-					//prepend it to footer rows
-					let footerRows = footer.querySelector(".footer-rows");
-					if (footerRows) {
-						footerRows.prepend(clankyContainer);
-					}
+				//prepend it to footer rows
+				let footerRows = footer.querySelector(".footer-rows");
+				if (footerRows) {
+					footerRows.prepend(clankyContainer);
 				}
-				for (let url of clankyUrls) {
-					try {
-						const response = await fetch(url);
-						if (!response.ok) {
-							throw new Error(`Couldnt fetch ${url}: ${response.statusText}`);
-						}
-						const html = await response.text();
-						const parser = new DOMParser();
-						const doc = parser.parseFromString(html, "text/html");
+			}
+			for (let url of clankyUrls) {
+				try {
+					const response = await fetch(url);
+					if (!response.ok) {
+						throw new Error(`Couldnt fetch ${url}: ${response.statusText}`);
+					}
+					const html = await response.text();
+					const parser = new DOMParser();
+					const doc = parser.parseFromString(html, "text/html");
 
-						const getMeta = (attr, value) => {
-							const el = doc.querySelector(`meta[${attr}="${value}"]`);
-							return el ? el.getAttribute("content") : "";
-						};
+					const getMeta = (attr, value) => {
+						const el = doc.querySelector(`meta[${attr}="${value}"]`);
+						return el ? el.getAttribute("content") : "";
+					};
 
-						const ogUrl = getMeta("property", "og:url");
-						const ogTitle = getMeta("property", "og:title");
-						const ogImage = getMeta("property", "og:image");
-						const ogDescription = getMeta("property", "og:description");
+					const ogUrl = getMeta("property", "og:url");
+					const ogTitle = getMeta("property", "og:title");
+					const ogImage = getMeta("property", "og:image");
+					const ogDescription = getMeta("property", "og:description");
 
-						// Extract relative path from og:url
-						const urlObj = new URL(ogUrl);
-						const relativePath = urlObj.pathname;
+					// Extract relative path from og:url
+					const urlObj = new URL(ogUrl);
+					const relativePath = urlObj.pathname;
 
-						// Convert image URL to CDN format
-						const imgUrl = ogImage.replace(
-							"https://www.king-kratom.cz/",
-							"https://cdn.myshoptet.com/usr/www.king-kratom.cz/",
-						);
+					// Convert image URL to CDN format
+					const imgUrl = ogImage.replace(
+						"https://www.king-kratom.cz/",
+						"https://cdn.myshoptet.com/usr/www.king-kratom.cz/",
+					);
 
-						const newsItem = document.createElement("div");
-						newsItem.classList.add("news-item-custom");
-						newsItem.innerHTML = `
+					const newsItem = document.createElement("div");
+					newsItem.classList.add("news-item-custom");
+					newsItem.innerHTML = `
 							<a href="${relativePath}" title="${ogTitle}">
 								<div class="image">
 									<img src="${imgUrl}" alt="${ogTitle}" width="1536" height="1024" data-src="${imgUrl}" fetchpriority="low" loading="lazy">
@@ -100,29 +100,30 @@ if (document.body.classList.contains("admin-logged")) {
 									<span class="read-article">Číst článek</span>
 								</div>
 							</a>`;
-						clankyWrapper.appendChild(newsItem);
-					} catch (error) {
-						console.error(`Error fetching ${url}:`, error);
-					}
+					clankyWrapper.appendChild(newsItem);
+				} catch (error) {
+					console.error(`Error fetching ${url}:`, error);
 				}
 			}
 		}
 	}
-
-	if (document.body.classList.contains("in-blog") && document.body.classList.contains("type-post")) {
-		let textElement = document.querySelector("#content  .text");
-		if (textElement) {
-			const customBuyButton = document.createElement("a");
-			customBuyButton.href = "https://www.king-kratom.cz/kratom/";
-			customBuyButton.classList.add("custom-buy-button", "btn");
-			customBuyButton.textContent = "Nakoupit";
-			textElement.appendChild(customBuyButton);
-		}
-	}
 }
 
+if (document.body.classList.contains("in-blog") && document.body.classList.contains("type-post")) {
+	let textElement = document.querySelector("#content  .text");
+	if (textElement) {
+		const customBuyButton = document.createElement("a");
+		customBuyButton.href = "https://www.king-kratom.cz/kratom/";
+		customBuyButton.classList.add("custom-buy-button", "btn");
+		customBuyButton.textContent = "Nakoupit";
+		textElement.appendChild(customBuyButton);
+	}
+}
+/* } */
+
 /*custom slick products*/
-if ($("body").hasClass("admin-logged") && $("body").hasClass("in-index")) {
+/* $("body").hasClass("admin-logged") &&  */
+if ($("body").hasClass("in-index")) {
 	$(".products-block.products").slick("unslick");
 	if (
 		"undefined" != typeof shoptetakTemplateSettings &&
