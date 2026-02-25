@@ -160,16 +160,19 @@
 
 /* } */
 /*carousel*/
-body:not(.admin-logged) #carousel .carousel-inner {
-  min-height: auto !important;
-}
-body:not(.admin-logged) #carousel .carousel-inner .item:not(:first-child) {
-  display: none !important;
-}
-body:not(.admin-logged) #carousel .carousel-control {
-  display: none;
-}
-
+/* body:not(.admin-logged) {
+	#carousel {
+		.carousel-inner {
+			min-height: auto !important;
+			.item:not(:first-child) {
+				display: none !important;
+			}
+		}
+		.carousel-control {
+			display: none;
+		}
+	}
+} */
 /* .admin-logged { */
 #carousel .carousel-inner {
   min-height: auto !important;
@@ -177,8 +180,10 @@ body:not(.admin-logged) #carousel .carousel-control {
 #carousel .carousel-inner .item {
   display: block;
 }
-#carousel .carousel-inner .item:first-child {
-  display: none;
+#carousel .carousel-inner {
+  /* .item:first-child {
+  	display: none;
+  } */
 }
 
 /* } */

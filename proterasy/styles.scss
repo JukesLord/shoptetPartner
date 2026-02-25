@@ -167,7 +167,7 @@
 /* } */
 
 /*carousel*/
-body:not(.admin-logged) {
+/* body:not(.admin-logged) {
 	#carousel {
 		.carousel-inner {
 			min-height: auto !important;
@@ -179,7 +179,7 @@ body:not(.admin-logged) {
 			display: none;
 		}
 	}
-}
+} */
 
 /* .admin-logged { */
 #carousel {
@@ -188,9 +188,9 @@ body:not(.admin-logged) {
 		.item {
 			display: block;
 		}
-		.item:first-child {
+		/* .item:first-child {
 			display: none;
-		}
+		} */
 	}
 }
 /* } */
