@@ -206,7 +206,7 @@
   }
 }
 .admin-logged .btn.custom-buy-button {
-  background-color: #0f7d18;
+  background-color: var(--color-primary);
   color: white;
   font-size: 20px;
   padding: 10px 20px;
@@ -219,7 +219,7 @@
   text-align: center;
 }
 .admin-logged .btn.custom-buy-button:hover, .admin-logged .btn.custom-buy-button:focus {
-  background-color: #14c23a;
+  background-color: var(--color-primary-hover);
   color: white;
 }
 @media screen and (max-width: 519px) {
