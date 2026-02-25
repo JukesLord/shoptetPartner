@@ -61,18 +61,18 @@
 
 #footer {
   background: var(--color-primary);
-  color: white;
+  color: white !important;
 }
 #footer * {
   color: inherit;
 }
 #footer a {
-  color: white;
+  color: white !important;
   -webkit-transition: none;
   transition: none;
 }
 #footer a:hover, #footer a:focus {
-  color: var(--color-secondary);
+  color: var(--color-secondary) !important;
 }
 #footer .container {
   background: transparent;

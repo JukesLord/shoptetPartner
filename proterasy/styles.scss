@@ -70,16 +70,16 @@
 
 #footer {
 	background: var(--color-primary);
-	color: white;
+	color: white !important;
 	* {
 		color: inherit;
 	}
 	a {
-		color: white;
+		color: white !important;
 		transition: none;
 		&:hover,
 		&:focus {
-			color: var(--color-secondary);
+			color: var(--color-secondary) !important;
 		}
 	}
 	.container {
