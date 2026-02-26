@@ -95,7 +95,7 @@
   overflow: hidden;
   text-transform: uppercase;
   background: transparent;
-  border-style: none;
+  border-color: transparent;
 }
 .p-tools .btn-primary:before {
   content: "";
