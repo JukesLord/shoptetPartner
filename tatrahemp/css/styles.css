@@ -89,7 +89,10 @@
   }
 }
 /*Holografické tlačítko*/
-.p-tools .btn-primary {
+.id-927 .p-tools .btn-primary,
+.id-927 .add-to-cart-button,
+.id-924 .p-tools .btn-primary,
+.id-924 .add-to-cart-button {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   overflow: hidden;
@@ -97,7 +100,10 @@
   position: relative;
   background: transparent !important;
 }
-.p-tools .btn-primary:before {
+.id-927 .p-tools .btn-primary:after,
+.id-927 .add-to-cart-button:after,
+.id-924 .p-tools .btn-primary:after,
+.id-924 .add-to-cart-button:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -116,7 +122,13 @@
           box-shadow: none;
   z-index: -1;
 }
-.p-tools .btn-primary:hover:before, .p-tools .btn-primary:focus:before {
+.id-927 .p-tools .btn-primary:hover:after, .id-927 .p-tools .btn-primary:focus:after,
+.id-927 .add-to-cart-button:hover:after,
+.id-927 .add-to-cart-button:focus:after,
+.id-924 .p-tools .btn-primary:hover:after,
+.id-924 .p-tools .btn-primary:focus:after,
+.id-924 .add-to-cart-button:hover:after,
+.id-924 .add-to-cart-button:focus:after {
   -webkit-transform: translate(-50%, -50%) rotate(-30deg);
           transform: translate(-50%, -50%) rotate(-30deg);
 }

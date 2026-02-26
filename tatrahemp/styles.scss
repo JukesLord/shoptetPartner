@@ -77,14 +77,16 @@
 }
 
 /*Holografické tlačítko*/
-.p-tools {
-	.btn-primary {
+.id-927,
+.id-924 {
+	.p-tools .btn-primary,
+	.add-to-cart-button {
 		transition: 0.3s;
 		overflow: hidden;
 		border-color: transparent !important;
 		position: relative;
 		background: transparent !important;
-		&:before {
+		&:after {
 			content: "";
 			position: absolute;
 			width: 100%;
@@ -102,7 +104,7 @@
 		}
 		&:hover,
 		&:focus {
-			&:before {
+			&:after {
 				transform: translate(-50%, -50%) rotate(-30deg);
 			}
 		}
