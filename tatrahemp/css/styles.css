@@ -6,12 +6,18 @@
 .type-product .social-buttons-wrapper > * {
   display: none;
 }
-.type-product .social-buttons-wrapper > .watchdog-active {
+.type-product .social-buttons-wrapper > .link-icons.watchdog-active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.type-product .social-buttons-wrapper > .watchdog-active a::before {
+.type-product .social-buttons-wrapper > .link-icons.watchdog-active a {
+  display: none;
+}
+.type-product .social-buttons-wrapper > .link-icons.watchdog-active a.watchdog {
+  display: block;
+}
+.type-product .social-buttons-wrapper > .link-icons.watchdog-active a.watchdog::before {
   content: "";
   background: url(https://732922.myshoptet.com/user/documents/upload/assets/icon_watchdog.svg);
   background-position: center;
