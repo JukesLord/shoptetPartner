@@ -27,3 +27,7 @@
   height: 1em;
   height: 1lh;
 }
+
+.content-modal {
+  background-color: var(--base);
+}
