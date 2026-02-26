@@ -19,6 +19,7 @@ document.querySelectorAll(".lazy-video-wrapper").forEach((wrapper) => {
 					"canplay",
 					() => {
 						wrapper.classList.add("loaded");
+						video.play();
 					},
 					{ once: true },
 				);
