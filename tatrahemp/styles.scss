@@ -81,10 +81,9 @@
 	.btn-primary {
 		transition: 0.3s;
 		overflow: hidden;
-		text-transform: uppercase;
-		background: transparent;
-
-		border-color: transparent;
+		border-color: transparent !important;
+		position: relative;
+		background: transparent !important;
 		&:before {
 			content: "";
 			position: absolute;
@@ -104,8 +103,7 @@
 		&:hover,
 		&:focus {
 			&:before {
-				transform: translate(-50%, -50%) rotate(-20deg);
-				transition: 0.3s;
+				transform: translate(-50%, -50%) rotate(-30deg);
 			}
 		}
 	}

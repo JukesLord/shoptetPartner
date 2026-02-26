@@ -93,9 +93,9 @@
   -webkit-transition: 0.3s;
   transition: 0.3s;
   overflow: hidden;
-  text-transform: uppercase;
-  background: transparent;
-  border-color: transparent;
+  border-color: transparent !important;
+  position: relative;
+  background: transparent !important;
 }
 .p-tools .btn-primary:before {
   content: "";
@@ -117,8 +117,6 @@
   z-index: -1;
 }
 .p-tools .btn-primary:hover:before, .p-tools .btn-primary:focus:before {
-  -webkit-transform: translate(-50%, -50%) rotate(-20deg);
-          transform: translate(-50%, -50%) rotate(-20deg);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transform: translate(-50%, -50%) rotate(-30deg);
+          transform: translate(-50%, -50%) rotate(-30deg);
 }
