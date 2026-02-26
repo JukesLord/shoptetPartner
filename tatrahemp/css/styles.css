@@ -33,6 +33,14 @@
 }
 
 /* Lazy video */
+#carousel .item {
+  height: 100%;
+}
+#carousel .item > span {
+  display: block;
+  height: 100%;
+}
+
 .lazy-video-wrapper {
   position: relative;
   overflow: hidden;
