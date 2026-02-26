@@ -33,10 +33,10 @@
 /* Lazy video */
 #carousel {
 	.item {
-		height: 100%;
+		min-height: inherit;
 		> span {
 			display: block;
-			height: 100%;
+			min-height: inherit;
 		}
 	}
 }
@@ -46,7 +46,7 @@
 	background: linear-gradient(90deg, var(--base) 25%, var(--secondary) 50%, var(--base) 75%);
 	background-size: 200% 100%;
 	animation: shimmer 1.4s infinite;
-	height: 100%;
+	min-height: inherit;
 
 	&.loaded {
 		background: none;
