@@ -17,8 +17,8 @@
 						background-repeat: no-repeat;
 						background-size: contain;
 						width: 100%;
-						height: 1em;
-						height: 1lh;
+						height: 1.3em;
+						height: 1.3lh;
 					}
 				}
 			}
@@ -28,4 +28,40 @@
 
 .content-modal {
 	background-color: var(--base);
+}
+
+/* Lazy video */
+.lazy-video-wrapper {
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+	background-size: 200% 100%;
+	animation: shimmer 1.4s infinite;
+
+	&.loaded {
+		background: none;
+		animation: none;
+
+		video {
+			opacity: 1;
+		}
+	}
+
+	video {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0;
+		transition: opacity 0.4s ease;
+	}
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: -200% 0;
+	}
 }
