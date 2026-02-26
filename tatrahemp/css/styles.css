@@ -41,6 +41,7 @@
   background-size: 200% 100%;
   -webkit-animation: shimmer 1.4s infinite;
           animation: shimmer 1.4s infinite;
+  height: 100%;
 }
 .lazy-video-wrapper.loaded {
   background: none;
