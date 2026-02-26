@@ -9,7 +9,7 @@ document.querySelectorAll(".lazy-video-wrapper").forEach((wrapper) => {
 				if (!entry.isIntersecting) return;
 				obs.unobserve(wrapper);
 
-				const src = video.dataset.src;
+				const src = (video.dataset.src || "").replace(/<!--[\s\S]*?-->/g, "").trim();
 				if (src) {
 					video.src = src;
 					video.load();
