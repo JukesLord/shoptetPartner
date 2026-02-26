@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .type-product .social-buttons-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,4 +87,38 @@
   100% {
     background-position: -200% 0;
   }
+}
+/*Holografické tlačítko*/
+.p-tools .btn-primary {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  overflow: hidden;
+  text-transform: uppercase;
+  background: transparent;
+  border-style: none;
+}
+.p-tools .btn-primary:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-top: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-image: url(https://732922.myshoptet.com/user/documents/upload/assets/holograficky_gradient.png);
+  background-position: center;
+  background-size: 100% 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  z-index: -1;
+}
+.p-tools .btn-primary:hover:before, .p-tools .btn-primary:focus:before {
+  -webkit-transform: translate(-50%, -50%) rotate(-20deg);
+          transform: translate(-50%, -50%) rotate(-20deg);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
