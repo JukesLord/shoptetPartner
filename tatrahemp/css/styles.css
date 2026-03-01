@@ -133,14 +133,21 @@
           transform: translate(-50%, -50%) rotate(-30deg);
 }
 
-/* Variant grid */
-.variant-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
+/* Variant flex */
+.variant-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: var(--m1);
 }
 
 .variant-btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(33.333% - var(--m1));
+          flex: 1 1 calc(33.333% - var(--m1));
+  min-width: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
