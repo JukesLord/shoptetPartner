@@ -37,7 +37,7 @@ if (variantSelect) {
 	const options = [...variantSelect.options];
 
 	const grid = document.createElement("div");
-	grid.className = "variant-grid";
+	grid.className = "variant-flex";
 
 	options.forEach((opt) => {
 		if (opt.index === 0) return; // skip placeholder
