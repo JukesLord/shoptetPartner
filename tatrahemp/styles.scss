@@ -111,16 +111,22 @@
 	}
 }
 
-/* Variant flex */
-.variant-flex {
-	display: flex;
-	flex-wrap: wrap;
+/* Variant grid */
+.detail-parameters .variant-list {
+	@media screen and (max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+		gap: var(--m1);
+	}
+}
+
+.variant-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(100px, 1fr));
 	gap: var(--m1);
 }
 
 .variant-btn {
-	flex: 1 1 calc(33.333% - var(--m1));
-	min-width: 100px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

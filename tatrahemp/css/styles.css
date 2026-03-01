@@ -133,21 +133,27 @@
           transform: translate(-50%, -50%) rotate(-30deg);
 }
 
-/* Variant flex */
-.variant-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+/* Variant grid */
+@media screen and (max-width: 500px) {
+  .detail-parameters .variant-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: var(--m1);
+  }
+}
+
+.variant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: var(--m1);
 }
 
 .variant-btn {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 calc(33.333% - var(--m1));
-          flex: 1 1 calc(33.333% - var(--m1));
-  min-width: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
