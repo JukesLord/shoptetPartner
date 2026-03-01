@@ -132,3 +132,55 @@
   -webkit-transform: translate(-50%, -50%) rotate(-30deg);
           transform: translate(-50%, -50%) rotate(-30deg);
 }
+
+/* Variant grid */
+.variant-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--m1);
+}
+
+.variant-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2px;
+  padding: var(--m1);
+  border: 1px solid var(--border);
+  border-radius: var(--m1);
+  background-color: var(--subtle);
+  cursor: pointer;
+  color: white;
+  -webkit-transition: background 0.15s;
+  transition: background 0.15s;
+}
+.variant-btn:hover:not(.is-unavailable) {
+  border-color: var(--hover);
+}
+.variant-btn.is-active {
+  border-color: var(--accent);
+  background: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2);
+  color: white;
+}
+.variant-btn.is-unavailable {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+.variant-btn__size {
+  font-weight: 700;
+  font-size: 0.9em;
+}
+.variant-btn__price {
+  font-size: 0.8em;
+}
