@@ -264,24 +264,34 @@
 }
  */
 @media screen and (max-width: 768px) {
-  .type-product .p-image-wrapper > .stars-wrapper {
+  .p-image-wrapper > .stars-wrapper {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     margin-bottom: 20px;
   }
-  .type-product .p-detail-info > * {
+  .p-detail-info > * {
     -webkit-box-ordinal-group: 100;
         -ms-flex-order: 99;
             order: 99;
   }
-  .type-product .p-detail-info > .detail-parameters {
-    -webkit-box-ordinal-group: -1;
-        -ms-flex-order: -2;
-            order: -2;
+  .p-detail-info > .price-line {
+    -webkit-box-ordinal-group: -14;
+        -ms-flex-order: -15;
+            order: -15;
+  }
+  .p-detail-info > .availability-value {
+    -webkit-box-ordinal-group: -12;
+        -ms-flex-order: -13;
+            order: -13;
+  }
+  .p-detail-info > .detail-parameters {
+    -webkit-box-ordinal-group: -9;
+        -ms-flex-order: -10;
+            order: -10;
     margin-top: 0;
   }
-  .type-product .variants-container {
+  .variants-container {
     margin-bottom: 20px;
   }
 }

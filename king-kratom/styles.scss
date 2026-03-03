@@ -243,20 +243,24 @@
  */
 
 @media screen and (max-width: 768px) {
-	.type-product {
-		.p-image-wrapper > .stars-wrapper {
-			justify-content: center;
-			margin-bottom: 20px;
-		}
-		.p-detail-info > * {
-			order: 99;
-		}
-		.p-detail-info > .detail-parameters {
-			order: -2;
-			margin-top: 0;
-		}
-		.variants-container {
-			margin-bottom: 20px;
-		}
+	.p-image-wrapper > .stars-wrapper {
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+	.p-detail-info > * {
+		order: 99;
+	}
+	.p-detail-info > .price-line {
+		order: -15;
+	}
+	.p-detail-info > .availability-value {
+		order: -13;
+	}
+	.p-detail-info > .detail-parameters {
+		order: -10;
+		margin-top: 0;
+	}
+	.variants-container {
+		margin-bottom: 20px;
 	}
 }
