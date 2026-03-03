@@ -220,74 +220,76 @@ if ($("body").hasClass("in-index")) {
 }
 
 /*Copy stars wrapper and place it before image*/
-if (document.body.classList.contains("type-product")) {
-	let starsBeforeImage = false;
-	let starsWrapper = document.querySelector(".p-info-wrapper > .stars-wrapper");
-	moveStars();
-	window.addEventListener("resize", moveStars);
-	function moveStars() {
-		if (!starsWrapper) {
-			console.warn("Stars wrapper not found");
-			return;
-		}
-		let windowWidth = window.innerWidth;
-		if (windowWidth < 768) {
-			if (starsBeforeImage) {
+document.addEventListener("DOMContentLoaded", function () {
+	if (document.body.classList.contains("type-product")) {
+		let starsBeforeImage = false;
+		let starsWrapper = document.querySelector(".p-info-wrapper > .stars-wrapper");
+		moveStars();
+		window.addEventListener("resize", moveStars);
+		function moveStars() {
+			if (!starsWrapper) {
+				console.warn("Stars wrapper not found");
 				return;
-			} else {
-				const pImageWrapper = document.querySelector(".p-image-wrapper");
-				if (!pImageWrapper) {
-					return;
-				}
-				pImageWrapper.prepend(starsWrapper);
-				starsBeforeImage = true;
 			}
-		} else {
-			if (starsBeforeImage) {
-				const pInfoWrapper = document.querySelector(".product-top .p-info-wrapper");
-				if (!pInfoWrapper) {
+			let windowWidth = window.innerWidth;
+			if (windowWidth < 768) {
+				if (starsBeforeImage) {
 					return;
+				} else {
+					const pImageWrapper = document.querySelector(".p-image-wrapper");
+					if (!pImageWrapper) {
+						return;
+					}
+					pImageWrapper.prepend(starsWrapper);
+					starsBeforeImage = true;
 				}
-				pInfoWrapper.appendChild(starsWrapper);
-				starsBeforeImage = false;
+			} else {
+				if (starsBeforeImage) {
+					const pInfoWrapper = document.querySelector(".product-top .p-info-wrapper");
+					if (!pInfoWrapper) {
+						return;
+					}
+					pInfoWrapper.appendChild(starsWrapper);
+					starsBeforeImage = false;
+				}
+			}
+		}
+
+		let priceInPDetailInfo = false;
+
+		movePriceAndAvailability();
+		window.addEventListener("resize", movePriceAndAvailability);
+		function movePriceAndAvailability() {
+			let priceLine = document.querySelector(".p-info-wrapper .price-line");
+			let availability = document.querySelector(".p-info-wrapper .availability-value");
+			if (!priceLine || !availability) {
+				console.warn("Price line or availability not found");
+				return;
+			}
+			let windowWidth = window.innerWidth;
+			if (windowWidth < 768) {
+				if (priceInPDetailInfo) {
+					return;
+				} else {
+					const pDetailInfo = document.querySelector(".p-detail-info");
+					if (!pDetailInfo) {
+						return;
+					}
+					pDetailInfo.appendChild(priceLine);
+					pDetailInfo.appendChild(availability);
+					priceInPDetailInfo = true;
+				}
+			} else {
+				if (priceInPDetailInfo) {
+					const pInfoWrapper = document.querySelector(".product-top .p-info-wrapper");
+					if (!pInfoWrapper) {
+						return;
+					}
+					pInfoWrapper.appendChild(priceLine);
+					pInfoWrapper.appendChild(availability);
+					priceInPDetailInfo = false;
+				}
 			}
 		}
 	}
-
-	let priceInPDetailInfo = false;
-
-	movePriceAndAvailability();
-	window.addEventListener("resize", movePriceAndAvailability);
-	function movePriceAndAvailability() {
-		let priceLine = document.querySelector(".p-info-wrapper .price-line");
-		let availability = document.querySelector(".p-info-wrapper .availability-value");
-		if (!priceLine || !availability) {
-			console.warn("Price line or availability not found");
-			return;
-		}
-		let windowWidth = window.innerWidth;
-		if (windowWidth < 768) {
-			if (priceInPDetailInfo) {
-				return;
-			} else {
-				const pDetailInfo = document.querySelector(".p-detail-info");
-				if (!pDetailInfo) {
-					return;
-				}
-				pDetailInfo.appendChild(priceLine);
-				pDetailInfo.appendChild(availability);
-				priceInPDetailInfo = true;
-			}
-		} else {
-			if (priceInPDetailInfo) {
-				const pInfoWrapper = document.querySelector(".product-top .p-info-wrapper");
-				if (!pInfoWrapper) {
-					return;
-				}
-				pInfoWrapper.appendChild(priceLine);
-				pInfoWrapper.appendChild(availability);
-				priceInPDetailInfo = false;
-			}
-		}
-	}
-}
+});
