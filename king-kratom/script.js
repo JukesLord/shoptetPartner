@@ -260,8 +260,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		movePriceAndAvailability();
 		window.addEventListener("resize", movePriceAndAvailability);
 		function movePriceAndAvailability() {
-			let priceLine = document.querySelector(".p-info-wrapper .price-line");
-			let availability = document.querySelector(".p-info-wrapper .availability-value");
+			let priceLine = document.querySelector(".price-line");
+			let availability = document.querySelector(".availability-value");
 			if (!priceLine || !availability) {
 				console.warn("Price line or availability not found");
 				return;
