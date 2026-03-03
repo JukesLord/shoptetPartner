@@ -253,4 +253,41 @@ if (document.body.classList.contains("type-product")) {
 			}
 		}
 	}
+
+	let priceInPDetailInfo = false;
+
+	movePriceAndAvailability();
+	window.addEventListener("resize", movePriceAndAvailability);
+	function movePriceAndAvailability() {
+		let priceLine = document.querySelector(".p-info-wrapper .price-line");
+		let availability = document.querySelector(".p-info-wrapper .availability-value");
+		if (!priceLine || !availability) {
+			console.warn("Price line or availability not found");
+			return;
+		}
+		let windowWidth = window.innerWidth;
+		if (windowWidth < 768) {
+			if (priceInPDetailInfo) {
+				return;
+			} else {
+				const pDetailInfo = document.querySelector(".p-detail-info");
+				if (!pDetailInfo) {
+					return;
+				}
+				pDetailInfo.appendChild(priceLine);
+				pDetailInfo.appendChild(availability);
+				priceInPDetailInfo = true;
+			}
+		} else {
+			if (priceInPDetailInfo) {
+				const pInfoWrapper = document.querySelector(".product-top .p-info-wrapper");
+				if (!pInfoWrapper) {
+					return;
+				}
+				pInfoWrapper.appendChild(priceLine);
+				pInfoWrapper.appendChild(availability);
+				priceInPDetailInfo = false;
+			}
+		}
+	}
 }
