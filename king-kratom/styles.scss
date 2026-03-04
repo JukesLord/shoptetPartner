@@ -264,3 +264,13 @@
 		margin-bottom: 20px;
 	}
 }
+
+@media screen and (max-width: 540px) {
+	.products-page.products-block {
+		flex-direction: column;
+		.product {
+			width: 100% !important;
+			margin: 0px !important;
+		}
+	}
+}

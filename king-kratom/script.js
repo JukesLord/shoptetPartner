@@ -219,8 +219,7 @@ if ($("body").hasClass("in-index")) {
 	}
 }
 
-/*Copy stars wrapper and place it before image*/
-
+/*Move stars wrapper, price and availability*/
 if (document.body.classList.contains("type-product")) {
 	let starsBeforeImage = false;
 	let starsWrapper = document.querySelector(".p-info-wrapper > .stars-wrapper");
@@ -292,3 +291,6 @@ if (document.body.classList.contains("type-product")) {
 		}
 	}
 }
+
+/*Jsou tam nějaké chyby z předešlých úprav někoho / nějaká šablona*/
+/*Při resizingu se v detailu prodouktu některé prvky nevrací na původní místo a rozhazuje to layout*/

@@ -295,3 +295,15 @@
     margin-bottom: 20px;
   }
 }
+@media screen and (max-width: 540px) {
+  .products-page.products-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .products-page.products-block .product {
+    width: 100% !important;
+    margin: 0px !important;
+  }
+}
