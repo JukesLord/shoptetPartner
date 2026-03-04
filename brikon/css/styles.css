@@ -1,0 +1,268 @@
+@charset "UTF-8";
+:root {
+  --gap: 10px;
+}
+
+/* .p-info-wrapper #productsAlternativex .dkLabFavouriteProductDiv,
+.p-info-wrapper #productsAlternativex .flags,
+.p-info-wrapper #productsAlternativex .p-bottom > div > *,
+.p-info-wrapper #productsAlternativex .p-code,
+.p-info-wrapper #productsAlternativex .p-in-in > *,
+.shp-tab[data-testid="tabAlternativeProducts"],
+.type-product #productsAlternativex-header,
+.type-product .browse-p {
+	display: none !important;
+}
+#productsAlternativex,
+.p-info-wrapper #productsAlternativex > .products > .product {
+	display: none;
+}
+.p-info-wrapper #productsAlternativex {
+	position: relative;
+	padding-top: 1.5em;
+	display: block;
+	margin-bottom: calc(var(--gap) * 2);
+	margin-top: 10px;
+	opacity: 1;
+}
+.p-info-wrapper #productsAlternativex .products {
+	display: flex;
+	row-gap: var(--gap);
+}
+.p-info-wrapper #productsAlternativex::before {
+	content: "Další dostupné varianty:";
+	font-weight: 600;
+	position: absolute;
+	top: 0;
+}
+.p-info-wrapper #productsAlternativex .product {
+	width: 90%;
+	border-style: solid !important;
+	border-width: 1px;
+	border-color: hsla(203, 7%, 47%, 0.36);
+	border-radius: 16px;
+	padding: 2px;
+	transition:
+		background 0.2s ease-out,
+		border-color 0.2s ease-out;
+	position: relative;
+	overflow: hidden;
+}
+.p-info-wrapper #productsAlternativex .product:hover {
+	border-color: var(--color-primary);
+}
+.p-info-wrapper #productsAlternativex .product::after {
+	background: var(--color-primary);
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.2s ease-out;
+	pointer-events: none;
+}
+.p-info-wrapper #productsAlternativex .product:hover::after {
+	opacity: 0.05;
+}
+.p-info-wrapper #productsAlternativex .p-in-in > a {
+	display: block !important;
+	margin: 0 !important;
+}
+.p-info-wrapper #productsAlternativex .p-bottom > div > .prices {
+	display: block !important;
+	margin: 0;
+}
+.p-info-wrapper #productsAlternativex .p .price strong {
+	font-size: 16px;
+}
+.p-info-wrapper #productsAlternativex .p {
+	display: grid;
+	grid-template-columns: 20% calc(80% - var(--gap));
+	gap: var(--gap);
+}
+.p-info-wrapper #productsAlternativex .p .image {
+	display: flex;
+	align-items: center;
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	margin: 0;
+}
+.p-info-wrapper #productsAlternativex .p-in {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 55% 45%;
+	margin: 0;
+}
+.p-info-wrapper #productsAlternativex .p-in-in {
+	grid-row: 1;
+	grid-column: 1;
+	display: flex;
+	align-items: center;
+	padding-bottom: 3px;
+}
+.p-info-wrapper #productsAlternativex .p .name {
+	height: auto;
+}
+.p-info-wrapper #productsAlternativex .p-in-in > a > span {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	line-height: 1.3em;
+	overflow: hidden;
+	margin: 15px 0;
+	color: #333;
+	font-weight: 500;
+}
+.p-info-wrapper #productsAlternativex .p-bottom {
+	grid-row: 1;
+	grid-column: 2;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: var(--gap);
+	padding-left: 10px;
+	padding-bottom: 3px;
+}
+.p-info-wrapper #productsAlternativex .p-bottom > div {
+	display: flex;
+	text-align: right;
+}
+.p-info-wrapper #productsAlternativex .p-bottom > div .price-final {
+	text-align: right;
+	font-size: 1.2rem;
+}
+#show-more-variants {
+	cursor: pointer;
+	position: absolute;
+	right: 10%;
+	bottom: calc(var(--gap) * -2 - 1.25em);
+	border-style: none;
+	color: var(--color-primary);
+	width: auto;
+	padding: 0;
+}
+.p-info-wrapper #productsAlternativex.show-all .product,
+.p-info-wrapper #productsAlternativex > .products > .product:nth-child(-n + 4) {
+	display: grid;
+}
+#show-more-variants::after {
+	content: "\e90e";
+	speak: none;
+	display: inline-block;
+	font-family: shoptet;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 0;
+	text-decoration: none;
+	text-transform: none;
+	vertical-align: middle;
+	margin-left: 5px;
+	transition: transform 0.3s ease-out;
+}
+#show-more-variants::before {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 90%;
+	height: 1px;
+	background: var(--color-primary);
+}
+.show-all #show-more-variants::after {
+	transform: rotate(180deg);
+}
+@media (max-width: 1200px) {
+	.p-info-wrapper #productsAlternativex {
+		display: flex;
+		flex-direction: column;
+		margin-top: 20px;
+		position: relative;
+	}
+	.p-info-wrapper #productsAlternativex .product {
+		width: 99%;
+	}
+	.p-info-wrapper #productsAlternativex .product img {
+		max-height: 85%;
+	}
+	.p-info-wrapper #productsAlternativex .p-in-in > a > span {
+		text-align: left;
+	}
+	.p-info-wrapper #productsAlternativex::before {
+		top: -5px;
+	}
+	#show-more-variants {
+		top: -6px;
+		bottom: auto;
+		right: 0;
+	}
+} */
+/* .messages {
+	width: 240px;
+	right: 20px;
+	top: auto;
+	bottom: 10px;
+	left: auto;
+	text-align: center;
+	border-radius: 18px;
+	overflow: hidden;
+}
+.messages .container {
+	width: auto;
+}
+.messages .msg {
+	border-radius: var(--border-radius);
+	padding: 15px 10px;
+	animation: 0.2s ease-out mesageTransform;
+	opacity: 1;
+}
+@keyframes mesageTransform {
+	from {
+		transform: translatex(calc(100% + 30px));
+	}
+	to {
+		transform: translatex(0);
+	}
+}
+ */
+#productsAlternative .products-block.products .product .p-in {
+  padding: 5px;
+}
+
+#productsAlternative .products-block.products .product .p-tools {
+  display: none;
+}
+
+#productsAlternative .products-block.products .product.slick-slide {
+  text-decoration: none;
+}
+
+#productsAlternative .products-block.products .product .p-desc {
+  display: none;
+}
+
+#productsAlternative .products-block.products .product .prices .price-final strong {
+  font-size: 16px;
+}
+
+#productsAlternative .products-block.products .product .p .name span {
+  -webkit-line-clamp: 3;
+}
+
+#productsAlternative .slick-slider .slick-arrow {
+  height: 27px;
+  min-width: 0;
+  min-height: 0;
+  width: 30px !important;
+  padding: 0 20px;
+}
+
+#productsAlternative:before {
+  content: "Další dostupné varianty";
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
