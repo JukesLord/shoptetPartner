@@ -33,4 +33,8 @@ if (!document.body.classList.contains("admin-logged")) {
 			}
 		});
 	}
+
+	$(document).ready(function () {
+		$("#productsAlternative").insertAfter(".p-detail-inner-header");
+	});
 }
