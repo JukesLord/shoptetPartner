@@ -83,10 +83,30 @@ if (document.body.classList.contains("admin-logged")) {
 			})
 			.join("");
 
+		const currentImgEl = document.querySelector(".p-main-image img");
+		const currentImgSrc = currentImgEl?.getAttribute("src") || "";
+		const currentImgAlt = currentImgEl?.getAttribute("alt") || "";
+		const currentName = document.querySelector(".p-detail-inner-header h1")?.textContent.trim() || "";
+		const currentPrice = document.querySelector(".price-final-holder")?.textContent.trim() || "";
+
+		const currentVariantHTML = `<div class="current-variant">
+			<div class="custom-variant">
+				<div class="custom-variant-image">
+					<img src="${currentImgSrc}" alt="${currentImgAlt}">
+				</div>
+				<div class="custom-variant-info">
+					<h5>${currentName}</h5>
+					<span class="custom-variant-price">${currentPrice}</span>
+				</div>
+				<div id="variant-button"></div>
+			</div>
+		</div>`;
+
 		const wrapper = document.createElement("div");
 		wrapper.className = "custom-variants-wrapper";
 		wrapper.innerHTML = `<h4>Další dostupné varianty:</h4>
 			<div class="custom-variants">
+				${currentVariantHTML}
 				<div class="custom-other-variants">
 					${variantsHTML}
 				</div>
