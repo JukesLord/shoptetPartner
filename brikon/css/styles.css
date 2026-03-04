@@ -302,6 +302,12 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info * {
   font-size: 1em;
 }
+body.admin-logged .custom-variants-wrapper .custom-variants .current-variant {
+  cursor: pointer;
+}
+body.admin-logged .custom-variants-wrapper .custom-variants .current-variant h5 {
+  text-decoration: none !important;
+}
 body.admin-logged .custom-variants-wrapper .custom-variants #variant-arrow {
   display: none;
 }

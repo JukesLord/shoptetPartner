@@ -306,6 +306,10 @@ body.admin-logged {
 			}
 
 			.current-variant {
+				cursor: pointer;
+				h5 {
+					text-decoration: none !important;
+				}
 			}
 			.custom-other-variants {
 			}
