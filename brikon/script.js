@@ -98,7 +98,7 @@ if (document.body.classList.contains("admin-logged")) {
 					<h5>${currentName}</h5>
 					<span class="custom-variant-price">${currentPrice}</span>
 				</div>
-				<div id="variant-button"></div>
+				<div id="variant-arrow"></div>
 			</div>
 		</div>`;
 
@@ -113,6 +113,10 @@ if (document.body.classList.contains("admin-logged")) {
 			</div>`;
 
 		container.closest("#productsAlternative").replaceWith(wrapper);
+
+		wrapper.querySelector(".current-variant").addEventListener("click", function () {
+			wrapper.querySelector(".custom-variants").classList.toggle("active");
+		});
 	}
 
 	function hideEmptyDetailParameters() {
