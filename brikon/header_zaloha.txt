@@ -1,0 +1,108 @@
+<meta name="google-site-verification" content="W0CO8SUDYzubVcN63GuvvdN5XJw50_pmfHJ5HbtCfoo" />
+<meta name="facebook-domain-verification" content="51pwlzrb2hwteweokwvs2snmqd98m6" />
+
+<style>
+/*BARTS-upravy*/
+div[id*=wt-form-wrapper-] button[type=submit]{
+color:#fff!important;
+}
+
+.products-block.products .product .btn, .products-block.products .product button{
+background:#b70700;
+}
+.products-block.products .product .btn:hover{
+background-color:#ae0d00 !important;
+}
+
+.filter-section.filter-section-boolean.dkLab-filters-wrapper__wrap:has(.symptom){
+display:none;
+}
+
+.filter-section h4::after{
+display:none;
+}
+.dklab-filters #filters .slider-wrapper h4{
+display:flex!important;
+flex-direction:row!important;
+}
+.filter-section:has(.dkLab-slider-wrapper) h4::after{
+display:block!important;
+}
+
+#filters h4:before{
+display:none;
+}
+#filters > .slider-wrapper, [class~=slider-wrapper] > div, .filter-sections form, [class~=slider-wrapper][class~=filter-section] > div, .razeni > form{
+display:block;
+}
+.dklab-filters #filters .slider-wrapper h4{
+margin-top:0!important;
+padding-top:15px!important;
+}
+
+.arrow {
+    display: inline-block;
+    margin-left: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    float: right;
+    margin-top: -25px;
+}
+
+.arrow.rotated {
+    transform: rotate(-135deg);
+}
+</style>
+
+<!-- Filip Hošek úpravy -->
+<style>
+/*Podobné produkty - alternative varianty*/
+:root {
+	--gap: 10px;
+}
+.p-info-wrapper #productsAlternativex .dkLabFavouriteProductDiv,.p-info-wrapper #productsAlternativex .flags,.p-info-wrapper #productsAlternativex .p-bottom>div>*,.p-info-wrapper #productsAlternativex .p-code,.p-info-wrapper #productsAlternativex .p-in-in>*,.shp-tab[data-testid=tabAlternativeProducts],.type-product #productsAlternativex-header,.type-product .browse-p{display:none!important}#productsAlternativex,.p-info-wrapper #productsAlternativex>.products>.product{display:none}.p-info-wrapper #productsAlternativex{position:relative;padding-top:1.5em;display:block;margin-bottom:calc(var(--gap) * 2);margin-top:10px;opacity:1}
+.p-info-wrapper #productsAlternativex .products{display:flex;row-gap:var(--gap)}.p-info-wrapper #productsAlternativex::before{content:"Další dostupné varianty:";font-weight:600;position:absolute;top:0}.p-info-wrapper #productsAlternativex .product{width:90%;border-style:solid!important;border-width:1px;border-color:hsla(203,7%,47%,.36);border-radius:16px;padding:2px;transition:background .2s ease-out,border-color .2s ease-out;position:relative;overflow:hidden}.p-info-wrapper #productsAlternativex .product:hover{border-color:var(--color-primary)}.p-info-wrapper #productsAlternativex .product::after{background:var(--color-primary);content:"";position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;transition:opacity .2s ease-out;pointer-events:none}
+.p-info-wrapper #productsAlternativex .product:hover::after{opacity:.05}.p-info-wrapper #productsAlternativex .p-in-in>a{display:block!important;margin:0!important}.p-info-wrapper #productsAlternativex .p-bottom>div>.prices{display:block!important;margin:0}.p-info-wrapper #productsAlternativex .p .price strong{font-size:16px}.p-info-wrapper #productsAlternativex .p{display:grid;grid-template-columns:20% calc(80% - var(--gap));gap:var(--gap)}.p-info-wrapper #productsAlternativex .p .image{display:flex;align-items:center;border-radius:var(--border-radius);overflow:hidden;margin:0}
+.p-info-wrapper #productsAlternativex .p-in{display:grid;grid-template-rows:1fr;grid-template-columns:55% 45%;margin:0}.p-info-wrapper #productsAlternativex .p-in-in{grid-row:1;grid-column:1;display:flex;align-items:center;padding-bottom:3px}.p-info-wrapper #productsAlternativex .p .name{height:auto}.p-info-wrapper #productsAlternativex .p-in-in>a>span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-height:1.3em;overflow:hidden;margin:15px 0;color:#333;font-weight:500}.p-info-wrapper #productsAlternativex .p-bottom{grid-row:1;grid-column:2;display:flex;align-items:center;justify-content:flex-end;padding-right:var(--gap);padding-left:10px;padding-bottom:3px}
+.p-info-wrapper #productsAlternativex .p-bottom>div{display:flex;text-align:right}
+.p-info-wrapper #productsAlternativex .p-bottom>div .price-final{text-align:right;font-size:1.2rem}#show-more-variants{cursor:pointer;position:absolute;right:10%;bottom:calc(var(--gap) * -2 - 1.25em);border-style:none;color:var(--color-primary);width:auto;padding:0}.p-info-wrapper #productsAlternativex.show-all .product,.p-info-wrapper #productsAlternativex>.products>.product:nth-child(-n+4){display:grid}#show-more-variants::after{content:"\e90e";speak:none;display:inline-block;font-family:shoptet;font-style:normal;font-variant:normal;font-weight:400;line-height:0;text-decoration:none;text-transform:none;vertical-align:middle;margin-left:5px;transition:transform .3s ease-out}
+#show-more-variants::before{content:"";position:absolute;bottom:-1px;left:0;width:90%;height:1px;background:var(--color-primary)}.show-all #show-more-variants::after{transform:rotate(180deg)}@media (max-width:1200px){.p-info-wrapper #productsAlternativex{display:flex;flex-direction:column;margin-top:20px;position:relative}.p-info-wrapper #productsAlternativex .product{width:99%}.p-info-wrapper #productsAlternativex .product img{max-height:85%}.p-info-wrapper #productsAlternativex .p-in-in>a>span{text-align:left}.p-info-wrapper #productsAlternativex::before{top:-5px}#show-more-variants{top:-6px;bottom:auto;right:0}}
+
+</style>
+<!-- Filip Hošek úpravy konec-->
+
+<style>
+.fixed-cart-line {display: none !important;}
+@media (min-width:768px) {
+#content #filters-wrapper {display:none !important}
+}
+.dklab-filters aside .box .filters-wrapper {margin-top:0;}
+.products-block.products .product a.btn {background-color: #CC0800 !important;color:white !important}
+.products-block.products .product a.btn:hover {background-color: #ae0d00 !important;}
+.products-block.products .product a.btn:before {color:white;}
+@media (min-width:1200px) {
+.products-block.products .product {width:25%;}
+}
+.products-inline.products .product {background:white;}
+
+.hp-news #content {width:100%;}
+@media (min-width:1200px) {
+.hp-news .news-wrapper .news-item {width:calc(25% - 8px) !important;}
+.hp-news .news-wrapper .news-item .image {height:240px;}
+.hp-news .news-wrapper .news-item:nth-child(n+5) {display: none;}
+}
+.detail-parameters.empty, .products-related-header {display: none;}
+#productsAlternative .products-block.products .product .p-in {padding:5px;}
+#productsAlternative .products-block.products .product .p-tools {display: none;}
+#productsAlternative .products-block.products .product.slick-slide {text-decoration:none;}
+#productsAlternative .products-block.products .product .p-desc {display: none;}
+#productsAlternative .products-block.products .product .prices .price-final strong {font-size:16px;}
+#productsAlternative .products-block.products .product .p .name span {-webkit-line-clamp:3;}
+.p-detail .p-code {float:none;}
+#productsAlternative .slick-slider .slick-arrow {height:27px;min-width:0;min-height:0;width:30px !important;padding: 0 20px;}
+#productsAlternative:before {content: "Další dostupné varianty";display:block;font-size:20px;font-weight:600;margin-bottom:20px;}
+.hp-categories-posts {padding-top:20px;padding-bottom:20px;background:white;} 
+</style>

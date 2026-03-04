@@ -38,3 +38,71 @@ if (!document.body.classList.contains("admin-logged")) {
 		$("#productsAlternative").insertAfter(".p-detail-inner-header");
 	});
 }
+
+if (document.body.classList.contains("admin-logged")) {
+	if (document.body.classList.contains("type-detail")) {
+		reworkProductVariants();
+		hideEmptyDetailParameters();
+	}
+
+	function reworkProductVariants() {
+		const container = document.querySelector("#productsAlternative .products");
+		if (!container) return;
+
+		const products = container.querySelectorAll(".product:not(.show-more-products-box)");
+		if (products.length === 0) return;
+
+		const variantsHTML = Array.from(products)
+			.map((product) => {
+				const imgEl = product.querySelector(".image img");
+				const imgSrc = imgEl?.getAttribute("data-src") || imgEl?.getAttribute("src") || "";
+				const imgAlt = imgEl?.getAttribute("alt") || "";
+
+				const name = product.querySelector("[data-micro='name']")?.textContent.trim() || "";
+				const href =
+					product.querySelector("a.image")?.getAttribute("href") ||
+					product.querySelector("a.name")?.getAttribute("href") ||
+					"#";
+
+				const availabilityEl = product.querySelector(".availability span");
+				const availability = availabilityEl?.textContent.trim() || "";
+				const availabilityColor = availabilityEl?.style.color || "";
+
+				const price = product.querySelector(".price-final strong")?.textContent.trim() || "";
+
+				return `<a href="${href}" class="custom-variant">
+				<div class="custom-variant-image">
+					<img src="${imgSrc}" alt="${imgAlt}">
+				</div>
+				<div class="custom-variant-info">
+					<h5>${name}</h5>
+					<span class="custom-variant-availability" style="color:${availabilityColor}">${availability}</span>
+					<span class="custom-variant-price">${price}</span>
+				</div>
+			</a>`;
+			})
+			.join("");
+
+		const wrapper = document.createElement("div");
+		wrapper.className = "custom-variants-wrapper";
+		wrapper.innerHTML = `<h4>Další dostupné varianty:</h4>
+			<div class="custom-variants">
+				<div class="custom-other-variants">
+					${variantsHTML}
+				</div>
+			</div>`;
+
+		container.closest("#productsAlternative").replaceWith(wrapper);
+	}
+
+	function hideEmptyDetailParameters() {
+		let parameters = document.querySelector(".product-top .detail-parameters");
+		if (!parameters) {
+			return;
+		}
+		let parametersLength = parameters.querySelectorAll(".parameter").length;
+		if (parametersLength === 0) {
+			parameters.classList.add("empty");
+		}
+	}
+}

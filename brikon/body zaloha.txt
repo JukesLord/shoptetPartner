@@ -1,0 +1,135 @@
+<script src="/user/documents/upload/js/filterOpen.js?13v=#DEBUG_TIMESTAMP#" type="text/javascript"></script>
+
+<script>
+$(document).ready(function() {
+  if (window.location.pathname.includes('/poptavkovy-formular/')) {
+    $('div[itemprop="about"]').has('#formContact').find('p').each(function() {
+      if ($(this).text().trim() === 'Máte nějaké otázky? Zodpovíme je. Prosíme o pečlivé vyplnění kontaktních údajů.') {
+        $(this).text('Pro nezávaznou poptávku vyplňte náš formulář.');
+      }
+    });
+  }
+});
+
+</script>
+
+
+
+<!-- Filip Hošek úpravy -->
+<script>
+if (document.body.classList.contains("type-detail")) {
+    document.addEventListener("DOMContentLoaded", function (event) {
+        /*alternative varianty podobné*/
+		if ($("#productsAlternativec .product").length > 0) {
+			$("#productsAlternativec .product").each(function () {
+				let $this = $(this);
+				let href = $this.find("a").first().attr("href");
+				let classes = $this.attr("class");
+
+				let newAnchor = $("<a>").attr("href", href).addClass(classes).html($this.html());
+				$this.replaceWith(newAnchor);
+			});
+      if ($(".p-detail-inner .product-top .p-short-description").length > 0) {
+			$("#productsAlternativec").insertAfter(".p-detail-inner .product-top .p-short-description");
+      } else if ($(".p-detail-inner .product-top .add-to-cart").length > 0) {
+      $("#productsAlternativec").insertAfter(".p-detail-inner .product-top .add-to-cart");
+      } else {
+      $("#productsAlternativec").insertAfter(".p-detail-inner .product-top .availability-value");
+      }
+			$("#productsAlternativec .p .image img").each(function () {
+				let $this = $(this);
+				let dataSrc = $this.attr("data-src");
+				$this.attr("src", dataSrc);
+			});
+		}
+		if ($("#productsAlternativec .product").length > 4) {
+				$("#productsAlternativec").append('<div id="show-more-variants">Všechny varianty</div>');
+
+			$("#show-more-variants").click(function () {
+				$("#productsAlternativec").toggleClass("show-all");
+			});
+		}
+    });
+}
+</script>
+<!-- Filip Hošek úpravy konec-->
+
+<script>
+$(document).ready(function() {
+    var $productsBlock = $('.products-block.products');
+
+    // Zkontroluj, jestli je slider již inicializován
+    if ($productsBlock.hasClass('slick-initialized')) {
+        // Získej aktuální možnosti slideru
+        var slickOptions = $productsBlock.slick('getSlick').options;
+
+        // Znič původní slider
+        $productsBlock.slick('unslick');
+
+        // Znovu inicializuj slider s úpravou pro nejvyšší rozlišení
+        $productsBlock.slick({
+            slidesToShow: 5,  // Zobrazí 5 slidů v nejvyšším rozlišení
+            slidesToScroll: slickOptions.slidesToScroll,
+            infinite: slickOptions.infinite,
+            autoplay: slickOptions.autoplay,
+            autoplaySpeed: slickOptions.autoplaySpeed,
+            dots: slickOptions.dots,
+            arrows: slickOptions.arrows,
+            responsive: [
+                {
+                    breakpoint: 1200, // Pro rozlišení menší než 1200px
+                    settings: {
+                        slidesToShow: slickOptions.slidesToShow,  // Zachování původního počtu slidů
+                        slidesToScroll: slickOptions.slidesToScroll
+                    }
+                },
+                {
+                    breakpoint: 480, // Pro rozlišení menší než 480px
+                    settings: {
+                        slidesToShow: slickOptions.slidesToShow,  // Zachování původního počtu slidů
+                        slidesToScroll: slickOptions.slidesToScroll
+                    }
+                }
+            ]
+        });
+    }
+});
+
+$(document).ready(function() {
+    $('#productsAlternative').insertAfter('.p-detail-inner-header');
+});
+
+$(document).ready(function() {
+    var $productsBlock = $('.products-alternative');
+
+    // Zkontroluj, jestli je slider inicializován
+    if ($productsBlock.hasClass('slick-initialized')) {
+        // Získej aktuální možnosti slideru
+        var slickOptions = $productsBlock.slick('getSlick').options;
+
+        // Znič původní slider
+        $productsBlock.slick('unslick');
+
+        // Znovu inicializuj slider s pevným počtem 3 slidů bez ohledu na rozlišení
+        $productsBlock.slick({
+            slidesToShow: 3,  // Pevně nastaveno na 3 produkty na řádek
+            slidesToScroll: slickOptions.slidesToScroll,
+            infinite: slickOptions.infinite,
+            autoplay: false,
+            autoplaySpeed: slickOptions.autoplaySpeed,
+            dots: slickOptions.dots,
+            arrows: slickOptions.arrows
+        });
+    }
+});
+
+</script>
+
+<script>
+$('.add-to-cart-button span').each(function() {
+  if ($(this).text().trim() === 'Do košíku') {
+    $(this).text('Koupit');
+  }
+});
+
+</script>
