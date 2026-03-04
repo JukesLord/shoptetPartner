@@ -302,7 +302,7 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info * {
   font-size: 1em;
 }
-body.admin-logged .custom-variants-wrapper .custom-variants #variant-button {
+body.admin-logged .custom-variants-wrapper .custom-variants #variant-arrow {
   display: none;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants.active .custom-other-variants {

@@ -52,6 +52,13 @@ if (document.body.classList.contains("admin-logged")) {
 		const products = container.querySelectorAll(".product:not(.show-more-products-box)");
 		if (products.length === 0) return;
 
+		const currentImgEl = document.querySelector(".p-main-image img");
+		const currentImgSrc = currentImgEl?.getAttribute("src") || "";
+		const currentImgAlt = currentImgEl?.getAttribute("alt") || "";
+		const currentName = document.querySelector(".p-detail-inner-header h1")?.textContent.trim() || "";
+		const currentPrice = document.querySelector(".price-final-holder")?.textContent.trim() || "";
+		const currentPriceNum = parseInt(currentPrice.replace(/\s/g, "").replace(/[^\d]/g, ""), 10);
+
 		const variantsHTML = Array.from(products)
 			.map((product) => {
 				const imgEl = product.querySelector(".image img");
@@ -68,7 +75,16 @@ if (document.body.classList.contains("admin-logged")) {
 				const availability = availabilityEl?.textContent.trim() || "";
 				const availabilityColor = availabilityEl?.style.color || "";
 
-				const price = product.querySelector(".price-final strong")?.textContent.trim() || "";
+				const priceRaw = product.querySelector(".price-final strong")?.textContent.trim() || "";
+				const priceNum = parseInt(priceRaw.replace(/\s/g, "").replace(/[^\d]/g, ""), 10);
+				const diff = priceNum - currentPriceNum;
+				const priceDiff = isNaN(diff)
+					? ""
+					: diff > 0
+						? `+${diff.toLocaleString("cs-CZ")},-`
+						: diff < 0
+							? `${diff.toLocaleString("cs-CZ")},-`
+							: "+ 0,-";
 
 				return `<a href="${href}" class="custom-variant">
 				<div class="custom-variant-image">
@@ -77,17 +93,11 @@ if (document.body.classList.contains("admin-logged")) {
 				<div class="custom-variant-info">
 					<h5>${name}</h5>
 					<span class="custom-variant-availability" style="color:${availabilityColor}">${availability}</span>
-					<span class="custom-variant-price">${price}</span>
+					<span class="custom-variant-price">${priceDiff}</span>
 				</div>
 			</a>`;
 			})
 			.join("");
-
-		const currentImgEl = document.querySelector(".p-main-image img");
-		const currentImgSrc = currentImgEl?.getAttribute("src") || "";
-		const currentImgAlt = currentImgEl?.getAttribute("alt") || "";
-		const currentName = document.querySelector(".p-detail-inner-header h1")?.textContent.trim() || "";
-		const currentPrice = document.querySelector(".price-final-holder")?.textContent.trim() || "";
 
 		const currentVariantHTML = `<div class="current-variant">
 			<div class="custom-variant">
