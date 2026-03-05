@@ -266,6 +266,7 @@ body.admin-logged .custom-variants-wrapper {
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   position: relative;
   z-index: 999;
+  width: 100%;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants {
   position: relative;
@@ -281,7 +282,7 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant {
   gap: 14px;
   text-decoration: none;
 }
-body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant:hover h5 {
+body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant:hover p {
   text-decoration: underline;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info {
@@ -293,7 +294,7 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info
           column-gap: 0.7em;
   row-gap: 0.25em;
 }
-body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info h5 {
+body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info p {
   margin: 0;
   grid-row: 1;
   grid-column: 1;
@@ -318,7 +319,7 @@ body.admin-logged .custom-variants-wrapper .custom-variants .current-variant {
   cursor: pointer;
   position: relative;
 }
-body.admin-logged .custom-variants-wrapper .custom-variants .current-variant h5 {
+body.admin-logged .custom-variants-wrapper .custom-variants .current-variant p {
   text-decoration: none !important;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .current-variant #variant-arrow {
