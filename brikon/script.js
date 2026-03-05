@@ -43,6 +43,7 @@ if (document.body.classList.contains("admin-logged")) {
 	if (document.body.classList.contains("type-detail")) {
 		reworkProductVariants();
 		hideEmptyDetailParameters();
+		moveRelatedProducts();
 	}
 
 	function reworkProductVariants() {
@@ -142,5 +143,32 @@ if (document.body.classList.contains("admin-logged")) {
 		if (parametersLength === 0) {
 			parameters.classList.add("empty");
 		}
+	}
+
+	function moveRelatedProducts() {
+		const relatedProducts = document.querySelector(".products-related");
+		if (!relatedProducts) {
+			return;
+		}
+		relatedProducts.addId("productsRelated");
+		let pDetailTabs = document.querySelector("#p-detail-tabs");
+		let tabContent = document.querySelector(".p-detail-tabs-wrapper .tab-content");
+		if (!tabContent || !pDetailTabs) {
+			return;
+		}
+		tabContent.appendChild(relatedProducts);
+		let relatedTitle = relatedProducts.querySelector(".products-related-header");
+		let retatedTitleText;
+		if (relatedTitle) {
+			retatedTitleText = relatedTitle.textContent.trim();
+			relatedTitle.remove();
+		} else {
+			retatedTitleText = "Související produkty";
+		}
+		const newTab = document.createElement("li");
+		newTab.className = "shp-tab";
+		newTab.setAttribute("data-testid", "productsRelated");
+		newTab.innerHTML = `<a href="#productsRelated" class="shp-tab-link" role="tab" data-toggle="tab" aria-expanded="false">${retatedTitleText}</a>`;
+		pDetailTabs.appendChild(newTab);
 	}
 }
