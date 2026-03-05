@@ -306,9 +306,13 @@ body.admin-logged {
 					margin: 0;
 					display: inline-block;
 				}
+				.custom-variant-name {
+					padding-right: 0.7em;
+					display: inline-block;
+				}
 				.custom-variant-price {
 					opacity: 0.6;
-					padding-left: 0.7em;
+					display: inline-block;
 				}
 
 				.custom-variant-availability {

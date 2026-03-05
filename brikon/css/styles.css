@@ -311,9 +311,13 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info
   margin: 0;
   display: inline-block;
 }
+body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info .custom-variant-name {
+  padding-right: 0.7em;
+  display: inline-block;
+}
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info .custom-variant-price {
   opacity: 0.6;
-  padding-left: 0.7em;
+  display: inline-block;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info .custom-variant-availability {
   padding-top: 0.25em;
