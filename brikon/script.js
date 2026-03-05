@@ -121,7 +121,7 @@ if (document.body.classList.contains("admin-logged")) {
 
 		const wrapper = document.createElement("div");
 		wrapper.className = "custom-variants-wrapper";
-		wrapper.innerHTML = `<h4>Další dostupné varianty:</h4>
+		wrapper.innerHTML = `<p>Další dostupné varianty:</p>
 			<div class="custom-variants">
 				${currentVariantHTML}
 				<div class="custom-other-variants">
@@ -197,6 +197,6 @@ if (document.body.classList.contains("admin-logged")) {
 		newTab.className = "shp-tab";
 		newTab.setAttribute("data-testid", "extendedDescription");
 		newTab.innerHTML = `<a href="#extendedDescription" class="shp-tab-link" role="tab" data-toggle="tab" aria-expanded="false">${parametersText}</a>`;
-		pDetailTabs.appendChild(newTab);
+		pDetailTabs.insertBefore(newTab, pDetailTabs.children[1] || null);
 	}
 }

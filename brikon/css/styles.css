@@ -355,8 +355,8 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-other-varian
   top: 100%;
   background: white;
   width: 100%;
-  padding-top: 5px;
   row-gap: 5px;
+  padding-bottom: 5px;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants.active .custom-other-variants {
   display: -webkit-box;
