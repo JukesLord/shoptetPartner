@@ -322,6 +322,9 @@ body.admin-logged {
 				p {
 					text-decoration: none !important;
 				}
+				.custom-variant-price {
+					display: none;
+				}
 				#variant-arrow {
 					position: absolute;
 					right: 0;

@@ -322,6 +322,9 @@ body.admin-logged .custom-variants-wrapper .custom-variants .current-variant {
 body.admin-logged .custom-variants-wrapper .custom-variants .current-variant p {
   text-decoration: none !important;
 }
+body.admin-logged .custom-variants-wrapper .custom-variants .current-variant .custom-variant-price {
+  display: none;
+}
 body.admin-logged .custom-variants-wrapper .custom-variants .current-variant #variant-arrow {
   position: absolute;
   right: 0;

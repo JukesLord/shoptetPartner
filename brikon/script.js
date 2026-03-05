@@ -87,7 +87,9 @@ if (document.body.classList.contains("admin-logged")) {
 							? `- ${Math.abs(diff).toLocaleString("cs-CZ")},-`
 							: "+ 0,-";
 
-				return `<a href="${href}" class="custom-variant">
+				return {
+					diff: isNaN(diff) ? Infinity : Math.abs(diff),
+					html: `<a href="${href}" class="custom-variant">
 				<div class="custom-variant-image">
 					<img src="${imgSrc}" alt="${imgAlt}">
 				</div>
@@ -96,8 +98,11 @@ if (document.body.classList.contains("admin-logged")) {
 					<span class="custom-variant-availability" style="color:${availabilityColor}">${availability}</span>
 					<span class="custom-variant-price">${priceDiff}</span>
 				</div>
-			</a>`;
+			</a>`,
+				};
 			})
+			.sort((a, b) => a.diff - b.diff)
+			.map((item) => item.html)
 			.join("");
 
 		const currentVariantHTML = `<div class="current-variant">
