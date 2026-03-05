@@ -124,6 +124,11 @@ if (document.body.classList.contains("admin-logged")) {
 
 		container.closest("#productsAlternative").replaceWith(wrapper);
 
+		const pDetailInfo = document.querySelector(".product-top .p-detail-info");
+		if (pDetailInfo) {
+			pDetailInfo.appendChild(wrapper);
+		}
+
 		wrapper.querySelector(".current-variant").addEventListener("click", function () {
 			wrapper.querySelector(".custom-variants").classList.toggle("active");
 		});
