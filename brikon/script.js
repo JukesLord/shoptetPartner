@@ -150,7 +150,7 @@ if (document.body.classList.contains("admin-logged")) {
 		if (!relatedProducts) {
 			return;
 		}
-		relatedProducts.addId("productsRelated");
+		relatedProducts.id = "productsRelated";
 		let pDetailTabs = document.querySelector("#p-detail-tabs");
 		let tabContent = document.querySelector(".p-detail-tabs-wrapper .tab-content");
 		if (!tabContent || !pDetailTabs) {
