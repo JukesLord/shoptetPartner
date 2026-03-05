@@ -281,6 +281,10 @@ body.admin-logged .custom-variants-wrapper .custom-variants {
   -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
 }
+body.admin-logged .custom-variants-wrapper .custom-variants:hover {
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
 body.admin-logged .custom-variants-wrapper .custom-variants.active {
   -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
@@ -309,7 +313,7 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info .custom-variant-name-price {
   margin: 0;
-  display: inline-block;
+  display: inline;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info .custom-variant-name {
   padding-right: 0.7em;
@@ -396,4 +400,7 @@ body.admin-logged #tab-content .extended-description.active {
 }
 body.admin-logged #tab-content .extended-description.active table {
   max-width: 480px;
+}
+body.admin-logged #p-detail-tabs {
+  font-size: 1.1em;
 }

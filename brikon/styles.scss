@@ -282,6 +282,9 @@ body.admin-logged {
 			background: white;
 			display: block;
 			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+			&:hover {
+				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+			}
 			&.active {
 				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 			}
@@ -304,7 +307,7 @@ body.admin-logged {
 				flex-direction: column;
 				.custom-variant-name-price {
 					margin: 0;
-					display: inline-block;
+					display: inline;
 				}
 				.custom-variant-name {
 					padding-right: 0.7em;
@@ -397,5 +400,8 @@ body.admin-logged {
 				max-width: 480px;
 			}
 		}
+	}
+	#p-detail-tabs {
+		font-size: 1.1em;
 	}
 }
