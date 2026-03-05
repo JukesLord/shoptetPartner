@@ -370,5 +370,13 @@ body.admin-logged {
 				}
 			}
 		}
+		.p-detail-tabs-wrapper {
+			.products-related {
+				display: none !important;
+				&.active {
+					display: flex !important;
+				}
+			}
+		}
 	}
 }

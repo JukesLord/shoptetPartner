@@ -367,3 +367,11 @@ body.admin-logged .custom-variants-wrapper .custom-variants.active .current-vari
   -webkit-transform: translate(-25%, -50%) rotate(180deg);
           transform: translate(-25%, -50%) rotate(180deg);
 }
+body.admin-logged .custom-variants-wrapper .p-detail-tabs-wrapper .products-related {
+  display: none !important;
+}
+body.admin-logged .custom-variants-wrapper .p-detail-tabs-wrapper .products-related.active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
