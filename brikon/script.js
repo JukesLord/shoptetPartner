@@ -95,7 +95,7 @@ if (document.body.classList.contains("admin-logged")) {
 					<img src="${imgSrc}" alt="${imgAlt}">
 				</div>
 				<div class="custom-variant-info">
-					<p>${name}<span class="custom-variant-price">${priceDiff}</span></p>
+					<span class="custom-variant-name">${name}</span><span class="custom-variant-price">${priceDiff}</span>
 					<span class="custom-variant-availability" style="color:${availabilityColor}">${availability}</span>
 				</div>
 			</a>`,
@@ -111,7 +111,7 @@ if (document.body.classList.contains("admin-logged")) {
 					<img src="${currentImgSrc}" alt="${currentImgAlt}">
 				</div>
 				<div class="custom-variant-info">
-					<p>${currentName}<span class="custom-variant-price">${currentPrice}</span></p>
+					<span class="custom-variant-name">${currentName}</span><span class="custom-variant-price">${currentPrice}</span>
 				</div>
 				<div id="variant-arrow"></div>
 			</div>

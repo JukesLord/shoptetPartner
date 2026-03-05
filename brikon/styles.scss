@@ -289,7 +289,7 @@ body.admin-logged {
 				gap: 14px;
 				text-decoration: none;
 				&:hover {
-					p {
+					.custom-variant-name {
 						text-decoration: underline;
 					}
 				}
@@ -298,13 +298,12 @@ body.admin-logged {
 				display: flex;
 				flex-direction: column;
 				row-gap: 0.25em;
-				p {
+				.custom-variant-name-price {
 					margin: 0;
 					display: inline-block;
 				}
 				.custom-variant-price {
 					opacity: 0.6;
-					display: block;
 					padding-left: 0.7em;
 				}
 
@@ -318,7 +317,7 @@ body.admin-logged {
 			.current-variant {
 				cursor: pointer;
 				position: relative;
-				p {
+				.custom-variant-name {
 					text-decoration: none !important;
 				}
 				.custom-variant-price {

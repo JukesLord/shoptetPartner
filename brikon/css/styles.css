@@ -290,7 +290,7 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant {
   gap: 14px;
   text-decoration: none;
 }
-body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant:hover p {
+body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant:hover .custom-variant-name {
   text-decoration: underline;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info {
@@ -303,13 +303,12 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info
           flex-direction: column;
   row-gap: 0.25em;
 }
-body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info p {
+body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info .custom-variant-name-price {
   margin: 0;
   display: inline-block;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info .custom-variant-price {
   opacity: 0.6;
-  display: block;
   padding-left: 0.7em;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info * {
@@ -319,7 +318,7 @@ body.admin-logged .custom-variants-wrapper .custom-variants .current-variant {
   cursor: pointer;
   position: relative;
 }
-body.admin-logged .custom-variants-wrapper .custom-variants .current-variant p {
+body.admin-logged .custom-variants-wrapper .custom-variants .current-variant .custom-variant-name {
   text-decoration: none !important;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .current-variant .custom-variant-price {
