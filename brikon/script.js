@@ -44,6 +44,7 @@ if (document.body.classList.contains("admin-logged")) {
 		reworkProductVariants();
 		hideEmptyDetailParameters();
 		moveRelatedProducts();
+		moveExtendedDescription();
 	}
 
 	function reworkProductVariants() {
@@ -174,6 +175,28 @@ if (document.body.classList.contains("admin-logged")) {
 		newTab.className = "shp-tab";
 		newTab.setAttribute("data-testid", "productsRelated");
 		newTab.innerHTML = `<a href="#productsRelated" class="shp-tab-link" role="tab" data-toggle="tab" aria-expanded="false">${retatedTitleText}</a>`;
+		pDetailTabs.appendChild(newTab);
+	}
+
+	function moveExtendedDescription() {
+		const extendedDescription = document.querySelector("#tab-content .extended-description");
+		if (!extendedDescription) {
+			return;
+		}
+		extendedDescription.id = "extendedDescription";
+		let pDetailTabs = document.querySelector("#p-detail-tabs");
+		let tabContent = document.querySelector(".p-detail-tabs-wrapper .tab-content");
+		if (!tabContent || !pDetailTabs) {
+			return;
+		}
+		tabContent.appendChild(extendedDescription);
+
+		let parametersText = "Parametry";
+
+		const newTab = document.createElement("li");
+		newTab.className = "shp-tab";
+		newTab.setAttribute("data-testid", "extendedDescription");
+		newTab.innerHTML = `<a href="#extendedDescription" class="shp-tab-link" role="tab" data-toggle="tab" aria-expanded="false">${parametersText}</a>`;
 		pDetailTabs.appendChild(newTab);
 	}
 }

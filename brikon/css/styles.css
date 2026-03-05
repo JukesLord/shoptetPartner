@@ -375,3 +375,14 @@ body.admin-logged .p-detail-tabs-wrapper .products-related.active {
   display: -ms-flexbox !important;
   display: flex !important;
 }
+body.admin-logged #tab-content .extended-description {
+  display: none !important;
+}
+body.admin-logged #tab-content .extended-description.active {
+  display: block !important;
+  padding-left: 0;
+  max-width: none;
+}
+body.admin-logged #tab-content .extended-description.active table {
+  max-width: 480px;
+}

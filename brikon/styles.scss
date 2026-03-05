@@ -379,4 +379,15 @@ body.admin-logged {
 			}
 		}
 	}
+	#tab-content .extended-description {
+		display: none !important;
+		&.active {
+			display: block !important;
+			padding-left: 0;
+			max-width: none;
+			table {
+				max-width: 480px;
+			}
+		}
+	}
 }
