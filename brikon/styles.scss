@@ -269,6 +269,7 @@ body.admin-logged {
 		position: relative;
 		z-index: 999;
 		width: 100%;
+
 		@media screen and (max-width: 480px) {
 			padding-bottom: 1em;
 		}
@@ -288,6 +289,7 @@ body.admin-logged {
 				align-items: center;
 				gap: 14px;
 				text-decoration: none;
+				padding-right: 30px;
 				&:hover {
 					.custom-variant-name {
 						text-decoration: underline;

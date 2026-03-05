@@ -289,6 +289,7 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant {
           align-items: center;
   gap: 14px;
   text-decoration: none;
+  padding-right: 30px;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant:hover .custom-variant-name {
   text-decoration: underline;
