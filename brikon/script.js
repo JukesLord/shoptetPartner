@@ -121,7 +121,6 @@ if (document.body.classList.contains("admin-logged")) {
 					${variantsHTML}
 				</div>
 			</div>`;
-
 		container.closest("#productsAlternative").replaceWith(wrapper);
 
 		const pDetailInfo = document.querySelector(".product-top .p-detail-info");
