@@ -83,10 +83,10 @@ if (document.body.classList.contains("admin-logged")) {
 				const priceDiff = isNaN(diff)
 					? ""
 					: diff > 0
-						? `+ ${diff.toLocaleString("cs-CZ")},-`
+						? `+&nbsp;${diff.toLocaleString("cs-CZ")},-`
 						: diff < 0
-							? `- ${Math.abs(diff).toLocaleString("cs-CZ")},-`
-							: "+ 0,-";
+							? `-&nbsp;${Math.abs(diff).toLocaleString("cs-CZ")},-`
+							: "+&nbsp;0,-";
 
 				return {
 					diff: isNaN(diff) ? Infinity : Math.abs(diff),

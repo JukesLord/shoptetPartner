@@ -265,7 +265,6 @@ body:not(.admin-logged) {
 
 body.admin-logged {
 	.custom-variants-wrapper {
-		filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 		position: relative;
 		z-index: 999;
 		width: 100%;
@@ -282,6 +281,10 @@ body.admin-logged {
 			position: relative;
 			background: white;
 			display: block;
+			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+			&.active {
+				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+			}
 
 			.custom-variant {
 				display: grid;
@@ -299,7 +302,6 @@ body.admin-logged {
 			.custom-variant-info {
 				display: flex;
 				flex-direction: column;
-				row-gap: 0.25em;
 				.custom-variant-name-price {
 					margin: 0;
 					display: inline-block;
@@ -310,6 +312,8 @@ body.admin-logged {
 				}
 
 				.custom-variant-availability {
+					padding-top: 0.25em;
+					padding-bottom: 0.5em;
 				}
 				* {
 					font-size: 1em;

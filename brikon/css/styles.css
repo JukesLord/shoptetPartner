@@ -262,8 +262,6 @@ body:not(.admin-logged) #productsAlternative:before {
 }
 
 body.admin-logged .custom-variants-wrapper {
-  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   position: relative;
   z-index: 999;
   width: 100%;
@@ -280,6 +278,12 @@ body.admin-logged .custom-variants-wrapper .custom-variants {
   position: relative;
   background: white;
   display: block;
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+}
+body.admin-logged .custom-variants-wrapper .custom-variants.active {
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant {
   display: grid;
@@ -302,7 +306,6 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 0.25em;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info .custom-variant-name-price {
   margin: 0;
@@ -311,6 +314,10 @@ body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info .custom-variant-price {
   opacity: 0.6;
   padding-left: 0.7em;
+}
+body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info .custom-variant-availability {
+  padding-top: 0.25em;
+  padding-bottom: 0.5em;
 }
 body.admin-logged .custom-variants-wrapper .custom-variants .custom-variant-info * {
   font-size: 1em;
