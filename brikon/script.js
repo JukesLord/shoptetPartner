@@ -1,7 +1,8 @@
-if (!document.body.classList.contains("admin-logged")) {
+/*alternative varianty podobné star=*/
+/* if (!document.body.classList.contains("admin-logged")) {
 	if (document.body.classList.contains("type-detail")) {
 		document.addEventListener("DOMContentLoaded", function (event) {
-			/*alternative varianty podobné*/
+		
 			if ($("#productsAlternativec .product").length > 0) {
 				$("#productsAlternativec .product").each(function () {
 					let $this = $(this);
@@ -37,60 +38,61 @@ if (!document.body.classList.contains("admin-logged")) {
 	$(document).ready(function () {
 		$("#productsAlternative").insertAfter(".p-detail-inner-header");
 	});
+} */
+
+/*alternative varianty nové*/
+
+if (document.body.classList.contains("type-detail")) {
+	reworkProductVariants();
+	hideEmptyDetailParameters();
+	moveRelatedProducts();
+	moveExtendedDescription();
 }
 
-if (document.body.classList.contains("admin-logged")) {
-	if (document.body.classList.contains("type-detail")) {
-		reworkProductVariants();
-		hideEmptyDetailParameters();
-		moveRelatedProducts();
-		moveExtendedDescription();
-	}
+function reworkProductVariants() {
+	const container = document.querySelector("#productsAlternative .products");
+	if (!container) return;
 
-	function reworkProductVariants() {
-		const container = document.querySelector("#productsAlternative .products");
-		if (!container) return;
+	const products = container.querySelectorAll(".product:not(.show-more-products-box)");
+	if (products.length === 0) return;
 
-		const products = container.querySelectorAll(".product:not(.show-more-products-box)");
-		if (products.length === 0) return;
+	const currentImgEl = document.querySelector(".p-main-image img");
+	const currentImgSrc = currentImgEl?.getAttribute("src") || "";
+	const currentImgAlt = currentImgEl?.getAttribute("alt") || "";
+	const currentName = document.querySelector(".p-detail-inner-header h1")?.textContent.trim() || "";
+	const currentPrice = document.querySelector(".price-final-holder")?.textContent.trim() || "";
+	const currentPriceNum = parseInt(currentPrice.replace(/\s/g, "").replace(/[^\d]/g, ""), 10);
 
-		const currentImgEl = document.querySelector(".p-main-image img");
-		const currentImgSrc = currentImgEl?.getAttribute("src") || "";
-		const currentImgAlt = currentImgEl?.getAttribute("alt") || "";
-		const currentName = document.querySelector(".p-detail-inner-header h1")?.textContent.trim() || "";
-		const currentPrice = document.querySelector(".price-final-holder")?.textContent.trim() || "";
-		const currentPriceNum = parseInt(currentPrice.replace(/\s/g, "").replace(/[^\d]/g, ""), 10);
+	const variantsHTML = Array.from(products)
+		.map((product) => {
+			const imgEl = product.querySelector(".image img");
+			const imgSrc = imgEl?.getAttribute("data-src") || imgEl?.getAttribute("src") || "";
+			const imgAlt = imgEl?.getAttribute("alt") || "";
 
-		const variantsHTML = Array.from(products)
-			.map((product) => {
-				const imgEl = product.querySelector(".image img");
-				const imgSrc = imgEl?.getAttribute("data-src") || imgEl?.getAttribute("src") || "";
-				const imgAlt = imgEl?.getAttribute("alt") || "";
+			const name = product.querySelector("[data-micro='name']")?.textContent.trim() || "";
+			const href =
+				product.querySelector("a.image")?.getAttribute("href") ||
+				product.querySelector("a.name")?.getAttribute("href") ||
+				"#";
 
-				const name = product.querySelector("[data-micro='name']")?.textContent.trim() || "";
-				const href =
-					product.querySelector("a.image")?.getAttribute("href") ||
-					product.querySelector("a.name")?.getAttribute("href") ||
-					"#";
+			const availabilityEl = product.querySelector(".availability span");
+			const availability = availabilityEl?.textContent.trim() || "";
+			const availabilityColor = availabilityEl?.style.color || "";
 
-				const availabilityEl = product.querySelector(".availability span");
-				const availability = availabilityEl?.textContent.trim() || "";
-				const availabilityColor = availabilityEl?.style.color || "";
+			const priceRaw = product.querySelector(".price-final strong")?.textContent.trim() || "";
+			const priceNum = parseInt(priceRaw.replace(/\s/g, "").replace(/[^\d]/g, ""), 10);
+			const diff = priceNum - currentPriceNum;
+			const priceDiff = isNaN(diff)
+				? ""
+				: diff > 0
+					? `+&nbsp;${diff.toLocaleString("cs-CZ")},-`
+					: diff < 0
+						? `-&nbsp;${Math.abs(diff).toLocaleString("cs-CZ")},-`
+						: "+&nbsp;0,-";
 
-				const priceRaw = product.querySelector(".price-final strong")?.textContent.trim() || "";
-				const priceNum = parseInt(priceRaw.replace(/\s/g, "").replace(/[^\d]/g, ""), 10);
-				const diff = priceNum - currentPriceNum;
-				const priceDiff = isNaN(diff)
-					? ""
-					: diff > 0
-						? `+&nbsp;${diff.toLocaleString("cs-CZ")},-`
-						: diff < 0
-							? `-&nbsp;${Math.abs(diff).toLocaleString("cs-CZ")},-`
-							: "+&nbsp;0,-";
-
-				return {
-					diff: isNaN(diff) ? Infinity : Math.abs(diff),
-					html: `<a href="${href}" class="custom-variant">
+			return {
+				diff: isNaN(diff) ? Infinity : Math.abs(diff),
+				html: `<a href="${href}" class="custom-variant">
 				<div class="custom-variant-image">
 					<img src="${imgSrc}" alt="${imgAlt}">
 				</div>
@@ -101,13 +103,13 @@ if (document.body.classList.contains("admin-logged")) {
 					<span class="custom-variant-availability" style="color:${availabilityColor}">${availability}</span>
 				</div>
 			</a>`,
-				};
-			})
-			.sort((a, b) => a.diff - b.diff)
-			.map((item) => item.html)
-			.join("");
+			};
+		})
+		.sort((a, b) => a.diff - b.diff)
+		.map((item) => item.html)
+		.join("");
 
-		const currentVariantHTML = `<div class="current-variant">
+	const currentVariantHTML = `<div class="current-variant">
 			<div class="custom-variant">
 				<div class="custom-variant-image">
 					<img src="${currentImgSrc}" alt="${currentImgAlt}">
@@ -121,84 +123,83 @@ if (document.body.classList.contains("admin-logged")) {
 			</div>
 		</div>`;
 
-		const wrapper = document.createElement("div");
-		wrapper.className = "custom-variants-wrapper";
-		wrapper.innerHTML = `<p>Další dostupné varianty:</p>
+	const wrapper = document.createElement("div");
+	wrapper.className = "custom-variants-wrapper";
+	wrapper.innerHTML = `<p>Další dostupné varianty:</p>
 			<div class="custom-variants">
 				${currentVariantHTML}
 				<div class="custom-other-variants">
 					${variantsHTML}
 				</div>
 			</div>`;
-		container.closest("#productsAlternative").replaceWith(wrapper);
+	container.closest("#productsAlternative").replaceWith(wrapper);
 
-		const pDetailInfo = document.querySelector(".product-top .p-detail-info");
-		if (pDetailInfo) {
-			pDetailInfo.appendChild(wrapper);
-		}
-
-		wrapper.querySelector(".current-variant").addEventListener("click", function () {
-			wrapper.querySelector(".custom-variants").classList.toggle("active");
-		});
+	const pDetailInfo = document.querySelector(".product-top .p-detail-info");
+	if (pDetailInfo) {
+		pDetailInfo.appendChild(wrapper);
 	}
 
-	function hideEmptyDetailParameters() {
-		let parameters = document.querySelector(".product-top .detail-parameters");
-		if (!parameters) {
-			return;
-		}
-		let parametersLength = parameters.querySelectorAll(".parameter").length;
-		if (parametersLength === 0) {
-			parameters.classList.add("empty");
-		}
+	wrapper.querySelector(".current-variant").addEventListener("click", function () {
+		wrapper.querySelector(".custom-variants").classList.toggle("active");
+	});
+}
+
+function hideEmptyDetailParameters() {
+	let parameters = document.querySelector(".product-top .detail-parameters");
+	if (!parameters) {
+		return;
 	}
-
-	function moveRelatedProducts() {
-		const relatedProducts = document.querySelector(".products-related");
-		if (!relatedProducts) {
-			return;
-		}
-		relatedProducts.id = "productsRelated";
-		let pDetailTabs = document.querySelector("#p-detail-tabs");
-		let tabContent = document.querySelector(".p-detail-tabs-wrapper .tab-content");
-		if (!tabContent || !pDetailTabs) {
-			return;
-		}
-		tabContent.appendChild(relatedProducts);
-		let relatedTitle = relatedProducts.querySelector(".products-related-header");
-		let retatedTitleText;
-		if (relatedTitle) {
-			retatedTitleText = relatedTitle.textContent.trim();
-			relatedTitle.remove();
-		} else {
-			retatedTitleText = "Související produkty";
-		}
-		const newTab = document.createElement("li");
-		newTab.className = "shp-tab";
-		newTab.setAttribute("data-testid", "productsRelated");
-		newTab.innerHTML = `<a href="#productsRelated" class="shp-tab-link" role="tab" data-toggle="tab" aria-expanded="false">${retatedTitleText}</a>`;
-		pDetailTabs.appendChild(newTab);
+	let parametersLength = parameters.querySelectorAll(".parameter").length;
+	if (parametersLength === 0) {
+		parameters.classList.add("empty");
 	}
+}
 
-	function moveExtendedDescription() {
-		const extendedDescription = document.querySelector("#tab-content .extended-description");
-		if (!extendedDescription) {
-			return;
-		}
-		extendedDescription.id = "extendedDescription";
-		let pDetailTabs = document.querySelector("#p-detail-tabs");
-		let tabContent = document.querySelector(".p-detail-tabs-wrapper .tab-content");
-		if (!tabContent || !pDetailTabs) {
-			return;
-		}
-		tabContent.appendChild(extendedDescription);
-
-		let parametersText = "Parametry";
-
-		const newTab = document.createElement("li");
-		newTab.className = "shp-tab";
-		newTab.setAttribute("data-testid", "extendedDescription");
-		newTab.innerHTML = `<a href="#extendedDescription" class="shp-tab-link" role="tab" data-toggle="tab" aria-expanded="false">${parametersText}</a>`;
-		pDetailTabs.insertBefore(newTab, pDetailTabs.children[1] || null);
+function moveRelatedProducts() {
+	const relatedProducts = document.querySelector(".products-related");
+	if (!relatedProducts) {
+		return;
 	}
+	relatedProducts.id = "productsRelated";
+	let pDetailTabs = document.querySelector("#p-detail-tabs");
+	let tabContent = document.querySelector(".p-detail-tabs-wrapper .tab-content");
+	if (!tabContent || !pDetailTabs) {
+		return;
+	}
+	tabContent.appendChild(relatedProducts);
+	let relatedTitle = relatedProducts.querySelector(".products-related-header");
+	let retatedTitleText;
+	if (relatedTitle) {
+		retatedTitleText = relatedTitle.textContent.trim();
+		relatedTitle.remove();
+	} else {
+		retatedTitleText = "Související produkty";
+	}
+	const newTab = document.createElement("li");
+	newTab.className = "shp-tab";
+	newTab.setAttribute("data-testid", "productsRelated");
+	newTab.innerHTML = `<a href="#productsRelated" class="shp-tab-link" role="tab" data-toggle="tab" aria-expanded="false">${retatedTitleText}</a>`;
+	pDetailTabs.appendChild(newTab);
+}
+
+function moveExtendedDescription() {
+	const extendedDescription = document.querySelector("#tab-content .extended-description");
+	if (!extendedDescription) {
+		return;
+	}
+	extendedDescription.id = "extendedDescription";
+	let pDetailTabs = document.querySelector("#p-detail-tabs");
+	let tabContent = document.querySelector(".p-detail-tabs-wrapper .tab-content");
+	if (!tabContent || !pDetailTabs) {
+		return;
+	}
+	tabContent.appendChild(extendedDescription);
+
+	let parametersText = "Parametry";
+
+	const newTab = document.createElement("li");
+	newTab.className = "shp-tab";
+	newTab.setAttribute("data-testid", "extendedDescription");
+	newTab.innerHTML = `<a href="#extendedDescription" class="shp-tab-link" role="tab" data-toggle="tab" aria-expanded="false">${parametersText}</a>`;
+	pDetailTabs.insertBefore(newTab, pDetailTabs.children[1] || null);
 }
