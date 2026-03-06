@@ -91,7 +91,7 @@ function reworkProductVariants() {
 						: "+&nbsp;0,-";
 
 			return {
-				diff: isNaN(diff) ? Infinity : Math.abs(diff),
+				diff: isNaN(diff) ? Infinity : diff,
 				html: `<a href="${href}" class="custom-variant">
 				<div class="custom-variant-image">
 					<img src="${imgSrc}" alt="${imgAlt}">
