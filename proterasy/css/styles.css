@@ -575,3 +575,10 @@
 }
 
 /* } */
+.products-block .product .p {
+  padding-bottom: 1em;
+}
+.products-block .product .p-code {
+  top: auto;
+  bottom: 0;
+}

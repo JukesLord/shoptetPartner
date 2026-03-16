@@ -541,3 +541,15 @@
 	}
 }
 /* } */
+
+.products-block {
+	.product {
+		.p {
+			padding-bottom: 1em;
+		}
+		.p-code {
+			top: auto;
+			bottom: 0;
+		}
+	}
+}
