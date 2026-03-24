@@ -14,6 +14,12 @@
 			}
 		}
 	} */
+@media screen and (max-width: 600px) {
+  .type-posts-listing .news-wrapper .news-item .image a:hover img {
+    -webkit-transform: scale(1.1) !important;
+            transform: scale(1.1) !important;
+  }
+}
 @media (min-width: 992px) {
   .type-posts-listing .news-wrapper .news-item:first-child {
     padding-bottom: 0;
