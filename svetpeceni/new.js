@@ -278,3 +278,15 @@ if (document.body.classList.contains("in-index")) {
 		}
 	}
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+	getUserNameAndDisplayInNavigation();
+	function getUserNameAndDisplayInNavigation() {
+		const userNameElement = document.querySelector(".login-widget strong");
+		if (userNameElement) {
+			console.log(userNameElement.textContent);
+		} else {
+			console.warn("User name element not found in the DOM.");
+		}
+	}
+});
