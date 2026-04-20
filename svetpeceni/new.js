@@ -285,6 +285,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		const userNameElement = document.querySelector(".login-widget strong");
 		if (userNameElement) {
 			console.log(userNameElement.textContent);
+			let userAElement = document.querySelector("#header .top-nav-button-account");
+			if (userAElement) {
+				userAElement.style.setProperty("--user-name", `"${userNameElement.textContent}"`);
+			}
 		} else {
 			console.warn("User name element not found in the DOM.");
 		}

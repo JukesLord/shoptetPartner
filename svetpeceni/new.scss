@@ -279,12 +279,13 @@ $desktop-large-min: 1680px;
 				}
 				> a.top-nav-button-account {
 					margin-right: 2.2em;
+
 					&::after {
 						position: absolute;
 						left: 3.5em;
 						top: 50%;
 						transform: translateY(-50%);
-						content: "Můj účet";
+						content: var(--user-name, "Můj účet");
 						font-size: 0.6em;
 						padding-left: 0;
 						width: max-content;
