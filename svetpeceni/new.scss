@@ -284,10 +284,14 @@ $desktop-large-min: 1680px;
 						content: var(--user-name, "Můj účet");
 					}
 				}
+
 				> a.cart-count {
 					&::after {
 						content: "Košík";
 						margin-right: 0;
+					}
+					i {
+						left: 0.85em;
 					}
 				}
 			}

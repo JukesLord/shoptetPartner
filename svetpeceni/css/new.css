@@ -304,4 +304,7 @@
     content: "Košík";
     margin-right: 0;
   }
+  .admin-logged #header .navigation-buttons > a.cart-count i {
+    left: 0.85em;
+  }
 }
