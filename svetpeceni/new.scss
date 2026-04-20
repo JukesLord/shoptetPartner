@@ -248,3 +248,61 @@ $desktop-large-min: 1680px;
 	margin-left: auto;
 	margin-right: auto;
 }
+
+@media (min-width: $tablet-min) {
+	.admin-logged {
+		#header {
+			.navigation-buttons {
+				> a[data-target="search"] {
+					margin-right: 1.75em;
+					&::after {
+						position: absolute;
+						left: 3.5em;
+						top: 50%;
+						transform: translateY(-50%);
+						content: "Hledat";
+						font-size: 0.6em;
+						padding-left: 0;
+					}
+				}
+				> button {
+					margin-right: 2em;
+					&::after {
+						position: absolute;
+						left: 3.5em;
+						top: 50%;
+						transform: translateY(-50%);
+						content: "Přihlásit";
+						font-size: 0.6em;
+						padding-left: 0;
+					}
+				}
+				> a.top-nav-button-account {
+					margin-right: 2.2em;
+					&::after {
+						position: absolute;
+						left: 3.5em;
+						top: 50%;
+						transform: translateY(-50%);
+						content: "Můj účet";
+						font-size: 0.6em;
+						padding-left: 0;
+						width: max-content;
+					}
+				}
+				> a.cart-count {
+					margin-right: 1.25em;
+					&::after {
+						position: absolute;
+						left: 3.5em;
+						top: 50%;
+						transform: translateY(-50%);
+						content: "Košík";
+						font-size: 0.6em;
+						padding-left: 0;
+					}
+				}
+			}
+		}
+	}
+}

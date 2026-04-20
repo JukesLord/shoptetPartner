@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*--------------------hodnoceni*/
 .votes-slider {
   --width-multiplier-of-1st-item: 1;
@@ -267,4 +268,62 @@
   max-width: calc(1712px + var(--padding-sides) * 2);
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .admin-logged #header .navigation-buttons > a[data-target=search] {
+    margin-right: 1.75em;
+  }
+  .admin-logged #header .navigation-buttons > a[data-target=search]::after {
+    position: absolute;
+    left: 3.5em;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    content: "Hledat";
+    font-size: 0.6em;
+    padding-left: 0;
+  }
+  .admin-logged #header .navigation-buttons > button {
+    margin-right: 2em;
+  }
+  .admin-logged #header .navigation-buttons > button::after {
+    position: absolute;
+    left: 3.5em;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    content: "Přihlásit";
+    font-size: 0.6em;
+    padding-left: 0;
+  }
+  .admin-logged #header .navigation-buttons > a.top-nav-button-account {
+    margin-right: 2.2em;
+  }
+  .admin-logged #header .navigation-buttons > a.top-nav-button-account::after {
+    position: absolute;
+    left: 3.5em;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    content: "Můj účet";
+    font-size: 0.6em;
+    padding-left: 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+  .admin-logged #header .navigation-buttons > a.cart-count {
+    margin-right: 1.25em;
+  }
+  .admin-logged #header .navigation-buttons > a.cart-count::after {
+    position: absolute;
+    left: 3.5em;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    content: "Košík";
+    font-size: 0.6em;
+    padding-left: 0;
+  }
 }
