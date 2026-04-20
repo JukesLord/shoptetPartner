@@ -271,59 +271,37 @@
 }
 
 @media (min-width: 768px) {
-  .admin-logged #header .navigation-buttons > a[data-target=search] {
-    margin-right: 1.75em;
+  .admin-logged #header .navigation-buttons > *:not([data-target=navigation]) {
+    margin-right: 0.25em;
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .admin-logged #header .navigation-buttons > *:not([data-target=navigation])::after {
+    position: relative;
+    content: "";
+    font-size: 14px;
+    padding-left: 0;
+    line-height: 1;
+    margin-left: 0.4em;
+    margin-right: 0.8em;
+    font-weight: 500;
   }
   .admin-logged #header .navigation-buttons > a[data-target=search]::after {
-    position: absolute;
-    left: 3.5em;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
     content: "Hledat";
-    font-size: 0.6em;
-    padding-left: 0;
   }
-  .admin-logged #header .navigation-buttons > button {
-    margin-right: 2em;
-  }
-  .admin-logged #header .navigation-buttons > button::after {
-    position: absolute;
-    left: 3.5em;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+  .admin-logged #header .navigation-buttons > button.top-nav-button-login::after {
     content: "Přihlásit";
-    font-size: 0.6em;
-    padding-left: 0;
-  }
-  .admin-logged #header .navigation-buttons > a.top-nav-button-account {
-    margin-right: 2.2em;
   }
   .admin-logged #header .navigation-buttons > a.top-nav-button-account::after {
-    position: absolute;
-    left: 3.5em;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    content: "Můj účet";
-    font-size: 0.6em;
-    padding-left: 0;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-  }
-  .admin-logged #header .navigation-buttons > a.cart-count {
-    margin-right: 1.25em;
+    content: var(--user-name, "Můj účet");
   }
   .admin-logged #header .navigation-buttons > a.cart-count::after {
-    position: absolute;
-    left: 3.5em;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
     content: "Košík";
-    font-size: 0.6em;
-    padding-left: 0;
+    margin-right: 0;
   }
 }
