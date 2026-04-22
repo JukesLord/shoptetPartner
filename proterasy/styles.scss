@@ -553,3 +553,142 @@
 		}
 	}
 }
+
+/*Alternative jako varianty*/
+.admin-logged {
+	.p-detail-tabs .shp-tab[data-testid="tabAlternativeProducts"] {
+		display: none;
+	}
+
+	#tab-content {
+		#productsAlternative {
+			display: none;
+		}
+	}
+
+	#productsAlternative.in-product-top {
+		transition: none;
+		h3 {
+			margin-bottom: 0.5em;
+			font-size: 16px;
+		}
+		.p-prev,
+		.p-next,
+		.browse-p {
+			display: none !important;
+		}
+		* {
+			transition: none;
+		}
+
+		.products {
+			padding: 1px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 10px;
+
+			@media screen and (max-width: 1439px) {
+				grid-template-columns: 1fr;
+			}
+			@media screen and (max-width: 1200px) {
+				grid-template-columns: 1fr 1fr;
+			}
+			@media screen and (max-width: 640px) {
+				grid-template-columns: 1fr;
+			}
+
+			.product {
+				display: block;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				border-style: solid;
+				border-width: 1px;
+				border-color: var(--color-secondary);
+				position: relative;
+				min-height: 70px;
+
+				&.inactive {
+					display: block;
+				}
+				&:hover {
+					border-color: var(--color-primary);
+					.name {
+						text-decoration: underline;
+					}
+				}
+				.p {
+					display: grid;
+					--image-width: 50px;
+					--padding: 10px;
+					padding: var(--padding) var(--padding) var(--padding) calc(var(--padding) * 2 + var(--image-width));
+					a.image {
+						position: absolute;
+						height: 100%;
+						width: 100%;
+						margin: 0;
+						img {
+							position: absolute;
+							left: var(--padding);
+							width: var(--image-width);
+							top: 50%;
+							transform: translateY(-50%);
+						}
+					}
+					.p-in {
+						display: grid;
+						grid-template-columns: 1.25fr 1fr;
+						gap: 10px;
+						align-items: center;
+						a.name {
+							height: auto;
+							font-size: 12px;
+							margin: 0;
+							text-align: left;
+						}
+						.prices {
+							display: flex;
+							flex-direction: column;
+							gap: 5px;
+							.price-additional {
+								font-size: 11px;
+							}
+							.price-final {
+								font-size: 14px;
+								strong {
+									font-size: 14px;
+								}
+							}
+							.flag-discount {
+								padding-top: 3px;
+								display: flex;
+								background: none;
+								text-align: left;
+								padding: 0;
+								margin: 0;
+								position: relative;
+								font-size: 11px;
+								.price-standard {
+									font-weight: 400;
+									font-size: 14px;
+								}
+								.price-save {
+									font-size: 14px;
+									font-weight: 400;
+								}
+							}
+						}
+					}
+				}
+
+				.p-code,
+				.ratings-wrapper,
+				.p-tools,
+				.p-desc,
+				.flags-extra {
+					display: none;
+				}
+			}
+		}
+	}
+}

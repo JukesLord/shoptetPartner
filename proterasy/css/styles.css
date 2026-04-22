@@ -582,3 +582,149 @@
   top: auto;
   bottom: 0;
 }
+
+/*Alternative jako varianty*/
+.admin-logged .p-detail-tabs .shp-tab[data-testid=tabAlternativeProducts] {
+  display: none;
+}
+.admin-logged #tab-content #productsAlternative {
+  display: none;
+}
+.admin-logged #productsAlternative.in-product-top {
+  -webkit-transition: none;
+  transition: none;
+}
+.admin-logged #productsAlternative.in-product-top h3 {
+  margin-bottom: 0.5em;
+  font-size: 16px;
+}
+.admin-logged #productsAlternative.in-product-top .p-prev,
+.admin-logged #productsAlternative.in-product-top .p-next,
+.admin-logged #productsAlternative.in-product-top .browse-p {
+  display: none !important;
+}
+.admin-logged #productsAlternative.in-product-top * {
+  -webkit-transition: none;
+  transition: none;
+}
+.admin-logged #productsAlternative.in-product-top .products {
+  padding: 1px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+@media screen and (max-width: 1439px) {
+  .admin-logged #productsAlternative.in-product-top .products {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .admin-logged #productsAlternative.in-product-top .products {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 640px) {
+  .admin-logged #productsAlternative.in-product-top .products {
+    grid-template-columns: 1fr;
+  }
+}
+.admin-logged #productsAlternative.in-product-top .products .product {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-secondary);
+  position: relative;
+  min-height: 70px;
+}
+.admin-logged #productsAlternative.in-product-top .products .product.inactive {
+  display: block;
+}
+.admin-logged #productsAlternative.in-product-top .products .product:hover {
+  border-color: var(--color-primary);
+}
+.admin-logged #productsAlternative.in-product-top .products .product:hover .name {
+  text-decoration: underline;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p {
+  display: grid;
+  --image-width: 50px;
+  --padding: 10px;
+  padding: var(--padding) var(--padding) var(--padding) calc(var(--padding) * 2 + var(--image-width));
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p a.image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p a.image img {
+  position: absolute;
+  left: var(--padding);
+  width: var(--image-width);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p .p-in {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p .p-in a.name {
+  height: auto;
+  font-size: 12px;
+  margin: 0;
+  text-align: left;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .price-additional {
+  font-size: 11px;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .price-final {
+  font-size: 14px;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .price-final strong {
+  font-size: 14px;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .flag-discount {
+  padding-top: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  font-size: 11px;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .flag-discount .price-standard {
+  font-weight: 400;
+  font-size: 14px;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .flag-discount .price-save {
+  font-size: 14px;
+  font-weight: 400;
+}
+.admin-logged #productsAlternative.in-product-top .products .product .p-code,
+.admin-logged #productsAlternative.in-product-top .products .product .ratings-wrapper,
+.admin-logged #productsAlternative.in-product-top .products .product .p-tools,
+.admin-logged #productsAlternative.in-product-top .products .product .p-desc,
+.admin-logged #productsAlternative.in-product-top .products .product .flags-extra {
+  display: none;
+}

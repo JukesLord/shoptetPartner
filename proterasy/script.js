@@ -233,3 +233,50 @@ function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, custom
 	}
 }
 /* } */
+
+if (document.body.classList.contains("type-product")) {
+	editAlternativeProducts();
+	function editAlternativeProducts() {
+		if (!document.body.classList.contains("admin-logged")) {
+			return;
+		}
+		const alt = document.querySelector("#tab-content #productsAlternative");
+		if (!alt) return;
+		alt.classList.remove("fade");
+		alt.classList.add("in-product-top");
+		const altTitle = document.createElement("h3");
+		altTitle.textContent = "Další varianty:";
+		alt.prepend(altTitle);
+
+		removeNotAvaiableProducts();
+		movePriceStandardToPrices();
+
+		const social = document.querySelector(".p-info-wrapper .social-buttons-wrapper");
+		if (social) {
+			social.before(alt);
+			return;
+		}
+		const infoWrapper = document.querySelector(".p-info-wrapper");
+		if (!infoWrapper) return;
+		infoWrapper.append(alt);
+	}
+	function removeNotAvaiableProducts() {
+		const notAvailableProducts = document.querySelectorAll("#productsAlternative .product");
+		notAvailableProducts.forEach((product) => {
+			if (!product.querySelector(".p-tools form button.add-to-cart-button")) {
+				product.remove();
+			}
+		});
+	}
+	function movePriceStandardToPrices() {
+		const productsWithPriceStandard = document.querySelectorAll("#productsAlternative .product");
+		productsWithPriceStandard.forEach((product) => {
+			const priceStandard = product.querySelector(".flag-discount");
+			const priceWrapper = product.querySelector(".prices");
+
+			if (priceStandard && priceWrapper) {
+				priceWrapper.appendChild(priceStandard);
+			}
+		});
+	}
+}
