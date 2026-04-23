@@ -568,9 +568,11 @@
 
 	#productsAlternative.in-product-top {
 		transition: none;
+		padding-top: 10px;
 		h3 {
 			margin-bottom: 0.5em;
 			font-size: 16px;
+			margin-top: 0;
 		}
 		.p-prev,
 		.p-next,
