@@ -250,51 +250,55 @@ $desktop-large-min: 1680px;
 }
 
 @media (min-width: $tablet-min) {
-	.admin-logged {
-		#header {
-			.navigation-buttons {
-				> *:not([data-target="navigation"]) {
-					margin-right: 0.25em;
-					width: auto;
-					display: flex;
-					align-items: center;
-					&::after {
-						position: relative;
-						content: "";
-						font-size: 14px;
-						padding-left: 0;
-						line-height: 1;
-						margin-left: 0.4em;
-						margin-right: 0.8em;
-						font-weight: 500;
-					}
+	#header {
+		.navigation-buttons {
+			> *:not([data-target="navigation"]) {
+				margin-right: 0.25em;
+				width: auto;
+				display: flex;
+				align-items: center;
+				&::after {
+					position: relative;
+					content: "";
+					font-size: 14px;
+					padding-left: 0;
+					line-height: 1;
+					margin-left: 0.4em;
+					margin-right: 0.8em;
+					font-weight: 500;
 				}
-				> a[data-target="search"] {
-					&::after {
-						content: "Hledat";
-					}
+			}
+			> a[data-target="search"] {
+				&::after {
+					content: "Hledat";
 				}
-				> button.top-nav-button-login {
-					&::after {
-						content: "Přihlásit";
-					}
+			}
+			> button.top-nav-button-login {
+				&::after {
+					content: "Přihlásit";
 				}
-				> a.top-nav-button-account {
-					&::after {
-						content: var(--user-name, "Můj účet");
-					}
+			}
+			> a.top-nav-button-account {
+				&::after {
+					content: var(--user-name, "Můj účet");
 				}
+			}
 
-				> a.cart-count {
-					&::after {
-						content: "Košík";
-						margin-right: 0;
-					}
-					i {
-						left: 0.85em;
-					}
+			> a.cart-count {
+				&::after {
+					content: "Košík";
+					margin-right: 0;
+				}
+				i {
+					left: 0.85em;
 				}
 			}
 		}
+	}
+}
+@media (min-width: $mobile-max) {
+	.top-nav-button-login,
+	a.top-nav-button-account {
+		display: flex;
 	}
 }

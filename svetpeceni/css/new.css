@@ -271,7 +271,7 @@
 }
 
 @media (min-width: 768px) {
-  .admin-logged #header .navigation-buttons > *:not([data-target=navigation]) {
+  #header .navigation-buttons > *:not([data-target=navigation]) {
     margin-right: 0.25em;
     width: auto;
     display: -webkit-box;
@@ -281,7 +281,7 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .admin-logged #header .navigation-buttons > *:not([data-target=navigation])::after {
+  #header .navigation-buttons > *:not([data-target=navigation])::after {
     position: relative;
     content: "";
     font-size: 14px;
@@ -291,20 +291,28 @@
     margin-right: 0.8em;
     font-weight: 500;
   }
-  .admin-logged #header .navigation-buttons > a[data-target=search]::after {
+  #header .navigation-buttons > a[data-target=search]::after {
     content: "Hledat";
   }
-  .admin-logged #header .navigation-buttons > button.top-nav-button-login::after {
+  #header .navigation-buttons > button.top-nav-button-login::after {
     content: "Přihlásit";
   }
-  .admin-logged #header .navigation-buttons > a.top-nav-button-account::after {
+  #header .navigation-buttons > a.top-nav-button-account::after {
     content: var(--user-name, "Můj účet");
   }
-  .admin-logged #header .navigation-buttons > a.cart-count::after {
+  #header .navigation-buttons > a.cart-count::after {
     content: "Košík";
     margin-right: 0;
   }
-  .admin-logged #header .navigation-buttons > a.cart-count i {
+  #header .navigation-buttons > a.cart-count i {
     left: 0.85em;
+  }
+}
+@media (min-width: 767px) {
+  .top-nav-button-login,
+  a.top-nav-button-account {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
