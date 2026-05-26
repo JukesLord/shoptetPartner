@@ -584,53 +584,55 @@
 }
 
 /*Alternative jako varianty*/
-.admin-logged .p-detail-tabs .shp-tab[data-testid=tabAlternativeProducts] {
+.p-detail-tabs .shp-tab[data-testid=tabAlternativeProducts] {
   display: none;
 }
-.admin-logged #tab-content #productsAlternative {
+
+#tab-content #productsAlternative {
   display: none;
 }
-.admin-logged #productsAlternative.in-product-top {
+
+#productsAlternative.in-product-top {
   -webkit-transition: none;
   transition: none;
   padding-top: 10px;
 }
-.admin-logged #productsAlternative.in-product-top h3 {
+#productsAlternative.in-product-top h3 {
   margin-bottom: 0.5em;
   font-size: 16px;
   margin-top: 0;
 }
-.admin-logged #productsAlternative.in-product-top .p-prev,
-.admin-logged #productsAlternative.in-product-top .p-next,
-.admin-logged #productsAlternative.in-product-top .browse-p {
+#productsAlternative.in-product-top .p-prev,
+#productsAlternative.in-product-top .p-next,
+#productsAlternative.in-product-top .browse-p {
   display: none !important;
 }
-.admin-logged #productsAlternative.in-product-top * {
+#productsAlternative.in-product-top * {
   -webkit-transition: none;
   transition: none;
 }
-.admin-logged #productsAlternative.in-product-top .products {
+#productsAlternative.in-product-top .products {
   padding: 1px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 @media screen and (max-width: 1439px) {
-  .admin-logged #productsAlternative.in-product-top .products {
+  #productsAlternative.in-product-top .products {
     grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 1200px) {
-  .admin-logged #productsAlternative.in-product-top .products {
+  #productsAlternative.in-product-top .products {
     grid-template-columns: 1fr 1fr;
   }
 }
 @media screen and (max-width: 640px) {
-  .admin-logged #productsAlternative.in-product-top .products {
+  #productsAlternative.in-product-top .products {
     grid-template-columns: 1fr;
   }
 }
-.admin-logged #productsAlternative.in-product-top .products .product {
+#productsAlternative.in-product-top .products .product {
   display: block;
   width: 100%;
   padding: 0;
@@ -641,28 +643,28 @@
   position: relative;
   min-height: 70px;
 }
-.admin-logged #productsAlternative.in-product-top .products .product.inactive {
+#productsAlternative.in-product-top .products .product.inactive {
   display: block;
 }
-.admin-logged #productsAlternative.in-product-top .products .product:hover {
+#productsAlternative.in-product-top .products .product:hover {
   border-color: var(--color-primary);
 }
-.admin-logged #productsAlternative.in-product-top .products .product:hover .name {
+#productsAlternative.in-product-top .products .product:hover .name {
   text-decoration: underline;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p {
+#productsAlternative.in-product-top .products .product .p {
   display: grid;
   --image-width: 50px;
   --padding: 10px;
   padding: var(--padding) var(--padding) var(--padding) calc(var(--padding) * 2 + var(--image-width));
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p a.image {
+#productsAlternative.in-product-top .products .product .p a.image {
   position: absolute;
   height: 100%;
   width: 100%;
   margin: 0;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p a.image img {
+#productsAlternative.in-product-top .products .product .p a.image img {
   position: absolute;
   left: var(--padding);
   width: var(--image-width);
@@ -670,7 +672,7 @@
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p .p-in {
+#productsAlternative.in-product-top .products .product .p .p-in {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
   gap: 10px;
@@ -678,13 +680,13 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p .p-in a.name {
+#productsAlternative.in-product-top .products .product .p .p-in a.name {
   height: auto;
   font-size: 12px;
   margin: 0;
   text-align: left;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices {
+#productsAlternative.in-product-top .products .product .p .p-in .prices {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -694,16 +696,16 @@
           flex-direction: column;
   gap: 5px;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .price-additional {
+#productsAlternative.in-product-top .products .product .p .p-in .prices .price-additional {
   font-size: 11px;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .price-final {
+#productsAlternative.in-product-top .products .product .p .p-in .prices .price-final {
   font-size: 14px;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .price-final strong {
+#productsAlternative.in-product-top .products .product .p .p-in .prices .price-final strong {
   font-size: 14px;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .flag-discount {
+#productsAlternative.in-product-top .products .product .p .p-in .prices .flag-discount {
   padding-top: 3px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -715,18 +717,18 @@
   position: relative;
   font-size: 11px;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .flag-discount .price-standard {
+#productsAlternative.in-product-top .products .product .p .p-in .prices .flag-discount .price-standard {
   font-weight: 400;
   font-size: 14px;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p .p-in .prices .flag-discount .price-save {
+#productsAlternative.in-product-top .products .product .p .p-in .prices .flag-discount .price-save {
   font-size: 14px;
   font-weight: 400;
 }
-.admin-logged #productsAlternative.in-product-top .products .product .p-code,
-.admin-logged #productsAlternative.in-product-top .products .product .ratings-wrapper,
-.admin-logged #productsAlternative.in-product-top .products .product .p-tools,
-.admin-logged #productsAlternative.in-product-top .products .product .p-desc,
-.admin-logged #productsAlternative.in-product-top .products .product .flags-extra {
+#productsAlternative.in-product-top .products .product .p-code,
+#productsAlternative.in-product-top .products .product .ratings-wrapper,
+#productsAlternative.in-product-top .products .product .p-tools,
+#productsAlternative.in-product-top .products .product .p-desc,
+#productsAlternative.in-product-top .products .product .flags-extra {
   display: none;
 }

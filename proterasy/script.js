@@ -237,9 +237,6 @@ function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, custom
 if (document.body.classList.contains("type-product")) {
 	editAlternativeProducts();
 	function editAlternativeProducts() {
-		if (!document.body.classList.contains("admin-logged")) {
-			return;
-		}
 		const alt = document.querySelector("#tab-content #productsAlternative");
 		if (!alt) return;
 		alt.classList.remove("fade");
