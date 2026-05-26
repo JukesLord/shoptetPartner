@@ -296,7 +296,7 @@ $desktop-large-min: 1680px;
 		}
 	}
 }
-@media (min-width: $mobile-max) {
+@media (max-width: $mobile-max) {
 	.top-nav-button-login,
 	a.top-nav-button-account {
 		display: flex;

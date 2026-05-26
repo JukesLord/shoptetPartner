@@ -308,7 +308,7 @@
     left: 0.85em;
   }
 }
-@media (min-width: 767px) {
+@media (max-width: 767px) {
   .top-nav-button-login,
   a.top-nav-button-account {
     display: -webkit-box;
