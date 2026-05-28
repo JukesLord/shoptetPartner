@@ -1,7 +1,7 @@
 :root {
-  --number-of-items: 3;
-  --next-item-preview: 80px;
-  --border-radious: 6px;
+  --number-of-items: 4;
+  --next-item-preview: 0px;
+  --border-radius: 6px;
 }
 
 @media screen and (max-width: 1439px) {
@@ -24,25 +24,25 @@
 @media screen and (max-width: 650px) {
   :root {
     --number-of-items: 1;
-    --next-item-preview: 200px;
+    --next-item-preview: 240px;
   }
 }
 @media screen and (max-width: 570px) {
   :root {
     --number-of-items: 1;
-    --next-item-preview: 120px;
+    --next-item-preview: 160px;
   }
 }
 @media screen and (max-width: 500px) {
   :root {
     --number-of-items: 1;
-    --next-item-preview: 80px;
+    --next-item-preview: 120px;
   }
 }
 @media screen and (max-width: 440px) {
   :root {
     --number-of-items: 1;
-    --next-item-preview: 60px;
+    --next-item-preview: 80px;
   }
 }
 .in-index #homepage-banner {
@@ -90,7 +90,7 @@
   color: black;
   text-wrap: pretty;
   width: calc(100% / var(--number-of-items) - var(--gap) * (var(--number-of-items) - 1) / var(--number-of-items) - var(--next-item-preview) / var(--number-of-items));
-  border-radius: var(--border-radious);
+  border-radius: var(--border-radius);
   overflow: hidden;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -126,8 +126,9 @@
           transform: scale(1.025);
 }
 .in-index #homepage-banner .carousel-control {
-  width: 44px;
-  height: 44px;
+  --width: 44px;
+  width: var(--width);
+  height: var(--width);
   opacity: 1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,19 +140,19 @@
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
-  border-radius: var(--border-radious);
+  border-radius: var(--border-radius);
   overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .in-index #homepage-banner .carousel-control {
-    width: 32px;
-    height: 32px;
+    --width: 32px;
   }
 }
 .in-index #homepage-banner .carousel-control::before {
   background: var(--color-primary);
   color: white;
   content: "\e61d";
+  font-family: shoptet;
   font-size: 20px;
   position: relative;
   display: -webkit-box;
@@ -179,10 +180,14 @@
   background: var(--color-primary-hover);
 }
 .in-index #homepage-banner .carousel-control.left {
-  left: -5px;
+  left: calc(var(--width/-2));
+}
+.in-index #homepage-banner .carousel-control.left::before {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .in-index #homepage-banner .carousel-control.right {
-  right: -5px;
+  right: calc(var(--width/-2));
 }
 .in-index #homepage-banner .carousel-control.hidden-control {
   display: none !important;
