@@ -1,7 +1,7 @@
 :root {
 	--number-of-items: 4;
 	--next-item-preview: 0px;
-	--border-radius: 6px;
+	--border-radius: 4px;
 }
 
 @media screen and (max-width: 1439px) {
@@ -160,10 +160,17 @@
 			&::before {
 				transform: rotate(180deg);
 			}
+			@media screen and (max-width: 768px) {
+				left: calc(var(--width) / -2.5);
+			}
 		}
 		.carousel-control.right {
 			right: calc(var(--width) / -2);
+			@media screen and (max-width: 768px) {
+				right: calc(var(--width) / -2.5);
+			}
 		}
+
 		.carousel-control.hidden-control {
 			display: none !important;
 		}
