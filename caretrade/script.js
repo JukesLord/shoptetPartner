@@ -114,8 +114,8 @@ $('li:contains("Hotelové vybavení")>ul').attr("id", "hotelove-vybaveni");
 $('li:contains("Housekeeping")>ul').attr("id", "vybaveni-pokoje");
 $(".reference").insertAfter("ul#1");
 $(".reference").insertAfter("ul#1");
+$("#welcome").insertAfter(".products:last");
 $(".blog-fp").insertAfter(".reference");
-$("#welcome").insertAfter(".blog-fp");
 
 $(document).ready(function () {
 	$(".td-additional-price").insertAfter(".price.sub-left-position");
@@ -140,6 +140,7 @@ if ($("body").hasClass("in-index")) {
 	$(".large-12.row.collapse.header-contacts,.searchform.large-12.medium-12.small-12").wrapAll(
 		'<div class="horni-panel"></div>',
 	);
+	$(".blog-fp").insertAfter(".vyhody");
 }
 
 $(window).ready(function () {
