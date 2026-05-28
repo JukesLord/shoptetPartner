@@ -231,7 +231,7 @@ function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, custom
 
 	function createControls() {
 		console.log("Creating controls for slider:", sliderWrapper);
-		let initialControls = carousel.querySelectorAll("#carousel-banner > a");
+		let initialControls = document.querySelectorAll("#carousel-banner > a");
 		if (initialControls && initialControls.length > 0) {
 			initialControls.forEach((control) => control.remove());
 			console.log("Existing controls removed before creating new ones.");
