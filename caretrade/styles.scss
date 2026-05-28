@@ -7,12 +7,13 @@
 @media screen and (max-width: 1439px) {
 	:root {
 		--number-of-items: 3;
+		--next-item-preview: 80px;
 	}
 }
 @media screen and (max-width: 991px) {
 	:root {
 		--number-of-items: 2;
-		--next-item-preview: 100px;
+		--next-item-preview: 140px;
 	}
 }
 @media screen and (max-width: 740px) {
@@ -30,19 +31,19 @@
 @media screen and (max-width: 570px) {
 	:root {
 		--number-of-items: 1;
-		--next-item-preview: 160px;
+		--next-item-preview: 180px;
 	}
 }
 @media screen and (max-width: 500px) {
 	:root {
 		--number-of-items: 1;
-		--next-item-preview: 120px;
+		--next-item-preview: 140px;
 	}
 }
 @media screen and (max-width: 440px) {
 	:root {
 		--number-of-items: 1;
-		--next-item-preview: 80px;
+		--next-item-preview: 100px;
 	}
 }
 .in-index {
@@ -112,7 +113,7 @@
 			}
 		}
 		.carousel-control {
-			--width: 44px;
+			--width: 40px;
 			width: var(--width);
 			height: var(--width);
 			opacity: 1;
@@ -122,15 +123,16 @@
 			position: absolute;
 			border-radius: var(--border-radius);
 			overflow: hidden;
+			cursor: pointer;
 			@media screen and (max-width: 768px) {
-				--width: 32px;
+				--width: 30px;
 			}
 			&::before {
 				background: var(--color-primary);
 				color: white;
 				content: "\e61d";
 				font-family: shoptet;
-				font-size: 20px;
+				font-size: 18px;
 				position: relative;
 				display: flex;
 				width: 100%;
@@ -143,7 +145,7 @@
 				align-items: center;
 
 				@media screen and (max-width: 768px) {
-					font-size: 16px;
+					font-size: 14px;
 				}
 			}
 			&:hover,
@@ -154,13 +156,13 @@
 			}
 		}
 		.carousel-control.left {
-			left: calc(var(--width / -2));
+			left: calc(var(--width) / -2);
 			&::before {
 				transform: rotate(180deg);
 			}
 		}
 		.carousel-control.right {
-			right: calc(var(--width / -2));
+			right: calc(var(--width) / -2);
 		}
 		.carousel-control.hidden-control {
 			display: none !important;

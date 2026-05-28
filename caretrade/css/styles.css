@@ -7,12 +7,13 @@
 @media screen and (max-width: 1439px) {
   :root {
     --number-of-items: 3;
+    --next-item-preview: 80px;
   }
 }
 @media screen and (max-width: 991px) {
   :root {
     --number-of-items: 2;
-    --next-item-preview: 100px;
+    --next-item-preview: 140px;
   }
 }
 @media screen and (max-width: 740px) {
@@ -30,19 +31,19 @@
 @media screen and (max-width: 570px) {
   :root {
     --number-of-items: 1;
-    --next-item-preview: 160px;
+    --next-item-preview: 180px;
   }
 }
 @media screen and (max-width: 500px) {
   :root {
     --number-of-items: 1;
-    --next-item-preview: 120px;
+    --next-item-preview: 140px;
   }
 }
 @media screen and (max-width: 440px) {
   :root {
     --number-of-items: 1;
-    --next-item-preview: 80px;
+    --next-item-preview: 100px;
   }
 }
 .in-index #homepage-banner {
@@ -126,7 +127,7 @@
           transform: scale(1.025);
 }
 .in-index #homepage-banner .carousel-control {
-  --width: 44px;
+  --width: 40px;
   width: var(--width);
   height: var(--width);
   opacity: 1;
@@ -142,10 +143,11 @@
   position: absolute;
   border-radius: var(--border-radius);
   overflow: hidden;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .in-index #homepage-banner .carousel-control {
-    --width: 32px;
+    --width: 30px;
   }
 }
 .in-index #homepage-banner .carousel-control::before {
@@ -153,7 +155,7 @@
   color: white;
   content: "\e61d";
   font-family: shoptet;
-  font-size: 20px;
+  font-size: 18px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -173,21 +175,21 @@
 }
 @media screen and (max-width: 768px) {
   .in-index #homepage-banner .carousel-control::before {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 .in-index #homepage-banner .carousel-control:hover::before, .in-index #homepage-banner .carousel-control:focus::before {
   background: var(--color-primary-hover);
 }
 .in-index #homepage-banner .carousel-control.left {
-  left: calc(var(--width/-2));
+  left: calc(var(--width) / -2);
 }
 .in-index #homepage-banner .carousel-control.left::before {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 .in-index #homepage-banner .carousel-control.right {
-  right: calc(var(--width/-2));
+  right: calc(var(--width) / -2);
 }
 .in-index #homepage-banner .carousel-control.hidden-control {
   display: none !important;
