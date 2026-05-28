@@ -53,10 +53,10 @@
           user-select: none;
   display: block;
 }
-.in-index #homepage-banner .carousel-banner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.in-index #homepage-banner #carousel-banner {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -70,20 +70,21 @@
   margin-right: 0;
   min-height: auto !important;
 }
-.in-index #homepage-banner .carousel-banner::-webkit-scrollbar {
+.in-index #homepage-banner #carousel-banner::-webkit-scrollbar {
   display: none;
 }
-.in-index #homepage-banner .carousel-banner.grabbing {
+.in-index #homepage-banner #carousel-banner.grabbing {
   cursor: -webkit-grabbing !important;
   cursor: grabbing !important;
 }
-.in-index #homepage-banner .carousel-banner.grabbing a {
+.in-index #homepage-banner #carousel-banner.grabbing a {
   cursor: -webkit-grabbing !important;
   cursor: grabbing !important;
 }
-.in-index #homepage-banner .carousel-banner > div {
-  display: block;
-  position: relative;
+.in-index #homepage-banner #carousel-banner > div {
+  display: block !important;
+  position: relative !important;
+  inset: 0 !important;
   color: black;
   text-wrap: pretty;
   width: calc(100% / var(--number-of-items) - var(--gap) * (var(--number-of-items) - 1) / var(--number-of-items) - var(--next-item-preview) / var(--number-of-items));
@@ -93,7 +94,7 @@
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
 }
-.in-index #homepage-banner .carousel-banner > div a {
+.in-index #homepage-banner #carousel-banner > div a {
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f9f9f9));
   background: linear-gradient(to bottom, white, #f9f9f9);
   position: relative;
@@ -102,21 +103,21 @@
   display: block;
   overflow: hidden;
 }
-.in-index #homepage-banner .carousel-banner > div a,
-.in-index #homepage-banner .carousel-banner > div img {
+.in-index #homepage-banner #carousel-banner > div a,
+.in-index #homepage-banner #carousel-banner > div img {
   -webkit-user-drag: none;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-.in-index #homepage-banner .carousel-banner > div img {
+.in-index #homepage-banner #carousel-banner > div img {
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
-.in-index #homepage-banner .carousel-banner > div:hover img {
+.in-index #homepage-banner #carousel-banner > div:hover img {
   -webkit-transform: scale(1.025);
           transform: scale(1.025);
 }
