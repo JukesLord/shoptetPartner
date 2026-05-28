@@ -1,6 +1,7 @@
 :root {
-	--number-of-items: 4;
+	--number-of-items: 3;
 	--next-item-preview: 80px;
+	--border-radious: 6px;
 }
 
 @media screen and (max-width: 1439px) {
@@ -11,37 +12,37 @@
 @media screen and (max-width: 991px) {
 	:root {
 		--number-of-items: 2;
-		--next-item-preview: 80px;
+		--next-item-preview: 100px;
 	}
 }
 @media screen and (max-width: 740px) {
 	:root {
 		--number-of-items: 2;
-		--next-item-preview: 40px;
+		--next-item-preview: 80px;
 	}
 }
 @media screen and (max-width: 650px) {
 	:root {
 		--number-of-items: 1;
-		--next-item-preview: 240px;
+		--next-item-preview: 200px;
 	}
 }
 @media screen and (max-width: 570px) {
 	:root {
 		--number-of-items: 1;
-		--next-item-preview: 150px;
+		--next-item-preview: 120px;
 	}
 }
 @media screen and (max-width: 500px) {
 	:root {
 		--number-of-items: 1;
-		--next-item-preview: 100px;
+		--next-item-preview: 80px;
 	}
 }
 @media screen and (max-width: 440px) {
 	:root {
 		--number-of-items: 1;
-		--next-item-preview: 80px;
+		--next-item-preview: 60px;
 	}
 }
 .in-index {
@@ -60,6 +61,7 @@
 			margin-left: 0;
 			margin-right: 0;
 			min-height: auto !important;
+			height: auto !important;
 			&::-webkit-scrollbar {
 				display: none;
 			}
@@ -79,6 +81,8 @@
 					100% / var(--number-of-items) - var(--gap) * (var(--number-of-items) - 1) /
 						var(--number-of-items) - var(--next-item-preview) / var(--number-of-items)
 				);
+				border-radius: var(--border-radious);
+				overflow: hidden;
 
 				flex-shrink: 0;
 				scroll-snap-align: start;
@@ -114,11 +118,18 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			position: absolute;
+			border-radius: var(--border-radious);
+			overflow: hidden;
 			@media screen and (max-width: 768px) {
 				width: 32px;
 				height: 32px;
 			}
 			&::before {
+				background: var(--color-primary);
+				color: white;
+				content: "\e61d";
+				font-size: 20px;
 				position: relative;
 				display: flex;
 				width: 100%;
@@ -127,7 +138,6 @@
 				margin: 0;
 				line-height: 1;
 				border-radius: 0;
-				background: var(--color-secondary);
 				justify-content: center;
 				align-items: center;
 
@@ -138,7 +148,7 @@
 			&:hover,
 			&:focus {
 				&::before {
-					background: var(--color-secondary-hover);
+					background: var(--color-primary-hover);
 				}
 			}
 		}
