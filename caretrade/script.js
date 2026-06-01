@@ -140,7 +140,7 @@ if ($("body").hasClass("in-index")) {
 	$(".large-12.row.collapse.header-contacts,.searchform.large-12.medium-12.small-12").wrapAll(
 		'<div class="horni-panel"></div>',
 	);
-	$(".blog-fp").insertAfter(".vyhody");
+	$(".blog-fp").insertAfter("#welcome");
 }
 
 $(window).ready(function () {
