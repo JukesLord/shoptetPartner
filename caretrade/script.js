@@ -132,11 +132,11 @@ if ($("body").hasClass("type-category")) {
 	$(".vyhody").load("/prvky-sablony/vyhody/ .text p");
 }
 if ($("body").hasClass("in-index")) {
-	$(".vyhody").insertAfter("#homepage-banner");
-	$(".vyhody").load("/prvky-sablony/vyhody/ .text p");
 	$(".chcivybavit").insertAfter("#homepage-banner");
 	$(".chcivybavit").load("/prvky-sablony/chci-vybavit-main/ .obsah");
 	$(".dopravazdarma").insertAfter(".chcivybavit");
+	$(".vyhody").insertAfter("#homepage-banner");
+	$(".vyhody").load("/prvky-sablony/vyhody/ .text p");
 	$(".large-12.row.collapse.header-contacts,.searchform.large-12.medium-12.small-12").wrapAll(
 		'<div class="horni-panel"></div>',
 	);
