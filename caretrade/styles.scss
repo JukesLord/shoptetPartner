@@ -108,8 +108,8 @@
 				&:hover {
 					img {
 						transform: scale(1.025);
-						outline: 1px solid #06babc;
 					}
+					border: 2px solid #06babc;
 				}
 			}
 		}
@@ -130,10 +130,10 @@
 			}
 			&::before {
 				/* background: var(--color-primary); */
-				color: #06babc;
+				color: #00cdc5;
 				content: "\e61d";
 				font-family: shoptet;
-				font-size: 18px;
+				font-size: 20px;
 				position: relative;
 				display: flex;
 				width: 100%;
@@ -146,7 +146,7 @@
 				align-items: center;
 
 				@media screen and (max-width: 768px) {
-					font-size: 14px;
+					font-size: 16px;
 				}
 			}
 			&:hover,
@@ -157,18 +157,22 @@
 			}
 		}
 		.carousel-control.left {
-			left: calc(var(--width) / -2);
+			/* left: calc(var(--width) / -2); */
+			left: 0;
 			&::before {
 				transform: rotate(180deg);
 			}
 			@media screen and (max-width: 768px) {
-				left: calc(var(--width) / -2.5);
+				/* left: calc(var(--width) / -2.5); */
+				left: 0;
 			}
 		}
 		.carousel-control.right {
-			right: calc(var(--width) / -2);
+			/* 	right: calc(var(--width)  -2); */
+			right: 0;
 			@media screen and (max-width: 768px) {
-				right: calc(var(--width) / -2.5);
+				/* 	right: calc(var(--width) / -2.5); */
+				right: 0;
 			}
 		}
 
@@ -191,11 +195,12 @@
 #menu-helper {
 	&:before {
 		background-color: transparent;
-		color: #06babc;
+		color: #00cdc5;
 	}
-	/* 	&:hover {
+	&:hover {
 		&:before {
 			background-color: var(--color-primary-hover);
+			color: #06babc;
 		}
-	} */
+	}
 }
