@@ -93,6 +93,7 @@
   width: calc(100% / var(--number-of-items) - var(--gap) * (var(--number-of-items) - 1) / var(--number-of-items) - var(--next-item-preview) / var(--number-of-items));
   border-radius: var(--border-radius);
   overflow: hidden;
+  border: 2px solid transparent;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   scroll-snap-align: start;
