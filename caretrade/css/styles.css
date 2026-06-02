@@ -125,6 +125,7 @@
 .in-index #homepage-banner #carousel-banner > div:hover img {
   -webkit-transform: scale(1.025);
           transform: scale(1.025);
+  outline: 1px solid #06babc;
 }
 .in-index #homepage-banner .carousel-control {
   --width: 40px;
@@ -151,8 +152,8 @@
   }
 }
 .in-index #homepage-banner .carousel-control::before {
-  background: var(--color-primary);
-  color: white;
+  /* background: var(--color-primary); */
+  color: #06babc;
   content: "\e61d";
   font-family: shoptet;
   font-size: 18px;
@@ -179,7 +180,7 @@
   }
 }
 .in-index #homepage-banner .carousel-control:hover::before, .in-index #homepage-banner .carousel-control:focus::before {
-  background: var(--color-primary-hover);
+  color: #005a64;
 }
 .in-index #homepage-banner .carousel-control.left {
   left: calc(var(--width) / -2);
@@ -211,4 +212,16 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   max-height: 1lh;
+}
+
+#menu-helper:before {
+  background-color: transparent;
+  color: #06babc;
+}
+#menu-helper {
+  /* 	&:hover {
+  	&:before {
+  		background-color: var(--color-primary-hover);
+  	}
+  } */
 }

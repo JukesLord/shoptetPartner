@@ -108,6 +108,7 @@
 				&:hover {
 					img {
 						transform: scale(1.025);
+						outline: 1px solid #06babc;
 					}
 				}
 			}
@@ -128,8 +129,8 @@
 				--width: 30px;
 			}
 			&::before {
-				background: var(--color-primary);
-				color: white;
+				/* background: var(--color-primary); */
+				color: #06babc;
 				content: "\e61d";
 				font-family: shoptet;
 				font-size: 18px;
@@ -151,7 +152,7 @@
 			&:hover,
 			&:focus {
 				&::before {
-					background: var(--color-primary-hover);
+					color: #005a64;
 				}
 			}
 		}
@@ -185,4 +186,16 @@
 			max-height: 1lh;
 		}
 	}
+}
+
+#menu-helper {
+	&:before {
+		background-color: transparent;
+		color: #06babc;
+	}
+	/* 	&:hover {
+		&:before {
+			background-color: var(--color-primary-hover);
+		}
+	} */
 }
