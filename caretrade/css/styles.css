@@ -225,7 +225,7 @@
   color: white;
 }
 #menu-helper:hover:before {
-  background-color: #24b7b1;
+  background-color: #24b7b1 !important;
   color: white;
 }
 
