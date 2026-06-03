@@ -107,7 +107,7 @@
 				}
 				&:hover {
 					img {
-						transform: scale(1.025);
+						/* 	transform: scale(1.025); */
 					}
 					border: 2px solid #06babc;
 				}
@@ -195,12 +195,19 @@
 #menu-helper {
 	&:before {
 		background-color: transparent;
-		color: #00cdc5;
+		color: white;
 	}
 	&:hover {
 		&:before {
-			background-color: var(--color-primary-hover);
+			background-color: #005a64;
 			color: #06babc;
 		}
 	}
+}
+
+.vyhody {
+	margin-bottom: 20px;
+}
+.chcivybavit h2 {
+	color: #005a64;
 }
