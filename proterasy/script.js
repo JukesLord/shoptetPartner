@@ -277,3 +277,117 @@ if (document.body.classList.contains("type-product")) {
 		});
 	}
 }
+
+materialCalculator();
+function materialCalculator() {
+	const calculator = document.querySelector("#custom-calculator");
+	if (!calculator) return;
+
+	const materials = parseMaterials(calculator);
+	if (materials.length === 0) return;
+
+	const widget = buildCalculatorWidget(materials);
+	calculator.insertAdjacentElement("afterend", widget);
+
+	// Parse a Czech-formatted number ("18,4", "1 620") into a float; NaN -> 0.
+	function parseCzechNumber(text) {
+		const value = parseFloat(String(text).replace(/\s/g, "").replace(",", "."));
+		return isNaN(value) ? 0 : value;
+	}
+
+	// Read #calculator rows into [{ name, pricePerM2 }].
+	function parseMaterials(table) {
+		const rows = table.querySelectorAll("tbody tr");
+		const result = [];
+		let current = null;
+
+		rows.forEach((row) => {
+			const cells = row.querySelectorAll("td");
+			if (cells.length < 3) return;
+
+			const label = cells[0].textContent.trim();
+			if (label.startsWith("##")) {
+				current = { name: label.slice(2).trim(), pricePerM2: 0 };
+				result.push(current);
+				return;
+			}
+			if (!label || label.startsWith("--") || !current) return;
+
+			const unitPrice = parseCzechNumber(cells[1].textContent);
+			const count = parseCzechNumber(cells[2].textContent);
+			current.pricePerM2 += unitPrice * count;
+		});
+
+		return result;
+	}
+
+	function formatPrice(value) {
+		return value.toLocaleString("cs-CZ", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " Kč";
+	}
+
+	function buildCalculatorWidget(materials) {
+		const wrapper = document.createElement("div");
+		wrapper.classList.add("material-calculator");
+
+		const controls = document.createElement("div");
+		controls.classList.add("mc-controls");
+
+		const label = document.createElement("label");
+		label.classList.add("mc-area-label");
+		label.setAttribute("for", "mc-area-input");
+		label.textContent = "Plocha (m²)";
+
+		const input = document.createElement("input");
+		input.classList.add("mc-area-input");
+		input.id = "mc-area-input";
+		input.type = "number";
+		input.min = "0";
+		input.step = "0.01";
+		input.setAttribute("inputmode", "decimal");
+		input.value = "1";
+
+		controls.appendChild(label);
+		controls.appendChild(input);
+
+		const tiles = document.createElement("div");
+		tiles.classList.add("mc-tiles");
+
+		const totalNodes = materials.map((material) => {
+			const tile = document.createElement("div");
+			tile.classList.add("mc-tile");
+
+			const name = document.createElement("span");
+			name.classList.add("mc-tile-name");
+			name.textContent = material.name;
+
+			const total = document.createElement("span");
+			total.classList.add("mc-tile-total");
+
+			const unit = document.createElement("span");
+			unit.classList.add("mc-tile-unit");
+			unit.textContent = formatPrice(material.pricePerM2) + "/m²";
+
+			tile.appendChild(name);
+			tile.appendChild(total);
+			tile.appendChild(unit);
+			tiles.appendChild(tile);
+
+			return total;
+		});
+
+		wrapper.appendChild(controls);
+		wrapper.appendChild(tiles);
+
+		function recalc() {
+			const area = parseFloat(input.value) || 0;
+			materials.forEach((material, index) => {
+				totalNodes[index].textContent = formatPrice(material.pricePerM2 * area);
+			});
+		}
+
+		input.addEventListener("input", recalc);
+		recalc();
+
+		return wrapper;
+	}
+}

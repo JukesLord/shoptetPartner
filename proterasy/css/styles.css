@@ -732,3 +732,102 @@
 #productsAlternative.in-product-top .products .product .flags-extra {
   display: none;
 }
+
+/*Material price calculator*/
+#custom-calculator {
+  display: none;
+}
+
+.material-calculator {
+  margin: 20px 0;
+}
+.material-calculator .mc-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+  max-width: 260px;
+}
+.material-calculator .mc-area-label {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+}
+.material-calculator .mc-area-input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  line-height: 1.2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--colors-foregrounds-borders-secondary);
+  border-radius: 0;
+  background: white;
+  -webkit-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
+}
+.material-calculator .mc-area-input:hover {
+  border-color: var(--color-secondary);
+}
+.material-calculator .mc-area-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+.material-calculator .mc-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+@media screen and (max-width: 480px) {
+  .material-calculator .mc-tiles {
+    grid-template-columns: 1fr;
+  }
+}
+.material-calculator .mc-tile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  background: var(--colors-surface-secondary);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-secondary);
+  -webkit-transition: border-color 0.2s ease, -webkit-box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, -webkit-box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, -webkit-box-shadow 0.2s ease;
+}
+.material-calculator .mc-tile:hover {
+  border-color: var(--color-primary);
+  -webkit-box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+.material-calculator .mc-tile-name {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: black;
+}
+.material-calculator .mc-tile-total {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-primary);
+}
+.material-calculator .mc-tile-unit {
+  font-size: 12px;
+  color: var(--colors-foregrounds-secondary, #777);
+}
