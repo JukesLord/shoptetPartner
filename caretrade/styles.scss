@@ -203,6 +203,11 @@
 			color: white;
 		}
 	}
+	@media screen and (max-width: 768px) {
+		&:before {
+			color: #24b7b1;
+		}
+	}
 }
 
 .vyhody {
@@ -210,4 +215,21 @@
 }
 .chcivybavit h2 {
 	color: #005a64;
+}
+#menu li a,
+.navigation-menu li a {
+	text-transform: none;
+	font-size: 1rem;
+}
+
+.star,
+a.star {
+	color: gold !important;
+	&:hover {
+		color: goldenrod !important;
+	}
+}
+
+.ordering-process:not(.in-dekujeme) #menu {
+	display: none;
 }

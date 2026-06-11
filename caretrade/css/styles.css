@@ -228,6 +228,11 @@
   background-color: #24b7b1 !important;
   color: white;
 }
+@media screen and (max-width: 768px) {
+  #menu-helper:before {
+    color: #24b7b1;
+  }
+}
 
 .vyhody {
   margin-bottom: 20px;
@@ -235,4 +240,23 @@
 
 .chcivybavit h2 {
   color: #005a64;
+}
+
+#menu li a,
+.navigation-menu li a {
+  text-transform: none;
+  font-size: 1rem;
+}
+
+.star,
+a.star {
+  color: gold !important;
+}
+.star:hover,
+a.star:hover {
+  color: goldenrod !important;
+}
+
+.ordering-process:not(.in-dekujeme) #menu {
+  display: none;
 }
