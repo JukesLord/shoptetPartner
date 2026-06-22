@@ -289,6 +289,8 @@ function materialCalculator() {
 	const widget = buildCalculatorWidget(materials);
 	calculator.insertAdjacentElement("afterend", widget);
 
+	whenReady(() => enhanceContactForm(materials));
+
 	// Parse a Czech-formatted number ("18,4", "1 620") into a float; NaN -> 0.
 	function parseCzechNumber(text) {
 		const value = parseFloat(String(text).replace(/\s/g, "").replace(",", "."));
@@ -348,7 +350,7 @@ function materialCalculator() {
 		input.id = "mc-area-input";
 		input.type = "number";
 		input.min = "0";
-		input.step = "0.01";
+		input.step = "0.1";
 		input.setAttribute("inputmode", "decimal");
 		input.value = "1";
 
@@ -404,5 +406,140 @@ function materialCalculator() {
 		recalc();
 
 		return wrapper;
+	}
+
+	function whenReady(callback) {
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", callback);
+		} else {
+			callback();
+		}
+	}
+
+	// Enrich the Shoptet contact form (#formContact) with a material picker, a live
+	// price readout and an optional note, and fold the calculation into the message
+	// that Shoptet e-mails to the shop.
+	function enhanceContactForm(materials) {
+		const form = document.querySelector("#formContact");
+		if (!form || form.classList.contains("mc-enhanced-form")) return;
+		form.classList.add("mc-enhanced-form");
+
+		const emailGroup = form.querySelector("#email") ? form.querySelector("#email").closest(".form-group") : null;
+		const messageField = form.querySelector('textarea[name="message"]');
+		const messageGroup = messageField ? messageField.closest(".form-group") : null;
+		const fieldset = form.querySelector("fieldset") || form;
+		const areaInput = document.querySelector("#mc-area-input");
+
+		// Material picker
+		const materialGroup = createGroup();
+		materialGroup.appendChild(createLabel("mc-material", "Materiál"));
+		const select = document.createElement("select");
+		select.id = "mc-material";
+		select.classList.add("form-control");
+		materials.forEach((material, index) => {
+			const option = document.createElement("option");
+			option.value = String(index);
+			option.textContent = material.name;
+			select.appendChild(option);
+		});
+		materialGroup.appendChild(select);
+
+		// Price readout (read-only, derived from the selected material + entered area)
+		const priceGroup = createGroup();
+		priceGroup.appendChild(createLabel("mc-price", "Orientační cena"));
+		const price = document.createElement("input");
+		price.type = "text";
+		price.id = "mc-price";
+		price.readOnly = true;
+		price.classList.add("form-control", "mc-price-output");
+		priceGroup.appendChild(price);
+
+		// Optional, non-required note
+		const noteGroup = createGroup();
+		noteGroup.appendChild(createLabel("mc-note", "Doplňující informace (nepovinné)"));
+		const note = document.createElement("textarea");
+		note.id = "mc-note";
+		note.rows = 4;
+		note.classList.add("form-control");
+		noteGroup.appendChild(note);
+
+		// Place material + price after the e-mail field, the note after the message field.
+		if (emailGroup) {
+			emailGroup.insertAdjacentElement("afterend", materialGroup);
+		} else {
+			fieldset.prepend(materialGroup);
+		}
+		materialGroup.insertAdjacentElement("afterend", priceGroup);
+		if (messageGroup) {
+			messageGroup.insertAdjacentElement("afterend", noteGroup);
+		} else {
+			priceGroup.insertAdjacentElement("afterend", noteGroup);
+		}
+
+		let userEditedMessage = false;
+		if (messageField) {
+			messageField.addEventListener("input", () => {
+				userEditedMessage = true;
+			});
+		}
+
+		function getArea() {
+			return areaInput ? parseFloat(areaInput.value) || 0 : 0;
+		}
+		function selectedMaterial() {
+			return materials[parseInt(select.value, 10)] || materials[0];
+		}
+		function buildSummary() {
+			const material = selectedMaterial();
+			const area = getArea();
+			const lines = [
+				"Kalkulace materiálu:",
+				"Materiál: " + material.name,
+				"Plocha: " + area + " m²",
+				"Cena za m²: " + formatPrice(material.pricePerM2),
+				"Orientační cena celkem: " + formatPrice(material.pricePerM2 * area),
+			];
+			if (note.value.trim()) lines.push("Doplňující informace: " + note.value.trim());
+			return lines.join("\n");
+		}
+		function refresh() {
+			price.value = formatPrice(selectedMaterial().pricePerM2 * getArea());
+			if (messageField && !userEditedMessage) messageField.value = buildSummary();
+		}
+
+		select.addEventListener("change", refresh);
+		note.addEventListener("input", refresh);
+		if (areaInput) areaInput.addEventListener("input", refresh);
+		refresh();
+
+		// Make sure the calculation is in the e-mail even if the visitor wrote their own message.
+		form.addEventListener(
+			"submit",
+			() => {
+				if (!messageField) return;
+				const own = userEditedMessage ? messageField.value.trim() : "";
+				messageField.value = own ? buildSummary() + "\n\n" + own : buildSummary();
+			},
+			true
+		);
+
+		// Relabel the submit button.
+		const submit = form.querySelector('[type="submit"]');
+		if (submit) {
+			if (submit.tagName === "INPUT") submit.value = "Chci přesnou kalkulaci";
+			else submit.textContent = "Chci přesnou kalkulaci";
+		}
+
+		function createGroup() {
+			const group = document.createElement("div");
+			group.classList.add("form-group", "js-validated-element-wrapper");
+			return group;
+		}
+		function createLabel(forId, text) {
+			const label = document.createElement("label");
+			label.setAttribute("for", forId);
+			label.textContent = text;
+			return label;
+		}
 	}
 }

@@ -768,10 +768,11 @@
 	}
 	.mc-tile-image {
 		display: block;
-		width: calc(100% + 40px);
-		height: 160px;
-		margin: -20px -20px 0;
+		width: 100%;
+		height: auto;
+		margin: auto;
 		object-fit: cover;
+		order: 99;
 	}
 	.mc-tile-name {
 		font-size: 13px;
@@ -789,5 +790,25 @@
 	.mc-tile-unit {
 		font-size: 12px;
 		color: var(--colors-foregrounds-secondary, #777);
+	}
+}
+
+#formContact.mc-enhanced-form {
+	select.form-control {
+		width: 100%;
+		appearance: auto;
+		cursor: pointer;
+	}
+	.mc-price-output {
+		font-size: 20px;
+		font-weight: 700;
+		color: var(--color-primary);
+		background: var(--colors-surface-secondary);
+		border-color: var(--color-secondary);
+		cursor: default;
+		&:focus {
+			outline: none;
+			box-shadow: none;
+		}
 	}
 }
