@@ -525,7 +525,6 @@ function materialCalculator() {
 		function buildSummary() {
 			const material = selectedMaterial();
 			const lines = [
-				"Kalkulace materiálu:",
 				"Jméno a příjmení: " + nameField.value.trim(),
 				"Materiál: " + material.name,
 				"Plocha: " + areaText(),
@@ -548,17 +547,17 @@ function materialCalculator() {
 		refresh();
 
 		// Make sure the calculation is in the e-mail even if the visitor wrote their own message.
-		// Shoptet drops the message into an HTML <td>, where plain newlines collapse to a single
-		// line, so convert them to <br> right before submitting.
+		// Shoptet escapes the message and renders it in an HTML <td>, so newlines collapse and
+		// <br> is escaped; join the items with a visible separator so they stay readable on one line.
 		form.addEventListener(
 			"submit",
 			() => {
 				if (!messageField) return;
 				const own = userEditedMessage ? messageField.value.trim() : "";
-				const finalText = own ? buildSummary() + "\n\n" + own : buildSummary();
-				messageField.value = finalText.replace(/\n/g, "<br>\n");
+				const finalText = own ? buildSummary() + "\n" + own : buildSummary();
+				messageField.value = finalText.replace(/\n/g, "   |   ");
 			},
-			true
+			true,
 		);
 
 		// Relabel the submit button.
