@@ -289,7 +289,10 @@ function materialCalculator() {
 	const widget = buildCalculatorWidget(materials);
 	calculator.insertAdjacentElement("afterend", widget);
 
-	whenReady(() => enhanceContactForm(materials));
+	whenReady(() => {
+		removeIntroParagraph();
+		enhanceContactForm(materials);
+	});
 
 	// Parse a Czech-formatted number ("18,4", "1 620") into a float; NaN -> 0.
 	function parseCzechNumber(text) {
@@ -416,6 +419,15 @@ function materialCalculator() {
 		}
 	}
 
+	// Remove the "Máte nějaké otázky?" intro paragraph from the page content.
+	function removeIntroParagraph() {
+		const content = document.querySelector("#content");
+		if (!content) return;
+		content.querySelectorAll("p").forEach((paragraph) => {
+			if (paragraph.textContent.includes("Máte nějaké otázky?")) paragraph.remove();
+		});
+	}
+
 	// Enrich the Shoptet contact form (#formContact) with a material picker, a live
 	// price readout and an optional note, and fold the calculation into the message
 	// that Shoptet e-mails to the shop.
@@ -506,6 +518,10 @@ function materialCalculator() {
 			priceGroup.insertAdjacentElement("afterend", noteGroup);
 		}
 
+		// Hide the original message textarea; it's auto-filled with the calculation, and the
+		// visitor types into the "Doplňující informace" note field instead.
+		if (messageGroup) messageGroup.style.display = "none";
+
 		let userEditedMessage = false;
 		if (messageField) {
 			messageField.addEventListener("input", () => {
@@ -555,7 +571,8 @@ function materialCalculator() {
 				if (!messageField) return;
 				const own = userEditedMessage ? messageField.value.trim() : "";
 				const finalText = own ? buildSummary() + "\n" + own : buildSummary();
-				messageField.value = finalText.replace(/\n/g, "   |   ");
+				// Pad the separator with non-breaking spaces ( ) so HTML doesn't collapse them.
+				messageField.value = finalText.replace(/\n/g, "   |   ");
 			},
 			true,
 		);

@@ -868,3 +868,8 @@
 #formContact.mc-enhanced-form label[for=mc-note] {
   width: 100%;
 }
+#formContact.mc-enhanced-form .btn {
+  font-size: 1.6rem;
+  padding: 0.5em;
+  font-weight: 700;
+}
