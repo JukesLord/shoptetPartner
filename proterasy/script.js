@@ -307,7 +307,13 @@ function materialCalculator() {
 
 			const label = cells[0].textContent.trim();
 			if (label.startsWith("##")) {
-				current = { name: label.slice(2).trim(), pricePerM2: 0 };
+				const img = row.querySelector("img");
+				current = {
+					name: label.slice(2).trim(),
+					pricePerM2: 0,
+					image: img ? img.getAttribute("src") : "",
+					imageAlt: img ? img.getAttribute("alt") : "",
+				};
 				result.push(current);
 				return;
 			}
@@ -355,6 +361,15 @@ function materialCalculator() {
 		const totalNodes = materials.map((material) => {
 			const tile = document.createElement("div");
 			tile.classList.add("mc-tile");
+
+			if (material.image) {
+				const image = document.createElement("img");
+				image.classList.add("mc-tile-image");
+				image.src = material.image;
+				image.alt = material.imageAlt || material.name;
+				image.loading = "lazy";
+				tile.appendChild(image);
+			}
 
 			const name = document.createElement("span");
 			name.classList.add("mc-tile-name");

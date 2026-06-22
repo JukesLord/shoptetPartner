@@ -818,6 +818,14 @@
   -webkit-box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
           box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
+.material-calculator .mc-tile-image {
+  display: block;
+  width: calc(100% + 40px);
+  height: 160px;
+  margin: -20px -20px 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .material-calculator .mc-tile-name {
   font-size: 13px;
   font-weight: 700;
