@@ -548,12 +548,15 @@ function materialCalculator() {
 		refresh();
 
 		// Make sure the calculation is in the e-mail even if the visitor wrote their own message.
+		// Shoptet drops the message into an HTML <td>, where plain newlines collapse to a single
+		// line, so convert them to <br> right before submitting.
 		form.addEventListener(
 			"submit",
 			() => {
 				if (!messageField) return;
 				const own = userEditedMessage ? messageField.value.trim() : "";
-				messageField.value = own ? buildSummary() + "\n\n" + own : buildSummary();
+				const finalText = own ? buildSummary() + "\n\n" + own : buildSummary();
+				messageField.value = finalText.replace(/\n/g, "<br>\n");
 			},
 			true
 		);

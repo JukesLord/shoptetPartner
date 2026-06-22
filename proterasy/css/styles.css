@@ -848,10 +848,10 @@
 }
 
 #formContact.mc-enhanced-form select.form-control {
-  width: 100%;
   cursor: pointer;
 }
-#formContact.mc-enhanced-form .mc-price-output {
+#formContact.mc-enhanced-form .mc-price-output,
+#formContact.mc-enhanced-form #mc-plocha {
   font-size: 20px;
   font-weight: 700;
   color: var(--color-primary);
@@ -859,8 +859,12 @@
   border-color: var(--color-secondary);
   cursor: default;
 }
-#formContact.mc-enhanced-form .mc-price-output:focus {
+#formContact.mc-enhanced-form .mc-price-output:focus,
+#formContact.mc-enhanced-form #mc-plocha:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+#formContact.mc-enhanced-form label[for=mc-note] {
+  width: 100%;
 }

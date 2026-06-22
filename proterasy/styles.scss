@@ -795,10 +795,10 @@
 
 #formContact.mc-enhanced-form {
 	select.form-control {
-		width: 100%;
 		cursor: pointer;
 	}
-	.mc-price-output {
+	.mc-price-output,
+	#mc-plocha {
 		font-size: 20px;
 		font-weight: 700;
 		color: var(--color-primary);
@@ -809,5 +809,8 @@
 			outline: none;
 			box-shadow: none;
 		}
+	}
+	label[for="mc-note"] {
+		width: 100%;
 	}
 }
