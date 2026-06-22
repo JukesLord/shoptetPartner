@@ -430,6 +430,23 @@ function materialCalculator() {
 		const fieldset = form.querySelector("fieldset") || form;
 		const areaInput = document.querySelector("#mc-area-input");
 
+		// Repurpose Shoptet's required name field as a fixed label for the e-mail,
+		// and hide it; the visitor's real name is collected below and folded into the message.
+		const fullNameField = form.querySelector('input[name="fullName"]');
+		const fullNameGroup = fullNameField ? fullNameField.closest(".form-group") : null;
+		if (fullNameField) fullNameField.value = "Kalkulace materiálu";
+		if (fullNameGroup) fullNameGroup.style.display = "none";
+
+		// Visitor's name (visible, folded into the message)
+		const nameGroup = createGroup();
+		nameGroup.appendChild(createLabel("mc-name", "Jméno a příjmení", true));
+		const nameField = document.createElement("input");
+		nameField.type = "text";
+		nameField.id = "mc-name";
+		nameField.required = true;
+		nameField.classList.add("form-control");
+		nameGroup.appendChild(nameField);
+
 		// Material picker
 		const materialGroup = createGroup();
 		materialGroup.appendChild(createLabel("mc-material", "Materiál"));
@@ -443,6 +460,16 @@ function materialCalculator() {
 			select.appendChild(option);
 		});
 		materialGroup.appendChild(select);
+
+		// Area readout (read-only, mirrors the calculator's m² input)
+		const areaGroup = createGroup();
+		areaGroup.appendChild(createLabel("mc-plocha", "Plocha"));
+		const areaField = document.createElement("input");
+		areaField.type = "text";
+		areaField.id = "mc-plocha";
+		areaField.readOnly = true;
+		areaField.classList.add("form-control");
+		areaGroup.appendChild(areaField);
 
 		// Price readout (read-only, derived from the selected material + entered area)
 		const priceGroup = createGroup();
@@ -463,13 +490,16 @@ function materialCalculator() {
 		note.classList.add("form-control");
 		noteGroup.appendChild(note);
 
-		// Place material + price after the e-mail field, the note after the message field.
+		// Layout: name + e-mail, then material / plocha / price, then message + note.
 		if (emailGroup) {
+			emailGroup.insertAdjacentElement("beforebegin", nameGroup);
 			emailGroup.insertAdjacentElement("afterend", materialGroup);
 		} else {
 			fieldset.prepend(materialGroup);
+			fieldset.prepend(nameGroup);
 		}
-		materialGroup.insertAdjacentElement("afterend", priceGroup);
+		materialGroup.insertAdjacentElement("afterend", areaGroup);
+		areaGroup.insertAdjacentElement("afterend", priceGroup);
 		if (messageGroup) {
 			messageGroup.insertAdjacentElement("afterend", noteGroup);
 		} else {
@@ -489,26 +519,31 @@ function materialCalculator() {
 		function selectedMaterial() {
 			return materials[parseInt(select.value, 10)] || materials[0];
 		}
+		function areaText() {
+			return getArea().toLocaleString("cs-CZ") + " m²";
+		}
 		function buildSummary() {
 			const material = selectedMaterial();
-			const area = getArea();
 			const lines = [
 				"Kalkulace materiálu:",
+				"Jméno a příjmení: " + nameField.value.trim(),
 				"Materiál: " + material.name,
-				"Plocha: " + area + " m²",
+				"Plocha: " + areaText(),
 				"Cena za m²: " + formatPrice(material.pricePerM2),
-				"Orientační cena celkem: " + formatPrice(material.pricePerM2 * area),
+				"Orientační cena celkem: " + formatPrice(material.pricePerM2 * getArea()),
 			];
 			if (note.value.trim()) lines.push("Doplňující informace: " + note.value.trim());
 			return lines.join("\n");
 		}
 		function refresh() {
+			areaField.value = areaText();
 			price.value = formatPrice(selectedMaterial().pricePerM2 * getArea());
 			if (messageField && !userEditedMessage) messageField.value = buildSummary();
 		}
 
 		select.addEventListener("change", refresh);
 		note.addEventListener("input", refresh);
+		nameField.addEventListener("input", refresh);
 		if (areaInput) areaInput.addEventListener("input", refresh);
 		refresh();
 
@@ -535,10 +570,17 @@ function materialCalculator() {
 			group.classList.add("form-group", "js-validated-element-wrapper");
 			return group;
 		}
-		function createLabel(forId, text) {
+		function createLabel(forId, text, required) {
 			const label = document.createElement("label");
 			label.setAttribute("for", forId);
-			label.textContent = text;
+			if (required) {
+				const span = document.createElement("span");
+				span.classList.add("required-asterisk");
+				span.textContent = text;
+				label.appendChild(span);
+			} else {
+				label.textContent = text;
+			}
 			return label;
 		}
 	}

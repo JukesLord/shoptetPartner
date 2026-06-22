@@ -849,9 +849,6 @@
 
 #formContact.mc-enhanced-form select.form-control {
   width: 100%;
-  -webkit-appearance: auto;
-     -moz-appearance: auto;
-          appearance: auto;
   cursor: pointer;
 }
 #formContact.mc-enhanced-form .mc-price-output {
