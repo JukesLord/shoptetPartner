@@ -459,6 +459,25 @@ function materialCalculator() {
 		nameField.classList.add("form-control");
 		nameGroup.appendChild(nameField);
 
+		// Phone (required)
+		const phoneGroup = createGroup();
+		phoneGroup.appendChild(createLabel("mc-phone", "Telefonní číslo", true));
+		const phoneField = document.createElement("input");
+		phoneField.type = "tel";
+		phoneField.id = "mc-phone";
+		phoneField.required = true;
+		phoneField.classList.add("form-control");
+		phoneGroup.appendChild(phoneField);
+
+		// City (optional)
+		const cityGroup = createGroup();
+		cityGroup.appendChild(createLabel("mc-city", "Město"));
+		const cityField = document.createElement("input");
+		cityField.type = "text";
+		cityField.id = "mc-city";
+		cityField.classList.add("form-control");
+		cityGroup.appendChild(cityField);
+
 		// Material picker
 		const materialGroup = createGroup();
 		materialGroup.appendChild(createLabel("mc-material", "Materiál"));
@@ -502,14 +521,16 @@ function materialCalculator() {
 		note.classList.add("form-control");
 		noteGroup.appendChild(note);
 
-		// Layout: name + e-mail, then material / plocha / price, then message + note.
+		// Layout: name + e-mail + phone + city, then material / plocha / price, then message + note.
 		if (emailGroup) {
 			emailGroup.insertAdjacentElement("beforebegin", nameGroup);
-			emailGroup.insertAdjacentElement("afterend", materialGroup);
+			emailGroup.insertAdjacentElement("afterend", phoneGroup);
 		} else {
-			fieldset.prepend(materialGroup);
+			fieldset.prepend(phoneGroup);
 			fieldset.prepend(nameGroup);
 		}
+		phoneGroup.insertAdjacentElement("afterend", cityGroup);
+		cityGroup.insertAdjacentElement("afterend", materialGroup);
 		materialGroup.insertAdjacentElement("afterend", areaGroup);
 		areaGroup.insertAdjacentElement("afterend", priceGroup);
 		if (messageGroup) {
@@ -542,11 +563,15 @@ function materialCalculator() {
 			const material = selectedMaterial();
 			const lines = [
 				"Jméno a příjmení: " + nameField.value.trim(),
+				"Telefonní číslo: " + phoneField.value.trim(),
+			];
+			if (cityField.value.trim()) lines.push("Město: " + cityField.value.trim());
+			lines.push(
 				"Materiál: " + material.name,
 				"Plocha: " + areaText(),
 				"Cena za m²: " + formatPrice(material.pricePerM2),
-				"Orientační cena celkem: " + formatPrice(material.pricePerM2 * getArea()),
-			];
+				"Orientační cena celkem: " + formatPrice(material.pricePerM2 * getArea())
+			);
 			if (note.value.trim()) lines.push("Doplňující informace: " + note.value.trim());
 			return lines.join("\n");
 		}
@@ -559,6 +584,8 @@ function materialCalculator() {
 		select.addEventListener("change", refresh);
 		note.addEventListener("input", refresh);
 		nameField.addEventListener("input", refresh);
+		phoneField.addEventListener("input", refresh);
+		cityField.addEventListener("input", refresh);
 		if (areaInput) areaInput.addEventListener("input", refresh);
 		refresh();
 
