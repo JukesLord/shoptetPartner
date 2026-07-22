@@ -407,15 +407,16 @@ function materialCalculator() {
 				const desc = document.createElement("span");
 				desc.classList.add("mc-tile-desc");
 				desc.textContent = material.description;
-				tile.appendChild(desc);
-			}
 
-			// "Více info zde." cue for the card's link; styled by the user.
-			if (material.link) {
-				const more = document.createElement("span");
-				more.classList.add("mc-tile-more");
-				more.textContent = "Více info zde.";
-				tile.appendChild(more);
+				// "Více info zde." appended at the end of the description; styled by the user.
+				if (material.link) {
+					const more = document.createElement("span");
+					more.classList.add("mc-tile-more");
+					more.textContent = "Více info zde.";
+					desc.appendChild(more);
+				}
+
+				tile.appendChild(desc);
 			}
 
 			const total = document.createElement("span");
