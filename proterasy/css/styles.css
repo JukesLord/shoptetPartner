@@ -853,6 +853,7 @@
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  mix-blend-mode: darken;
 }
 .material-calculator .mc-tile-desc {
   font-size: 13px;
@@ -875,6 +876,9 @@
 .material-calculator .mc-tile-unit {
   font-size: 12px;
   color: var(--colors-foregrounds-secondary, #777);
+}
+.material-calculator .mc-tile-more {
+  text-decoration: underline;
 }
 
 #formContact.mc-enhanced-form select.form-control {

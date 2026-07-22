@@ -410,6 +410,14 @@ function materialCalculator() {
 				tile.appendChild(desc);
 			}
 
+			// "Více info zde." cue for the card's link; styled by the user.
+			if (material.link) {
+				const more = document.createElement("span");
+				more.classList.add("mc-tile-more");
+				more.textContent = "Více info zde.";
+				tile.appendChild(more);
+			}
+
 			const total = document.createElement("span");
 			total.classList.add("mc-tile-total");
 
@@ -590,16 +598,13 @@ function materialCalculator() {
 		}
 		function buildSummary() {
 			const material = selectedMaterial();
-			const lines = [
-				"Jméno a příjmení: " + nameField.value.trim(),
-				"Telefonní číslo: " + phoneField.value.trim(),
-			];
+			const lines = ["Jméno a příjmení: " + nameField.value.trim(), "Telefonní číslo: " + phoneField.value.trim()];
 			if (cityField.value.trim()) lines.push("Město: " + cityField.value.trim());
 			lines.push(
 				"Materiál: " + material.name,
 				"Plocha: " + areaText(),
 				"Cena za m²: " + formatPrice(material.pricePerM2),
-				"Orientační cena celkem: " + formatPrice(material.pricePerM2 * getArea())
+				"Orientační cena celkem: " + formatPrice(material.pricePerM2 * getArea()),
 			);
 			if (note.value.trim()) lines.push("Doplňující informace: " + note.value.trim());
 			return lines.join("\n");

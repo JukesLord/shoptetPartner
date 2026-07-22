@@ -796,6 +796,7 @@
 		object-fit: cover;
 		order: 99;
 		transition: transform 0.3s ease;
+		mix-blend-mode: darken;
 	}
 	.mc-tile-desc {
 		font-size: 13px;
@@ -818,6 +819,9 @@
 	.mc-tile-unit {
 		font-size: 12px;
 		color: var(--colors-foregrounds-secondary, #777);
+	}
+	.mc-tile-more {
+		text-decoration: underline;
 	}
 }
 
