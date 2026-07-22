@@ -772,6 +772,7 @@
 
 		&.mc-tile-link {
 			cursor: pointer;
+			text-decoration: none;
 
 			&:hover {
 				transform: translateY(-3px);
@@ -782,6 +783,7 @@
 				}
 				.mc-tile-name {
 					color: var(--color-primary);
+					text-decoration: underline;
 				}
 			}
 		}
@@ -801,7 +803,7 @@
 		color: var(--colors-foregrounds-secondary, #555);
 	}
 	.mc-tile-name {
-		font-size: 13px;
+		font-size: 16px;
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 0.04em;

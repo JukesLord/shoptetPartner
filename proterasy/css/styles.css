@@ -823,6 +823,7 @@
 }
 .material-calculator .mc-tile.mc-tile-link {
   cursor: pointer;
+  text-decoration: none;
 }
 .material-calculator .mc-tile.mc-tile-link:hover {
   -webkit-transform: translateY(-3px);
@@ -836,6 +837,7 @@
 }
 .material-calculator .mc-tile.mc-tile-link:hover .mc-tile-name {
   color: var(--color-primary);
+  text-decoration: underline;
 }
 .material-calculator .mc-tile-image {
   display: block;
@@ -858,7 +860,7 @@
   color: var(--colors-foregrounds-secondary, #555);
 }
 .material-calculator .mc-tile-name {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
