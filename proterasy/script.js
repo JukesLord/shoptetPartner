@@ -312,12 +312,28 @@ function materialCalculator() {
 
 			const label = cells[0].textContent.trim();
 			if (label.startsWith("##")) {
+				const keyword = label.slice(2).trim();
+				const keywordLower = keyword.toLowerCase();
+
+				// ##Text and ##Odkaz describe the current material; they don't start a new one.
+				if (current && keywordLower === "text") {
+					current.description = cells[1].textContent.trim();
+					return;
+				}
+				if (current && keywordLower === "odkaz") {
+					const anchor = cells[1].querySelector("a");
+					current.link = anchor ? anchor.getAttribute("href") : cells[1].textContent.trim();
+					return;
+				}
+
 				const img = row.querySelector("img");
 				current = {
-					name: label.slice(2).trim(),
+					name: keyword,
 					pricePerM2: 0,
 					image: img ? img.getAttribute("src") : "",
 					imageAlt: img ? img.getAttribute("alt") : "",
+					description: "",
+					link: "",
 				};
 				result.push(current);
 				return;
@@ -364,8 +380,14 @@ function materialCalculator() {
 		tiles.classList.add("mc-tiles");
 
 		const totalNodes = materials.map((material) => {
-			const tile = document.createElement("div");
+			const tile = document.createElement(material.link ? "a" : "div");
 			tile.classList.add("mc-tile");
+			if (material.link) {
+				tile.classList.add("mc-tile-link");
+				tile.href = material.link;
+				tile.target = "_blank";
+				tile.rel = "noopener noreferrer";
+			}
 
 			if (material.image) {
 				const image = document.createElement("img");
@@ -379,6 +401,14 @@ function materialCalculator() {
 			const name = document.createElement("span");
 			name.classList.add("mc-tile-name");
 			name.textContent = material.name;
+			tile.appendChild(name);
+
+			if (material.description) {
+				const desc = document.createElement("span");
+				desc.classList.add("mc-tile-desc");
+				desc.textContent = material.description;
+				tile.appendChild(desc);
+			}
 
 			const total = document.createElement("span");
 			total.classList.add("mc-tile-total");
@@ -387,7 +417,6 @@ function materialCalculator() {
 			unit.classList.add("mc-tile-unit");
 			unit.textContent = formatPrice(material.pricePerM2) + "/m²";
 
-			tile.appendChild(name);
 			tile.appendChild(total);
 			tile.appendChild(unit);
 			tiles.appendChild(tile);
