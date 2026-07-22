@@ -879,6 +879,10 @@
 }
 .material-calculator .mc-tile-more {
   text-decoration: underline;
+  margin-left: 0.2em;
+}
+.material-calculator .mc-tile-more:hover {
+  color: var(--color-primary);
 }
 
 #formContact.mc-enhanced-form select.form-control {

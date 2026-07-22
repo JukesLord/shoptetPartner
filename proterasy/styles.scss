@@ -822,6 +822,10 @@
 	}
 	.mc-tile-more {
 		text-decoration: underline;
+		margin-left: 0.2em;
+		&:hover {
+			color: var(--color-primary);
+		}
 	}
 }
 
