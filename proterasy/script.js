@@ -316,8 +316,10 @@ function materialCalculator() {
 				const keywordLower = keyword.toLowerCase();
 
 				// ##Text and ##Odkaz describe the current material; they don't start a new one.
+				// ##Text: cell[1] = description, cell[2] = the "more info" link text.
 				if (current && keywordLower === "text") {
 					current.description = cells[1].textContent.trim();
+					current.moreText = cells[2].textContent.trim();
 					return;
 				}
 				if (current && keywordLower === "odkaz") {
@@ -333,6 +335,7 @@ function materialCalculator() {
 					image: img ? img.getAttribute("src") : "",
 					imageAlt: img ? img.getAttribute("alt") : "",
 					description: "",
+					moreText: "",
 					link: "",
 				};
 				result.push(current);
@@ -408,11 +411,11 @@ function materialCalculator() {
 				desc.classList.add("mc-tile-desc");
 				desc.textContent = material.description;
 
-				// "Více info zde." appended at the end of the description; styled by the user.
-				if (material.link) {
+				// "More info" text from the table, appended at the end of the description; styled by the user.
+				if (material.moreText) {
 					const more = document.createElement("span");
 					more.classList.add("mc-tile-more");
-					more.textContent = "Více info zde.";
+					more.textContent = material.moreText;
 					desc.appendChild(more);
 				}
 
