@@ -333,7 +333,7 @@
 .type-posts-listing .subcategories li {
   padding: 12px;
 }
-@media screen and (max-width(767px)) {
+@media screen and (max-width: 767px) {
   .type-posts-listing .subcategories li {
     padding: 4px;
   }
@@ -368,7 +368,7 @@
   border-color: var(--colors-foregrounds-borders-secondary);
   color: var(--colors-foregrounds-content-primary);
 }
-@media screen and (max-width(767px)) {
+@media screen and (max-width: 767px) {
   .type-posts-listing .subcategories-show-more {
     padding: 0 16px;
   }

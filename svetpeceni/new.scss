@@ -317,7 +317,7 @@ $desktop-large-min: 1680px;
 	.subcategories {
 		li {
 			padding: 12px;
-			@media screen and (max-width($mobile-max)) {
+			@media screen and (max-width: $mobile-max) {
 				padding: 4px;
 			}
 		}
@@ -344,7 +344,7 @@ $desktop-large-min: 1680px;
 		font-weight: 600;
 		border-color: var(--colors-foregrounds-borders-secondary);
 		color: var(--colors-foregrounds-content-primary);
-		@media screen and (max-width($mobile-max)) {
+		@media screen and (max-width: $mobile-max) {
 			padding: 0 16px;
 		}
 
