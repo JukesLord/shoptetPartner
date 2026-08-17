@@ -342,8 +342,10 @@ $desktop-large-min: 1680px;
 		padding: 5px 32px 5px 11px;
 		font-size: 14px;
 		font-weight: 600;
+		height: 56px;
 		border-color: var(--colors-foregrounds-borders-secondary);
 		color: var(--colors-foregrounds-content-primary);
+		position: relative;
 		@media screen and (max-width: $mobile-max) {
 			padding: 0 16px;
 		}
@@ -353,10 +355,16 @@ $desktop-large-min: 1680px;
 		}
 		&::after {
 			content: "\e910";
-			font-family: shoptet-shadows !important;
+			font-family: shoptet !important;
 			line-height: 1;
 			-webkit-font-smoothing: antialiased;
 			speak: none;
+			font-size: 12px;
+			line-height: 12px;
+			margin-top: -6px;
+			position: absolute;
+			right: 8px;
+			top: 50%;
 		}
 	}
 }
