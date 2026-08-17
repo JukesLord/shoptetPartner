@@ -313,13 +313,15 @@ $desktop-large-min: 1680px;
 	}
 }
 
-.type-posts-listing .subcategories {
-	//after 4th li hide all
-	.subcategories li:nth-child(n + 5) {
-		display: none;
-	}
-	.subcategories.active li {
-		display: block; /* or your grid/flex display */
+.type-posts-listing {
+	.subcategories {
+		//after 4th li hide all
+		li:nth-child(n + 5) {
+			display: none;
+		}
+		&.active li {
+			display: block; /* or your grid/flex display */
+		}
 	}
 	.subcategories-show-more {
 		display: flex;

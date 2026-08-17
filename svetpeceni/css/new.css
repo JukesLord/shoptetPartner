@@ -330,13 +330,13 @@
     display: flex;
   }
 }
-.type-posts-listing .subcategories .subcategories li:nth-child(n+5) {
+.type-posts-listing .subcategories li:nth-child(n+5) {
   display: none;
 }
-.type-posts-listing .subcategories .subcategories.active li {
+.type-posts-listing .subcategories.active li {
   display: block; /* or your grid/flex display */
 }
-.type-posts-listing .subcategories .subcategories-show-more {
+.type-posts-listing .subcategories-show-more {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,11 +356,11 @@
   border-radius: 8px;
   padding: 10px 15px;
 }
-.type-posts-listing .subcategories .subcategories-show-more:hover {
+.type-posts-listing .subcategories-show-more:hover {
   background: var(--color-secondary);
   color: #fff;
 }
-.type-posts-listing .subcategories .subcategories-show-more::after {
+.type-posts-listing .subcategories-show-more::after {
   content: "\e90c";
   font-family: shoptet-shadows !important;
   line-height: 1;
