@@ -294,3 +294,26 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 });
+
+initSubcategoriesShowMore();
+function initSubcategoriesShowMore() {
+	const subcategories = document.querySelector(".subcategories");
+	if (!subcategories) {
+		return;
+	}
+
+	const items = subcategories.querySelectorAll("li");
+	if (items.length <= 4) {
+		return;
+	}
+
+	const button = document.createElement("div");
+	button.className = "subcategories-show-more";
+	button.textContent = "Zobrazit více";
+
+	button.addEventListener("click", function () {
+		subcategories.classList.toggle("active");
+	});
+
+	subcategories.insertAdjacentElement("afterend", button);
+}

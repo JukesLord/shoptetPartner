@@ -312,3 +312,36 @@ $desktop-large-min: 1680px;
 		display: flex;
 	}
 }
+
+.type-posts-listing .subcategories {
+	//after 4th li hide all
+	.subcategories li:nth-child(n + 5) {
+		display: none;
+	}
+	.subcategories.active li {
+		display: block; /* or your grid/flex display */
+	}
+	.subcategories-show-more {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		border-style: solid;
+		width: max-content;
+		margin: auto;
+		border-width: 1px;
+		border-radius: 8px;
+		padding: 10px 15px;
+		&:hover {
+			background: var(--color-secondary);
+			color: #fff;
+		}
+		&::after {
+			content: "\e90c";
+			font-family: shoptet-shadows !important;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			speak: none;
+		}
+	}
+}
