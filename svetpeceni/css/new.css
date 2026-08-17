@@ -369,10 +369,14 @@
   border-color: var(--colors-foregrounds-borders-secondary);
   color: var(--colors-foregrounds-content-primary);
   position: relative;
+  font-weight: 400;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
 }
 @media screen and (max-width: 767px) {
   .type-posts-listing .subcategories-show-more {
-    padding: 0 16px;
+    padding: 0 32px 0px 16px;
+    margin-top: 4px;
   }
 }
 .type-posts-listing .subcategories-show-more:hover {
