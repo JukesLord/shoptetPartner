@@ -346,8 +346,7 @@ $desktop-large-min: 1680px;
 		border-color: var(--colors-foregrounds-borders-secondary);
 		color: var(--colors-foregrounds-content-primary);
 		position: relative;
-		font-weight: 400;
-		transform: translateY(2px);
+
 		@media screen and (max-width: $mobile-max) {
 			padding: 0 32px 0px 16px;
 			margin-top: 4px;
@@ -368,6 +367,8 @@ $desktop-large-min: 1680px;
 			position: absolute;
 			right: 8px;
 			top: 50%;
+			font-weight: 400;
+			transform: translateY(2px);
 		}
 	}
 }

@@ -669,3 +669,13 @@ function materialCalculator() {
 		}
 	}
 }
+
+function surchargeParameter() {
+	if (document.querySelector(".surcharge-list")) {
+		document.querySelectorAll('.surcharge-list option[data-choose="true"]').forEach(function (option) {
+			if (option.textContent.trim() === "Vyberte příplatek") {
+				option.textContent = "Vybrat";
+			}
+		});
+	}
+}

@@ -369,9 +369,6 @@
   border-color: var(--colors-foregrounds-borders-secondary);
   color: var(--colors-foregrounds-content-primary);
   position: relative;
-  font-weight: 400;
-  -webkit-transform: translateY(2px);
-          transform: translateY(2px);
 }
 @media screen and (max-width: 767px) {
   .type-posts-listing .subcategories-show-more {
@@ -394,4 +391,7 @@
   position: absolute;
   right: 8px;
   top: 50%;
+  font-weight: 400;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
 }
