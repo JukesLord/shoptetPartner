@@ -362,14 +362,22 @@
   margin: auto;
   border-width: 1px;
   border-radius: 8px;
-  padding: 10px 15px;
+  padding: 5px 32px 5px 11px;
+  font-size: 14px;
+  font-weight: 600;
+  border-color: var(--colors-foregrounds-borders-secondary);
+  color: var(--colors-foregrounds-content-primary);
+}
+@media screen and (max-width(767px)) {
+  .type-posts-listing .subcategories-show-more {
+    padding: 0 16px;
+  }
 }
 .type-posts-listing .subcategories-show-more:hover {
-  background: var(--color-secondary);
-  color: #fff;
+  background-color: hsla(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l), 0.08);
 }
 .type-posts-listing .subcategories-show-more::after {
-  content: "\e90c";
+  content: "\e910";
   font-family: shoptet-shadows !important;
   line-height: 1;
   -webkit-font-smoothing: antialiased;

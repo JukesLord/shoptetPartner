@@ -297,6 +297,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 initSubcategoriesShowMore();
 function initSubcategoriesShowMore() {
+	if (!document.body.classList.contains("type-posts-listing")) {
+		return;
+	}
 	const subcategories = document.querySelector(".subcategories");
 	if (!subcategories) {
 		return;
