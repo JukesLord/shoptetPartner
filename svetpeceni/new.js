@@ -315,7 +315,8 @@ function initSubcategoriesShowMore() {
 	button.textContent = "Zobrazit více";
 
 	button.addEventListener("click", function () {
-		subcategories.classList.toggle("active");
+		subcategories.classList.add("active");
+		button.style.display = "none";
 	});
 
 	subcategories.insertAdjacentElement("afterend", button);
