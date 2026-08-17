@@ -315,13 +315,13 @@ $desktop-large-min: 1680px;
 
 .type-posts-listing {
 	.subcategories {
-		//after 4th li hide all
 		li {
 			padding: 12px;
 			@media screen and (max-width($mobile-max)) {
 				padding: 4px;
 			}
 		}
+		//after 4th li hide all
 		li:nth-child(n + 5) {
 			display: none;
 		}
