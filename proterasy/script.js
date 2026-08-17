@@ -669,7 +669,7 @@ function materialCalculator() {
 		}
 	}
 }
-
+surchargeParameter();
 function surchargeParameter() {
 	if (document.querySelector(".surcharge-list")) {
 		document.querySelectorAll('.surcharge-list option[data-choose="true"]').forEach(function (option) {
