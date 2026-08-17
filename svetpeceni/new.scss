@@ -316,6 +316,12 @@ $desktop-large-min: 1680px;
 .type-posts-listing {
 	.subcategories {
 		//after 4th li hide all
+		li {
+			padding: 12px;
+			@media screen and (max-width($mobile-max)) {
+				padding: 4px;
+			}
+		}
 		li:nth-child(n + 5) {
 			display: none;
 		}
@@ -334,6 +340,7 @@ $desktop-large-min: 1680px;
 		border-width: 1px;
 		border-radius: 8px;
 		padding: 10px 15px;
+
 		&:hover {
 			background: var(--color-secondary);
 			color: #fff;

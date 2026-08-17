@@ -330,6 +330,14 @@
     display: flex;
   }
 }
+.type-posts-listing .subcategories li {
+  padding: 12px;
+}
+@media screen and (max-width(767px)) {
+  .type-posts-listing .subcategories li {
+    padding: 4px;
+  }
+}
 .type-posts-listing .subcategories li:nth-child(n+5) {
   display: none;
 }
