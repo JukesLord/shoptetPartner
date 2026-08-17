@@ -172,7 +172,9 @@ $desktop-large-min: 1680px;
 	}
 	@include customSlider;
 }
-
+body.in-index {
+	overflow-x: hidden;
+}
 .hodnoceni-obchodu-section {
 	.hodnoceni-obchodu-title {
 		text-align: center;
