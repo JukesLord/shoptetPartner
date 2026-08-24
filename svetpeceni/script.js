@@ -66,10 +66,10 @@ function initheader() {
 
 function initIndex() {
 	$(".next-to-carousel-banners").insertAfter(".benefitBanner.position--benefitHomepage");
-	$("section#topBanners").insertAfter(".full-width.benefit-banners-full-width");
-	if (document.body.classList.contains("admin-logged")) {
-		$("section#topBanners").insertBefore($(".middle-banner.full-width").eq(0));
-	}
+	/* $("section#topBanners").insertAfter(".full-width.benefit-banners-full-width"); */
+
+	$("section#topBanners").insertBefore($(".middle-banner.full-width").eq(0));
+
 	$("section.middle-banner.full-width:eq(0)").insertAfter(
 		".products-wrapper.product-slider-holder.has-navigation:eq(0)",
 	);
